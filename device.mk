@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvulkan
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:vendor/etc/sec_config
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
