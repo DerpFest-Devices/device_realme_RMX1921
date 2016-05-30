@@ -5,6 +5,8 @@
 56:4294967295:1021:3004
 /* Allow SS CTL service to be used by system and net_raw processes */
 43:4294967295:1000:3004
+/* <UIMHTTP QMI Service ID - 16>:<UIMHTTP QMI Instance ID - all instances>:<Client Group ID> */
+71:4294967295:1001
 /* <UIMRMT QMI Service ID - 16>:<UIMRMT QMI Instance ID - all instances>:<Client Group ID> */
 50:4294967295:1001
 /* QMI-SLIM service permitted to gps and net_raw */
