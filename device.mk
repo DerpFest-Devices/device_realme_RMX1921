@@ -487,6 +487,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/nxp
 
+# SystemUI
+EXCLUDE_SYSTEMUI_TESTS := true
+
 # Telephony
 PRODUCT_PACKAGES += \
     extphonelib \
