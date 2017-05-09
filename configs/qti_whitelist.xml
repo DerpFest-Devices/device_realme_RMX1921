@@ -38,4 +38,5 @@
     <allow-in-power-save package="com.qulacomm.qcrilmsgtunnel" />
     <allow-in-power-save package="com.qualcomm.qti.ims" />
     <allow-in-power-save package="com.qualcomm.qti.radioconfiginterface" />
+    <allow-in-power-save package="com.qualcomm.simcontacts" />
 </config>
