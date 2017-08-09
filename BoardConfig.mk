@@ -61,6 +61,9 @@ ifeq ($(HOST_OS),linux)
 endif
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
 # Graphics
 TARGET_USES_HWC2 := true
 
@@ -97,6 +100,11 @@ TARGET_RIL_VARIANT := caf
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-04-05
+
+# Sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
