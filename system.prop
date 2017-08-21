@@ -163,7 +163,7 @@ config.disable_rtt=true
 #Bringup properties
 debug.gralloc.gfx_ubwc_disable=0
 persist.sys.force_sw_gles=1
-persist.radio.atfwd.start=false
+persist.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
 qemu.hw.mainkeys=0
