@@ -168,3 +168,7 @@ ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
 qemu.hw.mainkeys=0
 sdm.debug.disable_inline_rotator=1
+sdm.debug.disable_display_ubwc_ff_voting=1
+
+#Disable backpressure
+debug.sf.disable_backpressure=1
