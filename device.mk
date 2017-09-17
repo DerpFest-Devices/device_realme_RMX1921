@@ -363,7 +363,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.realme_sdm710
 
 # Vibrator
 PRODUCT_PACKAGES += \
