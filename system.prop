@@ -171,3 +171,13 @@ sdm.debug.disable_display_ubwc_ff_voting=1
 
 #Disable backpressure
 debug.sf.disable_backpressure=1
+
+#Property to enable activity trigger
+ro.vendor.at_library=libqti-at.so
+
+#Property to enable whitelisted games
+persist.vendor.qti.games.gt.prof=1
+
+#core-ctl properties used by perfd
+ro.vendor.qti.core_ctl_min_cpu=4
+ro.vendor.qti.core_ctl_max_cpu=6
