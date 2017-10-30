@@ -76,7 +76,7 @@ ro.opengles.version=196610
 bt.max.hfpclient.connections=1
 
 # System property for cabl
-ro.qualcomm.cabl=1
+ro.qualcomm.cabl=2
 
 #
 # System props for telephony
