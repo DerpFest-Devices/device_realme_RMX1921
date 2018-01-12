@@ -156,6 +156,8 @@ ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
 sdm.debug.disable_inline_rotator=1
 
+#Property to enable display default color mode
+vendor.display.enable_default_color_mode=1
 
 #Property to enable activity trigger
 ro.vendor.at_library=libqti-at.so
