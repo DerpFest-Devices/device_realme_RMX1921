@@ -1229,25 +1229,6 @@ vendor/lib64/vendor.oppo.hardware.radio.oppoappradio@1.0.so
 vendor/lib64/vendor.oppo.hardware.radio.opporadio@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
 
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
-vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib/libperfconfig.so
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-
 # Peripheral manager - from LA.UM.9.8.r1-02700-SDM710.0
 vendor/bin/pm-proxy|832cbe7995de8177a2ef5bdf3f145131dfe828d4
 vendor/bin/pm-service|28f5e8d8f98c8e97941f514bafdc0b369cc5b600

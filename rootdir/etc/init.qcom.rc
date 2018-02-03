@@ -399,12 +399,6 @@ on post-fs-data
     mkdir /data/vendor/fm 0770 system system
     chmod 0770 /data/vendor/fm
 
-    #Create PERFD deamon related dirs
-    mkdir /data/vendor/perfd 0770 root system
-    chmod 2770 /data/vendor/perfd
-    rm /data/vendor/perfd/default_values
-
-
     #ifdef VENDOR_EDIT
     #wenjie.liu@CN.NFC.Basic.Hardware.1338555, 2018/04/09
     #add for:NFC Open Slowly
