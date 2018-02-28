@@ -54,6 +54,9 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 mm.enable.qcom_parser=13631487
 persist.mm.enable.prefetch=true
 
+#Netflix custom property
+ro.netflix.bsp_rev=Q670-14477-1
+
 #
 # system props for the data modules
 #
