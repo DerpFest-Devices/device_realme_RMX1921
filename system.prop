@@ -154,7 +154,7 @@ config.disable_rtt=true
 
 #Bringup properties
 debug.gralloc.gfx_ubwc_disable=0
-persist.radio.atfwd.start=true
+persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
 sdm.debug.disable_inline_rotator=1
