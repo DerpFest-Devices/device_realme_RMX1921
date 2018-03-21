@@ -89,6 +89,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.qcom:64
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
