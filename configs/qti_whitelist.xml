@@ -38,4 +38,26 @@
     <allow-in-power-save package="com.qualcomm.qti.ims" />
     <allow-in-power-save package="com.qualcomm.qti.radioconfiginterface" />
     <allow-in-power-save package="com.qualcomm.simcontacts" />
+    <hidden-api-whitelisted-app package="org.codeaurora.snapcam" />
+    <hidden-api-whitelisted-app package="com.android.mms" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.carrierconfigure" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.sva" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.smartassistant" />
+    <hidden-api-whitelisted-app package="com.quicinc.voice.activation" />
+    <hidden-api-whitelisted-app package="com.android.backup" />
+    <hidden-api-whitelisted-app package="com.android.contacts" />
+    <hidden-api-whitelisted-app package="com.android.exchange" />
+    <hidden-api-whitelisted-app package="com.android.soundrecorder" />
+    <hidden-api-whitelisted-app package="com.android.camera2" />
+    <hidden-api-whitelisted-app package="org.codeaurora.gallery" />
+    <hidden-api-whitelisted-app package="org.codeaurora.dialer" />
+    <hidden-api-whitelisted-app package="com.example.connmgr" />
+    <hidden-api-whitelisted-app package="com.android.email" />
+    <hidden-api-whitelisted-app package="com.cyanogenmod.filemanager" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.presenceappSub2" />
+    <hidden-api-whitelisted-app package="com.qualcomm.secureindicator" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.roamingsettings" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.sysmonappExternal" />
+    <hidden-api-whitelisted-app package="com.qualcomm.qti.biometrics.voiceprint.voiceprintdemo" />
+    <hidden-api-whitelisted-app package="com.qti.vtloopback " />
 </config>
