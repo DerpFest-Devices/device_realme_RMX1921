@@ -103,6 +103,15 @@ persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
+#enable offload audio video playback by default
+audio.offload.video=true
+
+#enable music through deep buffer
+audio.deep_buffer.media=true
+
+#set AudioFlinger client heap size
+ro.af.client_heap_size_kbyte=7168
+
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
