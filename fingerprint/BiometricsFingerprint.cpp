@@ -202,17 +202,12 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId()  {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel()  {
-    receivedCancel = false;
+    if(OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->cancel()) == RequestStatus::SYS_OK)
+       mOppoClientCallback->onError(mOppoBiometricsFingerprint->setNotify(mOppoClientCallback),
+           vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED,
+           0);
+
     RequestStatus ret = OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->cancel());
-    ALOGE("CANCELING");
-    if(!receivedCancel) {
-        ALOGE("Sending cancel error");
-        mOppoClientCallback->mClientCallback->onError(
-                myDeviceId,
-                android::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED,
-                0);
-    }
-    return ret;
 }
 
 Return<RequestStatus> BiometricsFingerprint::enumerate()  {
