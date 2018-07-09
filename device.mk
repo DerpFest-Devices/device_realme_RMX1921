@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.realme_sdm710
+
 # Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
