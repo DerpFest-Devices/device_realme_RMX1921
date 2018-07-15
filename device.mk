@@ -200,6 +200,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
+# HotwordEnrollement app permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.realme_sdm710
