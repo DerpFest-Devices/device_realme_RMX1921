@@ -43,7 +43,7 @@
         <!--L CPU - Set hispeed load 95 -->
         <!--BWMON - Set sample_ms 20 -->
         <Config
-            Id="0x00001331" Enable="true" Target="sdm710"
+            Id="0x00001331" Enable="true" Timeout="0" Target="sdm710"
             Resources="0x40C68100, 0xFFFFFFFA, 0x40C68110, 0xFFFFFFFA, 0x40C68120, 0xFFFFFFFA,
             0x40C68130, 0xFFFFFFFA, 0x40C68140, 0xFFFFFFFA, 0x40C68150, 0xFFFFFFFA,
             0x4143C100, 0x3E6, 0x41440100, 0x5F, 0x41820000, 0x14"/>
@@ -57,7 +57,7 @@
         <!--L CPU CORE 5 SCHED LOAD BOOST -->
         <!--BWMON - Set sample_ms 20 -->
         <Config
-            Id="0x00001332" Enable="true" Target="sdm710"
+            Id="0x00001332" Enable="true" Timeout="0" Target="sdm710"
             Resources="0x40C68100, 0xFFFFFFFA, 0x40C68110, 0xFFFFFFFA, 0x40C68120, 0xFFFFFFFA,
             0x40C68130, 0xFFFFFFFA, 0x40C68140, 0xFFFFFFFA, 0x40C68150, 0xFFFFFFFA,
             0x41820000, 0x14"/>
@@ -71,7 +71,7 @@
         <!--L CPU CORE 5 SCHED LOAD BOOST -->
         <!--BWMON - Set sample_ms 20 -->
         <Config
-            Id="0x00001333" Enable="true" Target="sdm710"
+            Id="0x00001333" Enable="true" Timeout="0" Target="sdm710"
             Resources="0x40C68100, 0xFFFFFFFA, 0x40C68110, 0xFFFFFFFA, 0x40C68120, 0xFFFFFFFA,
             0x40C68130, 0xFFFFFFFA, 0x40C68140, 0xFFFFFFFA, 0x40C68150, 0xFFFFFFFA,
             0x41820000, 0x14"/>
