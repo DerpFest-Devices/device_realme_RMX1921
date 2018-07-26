@@ -180,7 +180,3 @@ ro.vendor.qti.core_ctl_max_cpu=6
 
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
-
-#Property to enable touch optimizations
-persist.vendor.qti.inputopts.enable=true
-persist.vendor.qti.inputopts.movetouchslop=0.6
