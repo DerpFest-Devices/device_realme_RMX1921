@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 
 <!--
-/* Copyright (c) 2017, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -99,4 +99,5 @@
     <hidden-api-whitelisted-app package="org.codeaurora.bluetooth" />
     <hidden-api-whitelisted-app package="com.qualcomm.wfd.client" />
     <hidden-api-whitelisted-app package="com.qualcomm.wfd.service" />
+    <hidden-api-whitelisted-app package="com.qti.service.colorservice" />
 </config>
