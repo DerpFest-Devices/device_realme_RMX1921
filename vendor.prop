@@ -121,7 +121,6 @@ debug.stagefright.omx_default_rank=0
 # Display
 vendor.display.enable_default_color_mode=1
 ro.vendor.display.cabl=2
-ro.sf.lcd_density=420
 
 # Dolby
 vendor.audio.dolby.ds2.enabled=false
