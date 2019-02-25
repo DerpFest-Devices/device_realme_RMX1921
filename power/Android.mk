@@ -6,6 +6,7 @@ ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
 endif
 
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_INIT_RC := android.hardware.power@1.0-service.rc
 LOCAL_SHARED_LIBRARIES := liblog libcutils libdl libxml2
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 LOCAL_HEADER_LIBRARIES += libutils_headers
