@@ -165,9 +165,9 @@
   </array>
 
   <!-- Current when CPU is awake -->
-  <item name="cpu.awake">12</item>
+  <item name="cpu.idle">12</item>
   <!-- Current when CPU is idle -->
-  <item name="cpu.idle">5.5</item>
+  <item name="cpu.suspend">5.5</item>
 
   <!-- Memory bandwidth power values in mA at the rail. There must be one value
        for each bucket defined in the device tree. -->
