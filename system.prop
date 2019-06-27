@@ -101,8 +101,6 @@ audio.deep_buffer.media=true
 #set AudioFlinger client heap size
 ro.af.client_heap_size_kbyte=7168
 
-#property to enable user to access Google WFD settings
-persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
 
