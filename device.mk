@@ -425,7 +425,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.class_main.sh \
     init.RealmeParts.rc \
     init.oppo.rc \
     init.oppo.display.rc \

@@ -317,9 +317,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #on property:persist.airplane.mode.pwr.svg=enabled
 #    setprop ro.mdm_helper_proxy_req false
 #
-#on property:init.svc.ril-daemon=running
-#    setprop ro.mdm_helper_proxy_req true
-#
 ## Start mdm_helper_proxy
 #on property:ro.mdm_helper_proxy_req=true
 #    start mdm_helper_proxy
