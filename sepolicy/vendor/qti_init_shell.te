@@ -16,3 +16,4 @@ allow qti_init_shell sysfs_led_file:file { getattr setattr };
 allow qti_init_shell sysfs_lcd_file:file { getattr setattr };
 allow qti_init_shell ctl_start_prop:property_service set;
 allow qti_init_shell ctl_stop_prop:property_service set;
+allow qti_init_shell { sysfs sysfs_dm }:file write;
