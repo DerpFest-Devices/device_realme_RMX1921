@@ -1,0 +1,4 @@
+service fps_hal.realme_sdm710 /system/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
+    class late_start
+    user system
+    group system input
