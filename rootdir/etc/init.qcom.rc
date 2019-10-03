@@ -562,38 +562,6 @@ service qmiproxy /system/bin/qmiproxy
     group radio diag
     disabled
 
-#ifndef OPLUS_BUG_STABILITY
-#HuiTao@CONNECTIVITY.WIFI.BASE.1072015, 2015/04/24,
-#Modify for:close defualt debug log of wpa_supplicant
-#service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
-#    -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 -dd \
-#    -g@android:vendor_wpa_wlan0
-#   we will start as root and wpa_supplicant will switch to user wifi
-#   after setting up the capabilities required for WEXT
-#   user wifi
-#   group wifi inet keystore
-#    interface android.hardware.wifi.supplicant@1.0::ISupplicant default
-#    interface android.hardware.wifi.supplicant@1.1::ISupplicant default
-#    class main
-#    socket vendor_wpa_wlan0 dgram 660 wifi wifi
-#    disabled
-#    oneshot
-#else
-service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
-    -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
-    -g@android:vendor_wpa_wlan0
-#   we will start as root and wpa_supplicant will switch to user wifi
-#   after setting up the capabilities required for WEXT
-#   user wifi
-#   group wifi inet keystore
-    interface android.hardware.wifi.supplicant@1.0::ISupplicant default
-    interface android.hardware.wifi.supplicant@1.1::ISupplicant default
-    class main
-    socket vendor_wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-#endif
-
 service vendor.wigig_supplicant /vendor/bin/hw/wpa_supplicant \
     -iwigig0 -Dnl80211 -c/data/vendor/wifi/wigig_supplicant.conf \
     -m/data/vendor/wifi/wigig_p2p_supplicant.conf \
