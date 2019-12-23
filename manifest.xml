@@ -274,6 +274,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                <instance>imsradio1</instance>
            </interface>
     </hal>
+    <!--ANT-->
+    <hal format="hidl"> 
+        <name>com.dsi.ant</name> 
+        <transport>hwbinder</transport> 
+        <version>1.0</version>
+        <interface>
+            <name>IAnt</name> 
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- dpm QMI hal service -->
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
