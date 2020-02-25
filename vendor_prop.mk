@@ -146,6 +146,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     pm.sleep_mode=1
 
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so
+
 # SoC
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=Qualcomm \
