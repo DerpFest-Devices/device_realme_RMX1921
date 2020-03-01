@@ -237,10 +237,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# Net
-PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
-
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
