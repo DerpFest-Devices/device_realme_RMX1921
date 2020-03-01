@@ -1,0 +1,10 @@
+# Camera
+vendor.oppo.hardware.camera.oppoAlgoProcessService::IOppoAlgoProcessService  u:object_r:hal_camera_hwservice:s0
+vendor.oppo.hardware.camera.oppopostproc::ICameraPostProc                    u:object_r:hal_camera_hwservice:s0
+
+# Fingerprint
+vendor.oppo.hardware.biometrics.fingerprint::IBiometricsFingerprint          u:object_r:hal_fingerprint_hwservice:s0
+
+# NFC
+vendor.nxp.nxpnfc::INxpNfc                                      u:object_r:nfc_hwservice:s0
+vendor.nxp.nxpese::INxpEse                                      u:object_r:nfc_hwservice:s0

@@ -1,0 +1,10 @@
+# Wifi
+type vendor_wifi_prop, property_type;
+
+# Oppo props
+type oppo_debug_prop, property_type;
+type oppo_fingerprint_prop, property_type;
+type oppo_wlan_prop, property_type;
+
+# Camera
+type vendor_camera_prop, property_type;

@@ -1,0 +1,1 @@
+add_hwservice(hal_secure_element_default, nfc_hwservice);

@@ -1,0 +1,16 @@
+binder_call(hal_fingerprint_default, hal_fingerprint_default)
+
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_default goodix_device:chr_file rw_file_perms;
+allow hal_fingerprint_default qdsp_device:chr_file rw_file_perms;
+
+allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+
+allow hal_fingerprint_default proc_oppo_fp:file r_file_perms;
+
+allow hal_fingerprint_default proc_touchpanel:dir search;
+allow hal_fingerprint_default proc_touchpanel:file rw_file_perms;
+
+get_prop(hal_fingerprint_default, oppo_debug_prop);
+
+set_prop(hal_fingerprint_default, oppo_fingerprint_prop);
