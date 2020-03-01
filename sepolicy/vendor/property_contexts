@@ -1,0 +1,43 @@
+# Wlan
+vendor.wlan.  u:object_r:vendor_wifi_prop:s0
+wifi.active.interface              u:object_r:exported_wifi_prop:s0
+
+# Oppo Audio props
+persist.oppo.mm.pcmdump                 u:object_r:vendor_audio_prop:s0
+sys.oppo.mm.record.type                 u:object_r:vendor_audio_prop:s0
+sys.oppo.mm.voice.record                u:object_r:vendor_audio_prop:s0
+
+# Oppo FP props
+persist.vendor.fingerprint.             u:object_r:oppo_fingerprint_prop:s0
+oppo.optical.             u:object_r:oppo_fingerprint_prop:s0
+vendor.fingerprint.optical.             u:object_r:oppo_fingerprint_prop:s0
+
+# Camera
+oppo.camera.                  u:object_r:vendor_camera_prop:s0
+persist.front.skipdisplay.enable                  u:object_r:vendor_camera_prop:s0
+persist.aec.manual.mode                  u:object_r:vendor_camera_prop:s0
+persist.camera.                  u:object_r:vendor_camera_prop:s0
+ro.camera.                  u:object_r:vendor_camera_prop:s0
+persist.oppo.camera.                 u:object_r:vendor_camera_prop:s0
+
+# Radio props
+gsm.operator.numeric              u:object_r:radio_prop:s0
+
+# Oppo debug props
+persist.ipe.debug                  u:object_r:oppo_debug_prop:s0
+persist.sys.oppo                  u:object_r:oppo_debug_prop:s0
+persist.sys.assert.                  u:object_r:oppo_debug_prop:s0
+ro.build.flavor                  u:object_r:oppo_debug_prop:s0
+ro.oppo.                  u:object_r:oppo_debug_prop:s0
+persist.sys.log.                 u:object_r:oppo_debug_prop:s0
+sys.oppo_ftm_mode                  u:object_r:oppo_debug_prop:s0
+sys.oppo.bsp.drm.widevine.info     u:object_r:oppo_debug_prop:s0
+oppo.tof.             u:object_r:oppo_debug_prop:s0
+persist.serial.enable             u:object_r:oppo_debug_prop:s0
+ro.sys.reserve.integrate             u:object_r:oppo_debug_prop:s0
+ro.vendor.aware_available             u:object_r:oppo_debug_prop:s0
+sys.build.display.full_id             u:object_r:oppo_debug_prop:s0
+ro.rf_version             u:object_r:oppo_debug_prop:s0
+
+# Oppo wlan prop
+persist.oppo.wlan.            u:object_r:oppo_wlan_prop:s0
