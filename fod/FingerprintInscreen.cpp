@@ -22,6 +22,17 @@
 #include <fstream>
 #include <cmath>
 
+
+/* Hardcoded stuffs */
+#define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
+#define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
+#define HBM_PATH "/sys/kernel/oppo_display/hbm"
+#define X_POS 445
+#define Y_POS 1988
+#define FP_SIZE 190
+#define FP_BEGIN 1
+#define FP_ENDIT 0
+
 namespace {
 
 template <typename T>
@@ -54,15 +65,15 @@ FingerprintInscreen::FingerprintInscreen() {
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
-    return FOD_POS_X;
+    return X_POS;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionY() {
-    return FOD_POS_Y;
+    return Y_POS;
 }
 
 Return<int32_t> FingerprintInscreen::getSize() {
-    return FOD_SIZE;
+    return FP_SIZE;
 }
 
 Return<void> FingerprintInscreen::onStartEnroll() {
@@ -74,10 +85,16 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
+    set(DIMLAYER_PATH, FP_BEGIN);
+    set(HBM_PATH, FP_BEGIN);
+    set(FP_PRESS_PATH, FP_BEGIN);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    set(FP_PRESS_PATH, FP_ENDIT);
+    set(DIMLAYER_PATH, FP_ENDIT);
+    set(HBM_PATH, FP_ENDIT);
     return Void();
 }
 
@@ -86,6 +103,9 @@ Return<void> FingerprintInscreen::onShowFODView() {
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
+    set(HBM_PATH, FP_ENDIT);
+    set(DIMLAYER_PATH, FP_ENDIT);
+    set(FP_PRESS_PATH, FP_ENDIT);
     return Void();
 }
 
@@ -104,10 +124,7 @@ Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
 }
 
 Return<int32_t> FingerprintInscreen::getDimAmount(int32_t) {
-    int dimAmount = 0;
-    LOG(INFO) << "dimAmount = " << dimAmount;
-
-    return dimAmount;
+    return 0;
 }
 
 Return<bool> FingerprintInscreen::shouldBoostBrightness() {
