@@ -412,4 +412,5 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.opus.decoder" type="audio/opus" update="true" rank="100"/>
     </Decoders>
     <Include href="media_codecs_google_video.xml" />
+    <Include href="media_codecs_dolby_audio.xml" />
 </MediaCodecs>
