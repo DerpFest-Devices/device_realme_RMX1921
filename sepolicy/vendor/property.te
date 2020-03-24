@@ -8,3 +8,6 @@ type oppo_wlan_prop, property_type;
 
 # Camera
 type vendor_camera_prop, property_type;
+
+# Dolby
+type vendor_dolby_loglevel_prop, property_type;
