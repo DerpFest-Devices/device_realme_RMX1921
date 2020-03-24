@@ -382,6 +382,10 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service \
     thermal.sdm710
 
+# Touch
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.RMX1921
+    
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service

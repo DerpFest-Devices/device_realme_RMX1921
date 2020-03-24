@@ -1406,6 +1406,7 @@ service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0
 #ifdef VENDOR_EIDT
 #wushuxun@PSW.CN.Wifi.Network.internet.1074197, 2018/11/08,
 #Add for make WCNSS_qcom_cfg.ini Rom-update.
+
 on post-fs-data
     chmod 0666 /mnt/vendor/persist/WCNSS_qcom_cfg.ini
 
