@@ -14,3 +14,6 @@ vendor.oppo.hardware.commondcs::ICommonDcsHalService                            
 
 # Radio
 vendor.oppo.hardware.radio.oppoappradio::IOppoAppRadio          u:object_r:opporadio_hwservice:s0
+
+# Dolby
+vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0

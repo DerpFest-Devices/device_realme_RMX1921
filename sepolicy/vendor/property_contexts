@@ -50,3 +50,4 @@ audio_hal.in_period_size                        u:object_r:vendor_audio_prop:s0
 audio_hal.period_multiplier                     u:object_r:vendor_audio_prop:s0
 audio_hal.period_size                           u:object_r:vendor_audio_prop:s0
 persist.audio.dualmic.config                    u:object_r:vendor_audio_prop:s0
+persist.vendor.dolby.loglevel                   u:object_r:vendor_dolby_loglevel_prop:s0

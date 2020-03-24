@@ -16,3 +16,7 @@ get_prop(hal_audio_default, vendor_audio_prop);
 allow hal_audio_default sysfs:dir { read open };
 allow hal_audio_default proc_audio_file:file { read };
 get_prop(hal_audio_default, default_prop);
+
+# Dolby
+allow hal_audio_default hal_dms_default:binder { transfer call };
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
