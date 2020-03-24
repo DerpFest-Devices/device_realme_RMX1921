@@ -51,6 +51,7 @@ public:
     Return<void> setCallback(const sp<::vendor::lineage::biometrics::fingerprint::inscreen::V1_0::IFingerprintInscreenCallback>& callback) override;
 
 private:
+    bool mFingerPressed;
     std::mutex mCallbackLock;
     sp<IFingerprintInscreenCallback> mCallback;
 };

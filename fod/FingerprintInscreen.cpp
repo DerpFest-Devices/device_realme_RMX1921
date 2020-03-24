@@ -21,7 +21,7 @@
 #include <android-base/logging.h>
 #include <fstream>
 #include <cmath>
-
+#include <thread>
 
 /* Hardcoded stuffs */
 #define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
@@ -60,7 +60,7 @@ namespace inscreen {
 namespace V1_0 {
 namespace implementation {
 
-FingerprintInscreen::FingerprintInscreen() {
+FingerprintInscreen::FingerprintInscreen():mFingerPressed{false} {
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
@@ -96,6 +96,7 @@ Return<void> FingerprintInscreen::onPress() {
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    mFingerPressed = false;
     set(FP_PRESS_PATH, FP_ENDIT);
     set(DIMLAYER_PATH, FP_ENDIT);
     return Void();
