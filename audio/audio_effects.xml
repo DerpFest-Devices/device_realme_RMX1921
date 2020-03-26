@@ -41,6 +41,7 @@
         <library name="volume_listener" path="libvolumelistener.so"/>
         <library name="audiosphere" path="libasphere.so"/>
         <library name="shoebox" path="libshoebox.so"/>
+        <library name="dap" path="libswdap.so"/>
         <!-- #ifdef VENDOR_EDIT-->
         <!-- Kaiqin.Huang@RM.MM.AudioServer.effect 2019/09/30 add for direc -->
         <library name="dirac_gef" path="libdiraceffect.so"/>
@@ -93,6 +94,7 @@
         <effect name="notification_helper" library="volume_listener" uuid="0b776dde-0590-11e5-81ba-0025b32654a0"/>
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
+        <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
         <!-- #ifdef VENDOR_EDIT-->
         <!-- Kaiqin.Huang@RM.MM.AudioServer.effect 2019/09/30 add for direc -->
         <effect name="dirac_gef" library="dirac_gef" uuid="3799D6D1-22C5-43C3-B3EC-D664CF8D2F0D"/>
