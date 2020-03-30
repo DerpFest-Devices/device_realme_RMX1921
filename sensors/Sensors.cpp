@@ -18,6 +18,7 @@
 #include <sensors/convert.h>
 #include "multihal.h"
 
+#include <time.h>
 #include <android-base/logging.h>
 
 #include <sys/stat.h>
@@ -56,7 +57,9 @@ static Result ResultFromStatus(status_t err) {
 Sensors::Sensors()
     : mInitCheck(NO_INIT),
       mSensorModule(nullptr),
-      mSensorDevice(nullptr) {
+      mSensorDevice(nullptr),
+      mSensorHandleProximityWakeup(-1),
+      mSensorHandleProximity(-1){
     status_t err = OK;
     if (UseMultiHal()) {
         mSensorModule = ::get_multi_hal_module_info();
@@ -132,9 +135,14 @@ Return<void> Sensors::getSensorsList(getSensorsList_cb _hidl_cb) {
         }
 	if (dst->typeAsString == "qti.sensor.proximity_fake") {
             dst->type = SensorType::PROXIMITY;
+            mSensorHandleProximity = dst->sensorHandle;
             dst->typeAsString = "";
         }
 
+        // For proximity Wakeup
+        if (dst->name == "proximity_wakeup") { 
+            mSensorHandleProximityWakeup = dst->sensorHandle;
+        }
     }
 
     _hidl_cb(out);
@@ -348,7 +356,26 @@ void Sensors::convertFromSensorEvents(
         Event *dst = &(*dstVec)[i];
 
         convertFromSensorEvent(src, dst);
+
+        //dev-harsh1998 add delay to fix proximity event updates
+        // https://www.reddit.com/r/learnprogramming/comments/732hma/is_it_possible_to_make_a_while_loop_for_a_certain
+        if (isProximity(dst->sensorHandle)) {
+            if (dst->u.scalar == 0){ 
+            time_t start = clock();
+            while ((clock() - start) * 0.001 < 0.5f)
+                dst->u.scalar = 0;
+            } else { 
+            time_t start = clock();
+            while ((clock() - start) * 0.001 < 0.5f)
+                dst->u.scalar = 5;
+            }
+        }
     }
+}
+
+bool Sensors::isProximity(int32_t sensor_handle) {
+    return sensor_handle == mSensorHandleProximityWakeup
+        || sensor_handle == mSensorHandleProximity;
 }
 
 ISensors *HIDL_FETCH_ISensors(const char * /* hal */) {
