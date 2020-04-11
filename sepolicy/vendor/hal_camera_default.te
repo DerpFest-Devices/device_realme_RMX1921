@@ -1,6 +1,6 @@
-
 allow hal_camera_default persist_camera_file:file rw_file_perms;
 allow hal_camera_default persist_camera_file:dir search;
+allow hal_camera_default proc:file rw_file_perms;
 
 get_prop(hal_camera_default, vendor_camera_prop)
 get_prop(hal_camera_default, oppo_debug_prop)
