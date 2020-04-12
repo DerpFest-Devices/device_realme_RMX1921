@@ -36,7 +36,7 @@ public class TiltSensor implements SensorEventListener {
 
     private static final String TILT_SENSOR = "android.sensor.tilt_detector";
 
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int MIN_PULSE_INTERVAL_MS = 2750;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
