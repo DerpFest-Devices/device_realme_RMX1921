@@ -143,6 +143,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_ltd_sys_ind=1 \
     persist.vendor.radio.data_con_rprt=1
 
+# Misc tweaks
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.sleep_mode=1
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
