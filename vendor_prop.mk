@@ -165,6 +165,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Phase offsets
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.use_phase_offsets_as_durations=1 \
+    debug.sdm.support_writeback=0 \
     debug.sf.late.sf.duration=10500000 \
     debug.sf.late.app.duration=20500000 \
     debug.sf.early.sf.duration=21000000 \
