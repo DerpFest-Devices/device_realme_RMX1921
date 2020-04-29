@@ -15,3 +15,5 @@ libnativehelpers.so
 libOppoAlgoClient.so
 vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
 libOppoAPSMemMgr.so
+libprotobuf-cpp-full.so
+libprotobuf-cpp-lite.so
