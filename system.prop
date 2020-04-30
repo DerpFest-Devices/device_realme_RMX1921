@@ -15,14 +15,17 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-# Start in cdma mode
-ro.telephony.default_network=5
+# Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
+ro.telephony.default_network=22,20
 
 debug.sf.hw=0
 debug.egl.hw=0
+debug.sf.latch_unsignaled=1
+
 #debug.composition.type=c2d
 #persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
+debug.sf.enable_hwc_vds=1
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
@@ -45,6 +48,7 @@ media.stagefright.enable-scan=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 #13631487 is decimal sum of supported codecs in AAL
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD
 mm.enable.qcom_parser=13631487
@@ -64,7 +68,9 @@ persist.timed.enable=true
 # system prop for opengles version
 #
 # 196608 is decimal for 0x30000 to report version 3
-ro.opengles.version=196608
+# 196609 is decimal for 0x30001 to report version 3.1
+# 196610 is decimal for 0x30002 to report version 3.2
+ro.opengles.version=196610
 
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
@@ -161,3 +167,4 @@ persist.radio.atfwd.start=false
 ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
 qemu.hw.mainkeys=0
+sdm.debug.disable_inline_rotator=1
