@@ -116,5 +116,10 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Wlan
+WIFI_HIDL_FEATURE_AWARE := true
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+QC_WIFI_HIDL_FEATURE_DUAL_AP := true
+
 # Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
