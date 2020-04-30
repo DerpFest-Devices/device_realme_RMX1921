@@ -88,6 +88,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
