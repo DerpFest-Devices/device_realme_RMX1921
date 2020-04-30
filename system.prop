@@ -174,9 +174,5 @@ ro.vendor.at_library=libqti-at.so
 #Property to enable whitelisted games
 persist.vendor.qti.games.gt.prof=1
 
-#core-ctl properties used by perfd
-ro.vendor.qti.core_ctl_min_cpu=4
-ro.vendor.qti.core_ctl_max_cpu=6
-
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
