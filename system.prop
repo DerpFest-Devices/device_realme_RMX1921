@@ -64,14 +64,6 @@ persist.data.mode=concurrent
 #system props for time-services
 persist.timed.enable=true
 
-#
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report version 3
-# 196609 is decimal for 0x30001 to report version 3.1
-# 196610 is decimal for 0x30002 to report version 3.2
-ro.opengles.version=196610
-
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
 
@@ -86,9 +78,6 @@ telephony.lteOnCdmaDevice=1
 #Simulate sdcard on /data/media
 #
 persist.fuse_sdcard=true
-
-#system prop for Bluetooth SOC type
-qcom.bluetooth.soc=cherokee
 
 #system prop for wipower support
 ro.bluetooth.emb_wp_mode=true
@@ -165,7 +154,6 @@ debug.gralloc.gfx_ubwc_disable=0
 persist.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 sdm.debug.disable_scalar=0
-qemu.hw.mainkeys=0
 sdm.debug.disable_inline_rotator=1
 
 
