@@ -18,17 +18,8 @@ DEVICE_PROVISIONED=1
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
 ro.telephony.default_network=22,20
 
-debug.sf.hw=0
-debug.egl.hw=0
-debug.sf.latch_unsignaled=1
-
-#debug.composition.type=c2d
-#persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
-debug.sf.enable_hwc_vds=1
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
 
 #ro.hdmi.enable=true
 #persist.speaker.prot.enable=false
@@ -76,8 +67,6 @@ persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
 
-# System property for cabl
-ro.qualcomm.cabl=2
 
 #
 # System props for telephony
@@ -171,15 +160,13 @@ ro.hwui.text_large_cache_height=4096
 config.disable_rtt=true
 
 #Bringup properties
-debug.gralloc.gfx_ubwc_disable=0
+persist.sys.force_sw_gles=1
 persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
-sdm.debug.disable_scalar=0
-sdm.debug.disable_inline_rotator=1
+
 sdm.drop_skewed_vsync=1
 
-#Property to enable display default color mode
-vendor.display.enable_default_color_mode=1
+
 
 #Property to enable activity trigger
 ro.vendor.at_library=libqti-at.so
