@@ -12,5 +12,7 @@
 -->
 <resources>
     <!-- Color of the FOD view -->
-    <color name="config_fodColor">#FFFFFF</color>
+
+    <color name="config_fodColor">#00f8d0b8</color>
+    
 </resources>
