@@ -22,6 +22,20 @@
 #include <fstream>
 #include <cmath>
 
+/* Define FOD size and location */
+#define FOD_SIZE 196
+#define FOD_POS_X 445
+#define FOD_POS_Y 1967
+
+/* Define Dimlayer paths */
+#define DIM_HBM "/sys/kernel/oppo_display/dimlayer_hbm"
+
+/* Define FOD_PRESS */
+#define FOD_PRESS "/sys/kernel/oppo_display/notify_fppress"
+
+/* Define High brightness mode */
+#define HIGH_BRIGHTNESS "/sys/kernel/oppo_display/hbm"
+
 namespace {
 
 template <typename T>
@@ -74,10 +88,16 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
+    set(DIM_HBM, 1);
+    set(HIGH_BRIGHTNESS, 1);
+    set(FOD_PRESS, 1);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onRelease() {
+    set(FOD_PRESS, 0);
+    set(DIM_HBM, 0);
+    set(HIGH_BRIGHTNESS, 0);
     return Void();
 }
 
