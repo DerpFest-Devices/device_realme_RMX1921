@@ -1,6 +1,9 @@
 [AID_QTI_DIAG]
 value:2901
 
+[AID_QDSS]
+value:2902
+
 [vendor/bin/wcnss_filter]
 mode: 0755
 user: AID_BLUETOOTH
