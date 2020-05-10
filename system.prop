@@ -1,5 +1,5 @@
 #
-# system.prop for msmpeafowl
+# system.prop for SDM710
 #
 
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
@@ -152,14 +152,6 @@ persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 
 sdm.drop_skewed_vsync=1
-
-
-
-#Property to enable activity trigger
-ro.vendor.at_library=libqti-at.so
-
-#Property to enable whitelisted games
-persist.vendor.qti.games.gt.prof=1
 
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
