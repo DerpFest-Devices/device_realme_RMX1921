@@ -21,6 +21,13 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
+    libbthost_if \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
