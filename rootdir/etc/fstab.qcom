@@ -26,3 +26,8 @@
 
 # Opporeserve partition
 /dev/block/bootdevice/by-name/opporeserve2      /mnt/vendor/opporeserve             ext4   nosuid,nodev,noatime,barrier=1,discard                           wait,check
+
+# Recovery only
+/dev/block/bootdevice/by-name/vendor         /vendor                 ext4    ro,barrier=1                                                                   wait,recoveryonly
+/dev/block/bootdevice/by-name/boot           /boot                   emmc    defaults                                                                       recoveryonly
+/dev/block/bootdevice/by-name/recovery       /recovery               emmc    defaults                                                                       recoveryonly
