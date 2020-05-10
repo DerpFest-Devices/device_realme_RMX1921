@@ -36,6 +36,21 @@ PRODUCT_PACKAGES += \
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.msm.usb.configfs.rc \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.rc \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.recovery.qcom.rc \
+    init.target.rc \
+    ueventd.qcom.rc
+    
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
