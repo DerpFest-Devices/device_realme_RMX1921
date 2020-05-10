@@ -1,0 +1,76 @@
+##################################################################################
+### VENDOR_EDIT, OPPO All rights reserved.
+###
+### File: - init.oppo.reserve.rc
+###
+### ------------------------------- Revision History: ----------------------------
+### <author>                        <data>       <version>   <desc>
+### ------------------------------------------------------------------------------
+### Runsheng.Pei@PSW.AD.Storage.ReservePartition.1207580, 2017/12/29, Add for new reserve partition
+### Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
+##################################################################################
+on post-fs-data
+  chown system system /mnt/vendor/opporeserve
+  chmod 0771 /mnt/vendor/opporeserve
+  mkdir /mnt/vendor/opporeserve/radio
+  chown radio system /mnt/vendor/opporeserve/radio
+  chmod 0771 /mnt/vendor/opporeserve/radio
+  mkdir /mnt/vendor/opporeserve/system
+  chown system system /mnt/vendor/opporeserve/system
+  chmod 0771 /mnt/vendor/opporeserve/system
+  mkdir /mnt/vendor/opporeserve/system/config
+  chown system system /mnt/vendor/opporeserve/system/config
+  chmod 0771 /mnt/vendor/opporeserve/system/config
+  mkdir /mnt/vendor/opporeserve/media
+  chown system system /mnt/vendor/opporeserve/media
+  chmod 0771 /mnt/vendor/opporeserve/media
+# mount sdcardfs /dev/block/bootdevice/by-name/mnt/vendor/opporeserve2 /mnt/vendor/opporeserve/media reserved_mb=24
+  mkdir /mnt/vendor/opporeserve/media/dropbox
+  chown system system /mnt/vendor/opporeserve/media/dropbox
+  chmod 0771 /mnt/vendor/opporeserve/media/dropbox
+  mkdir /mnt/vendor/opporeserve/media/log
+  chown system system /mnt/vendor/opporeserve/media/log
+  chmod 0771 /mnt/vendor/opporeserve/media/log
+  mkdir /mnt/vendor/opporeserve/media/log/usage
+  chown system system /mnt/vendor/opporeserve/media/log/usage
+  chmod 0771 /mnt/vendor/opporeserve/media/log/usage
+  mkdir /mnt/vendor/opporeserve/media/log/usage/cache
+  chown system system /mnt/vendor/opporeserve/media/log/usage/cache
+  chmod 0771 /mnt/vendor/opporeserve/media/log/usage/cache
+  mkdir /mnt/vendor/opporeserve/media/log/usage/persist
+  chown system system /mnt/vendor/opporeserve/media/log/usage/persist
+  chmod 0771 /mnt/vendor/opporeserve/media/log/usage/persist
+  mkdir /mnt/vendor/opporeserve/media/log/criticalLog
+  chown system system /mnt/vendor/opporeserve/media/log/criticalLog
+  chmod 0771 /mnt/vendor/opporeserve/media/log/criticalLog
+  mkdir /mnt/vendor/opporeserve/media/log/criticalLog/persist
+  chown system system /mnt/vendor/opporeserve/media/log/criticalLog/persist
+  chmod 0771 /mnt/vendor/opporeserve/media/log/criticalLog/persist
+  mkdir /mnt/vendor/opporeserve/media/log/criticalLog/cache
+  chown system system /mnt/vendor/opporeserve/media/log/criticalLog/cache
+  chmod 0771 /mnt/vendor/opporeserve/media/log/criticalLog/cache
+  mkdir /mnt/vendor/opporeserve/media/engineermode
+  chown system system /mnt/vendor/opporeserve/media/engineermode
+  chmod 0771 /mnt/vendor/opporeserve/media/engineermode
+  mkdir /mnt/vendor/opporeserve/media/ColorOS
+  chown system system /mnt/vendor/opporeserve/media/ColorOS
+  chmod 0771 /mnt/vendor/opporeserve/media/ColorOS
+  mkdir /mnt/vendor/opporeserve/media/Camera
+  chown system system /mnt/vendor/opporeserve/media/Camera
+  chmod 0771 /mnt/vendor/opporeserve/media/Camera
+
+  mkdir /mnt/vendor/opporeserve/media/ColorOS/HeytapID
+  chown system system /mnt/vendor/opporeserve/media/ColorOS/HeytapID
+  chmod 0771 /mnt/vendor/opporeserve/media/ColorOS/HeytapID
+
+  restorecon_recursive /mnt/vendor/opporeserve
+
+##ifdef VENDOR_EDIT
+#wenjie.Liu@CN.NFC.Basic.Felica.1334855,add for: Felica Nvram store in opporeserve
+  mkdir /mnt/vendor/opporeserve/media/nfclock 0771
+  chown system system /mnt/vendor/opporeserve/media/nfclock
+  mkdir /mnt/vendor/opporeserve/connectivity 0771
+  chown nfc system /mnt/vendor/opporeserve/connectivity
+  mkdir /mnt/vendor/opporeserve/connectivity/felicalock 0771
+  chown nfc system /mnt/vendor/opporeserve/connectivity/felicalock
+##endif VENDOR_EDIT
