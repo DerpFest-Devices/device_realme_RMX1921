@@ -244,8 +244,13 @@ PRODUCT_PACKAGES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
+    libdisplayconfig.vendor \
     libnl \
-    libqdMetaData.system
+    libqdMetaData \
+    libqdMetaData.system \
+     
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 # Wlan
 PRODUCT_PACKAGES += \
