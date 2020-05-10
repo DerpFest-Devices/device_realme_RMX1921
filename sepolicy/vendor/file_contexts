@@ -1,0 +1,13 @@
+# Graphics nodes
+/sys/kernel/oppo_display/hbm		u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/seed		u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/cabc		u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/ffl_set	u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/dim_alpha	u:object_r:alpha_sysfs:s0
+/sys/kernel/oppo_display/esd_status	u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/dim_dc_alpha	u:object_r:alpha_sysfs:s0
+/sys/kernel/oppo_display/dimlayer_hbm	u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/dimlayer_bl_en		u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/notify_fppress		u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/sau_closebl_node		u:object_r:sysfs_graphics_ffl:s0
+/sys/kernel/oppo_display/panel_serial_number		u:object_r:sysfs_graphics_ffl:s0
