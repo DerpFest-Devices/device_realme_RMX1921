@@ -135,6 +135,9 @@ on early-boot
     chmod 0775 /mnt/vendor/persist/data/pfm/licenses
 
 on boot
+    chown system system /proc/touchpanel/wake_gesture
+    chmod 0660 /proc/touchpanel/wake_gesture
+    
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
