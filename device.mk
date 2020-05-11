@@ -17,6 +17,9 @@ $(call inherit-product-if-exists, vendor/realme/RMX1921/RMX1921-vendor.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
