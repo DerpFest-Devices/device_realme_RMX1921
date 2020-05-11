@@ -37,6 +37,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.soundtrigger@2.1-impl \
     audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
     tinymix
 
 # Camera
@@ -56,13 +58,22 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    libvulkan
+    libdrm.vendor \
+    libgui_vendor \
+    libtinyxml \
+    libvulkan \
+    vendor.display.config@1.2.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.1-service.clearkey
+
+# IPA
+PRODUCT_PACKAGES += \
+    libnetfilter_conntrack \
+    libnfnetlink
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -134,6 +145,11 @@ PRODUCT_COPY_FILES += \
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
+# Radio
+PRODUCT_PACKAGES += \
+    libjson \
+    librmnetctl
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -168,7 +184,8 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+    android.hardware.sensors@1.0-service \
+    libsensorndkbridge
 
 # Telephony
 PRODUCT_PACKAGES += \
