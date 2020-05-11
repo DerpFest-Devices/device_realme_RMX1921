@@ -56,13 +56,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@2.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    libdrm.vendor \
-    libgui_vendor \
+    gralloc.sdm710 \
+    hwcomposer.sdm710 \
+    memtrack.sdm710 \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.2.vendor
+    vendor.qti.hardware.display.allocator@1.0-service
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -220,7 +222,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
-    
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libdisplayconfig \
+    libnl \
+    libqdMetaData.system
+
 # Wlan
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
