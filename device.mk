@@ -87,7 +87,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.qcom:64
 
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
