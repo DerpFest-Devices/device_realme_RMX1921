@@ -276,7 +276,12 @@ PRODUCT_BOOT_JARS += \
 
 # Wlan
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
+    android.hardware.wifi@1.0-service \
+    hostapd \
+    libwifi-hal-qcom \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wlan/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
