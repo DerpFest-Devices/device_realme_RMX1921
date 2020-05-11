@@ -105,6 +105,7 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
+BUILD_WITHOUT_VENDOR := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
