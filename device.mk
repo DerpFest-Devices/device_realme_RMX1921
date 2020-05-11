@@ -33,6 +33,10 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     tinymix
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
