@@ -39,35 +39,19 @@ interface IBiometricsFingerprint {
   setActiveGroup(uint32_t gid, string storePath) generates (RequestStatus debugErrno);
 
   authenticate(uint64_t operationId, uint32_t gid) generates (RequestStatus debugErrno);
-
-  pauseEnroll() generates (RequestStatus debugErrno);
-  
-  pauseIdentify() generates (RequestStatus debugErrno);
-  
-  continueEnroll() generates (RequestStatus debugErrno);
-  
-  setScreenState(FingerprintScreenState ScreenState);
-  
-  getAlikeyStatus() generates (RequestStatus debugErrno);
-  
-  continueIdentify() generates (RequestStatus debugErrno);
-  
   authenticateAsType(uint64_t auth, uint32_t type, FingerprintAuthType AuthType) generates (RequestStatus debugErrno);
-
-  getEngineeringInfo(uint32_t info) generates (RequestStatus debugErrno);
-
-  sendFingerprintCmd(int32_t cmd, vec<int8_t> CmdId) generates (RequestStatus debugErrno);
-
-  dynamicallyConfigLog(uint32_t log) generates (RequestStatus debugErrno);
-  
-  setTouchEventListener() generates (RequestStatus debugErrno);
-  
-  getEnrollmentTotalTimes() generates (RequestStatus debugErrno);
-  
   cleanUp() generates (RequestStatus debugErrno);
-  
-  touchUp() generates (RequestStatus debugErrno);
-  
+  pauseEnroll() generates (RequestStatus debugErrno);
+  continueEnroll() generates (RequestStatus debugErrno);
+  setTouchEventListener() generates (RequestStatus debugErrno);
+  dynamicallyConfigLog(uint32_t log) generates (RequestStatus debugErrno);
+  pauseIdentify() generates (RequestStatus debugErrno);
+  continueIdentify() generates (RequestStatus debugErrno);
+  getAlikeyStatus() generates (RequestStatus debugErrno);
+  getEnrollmentTotalTimes() generates (RequestStatus debugErrno);
+  setScreenState(FingerprintScreenState ScreenState);
+  getEngineeringInfo(uint32_t info) generates (RequestStatus debugErrno);
   touchDown() generates (RequestStatus debugErrno);
-  
+  touchUp() generates (RequestStatus debugErrno);
+  sendFingerprintCmd(int32_t cmd, vec<int8_t> CmdId) generates (RequestStatus debugErrno);
 };
