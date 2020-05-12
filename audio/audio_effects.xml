@@ -42,15 +42,6 @@
         <library name="audiosphere" path="libasphere.so"/>
         <library name="shoebox" path="libshoebox.so"/>
         <!-- #ifdef VENDOR_EDIT-->
-        <!-- YunMang.Xiao@PSW.MM.Dolby, 2019/06/18, add for dolby -->
-        <!--DOLBY DAP-->
-        <library name="dap" path="libswdap.so"/>
-        <!--DOLBY END-->
-         <!--DOLBY VQE-->
-        <library name="vqe" path="libswvqe.so"/>
-        <!--DOLBY END-->
-        <!-- #endif VENDOR_EDIT-->
-        <!-- #ifdef VENDOR_EDIT-->
         <!-- Kaiqin.Huang@RM.MM.AudioServer.effect 2019/09/30 add for direc -->
         <library name="dirac_gef" path="libdiraceffect.so"/>
         <!-- #endif VENDOR_EDIT-->
@@ -103,44 +94,10 @@
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
         <!-- #ifdef VENDOR_EDIT-->
-        <!--YunMang.Xiao@PSW.MM.Dolby, 2019/06/18, add for dolby -->
-        <!--DOLBY DAP-->
-        <effect name="dap" library="dap" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa"/>
-        <!--DOLBY END-->
-        <!--DOLBY VQE-->
-        <effect name="vqe" library="vqe" uuid="64a0f614-7fa4-48b8-b081-d59dc954616f"/>
-        <!--DOLBY END-->
-        <!-- #endif VENDOR_EDIT-->
-        <!-- #ifdef VENDOR_EDIT-->
         <!-- Kaiqin.Huang@RM.MM.AudioServer.effect 2019/09/30 add for direc -->
         <effect name="dirac_gef" library="dirac_gef" uuid="3799D6D1-22C5-43C3-B3EC-D664CF8D2F0D"/>
         <!-- #endif VENDOR_EDIT-->
     </effects>
-    <postprocess>
-    <!-- #ifndef VENDOR_EDIT-->
-        <!-- YunMang.Xiao@PSW.MM.Dolby, 2019/06/18, add for dolby -->
-    <!--
-        <stream type="music">
-            <apply effect="music_helper"/>
-        </stream>
-        <stream type="ring">
-            <apply effect="ring_helper"/>
-        </stream>
-        <stream type="alarm">
-            <apply effect="alarm_helper"/>
-        </stream> -->
-     <!-- #endif VENDOR_EDIT-->
-        <stream type="voice_call">
-            <apply effect="voice_helper"/>
-        </stream>
-    <!-- #ifndef VENDOR_EDIT-->
-        <!-- YunMang.Xiao@PSW.MM.Dolby, 2019/06/18, add for dolby -->
-     <!--
-            <stream type="notification">
-            <apply effect="notification_helper"/>
-        </stream> -->
-     <!-- #endif VENDOR_EDIT-->
-    </postprocess>
     <preprocess>
         <stream type="voice_communication">
             <apply effect="aec"/>
