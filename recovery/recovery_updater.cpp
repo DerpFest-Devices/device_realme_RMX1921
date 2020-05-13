@@ -15,21 +15,22 @@
  * limitations under the License.
  */
 
-#include <sys/mman.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #include <string>
 #include <vector>
 
 #include "edify/expr.h"
+#include "otautil/error_code.h"
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 

@@ -21,6 +21,3 @@ LOCAL_MODULE := power.qcom
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-variable
 LOCAL_VENDOR_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
-
-endif

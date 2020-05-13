@@ -120,7 +120,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
+    android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710 \
     lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710
 
 PRODUCT_COPY_FILES += \
@@ -201,7 +201,7 @@ PRODUCT_COPY_FILES += \
 	
 # Codec2 modules
 PRODUCT_PACKAGES += \
-    com.android.media.swcodec \	
+    com.android.media.swcodec \
     libsfplugin_ccodec
 
 # Native libraries whitelist
