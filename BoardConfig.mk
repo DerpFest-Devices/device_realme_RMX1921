@@ -138,6 +138,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_RMX1921
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Security patch level
