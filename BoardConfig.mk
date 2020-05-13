@@ -85,6 +85,10 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# FM
+BOARD_HAS_QCA_FM_SOC := "cherokee"
+BOARD_HAVE_QCOM_FM := true
+
 # Graphics
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true

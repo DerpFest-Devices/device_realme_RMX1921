@@ -126,6 +126,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:vendor/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
+
 # IPA
 PRODUCT_PACKAGES += \
     libnetfilter_conntrack \
