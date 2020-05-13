@@ -1,3 +1,4 @@
+# Audio
 PRODUCT_PROPERTY_OVERRIDES +=  \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
@@ -5,26 +6,10 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     audio.offload.video=true \
     audio.sys.noisy.broadcast.delay=600 \
     audio.sys.offload.pstimeout.secs=3 \
-    dalvik.vm.heapgrowthlimit=384m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    debug.egl.hw=0 \
-    debug.sf.hw=0 \
-    debug.stagefright.omx_default_rank.sw-audio=1 \
-    debug.stagefright.omx_default_rank=0 \
-    drm.service.enabled=true \
-    keyguard.no_require_sim=true \
     persist.audio.fluence.speaker=true \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicecomm=true \
     persist.audio.fluence.voicerec=false \
-    persist.backup.ntpServer=0.pool.ntp.org \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.demo.hdmirotationlock=false \
     persist.dirac.acs.controller=gef \
     persist.dirac.acs.ignore_error=1 \
     persist.dirac.acs.no_usermsg=true \
@@ -43,15 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.dirac.gef.int.mid=0x10012DE0 \
     persist.dirac.path=/vendor/etc/dirac/ \
     persist.dirac.qem.oppo.syss=true \
-    persist.radio.multisim.config=dsds \
-    persist.sys.enable.kneuron=0 \
-    persist.sys.enable.neo=1 \
-    persist.sys.enable.oscar=0 \
-    persist.sys.hypnus.daemon.enable=1 \
-    persist.sys.hypnus.dc=1 \
-    persist.sys.oscar.dc=1 \
-    persist.sys.sf.color_saturation=1.0 \
-    persist.sys.sf.native_mode=0 \
     persist.vendor.audio.ambisonic.auto.profile=false \
     persist.vendor.audio.ambisonic.capture=false \
     persist.vendor.audio.avs.afe_api_version=2 \
@@ -65,52 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.vendor.audio.spv3.enable=true \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
-    persist.vendor.enable.hans=true \
-    persist.vendor.engineer.hide.log=6996 \
-    persist.vendor.engineer.hide.warn=6776 \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
-    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
-    persist.vendor.qcomsysd.enabled=1 \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1 \
-    qemu.hw.mainkeys=0 \
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
-    ro.af.client_heap_size_kbyte=7168 \
-    ro.apex.updatable=true \
-    ro.bluetooth.a2dp_offload.supported=true \
-    ro.carrier=unknown \
-    ro.com.android.dataroaming=true \
-    ro.config.alarm_alert=ringtone_008.ogg \
-    ro.config.calendar_sound=notification_003.ogg \
-    ro.config.notification_sim2=notification_000.ogg \
-    ro.config.notification_sms=notification_000.ogg \
-    ro.config.notification_sound=notification_000.ogg \
-    ro.config.ringtone=ringtone_000.ogg \
-    ro.config.ringtone_sim2=ringtone_000.ogg \
-    ro.control_privapp_permissions=enforce \
-    ro.dirac.acs.storeSettings=1 \
-    ro.frp.pst=/dev/block/bootdevice/by-name/frp \
-    ro.hardware.egl=adreno \
-    ro.hardware.keystore_desede=true \
-    ro.hardware.vulkan=adreno \
-    ro.opengles.version=196610 \
-    ro.oppo.theme.version=7000 \
-    ro.qc.sdk.audio.fluencetype=none \
-    ro.qc.sdk.audio.ssr=false \
-    ro.telephony.iwlan_operation_mode=legacy \
-    ro.vendor.audio.sdk.fluencetype=none \
-    ro.vendor.audio.sdk.ssr=false \
-    ro.vendor.bluetooth.wipower=false \
-    ro.vendor.display.cabl=2 \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.iocgrp.config=1 \
-    sys.autosuspend.timeout=500000 \
-    sys.vendor.shutdown.waittime=500 \
     vendor.audio.apptype.multirec.enabled=false \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
@@ -173,8 +103,98 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.volume.headset.gain.depcal=true \
     vendor.audio_hal.period_size=192 \
-    vendor.display.enable_default_color_mode=1 \
-    vendor.hw.fm.init=0 \
-    vendor.power.pasr.enabled=true \
+    ro.qc.sdk.audio.fluencetype=none \
+    ro.qc.sdk.audio.ssr=false \
+    ro.vendor.audio.sdk.fluencetype=none \
+    ro.vendor.audio.sdk.ssr=false \
+    ro.dirac.acs.storeSettings=1
+
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.qcom.bluetooth.soc=cherokee \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    ro.vendor.bluetooth.wipower=false \
+    ro.bluetooth.a2dp_offload.supported=true
+  
+# Dalvik VM configs
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    dalvik.vm.heapgrowthlimit=384m \
+    dalvik.vm.heapmaxfree=8m \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heaptargetutilization=0.75
+    
+# Display
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    vendor.display.enable_default_color_mode=1 \
+    ro.vendor.display.cabl=2
+
+# FRP
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    debug.egl.hw=0 \
+    debug.sf.hw=0 \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
+    drm.service.enabled=true \
+    keyguard.no_require_sim=true \
+    ro.hardware.vulkan=adreno \
+    ro.opengles.version=196610 \
+    ro.hardware.egl=adreno
+
+# Keystore
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.hardware.keystore_desede=true
+
+# Perf
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.vendor.extension_library=libqti-perfd-client.so
+
+# Qcom system daemon
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    persist.vendor.qcomsysd.enabled=1
+   
+# RIL
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    persist.demo.hdmirotationlock=false \
+    persist.radio.multisim.config=dsds \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.custom_ecc=1 \
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.sib16_support=1 \
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+
+# Surfaceflinger
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    persist.sys.sf.color_saturation=1.0 \
+    persist.sys.sf.native_mode=0
+    
+# Thermal
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    persist.sys.enable.oscar=0 \
+    persist.sys.oscar.dc=1
+
+# VoWifi
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.telephony.iwlan_operation_mode=legacy
+
+# Misc
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    vendor.hw.fm.init=0 \
+    ro.vendor.iocgrp.config=1 \
+    vendor.power.pasr.enabled=true \
     vendor.voice.path.for.pcm.voip=true \
+    qemu.hw.mainkeys=0 \
+    persist.sys.enable.neo=1 \
+    ro.af.client_heap_size_kbyte=7168 \
+    ro.control_privapp_permissions=enforce
