@@ -142,7 +142,8 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 #Rank OMX SW codecs lower than OMX HW codecs
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
-    debug.stagefright.omx_default_rank=0
+    debug.stagefright.omx_default_rank=0 \
+    debug.media.codec2=2
 
 # Dalvik VM configs
 PRODUCT_PROPERTY_OVERRIDES +=  \
