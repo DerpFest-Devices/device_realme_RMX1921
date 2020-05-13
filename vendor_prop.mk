@@ -137,7 +137,13 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.camera.attr.detect.enable=1 \
     ro.camera.notify_nfc=1 \
     ro.camera.temperature.limit=470
-  
+
+# Codec2 (Enabling codec2.0 SW only for non-generic odm build variant)
+#Rank OMX SW codecs lower than OMX HW codecs
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0
+
 # Dalvik VM configs
 PRODUCT_PROPERTY_OVERRIDES +=  \
     dalvik.vm.heapgrowthlimit=384m \
@@ -174,8 +180,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
-    debug.stagefright.omx_default_rank.sw-audio=1 \
-    debug.stagefright.omx_default_rank=0 \
     drm.service.enabled=true \
     keyguard.no_require_sim=true \
     ro.hardware.vulkan=adreno \
