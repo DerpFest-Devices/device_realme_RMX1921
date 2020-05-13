@@ -119,7 +119,24 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.bluetooth.a2dp_offload.disabled=false \
     ro.vendor.bluetooth.wipower=false \
-    ro.bluetooth.a2dp_offload.supported=true
+    ro.bluetooth.a2dp_offload.supported=true \
+    persist.bluetooth.disableabsvol=false \
+    persist.vendor.service.bt.iot.enablelogging=true \
+    persist.vendor.bluetooth.a2dp.hal.implementation=true \
+    persist.vendor.bt.a2dp.hal.implementation=true \
+    persist.bluetooth.disableinbandringing=false \
+    persist.bluetooth.specificatcmdsenable=true \
+    persist.vendor.bluetooth.modem_nv_support=true \
+    persist.vendor.service.bdroid.soc.alwayson=true \
+    persist.vendor.service.bt.iotinfo.report.enable=true
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.camera.hfr.enable=1 \
+    ro.camera.relight.enable=0 \
+    ro.camera.attr.detect.enable=1 \
+    ro.camera.notify_nfc=1 \
+    ro.camera.temperature.limit=470
   
 # Dalvik VM configs
 PRODUCT_PROPERTY_OVERRIDES +=  \
@@ -133,7 +150,21 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.display.enable_default_color_mode=1 \
-    ro.vendor.display.cabl=2
+    ro.vendor.display.cabl=2 \
+    persist.sys.enable.rc=1 \
+    ro.display.rc.size=108,108,111,111 \
+    ro.vendor.display.ad=1 \
+    ro.vendor.display.sensortype=2 \
+    ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg \
+    ro.lcd.backlight.samsung_tenbit=10,517,103,303,355,457,563,676,805,883,1023 \
+    ro.lcd.backlight.config_dsjm=11,958,13,334,517,794,1055,1325,1617,1770,1989,2047 \
+    ro.vendor.display.backlightapp=1 \
+    ro.display.underscreenfingerprint=1 \
+    ro.display.underscreen.lightsensor.support=1 \
+    ro.lcd.display.screen.underlightsensor.region=624,28,672,76 \
+    ro.display.underscreen.lightsensor.screenshot.period=50 \
+    persist.debug.wfd.enable=1 \
+    ro.oppo.screen.heteromorphism=444,0:636,76
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES +=  \
@@ -172,12 +203,26 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.sib16_support=1 \
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
+    ro.telephony.default_network=9,0 \
+    persist.radio.multisim.config=dsds \
+    persist.radio.custom_exp_ecc=1 \
+    gsm.lte.ca.support=1 \
+    ro.product.oem_dm=1 \
+    persist.vendor.radio.process_sups_ind=1 \
+    persist.vendor.radio.data_con_rprt=1
+
+# Sensors
+PRODUCT_PROPERTY_OVERRIDES +=  \
+   persist.sys.oppo.fusionlight=true \
+   persist.sys.oppo.proximity=true
 
 # Surfaceflinger
 PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.sys.sf.color_saturation=1.0 \
-    persist.sys.sf.native_mode=0
+    persist.sys.sf.native_mode=0 \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.latch_unsignaled=1
     
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
@@ -192,7 +237,9 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 
 # VoWifi
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.telephony.iwlan_operation_mode=legacy
+    ro.telephony.iwlan_operation_mode=legacy \
+    persist.data.iwlan.enable=true \
+    persist.data.iwlan.rekey=4294967295
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES +=  \
