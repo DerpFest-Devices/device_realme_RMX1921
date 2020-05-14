@@ -869,4 +869,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Vendor HALs -->
+        <hal format="hidl">
+        <name>vendor.oppo.hardware.camera.oppoAlgoProcessService</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOppoAlgoProcessService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
