@@ -1,3 +1,11 @@
+on boot
+    chmod 0660 /sys/kernel/oppo_display/notify_fppress
+    chmod 0660 /sys/kernel/oppo_display/dimlayer_hbm
+    chmod 0660 /sys/kernel/oppo_display/hbm
+    chown system system /sys/kernel/oppo_display/notify_fppress
+    chown system system /sys/kernel/oppo_display/dimlayer_hbm
+    chown system system /sys/kernel/oppo_display/hbm
+
 service fingerprint-inscreen-1-0 /system/bin/hw/lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710
     interface vendor.lineage.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
     class hal

@@ -1,3 +1,51 @@
+on boot
+    # Goodix FP
+    chown system system /dev/goodix_fp
+
+    # Egis FP
+    chown system system /dev/esfp0
+
+    # FPC FP
+    chown system system /dev/uinput
+    chown system system /sys/devices/platform/soc/soc:fpc_fpc1020/irq
+    chown system system /sys/devices/platform/soc/soc:fpc_fpc1020/irq_enable
+    chown system system /sys/devices/platform/soc/soc:fpc_fpc1020/wakelock_enable
+    chmod 0660 /sys/devices/platform/soc/soc:fpc_fpc1020/irq
+    chmod 0660 /sys/devices/platform/soc/soc:fpc_fpc1020/irq_enable
+    chmod 0660 /sys/devices/platform/soc/soc:fpc_fpc1020/wakelock_enable
+
+on post-fs-data
+    # Goodix FP
+    mkdir /data/gf_data 0700 system system
+    mkdir /data/system/gf_data 0700 system system
+    mkdir /data/images 0700 system system
+    
+    # FPC FP
+    chown system  system /sys/bus/platform/devices/fpc_interrupt/clk_enable
+    chown system  system /sys/bus/platform/devices/fpc_interrupt/wakelock_enable
+    chown system  system /sys/bus/platform/devices/fpc_interrupt/irq
+    chown system  system /sys/bus/platform/devices/fpc_interrupt/irq_enable
+    chown system  system /sys/bus/platform/devices/fpc_interrupt/irq_unexpected
+    chmod 0200 /sys/bus/platform/devices/fpc_interrupt/irq_enable
+    chmod 0200 /sys/bus/platform/devices/fpc_interrupt/clk_enable
+    chmod 0200 /sys/bus/platform/devices/fpc_interrupt/wakelock_enable
+    chmod 0600 /sys/bus/platform/devices/fpc_interrupt/irq
+    chmod 0660 /sys/bus/platform/devices/fpc_interrupt/irq_unexpected
+
+    # For FOD (Common)
+    mkdir /data/vendor/fingerprint 0770 system system
+    mkdir /mnt/vendor/persist/fingerprint 0770 system system
+    chown system system /sys/kernel/oppo_display/hbm
+
+    # For Silead FOD
+    mkdir /data/system/silead 0770 system system
+    mkdir /persist/silead 0770 system system
+    mkdir /data/vendor/silead 0770 system system
+    mkdir /mnt/vendor/persist/fingerprint/silead 0770 system system
+
+    # For Egis FOD
+    mkdir /data/vendor/optical_fingerprint   0770 system system
+
 service vendor.fps_hal.realme_sdm710 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710
     class late_start
     user system
