@@ -1443,3 +1443,7 @@ on property:oppo.wifirftest.enable=1
 on property:oppo.wifirftest.enable=0
     stop wifirfmodetest
 #endif
+
+# Smart Charging
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
