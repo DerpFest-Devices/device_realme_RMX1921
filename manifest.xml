@@ -869,6 +869,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Lineage Power HAL-->
+    <hal format="hidl">
+        <name>vendor.lineage.power</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILineagePower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- Vendor HALs -->
         <hal format="hidl">
         <name>vendor.oppo.hardware.camera.oppoAlgoProcessService</name>
