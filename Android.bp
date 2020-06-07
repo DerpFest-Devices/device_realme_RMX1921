@@ -1,3 +1,2 @@
-subdirs = [
-    "light"
-]
+soong_namespace {
+}
