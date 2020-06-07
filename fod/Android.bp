@@ -32,3 +32,11 @@ cc_binary {
         "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
     ],
 }
+
+cc_library_static {
+    name: "libfod_extension.RMX1921",
+    srcs: ["FodExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+}
