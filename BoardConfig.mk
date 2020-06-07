@@ -173,6 +173,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # VNDK
@@ -195,3 +196,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
+#-include vendor/realme/sdm710-common/BoardConfigVendor.mk
