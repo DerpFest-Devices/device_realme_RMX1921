@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Included>
+    <Encoders>
+        <MediaCodec name="OMX.oppo.h264.encoder" type="video/avc">
+            <!-- profiles and levels:  ProfileBaseline : Level41 -->
+            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" range="1-244800" />
+            <Limit name="bitrate" range="1000-12000000" />
+            <Feature name="intra-refresh" />
+        </MediaCodec>
+    </Encoders>
+</Included>
