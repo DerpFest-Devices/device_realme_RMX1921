@@ -191,6 +191,7 @@ WIFI_DRIVER_STATE_OFF := "OFF"
 WIFI_DRIVER_STATE_ON := "ON"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 QC_WIFI_HIDL_FEATURE_DUAL_AP := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/realme/RMX1921/BoardConfigVendor.mk
