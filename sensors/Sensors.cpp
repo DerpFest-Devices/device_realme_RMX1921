@@ -133,10 +133,11 @@ Return<void> Sensors::getSensorsList(getSensorsList_cb _hidl_cb) {
             dst->type = SensorType::LIGHT;
             dst->typeAsString = "";
         }
-	if (dst->typeAsString == "qti.sensor.proximity_fake") {
-            dst->type = SensorType::PROXIMITY;
-            mSensorHandleProximity = dst->sensorHandle;
-            dst->typeAsString = "";
+
+	 if (dst->typeAsString == "qti.sensor.proximity_fake") {
+             dst->type = SensorType::PROXIMITY;
+             mSensorHandleProximity = dst->sensorHandle;
+             dst->typeAsString = "";
         }
 
         // For proximity Wakeup
