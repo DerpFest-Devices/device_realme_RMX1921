@@ -49,8 +49,13 @@ on property:sys.usb.config=mass_storage && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0xF000
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0xF000
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2768
+#endif
     symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -69,10 +74,21 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && p
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9015
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0x9015
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2767
+#endif
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f2
+#ifdef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Add for for mass_storage */
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/ro 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/cdrom 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/removable 0
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file /dev/block/platform/soc/c0c4000.sdhci/by-name/DRIVER
+#endif
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -90,8 +106,13 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,adb && property:
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x901D
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0x901D
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x276C
+#endif
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
@@ -113,6 +134,34 @@ on property:sys.usb.config=diag && property:sys.usb.configfs=1
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
+
+#ifdef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Add for for mtp,mass_storage,adb */
+on property:sys.usb.config=mtp,mass_storage,adb && property:sys.usb.configfs=1
+    start adbd
+
+on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,mass_storage,adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_mass_storage_adb"
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
+    rm /config/usb_gadget/g1/configs/b.1/f3
+    rm /config/usb_gadget/g1/configs/b.1/f4
+    rm /config/usb_gadget/g1/configs/b.1/f5
+    rm /config/usb_gadget/g1/configs/b.1/f6
+    rm /config/usb_gadget/g1/configs/b.1/f7
+    rm /config/usb_gadget/g1/configs/b.1/f8
+    rm /config/usb_gadget/g1/configs/b.1/f9
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2774
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f2
+    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/ro 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/cdrom 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/removable 0
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file /dev/block/platform/soc/c0c4000.sdhci/by-name/DRIVER
+    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+    setprop sys.usb.state ${sys.usb.config}
+#endif /* VENDOR_EDIT */
 
 on property:sys.usb.config=diag,serial_cdev,rmnet,adb && property:sys.usb.configfs=1
     start adbd
@@ -156,29 +205,6 @@ on property:sys.usb.config=diag,serial_cdev,rmnet && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.config=diag,serial_cdev,serial_cdev_nmea,adb && property:sys.usb.configfs=1
-    start adbd
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,serial_cdev_nmea,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "diag_dun_nmea_adb"
-    rm /config/usb_gadget/g1/configs/b.1/f1
-    rm /config/usb_gadget/g1/configs/b.1/f2
-    rm /config/usb_gadget/g1/configs/b.1/f3
-    rm /config/usb_gadget/g1/configs/b.1/f4
-    rm /config/usb_gadget/g1/configs/b.1/f5
-    rm /config/usb_gadget/g1/configs/b.1/f6
-    rm /config/usb_gadget/g1/configs/b.1/f7
-    rm /config/usb_gadget/g1/configs/b.1/f8
-    rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9020
-    symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/cser.nmea.1 /config/usb_gadget/g1/configs/b.1/f4
-    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state ${sys.usb.config}
-
 on property:vendor.usb.tethering=true
     write /sys/class/net/rndis0/queues/rx-0/rps_cpus ${vendor.usb.rps_mask}
 
@@ -196,8 +222,13 @@ on property:sys.usb.config=rndis,none && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0xF00E
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0xF00E
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x276A
+#endif
     symlink /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state rndis
@@ -228,8 +259,13 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,none,adb && pro
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9024
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0x9024
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2766
+#endif
     symlink /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
@@ -251,7 +287,12 @@ on property:sys.usb.config=rndis,diag && property:sys.usb.configfs=1
     symlink /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state rndis
+#ifndef VENDOR_EDIT
+#Jianchao.Shi@BSP.CHG.Basic, 2017/04/13, sjc Modify for telecom test
+#    setprop sys.usb.state rndis
+#else
+    setprop sys.usb.state ${sys.usb.config}
+#endif
 
 on property:sys.usb.config=rndis,diag,adb && property:sys.usb.configfs=1
     start adbd
@@ -267,13 +308,23 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,diag,adb && pro
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x902D
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0x902D
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2775
+#endif
     symlink /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state rndis,adb
+#ifndef VENDOR_EDIT
+#Jianchao.Shi@BSP.CHG.Basic, 2017/04/13, sjc Modify for telecom test
+#    setprop sys.usb.state rndis,adb
+#else
+    setprop sys.usb.state ${sys.usb.config}
+#endif
 
 on property:sys.usb.config=rndis,serial_cdev && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "rndis_dun"
@@ -326,13 +377,23 @@ on property:sys.usb.config=rndis,serial_cdev,diag && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
     rm /config/usb_gadget/g1/configs/b.1/f9
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x90B5
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x05C6
+#    write /config/usb_gadget/g1/idProduct 0x90B5
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2783
+#endif
     symlink /config/usb_gadget/g1/functions/${vendor.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state rndis
+#ifndef VENDOR_EDIT
+#Jianchao.Shi@BSP.CHG.Basic, 2017/04/13, sjc Modify for telecom test
+#    setprop sys.usb.state rndis
+#else
+    setprop sys.usb.state ${sys.usb.config}
+#endif
 
 on property:sys.usb.config=rndis,serial_cdev,diag,adb && property:sys.usb.configfs=1
     start adbd
@@ -355,7 +416,12 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,serial_cdev,dia
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state rndis,adb
+#ifndef VENDOR_EDIT
+#Jianchao.Shi@BSP.CHG.Basic, 2017/04/13, sjc Modify for telecom test
+#    setprop sys.usb.state rndis,adb
+#else
+    setprop sys.usb.state ${sys.usb.config}
+#endif
 
 on property:sys.usb.config=mtp,diag && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_diag"
@@ -812,6 +878,36 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,rmne
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f5
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
+
+#ifdef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Add for for mtp,mass_storage */
+#sys.usb.config=mtp,mass_storage
+on property:sys.usb.config=mtp,mass_storage && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_mass_storage"
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
+    rm /config/usb_gadget/g1/configs/b.1/f3
+    rm /config/usb_gadget/g1/configs/b.1/f4
+    rm /config/usb_gadget/g1/configs/b.1/f5
+    rm /config/usb_gadget/g1/configs/b.1/f6
+    rm /config/usb_gadget/g1/configs/b.1/f7
+    rm /config/usb_gadget/g1/configs/b.1/f8
+    rm /config/usb_gadget/g1/configs/b.1/f9
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2773
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f2
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/ro 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/cdrom 1
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/removable 0
+    write /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file /dev/block/platform/soc/c0c4000.sdhci/by-name/DRIVER
+    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+    setprop sys.usb.state ${sys.usb.config}
+
+#*#801# config: serial_smd/serial_tty/rmnet_bam/rmnet_ipa are not support in sdm845
+#diag,serial_smd,serial_tty,rmnet_bam,mass_storage,adb
+#diag,serial_smd,rmnet_bam,adb
+#diag,serial_smd,rmnet_ipa,adb
+#endif /* VENDOR_EDIT */
 
 on property:sys.usb.config=diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_mdm,rmnet && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "diag_diag_mdm,qdss_qdss_mdm_dun_dun_mdm_rmnet"
@@ -1352,24 +1448,49 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,diag_mdm,adb,cci
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee7
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x18d1
+#    write /config/usb_gadget/g1/idProduct 0x4ee7
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2769
+#endif
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee1
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x18d1
+#    write /config/usb_gadget/g1/idProduct 0x4ee1
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2764
+#endif
 
 on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee2
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x18d1
+#    write /config/usb_gadget/g1/idProduct 0x4ee2
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2765
+#endif
 
 on property:sys.usb.config=ptp && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee5
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x18d1
+#    write /config/usb_gadget/g1/idProduct 0x4ee5
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2771
+#endif
 
 on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee6
+#ifndef VENDOR_EDIT /*Jianchao.Shi@BSP.CHG.Basic, 2018/01/17, sjc Modify for for oppo vid & pid */
+#    write /config/usb_gadget/g1/idVendor 0x18d1
+#    write /config/usb_gadget/g1/idProduct 0x4ee6
+#else
+    write /config/usb_gadget/g1/idVendor 0x22D9
+    write /config/usb_gadget/g1/idProduct 0x2772
+#endif
 
 on property:sys.usb.config=accessory && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
