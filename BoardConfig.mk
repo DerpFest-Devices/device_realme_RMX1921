@@ -6,7 +6,7 @@
 
 DEVICE_PATH := device/realme/RMX1921
 BOARD_VENDOR := realme
-
+BUILD_BROKEN_DUP_RULES := true
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
