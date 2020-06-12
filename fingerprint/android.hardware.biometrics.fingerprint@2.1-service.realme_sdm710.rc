@@ -50,3 +50,8 @@ service vendor.fps_hal.realme_sdm710 /vendor/bin/hw/android.hardware.biometrics.
     class late_start
     user system
     group system input
+    
+service oppo_fingerprints_sh /vendor/bin/sh /vendor/bin/init.oppo.fingerprints.sh
+    class main
+    user root
+    oneshot
