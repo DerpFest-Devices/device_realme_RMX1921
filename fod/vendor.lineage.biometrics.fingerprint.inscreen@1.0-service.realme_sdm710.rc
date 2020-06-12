@@ -6,7 +6,7 @@ on boot
     chown system system /sys/kernel/oppo_display/dimlayer_hbm
     chown system system /sys/kernel/oppo_display/hbm
 
-service fingerprint-inscreen-1-0 /system/bin/hw/lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710
+service fingerprint-inscreen-1-0 /vendor/bin/hw/vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710
     interface vendor.lineage.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
     class hal
     user system

@@ -17,9 +17,10 @@ cc_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
     vintf_fragments: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710.xml"],
-    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710",
-    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710.rc"],
+    name: "vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710",
+    init_rc: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710.rc"],
     srcs: ["service.cpp", "FingerprintInscreen.cpp"],
+    proprietary: true,
     shared_libs: [
         "libbase",
         "libhardware",
