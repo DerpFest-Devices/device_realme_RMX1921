@@ -140,9 +140,9 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 
 # Codec2 (Enabling codec2.0 SW only for non-generic odm build variant)
 #Rank OMX SW codecs lower than OMX HW codecs
-#    debug.stagefright.omx_default_rank.sw-audio=1 \
-#    debug.stagefright.omx_default_rank=0 \
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
     debug.media.codec2=2
 
 # Dalvik VM configs
