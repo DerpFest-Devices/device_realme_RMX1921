@@ -1,33 +1,6 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES +=  \
     af.fast_track_multiplier=1 \
-    audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=30 \
-    audio.offload.video=true \
-    audio.sys.noisy.broadcast.delay=600 \
-    audio.sys.offload.pstimeout.secs=3 \
-    persist.audio.fluence.speaker=true \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicecomm=true \
-    persist.audio.fluence.voicerec=false \
-    persist.dirac.acs.controller=gef \
-    persist.dirac.acs.ignore_error=1 \
-    persist.dirac.acs.no_usermsg=true \
-    persist.dirac.config=64 \
-    persist.dirac.gef.exs.appt=0x00011130 \
-    persist.dirac.gef.exs.did=29,49 \
-    persist.dirac.gef.exs.mid=0x10012DE3 \
-    persist.dirac.gef.ext.appt=0x00011130,0x00011134,0x00011136 \
-    persist.dirac.gef.ext.did=10,20,29,49 \
-    persist.dirac.gef.ext.mid=0x10012DE1 \
-    persist.dirac.gef.ins.appt=0x00011130 \
-    persist.dirac.gef.ins.did=19,134,150 \
-    persist.dirac.gef.ins.mid=0x10012DE2 \
-    persist.dirac.gef.int.appt=0x00011130,0x00011134,0x00011136 \
-    persist.dirac.gef.int.did=15,19,134,150 \
-    persist.dirac.gef.int.mid=0x10012DE0 \
-    persist.dirac.path=/vendor/etc/dirac/ \
-    persist.dirac.qem.oppo.syss=true \
     persist.vendor.audio.ambisonic.auto.profile=false \
     persist.vendor.audio.ambisonic.capture=false \
     persist.vendor.audio.avs.afe_api_version=2 \
@@ -41,6 +14,8 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.vendor.audio.spv3.enable=true \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
+    ro.vendor.audio.sdk.fluencetype=none \
+    ro.vendor.audio.sdk.ssr=false \
     vendor.audio.apptype.multirec.enabled=false \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
@@ -102,47 +77,23 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.volume.headset.gain.depcal=true \
-    vendor.audio_hal.period_size=192 \
-    ro.qc.sdk.audio.fluencetype=none \
-    ro.qc.sdk.audio.ssr=false \
-    ro.vendor.audio.sdk.fluencetype=none \
-    ro.vendor.audio.sdk.ssr=false \
-    ro.dirac.acs.storeSettings=1
+    vendor.audio_hal.period_size=192
+
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    vendor.qcom.bluetooth.soc=cherokee \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
-    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.bluetooth.a2dp_offload.disabled=false \
-    ro.vendor.bluetooth.wipower=false \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    persist.vendor.bt.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     ro.bluetooth.a2dp_offload.supported=true \
-    persist.bluetooth.disableabsvol=false \
-    persist.vendor.service.bt.iot.enablelogging=true \
-    persist.vendor.bluetooth.a2dp.hal.implementation=true \
-    persist.vendor.bt.a2dp.hal.implementation=true \
-    persist.bluetooth.disableinbandringing=false \
-    persist.bluetooth.specificatcmdsenable=true \
-    persist.vendor.bluetooth.modem_nv_support=true \
-    persist.vendor.service.bdroid.soc.alwayson=true \
-    persist.vendor.service.bt.iotinfo.report.enable=true
+    vendor.qcom.bluetooth.soc=cherokee
 
-# Camera
+# Codec2
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.camera.hfr.enable=1 \
-    ro.camera.relight.enable=0 \
-    ro.camera.attr.detect.enable=1 \
-    ro.camera.notify_nfc=1 \
-    ro.camera.temperature.limit=470
-
-# Codec2 (Enabling codec2.0 SW only for non-generic odm build variant)
-#Rank OMX SW codecs lower than OMX HW codecs
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.omx_default_rank.sw-audio=1 \
-    debug.stagefright.omx_default_rank=0 \
     debug.media.codec2=2
 
 # Dalvik VM configs
@@ -153,25 +104,19 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     dalvik.vm.heapsize=512m \
     dalvik.vm.heapstartsize=16m \
     dalvik.vm.heaptargetutilization=0.75
-    
+ 
+# Display post-processing
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    ro.vendor.display.cabl=2
+   
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.display.enable_default_color_mode=1 \
-    ro.vendor.display.cabl=2 \
-    persist.sys.enable.rc=1 \
-    ro.display.rc.size=108,108,111,111 \
-    ro.vendor.display.ad=1 \
-    ro.vendor.display.sensortype=2 \
-    ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg \
-    ro.lcd.backlight.samsung_tenbit=10,517,103,303,355,457,563,676,805,883,1023 \
-    ro.lcd.backlight.config_dsjm=11,958,13,334,517,794,1055,1325,1617,1770,1989,2047 \
-    ro.vendor.display.backlightapp=1 \
-    ro.display.underscreenfingerprint=1 \
-    ro.display.underscreen.lightsensor.support=1 \
-    ro.lcd.display.screen.underlightsensor.region=624,28,672,76 \
-    ro.display.underscreen.lightsensor.screenshot.period=50 \
-    persist.debug.wfd.enable=1 \
-    ro.oppo.screen.heteromorphism=444,0:636,76
+    ro.vendor.display.cabl=2
+
+# DRM
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    drm.service.enabled=true
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES +=  \
@@ -181,78 +126,15 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
-    drm.service.enabled=true \
-    keyguard.no_require_sim=true \
-    ro.hardware.vulkan=adreno \
-    ro.opengles.version=196610 \
-    ro.hardware.egl=adreno
-
-# Keystore
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.hardware.keystore_desede=true
+    ro.opengles.version=196610
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.extension_library=libqti-perfd-client.so
-
-# Qcom system daemon
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    persist.vendor.qcomsysd.enabled=1
-   
-# RIL
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    persist.demo.hdmirotationlock=false \
-    persist.radio.multisim.config=dsds \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1 \
-    rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
-    ro.telephony.default_network=9,0 \
-    persist.radio.multisim.config=dsds \
-    persist.radio.custom_exp_ecc=1 \
-    gsm.lte.ca.support=1 \
-    ro.product.oem_dm=1 \
-    persist.vendor.radio.process_sups_ind=1 \
-    persist.vendor.radio.data_con_rprt=1
-
-# Sensors
-PRODUCT_PROPERTY_OVERRIDES +=  \
-   persist.sys.oppo.fusionlight=true \
-   persist.sys.oppo.proximity=true
-
-# Surfaceflinger
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    persist.sys.sf.color_saturation=1.0 \
-    persist.sys.sf.native_mode=0 \
-    debug.sf.disable_backpressure=1 \
-    debug.sf.latch_unsignaled=1
     
+# Surfaceflinger properties    
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.wcg_composition_dataspace=143261696
-
-# Thermal
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    persist.sys.enable.oscar=0 \
-    persist.sys.oscar.dc=1
-
-# VoWifi
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.telephony.iwlan_operation_mode=legacy \
-    persist.data.iwlan.enable=true \
-    persist.data.iwlan.rekey=4294967295
-
-# Misc
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    vendor.hw.fm.init=0 \
-    ro.vendor.iocgrp.config=1 \
-    vendor.power.pasr.enabled=true \
-    vendor.voice.path.for.pcm.voip=true \
-    qemu.hw.mainkeys=0 \
-    persist.sys.enable.neo=1 \
-    ro.af.client_heap_size_kbyte=7168 \
-    ro.control_privapp_permissions=enforce
