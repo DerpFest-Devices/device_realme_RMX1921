@@ -97,7 +97,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     libstdc++.vendor \
-    Snap
+    Snap \
+    vendor.qti.hardware.camera.device@1.0.vendor
 
 # Context Hub
 PRODUCT_PACKAGES += \
@@ -140,8 +141,8 @@ PRODUCT_PACKAGES += \
 
 # IPA
 PRODUCT_PACKAGES += \
-    libnetfilter_conntrack \
-    libnfnetlink
+    ipacm \
+    IPACM_cfg.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -170,10 +171,6 @@ PRODUCT_PACKAGES += \
 # HW crypto
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
-
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
 
 # Input
 PRODUCT_COPY_FILES += \
