@@ -14,9 +14,11 @@
 // limitations under the License.
 
 cc_binary {
-    name: "lineage.touch@1.0-service.RMX1921",
-    init_rc: ["lineage.touch@1.0-service.RMX1921.rc"],
+    name: "vendor.lineage.touch@1.0-service.RMX1921",
+    init_rc: ["vendor.lineage.touch@1.0-service.RMX1921.rc"],
+    vintf_fragments: ["vendor.lineage.touch@1.0-service.RMX1921.xml"],
     defaults: ["hidl_defaults"],
+    proprietary: true,
     relative_install_path: "hw",
     srcs: [
         "TouchscreenGesture.cpp",

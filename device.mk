@@ -384,7 +384,7 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.RMX1921
+    vendor.lineage.touch@1.0-service.RMX1921
     
 # Trust HAL
 PRODUCT_PACKAGES += \
