@@ -20,4 +20,4 @@
 /dev/block/bootdevice/by-name/dsp                       /vendor/dsp              ext4    ro,nosuid,nodev,barrier=1                            wait
 /dev/block/bootdevice/by-name/modem                     /vendor/firmware_mnt     vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=222,fmask=333,context=u:object_r:firmware_file:s0 wait
 /dev/block/bootdevice/by-name/persist                   /mnt/vendor/persist      ext4    nosuid,noatime,nodev,barrier=1                       wait
-/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.*.auto*     /storage/usbotg    vfat    nosuid,nodev    wait,voldmanaged=usbotg:auto
+/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.*.auto*     auto    auto    defaults    wait,voldmanaged=usbotg:auto
