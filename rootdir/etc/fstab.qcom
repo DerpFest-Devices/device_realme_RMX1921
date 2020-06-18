@@ -22,7 +22,7 @@
 /dev/block/bootdevice/by-name/misc                      /misc              emmc    defaults                                             defaults
 
 # OTG storage
-/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.*.auto*     /storage/usbotg    vfat    nosuid,nodev    wait,voldmanaged=usbotg:auto
+/devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.*.auto*     auto    auto    defaults			wait,voldmanaged=usbotg:auto
 
 # Opporeserve partition
 /dev/block/bootdevice/by-name/opporeserve2      /mnt/vendor/opporeserve             ext4   nosuid,nodev,noatime,barrier=1,discard                           wait,check
