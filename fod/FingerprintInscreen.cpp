@@ -27,8 +27,8 @@
 #define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
 #define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
 #define X_POS 445
-#define Y_POS 1988
-#define FP_SIZE 190
+#define Y_POS 1967
+#define FP_SIZE 196
 #define FP_BEGIN 1
 #define FP_ENDIT 0
 
