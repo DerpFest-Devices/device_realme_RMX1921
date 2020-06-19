@@ -28,8 +28,6 @@ ro.vendor.use_data_netmgrd=true
 # Display - oppo
 persist.sys.enable.rc=1
 ro.display.rc.size=108,108,111,111
-ro.vendor.display.ad=1
-ro.vendor.display.sensortype=2
 ro.lcd.backlight.samsung_tenbit=10,517,103,303,355,457,563,676,805,883,1023
 ro.lcd.backlight.config_dsjm=11,958,13,334,517,794,1055,1325,1617,1770,1989,2047
 ro.vendor.display.backlightapp=1
@@ -50,9 +48,6 @@ ro.vendor.display.sensortype=2
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
-
-# Display
-ro.oppo.screen.heteromorphism=444,0:636,76
 
 # Graphics
 debug.sf.disable_backpressure=1
@@ -97,15 +92,6 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
-
-persist.radio.custom_exp_ecc=1
-ro.product.oem_dm=1
-persist.vendor.radio.process_sups_ind=1
-persist.vendor.radio.data_con_rprt=1
-
-ro.telephony.iwlan_operation_mode=legacy
-persist.data.iwlan.enable=true
-persist.data.iwlan.rekey=4294967295
 
 # Sensors
 persist.sys.oppo.fusionlight=true

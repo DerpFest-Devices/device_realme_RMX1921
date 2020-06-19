@@ -128,6 +128,12 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.sf.hw=0 \
     ro.opengles.version=196610
 
+# IMS
+PRODUCT_PROPERTY_OVERRIDES +=  \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.extension_library=libqti-perfd-client.so
