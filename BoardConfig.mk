@@ -168,19 +168,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 VENDOR_SECURITY_PATCH := 2020-04-05
 
 # Sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
+include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
-SELINUX_IGNORE_NEVERALLOWS := true
 
 # System-as-root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
