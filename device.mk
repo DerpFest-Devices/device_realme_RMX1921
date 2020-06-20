@@ -306,6 +306,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.class_main.sh \
     init.oppo.reserve.rc \
     init.msm.usb.configfs.rc \
     init.oppo.fingerprints.sh \
