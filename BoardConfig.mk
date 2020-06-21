@@ -133,7 +133,7 @@ TARGET_USES_MKE2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := "/dev/input/event2"
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
