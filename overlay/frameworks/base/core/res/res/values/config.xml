@@ -341,6 +341,18 @@
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
     <bool name="config_camera_sound_forced">false</bool>
     
+    <!-- Default list of files pinned by the Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/framework/arm64/boot-framework.oat"</item>
+        <item>"/system/framework/boot-framework.vdex"</item>
+        <item>"/system/framework/oat/arm64/services.odex"</item>
+        <item>"/system/framework/oat/arm64/services.vdex"</item>
+        <item>"/system/framework/arm64/boot.oat"</item>
+        <item>"/system/framework/boot.vdex"</item>
+        <item>"/system/framework/arm64/boot-core-libart.oat"</item>
+        <item>"/system/framework/boot-core-libart.vdex"</item>
+    </string-array>
+    
     <!-- If true, the doze component is not started until after the screen has been turned off
     and the screen off animation has been performed. -->
      <bool name="config_dozeAfterScreenOff">true</bool>
