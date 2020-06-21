@@ -92,6 +92,10 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.bluetooth.a2dp_offload.supported=true \
     vendor.qcom.bluetooth.soc=cherokee
 
+# Camera
+PRODUCT_PRODUCT_PROPERTIES += \
+   persist.camera.HAL3.enabled=1
+   
 # Codec2
 PRODUCT_PROPERTY_OVERRIDES +=  \
     debug.media.codec2=2
