@@ -72,6 +72,7 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
+vendor/lib/libtinycompress.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -82,6 +83,7 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libqtigef.so
 vendor/lib/liba2dpoffload.so
 vendor/lib64/liba2dpoffload.so
+vendor/lib64/libtinycompress.so
 
 # Audio HAL
 vendor/lib64/hw/audio.primary.sdm710.so
