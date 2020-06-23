@@ -143,18 +143,9 @@ product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera
-lib/libchromaflash.so
-lib64/libseemore.so
 vendor/lib/camera/com.qti.sensor.gc2375h.so
-vendor/lib/camera/com.qti.sensor.gc5035.so
 vendor/lib/camera/com.qti.sensor.hi846.so
-vendor/lib/camera/com.qti.sensor.imx316.so
-vendor/lib/camera/com.qti.sensor.imx362.so
 vendor/lib/camera/com.qti.sensor.imx471.so
-vendor/lib/camera/com.qti.sensor.imx519.so
-vendor/lib/camera/com.qti.sensor.imx586.so
-vendor/lib/camera/com.qti.sensor.s5k2x5.so
-vendor/lib/camera/com.qti.sensor.s5k3p9sp.so
 vendor/lib/camera/com.qti.sensor.s5kgw1.so
 vendor/lib/camera/com.qti.sensor.sp2509v.so
 vendor/lib/camera/components/com.arcsoft.node.yuvhdr.so
@@ -250,15 +241,8 @@ vendor/lib/libVDRTImageAdjustment.so
 vendor/lib/libvideoutils.so
 vendor/lib/libvidhance.so
 vendor/lib64/camera/com.qti.sensor.gc2375h.so
-vendor/lib64/camera/com.qti.sensor.gc5035.so
 vendor/lib64/camera/com.qti.sensor.hi846.so
-vendor/lib64/camera/com.qti.sensor.imx316.so
-vendor/lib64/camera/com.qti.sensor.imx362.so
 vendor/lib64/camera/com.qti.sensor.imx471.so
-vendor/lib64/camera/com.qti.sensor.imx519.so
-vendor/lib64/camera/com.qti.sensor.imx586.so
-vendor/lib64/camera/com.qti.sensor.s5k2x5.so
-vendor/lib64/camera/com.qti.sensor.s5k3p9sp.so
 vendor/lib64/camera/com.qti.sensor.s5kgw1.so
 vendor/lib64/camera/com.qti.sensor.sp2509v.so
 vendor/lib64/camera/com.qti.sensormodule.holitech_gc2375h.bin
