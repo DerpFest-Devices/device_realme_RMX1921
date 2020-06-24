@@ -522,54 +522,11 @@ vendor/lib/libsdm-disp-vndapis.so
 vendor/lib/libsdmextension.so
 vendor/lib/libtinyxml2_1.so
 
-vendor/bin/hw/vendor.qti.hardware.display.allocator@1.0-service
-vendor/etc/init/vendor.qti.hardware.display.allocator@1.0-service.rc
-vendor/lib/hw/gralloc.default.so
-vendor/lib/hw/gralloc.sdm710.so
-vendor/lib/hw/hwcomposer.sdm710.so
-vendor/lib/hw/memtrack.sdm710.so
-vendor/lib/libdisplaydebug.so
-vendor/lib/libdrm.so
-vendor/lib/libdrmutils.so
-vendor/lib/libgpu_tonemapper.so
-vendor/lib/libgralloccore.so
-vendor/lib/libgrallocutils.so
-vendor/lib/libqdMetaData.so
-vendor/lib/libqdutils.so
-vendor/lib/libqservice.so
+# Display Hardware
 vendor/lib/libsdmcore.so
-vendor/lib/libsdmutils.so
-vendor/lib/vendor.display.config@1.0.so
-vendor/lib/vendor.display.config@1.1.so
-vendor/lib/vendor.display.config@1.2.so
-vendor/lib/vendor.display.config@1.3.so
-vendor/lib/vendor.display.config@1.4.so
-vendor/lib/vendor.display.config@1.5.so
-vendor/lib/vendor.display.config@1.6.so
-vendor/lib/vendor.display.config@1.7.so
-vendor/lib64/hw/gralloc.default.so
-vendor/lib64/hw/gralloc.sdm710.so
-vendor/lib64/hw/hwcomposer.sdm710.so
-vendor/lib64/hw/memtrack.sdm710.so
-vendor/lib64/libdisplaydebug.so
-vendor/lib64/libdrm.so
-vendor/lib64/libdrmutils.so
-vendor/lib64/libgpu_tonemapper.so
-vendor/lib64/libgralloccore.so
-vendor/lib64/libgrallocutils.so
-#vendor/lib64/libqdMetaData.so
-vendor/lib64/libqdutils.so
-vendor/lib64/libqservice.so
 vendor/lib64/libsdmcore.so
-vendor/lib64/libsdmutils.so
-vendor/lib64/vendor.display.config@1.0.so
-vendor/lib64/vendor.display.config@1.1.so
-vendor/lib64/vendor.display.config@1.2.so
-vendor/lib64/vendor.display.config@1.3.so
-vendor/lib64/vendor.display.config@1.4.so
-vendor/lib64/vendor.display.config@1.5.so
-vendor/lib64/vendor.display.config@1.6.so
-vendor/lib64/vendor.display.config@1.7.so
+vendor/lib/hw/hwcomposer.sdm710.so
+vendor/lib64/hw/hwcomposer.sdm710.so
 
 # Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -853,8 +810,8 @@ vendor/firmware/leia_pm4_470.fw
 vendor/lib64/hw/vulkan.sdm710.so
 vendor/lib/hw/vulkan.sdm710.so
 
-# IMS
--product/app/uceShimService/uceShimService.apk
+# IMS - Pinned blobs are from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190828.002/00WW_4_30B:user/release-keys
+-product/app/uceShimService/uceShimService.apk|f30f05dffef88ac4f7a18f9f1d94ef22ddd2f4ea
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
@@ -903,7 +860,7 @@ product/lib/vendor.qti.ims.callinfo@1.0.so
 product/lib/vendor.qti.ims.rcsconfig@1.0.so
 product/lib/vendor.qti.imsrtpservice@2.0.so
 product/lib/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk|d2e0d617c6c8adcbcecd7d2c29d939081796b2fd
 product/lib/libdiag_system.so
 product/lib64/libdiag_system.so
 vendor/bin/ims_rtp_daemon
@@ -1130,44 +1087,41 @@ vendor/lib64/unnhal-acc-adreno.so
 vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hvx.so
 
-# Oppo
+# Oppo Camera - AlgoProcessService
 vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-service
-vendor/etc/audio_platform_info_oppo.xml
 vendor/etc/init/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.mmdisplayfeature@1.0-service.rc
 vendor/lib/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib/libOppoAlgoClient.so
 vendor/lib/liboppoalgolib.so
 vendor/lib/libOppoAPSMemMgr.so
 vendor/lib/liboppocamalgo_daemon.so
-vendor/lib/libOPPORectify.so
-vendor/lib/libopposfr.so
-vendor/lib/liboppo_aisd.so
+vendor/lib64/liboppo_log_print.so
 vendor/lib/liboppo_log_print.so
-vendor/lib/liboppo_platform_hwi.so
-vendor/lib/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
-vendor/lib/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
-vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
-vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
-vendor/lib/vendor.oppo.hardware.mmdisplayfeature@1.0.so
-vendor/lib64/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
-vendor/lib64/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib64/hw/vendor.oppo.hardware.mmdisplayfeature@1.0-impl.so
 vendor/lib64/libOppoAlgoClient.so
 vendor/lib64/liboppoalgolib.so
 vendor/lib64/libOppoAPSMemMgr.so
+vendor/lib/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
+vendor/lib64/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
+vendor/lib64/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
+
+# Oppo Camera - HalAssist
+vendor/lib/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
+vendor/lib/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
+vendor/lib64/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
+vendor/lib64/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
+
+# Oppo
 vendor/lib64/libOPPORectify.so
 vendor/lib64/libopposfr.so
 vendor/lib64/liboppo_aisd.so
-vendor/lib64/liboppo_log_print.so
 vendor/lib64/liboppo_platform_hwi.so
-vendor/lib64/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
-vendor/lib64/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
+vendor/lib/libOPPORectify.so
+vendor/lib/libopposfr.so
+vendor/lib/liboppo_aisd.so
+vendor/lib/liboppo_platform_hwi.so
+vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
+vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
 vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
-vendor/lib64/vendor.oppo.hardware.mmdisplayfeature@1.0.so
 vendor/lib64/vendor.oppo.hardware.radio.oppoappradio@1.0.so
 vendor/lib64/vendor.oppo.hardware.radio.opporadio@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
@@ -1208,7 +1162,7 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/etc/sec_config
@@ -1245,14 +1199,14 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
-# RIL
--product/app/QtiTelephonyService/QtiTelephonyService.apk
+# RIL - Pinned blobs are from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190828.002/00WW_4_30B:user/release-keys
+-product/app/QtiTelephonyService/QtiTelephonyService.apk|165109022921de31007f8ebc7304de08ecde6bb4
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
-product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar
+product/framework/qcrilhook.jar|3afd31d5a08e220904441d5c8c0bcf43b8ebbbfe
+product/framework/qti-telephony-common.jar|fabeba9162fd802a1ba048ddbb5b3b2d23545183
 product/framework/QtiTelephonyServicelibrary.jar
--product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|c59fcb4a375dec19a0208dcfcc4696e0ccfd3a13
 -vendor/app/IWlanService/IWlanService.apk
 vendor/bin/hw/qcrild
 vendor/bin/adpl
@@ -1518,7 +1472,6 @@ vendor/lib64/libhdcpsrm.so
 
 # UFS firmware
 vendor/firmware/ufs/MICRON-128GB-UFS-MT.bin
-vendor/firmware/ufs/move_target_ufs_fw_to_opporeserve1.sh
 vendor/firmware/ufs/SAMSUNG-KM2B8001CM-BB01.bin
 vendor/firmware/ufs/SAMSUNG-KM8B8001JM-BC01.bin
 vendor/firmware/ufs/SKhynix-H9HQ16AECMMDAR.bin
