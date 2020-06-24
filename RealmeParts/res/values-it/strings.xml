@@ -34,7 +34,7 @@
     <string name="srgb_mode_title">Modaità sRGB</string>
     <string name="tile_srgb_mode">sRGB</string>
     <!-- otg mode -->
-    <string name="otg_mode_summary">"Abilità l'uscita USB-OTG per fornire energia a dispositivi come pen-drive o cuffie"</string>
+    <string name="otg_mode_summary">"Abilita l'uscita USB-OTG per fornire energia a dispositivi come pen-drive o cuffie"</string>
     <string name="otg_mode_title">Abilita USB-OTG</string>
     <string name="tile_otg_mode">USB-OTG</string>
     <!-- game mode -->
@@ -206,4 +206,8 @@
     <string name="performance_battery">Batteria</string>
     <string name="performance_gaming">Gaming</string>
     <string name="performance_balance">Bilanciato</string>
+
+    <string name="clear_speaker_title">"Pulisci l'altoparlante"</string>
+    <string name="clear_speaker_summary">"Ascolta un audio di trenta secondi per pulire l'altoparlante"</string>
+    <string name="clear_speaker_description">"Esegui questo comando se hai notato che l'altoparlante è bloccato dalla polvere, alza il volume al massimo e metti il telefono con l'altoparlante verso il basso.\n\nSe non risolvi con una sola esecuzione ripeti 2-5 volte mentre sbatti il telefono.\n\nATTENZIONE: Controlla che le cuffie siano disconnesse."</string>
 </resources>

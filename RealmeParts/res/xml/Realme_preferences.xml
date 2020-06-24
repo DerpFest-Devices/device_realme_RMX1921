@@ -33,6 +33,15 @@
                  android:targetClass="com.motorola.dolby.dolbyui.ui.welcome.WelcomeActivity" />
         </Preference>
 
+        <Preference
+                android:key="clear_speaker"
+                android:title="@string/clear_speaker_title"
+                android:summary="@string/clear_speaker_summary">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetClass="org.device.RealmeParts.speaker.ClearSpeakerActivity"
+                    android:targetPackage="org.device.RealmeParts" />
+            </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory

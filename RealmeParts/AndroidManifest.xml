@@ -88,6 +88,15 @@
         </activity>
         <service android:name="org.device.RealmeParts.kcal.KcalService"></service>
 
+        <activity
+            android:name=".speaker.ClearSpeakerActivity"
+            android:label="@string/clear_speaker_title"
+            android:theme="@style/Theme.Main">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+        </activity>
+
         <!-- Quick Settings Tiles -->
         <service
             android:name="org.device.RealmeParts.GameModeTileService"
