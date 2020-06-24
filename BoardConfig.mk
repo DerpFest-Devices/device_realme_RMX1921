@@ -181,7 +181,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_RMX1921
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-04-05
+VENDOR_SECURITY_PATCH := 2020-06-05
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
