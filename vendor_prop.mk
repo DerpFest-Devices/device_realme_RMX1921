@@ -100,15 +100,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES +=  \
    debug.stagefright.omx_default_rank.sw-audio=1 \
    debug.stagefright.omx_default_rank=0
- 
-# Display post-processing
-PRODUCT_PROPERTY_OVERRIDES +=  \
-    ro.vendor.display.cabl=2
    
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.display.enable_default_color_mode=1 \
-    ro.vendor.display.cabl=2
+    ro.vendor.display.cabl=2 \
+    ro.sf.lcd_density=420
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES +=  \
