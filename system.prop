@@ -108,3 +108,6 @@ persist.sys.oscar.dc=1
 # SSR
 persist.vendor.ssr.enable_ramdumps=0
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true
