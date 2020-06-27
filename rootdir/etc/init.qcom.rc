@@ -479,9 +479,6 @@ service qcomsysd /system/vendor/bin/qcom-system-daemon
     group root diag oem_2901
     disabled
 
-on property:apexd.status=ready
-    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
-
 on property:persist.vendor.qcomsysd.enabled=1
     enable qcomsysd
 

@@ -20,9 +20,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
