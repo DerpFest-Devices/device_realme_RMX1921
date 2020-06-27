@@ -95,12 +95,12 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
    persist.camera.HAL3.enabled=1
-   
+
 # Codec2
 PRODUCT_PROPERTY_OVERRIDES +=  \
    debug.stagefright.omx_default_rank.sw-audio=1 \
    debug.stagefright.omx_default_rank=0
-   
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.display.enable_default_color_mode=1 \
@@ -130,20 +130,10 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.extension_library=libqti-perfd-client.so
-    
-# Surfaceflinger properties    
+
+# Surfaceflinger properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.use_color_management=true \
-    ro.surface_flinger.wcg_composition_dataspace=143261696 \
-    ro.surface_flinger.set_idle_timer_ms=4000 \
-    ro.surface_flinger.set_touch_timer_ms=4000 \
-    ro.surface_flinger.set_display_power_timer_ms=1000 \
-    ro.surface_flinger.use_smart_90_for_video=true \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.max_virtual_display_dimension=4096 \
-    ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+    ro.surface_flinger.wcg_composition_dataspace=143261696
