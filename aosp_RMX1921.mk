@@ -24,8 +24,8 @@ PRODUCT_MODEL := Realme XT
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="unknown-user 10 QKQ1.190918.001 unknown release-keys" \
+    PRIVATE_BUILD_DESC="coral-user 10 QQ3A.200605.001 6392402 release-keys" \
     PRODUCT_NAME="RMX1921"
-    
+
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := realme/RMX1921/RMX1921:10/QKQ1.190918.001/1590390095:user/release-keys
+BUILD_FINGERPRINT := google/coral/coral:10/QQ3A.200605.001/6392402:user/release-keys

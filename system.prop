@@ -104,6 +104,3 @@ persist.sys.oppo.proximity=true
 # Thermal
 persist.sys.enable.oscar=0
 persist.sys.oscar.dc=1
-
-# SafteyNet
-ro.build.fingerprint=google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys
