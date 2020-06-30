@@ -1,0 +1,2 @@
+type oppo_display_default, domain;
+type oppo_display_default_exec, exec_type, file_type, vendor_file_type;

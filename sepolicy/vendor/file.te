@@ -15,3 +15,7 @@ type persist_camera_file, file_type;
 
 # Devinfo
 type proc_devinfo, fs_type, proc_type;
+
+# Audio
+type persist_audio_file, file_type , vendor_persist_type;
+type proc_audio_file, file_type, data_file_type, core_data_file_type;
