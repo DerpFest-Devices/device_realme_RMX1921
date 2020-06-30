@@ -1,0 +1,2 @@
+# Oppo display
+type sysfs_oppo_display, fs_type, sysfs_type;

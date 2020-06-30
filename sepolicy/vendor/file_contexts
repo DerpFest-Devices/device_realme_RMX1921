@@ -1,3 +1,6 @@
+# FOD Hal
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.realme_sdm710    u:object_r:hal_lineage_fod_default_exec:s0
+
 /bt_firmware(/.*)?                            u:object_r:bt_firmware_file:s0
 /firmware(/.*)?                               u:object_r:firmware_file:s0
 /persist(/.*)?                                u:object_r:persist_file:s0

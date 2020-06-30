@@ -1,0 +1,2 @@
+# Oppo display
+genfscon sysfs /kernel/oppo_display      u:object_r:sysfs_oppo_display:s0
