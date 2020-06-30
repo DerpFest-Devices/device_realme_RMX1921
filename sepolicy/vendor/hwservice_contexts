@@ -8,3 +8,6 @@ vendor.oppo.hardware.biometrics.fingerprint::IBiometricsFingerprint          u:o
 # NFC
 vendor.nxp.nxpnfc::INxpNfc                                      u:object_r:nfc_hwservice:s0
 vendor.nxp.nxpese::INxpEse                                      u:object_r:nfc_hwservice:s0
+
+# Dcs
+vendor.oppo.hardware.commondcs::ICommonDcsHalService                             u:object_r:dcs_hwservice:s0

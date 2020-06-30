@@ -3,3 +3,4 @@ get_prop(system_server, vendor_default_prop);
 
 allow system_server sysfs:file { getattr open read write };
 allow system_server vendor_file:file { open read };
+allow system_server dcs_hwservice:hwservice_manager { add find };
