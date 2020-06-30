@@ -11,3 +11,6 @@ vendor.nxp.nxpese::INxpEse                                      u:object_r:nfc_h
 
 # Dcs
 vendor.oppo.hardware.commondcs::ICommonDcsHalService                             u:object_r:dcs_hwservice:s0
+
+# Radio
+vendor.oppo.hardware.radio.oppoappradio::IOppoAppRadio          u:object_r:opporadio_hwservice:s0

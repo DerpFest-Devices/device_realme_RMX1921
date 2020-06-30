@@ -1,5 +1,7 @@
 # Oppo display
 genfscon sysfs /kernel/oppo_display      u:object_r:sysfs_oppo_display:s0
+genfscon sysfs /devices/pnp0/00:00/rtc u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/GFSH0007:00/rtc u:object_r:sysfs_rtc:s0
 
 # Touchpanel
 genfscon proc /touchpanel              u:object_r:proc_touchpanel:s0
