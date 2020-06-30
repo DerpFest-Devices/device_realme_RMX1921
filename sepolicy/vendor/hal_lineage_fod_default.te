@@ -1,0 +1,2 @@
+allow hal_lineage_fod_default sysfs_oppo_display:dir search;
+allow hal_lineage_fod_default sysfs_oppo_display:file rw_file_perms;
