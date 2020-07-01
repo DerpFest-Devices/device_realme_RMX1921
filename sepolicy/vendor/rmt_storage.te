@@ -1,4 +1,6 @@
 allow rmt_storage mdmreason_device:chr_file rw_file_perms;
 allow rmt_storage proc_oppoversion:dir search;
+allow rmt_storage proc_oppoversion:file { open read write };
 
 get_prop(rmt_storage, oppo_debug_prop);
+get_prop(rmt_storage, default_prop);

@@ -1,10 +1,20 @@
 allow hal_camera_default persist_camera_file:file rw_file_perms;
-allow hal_camera_default persist_camera_file:dir search;
+allow hal_camera_default persist_camera_file:dir { add_name search write };
+allow hal_camera_default persist_camera_file:file { setattr create };
 allow hal_camera_default proc:file rw_file_perms;
 
-get_prop(hal_camera_default, vendor_camera_prop)
-get_prop(hal_camera_default, oppo_debug_prop)
+get_prop(hal_camera_default, vendor_camera_prop);
+get_prop(hal_camera_default, oppo_debug_prop);
+get_prop(hal_camera_default, radio_prop);
+get_prop(hal_camera_default, apexd_prop);
+get_prop(hal_camera_default, audio_prop);
 
-r_dir_file(hal_camera_default, sysfs_net)
+r_dir_file(hal_camera_default, sysfs_net);
 
-set_prop(hal_camera_default, vendor_camera_prop)
+set_prop(hal_camera_default, vendor_camera_prop);
+
+allow hal_camera_default vendor_default_prop:property_service set;
+allow hal_camera_default proc_oppoversion:dir search;
+allow hal_camera_default debugfs:file { getattr open read };
+allow hal_camera_default proc_meminfo:file { getattr open read };
+allow hal_camera_default proc_oppoversion:file { open read };

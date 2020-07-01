@@ -1,0 +1,2 @@
+allow poweroffalarm_app cgroup:file write;
+allow poweroffalarm_app vendor_mpctl_prop:file read;

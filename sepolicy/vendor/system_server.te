@@ -1,0 +1,5 @@
+get_prop(system_server, persist_camera_prop);
+get_prop(system_server, vendor_default_prop);
+
+allow system_server sysfs:file { getattr open read write };
+allow system_server vendor_file:file { open read };
