@@ -1,0 +1,8 @@
+allow init system_file:file execute_no_trans;
+allow init persist_file:lnk_file read;
+allow init socket_device:sock_file { create setattr };
+allow init sysfs_battery_supply:file setattr; 
+allow init vendor_file:file { execute execute_no_trans };
+allow init vendor_toolbox_exec:file execute_no_trans;
+allow init sysfs_oppo_display:file rw_file_perms;
+allow init hwservicemanager:binder transfer;

@@ -1,0 +1,1 @@
+allow vendor_vppservice hal_capabilityconfigstore_qti_default:binder call;

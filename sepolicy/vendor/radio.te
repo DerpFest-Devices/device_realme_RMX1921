@@ -1,0 +1,3 @@
+allow radio gpuservice:binder call;
+allow radio vendor_file:file { execute read };
+allow radio vendor_mpctl_prop:file read;

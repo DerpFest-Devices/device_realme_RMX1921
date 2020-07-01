@@ -14,3 +14,8 @@ allow hal_fingerprint_default proc_touchpanel:file rw_file_perms;
 get_prop(hal_fingerprint_default, oppo_debug_prop);
 
 set_prop(hal_fingerprint_default, oppo_fingerprint_prop);
+
+get_prop(hal_fingerprint_default, default_prop);
+get_prop(hal_fingerprint_default, adsprpc_prop);
+
+allow hal_fingerprint_default default_prop:property_service set;

@@ -1,3 +1,11 @@
 get_prop(rild, oppo_debug_prop);
 
 r_dir_file(rild, proc_devinfo);
+
+allow rild cache_file:dir { add_name getattr create search write };
+allow rild cache_file:file { create open write };
+allow rild system_data_file:dir getattr;
+allow rild block_device:dir search;
+allow rild default_prop:property_service set;
+allow rild system_prop:property_service set;
+allow rild oppo_debug_prop:property_service set;

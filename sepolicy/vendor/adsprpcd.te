@@ -1,3 +1,7 @@
 allow adsprpcd sensors_persist_file:file create_file_perms;
 
 r_dir_file(adsprpcd, proc_oppoversion);
+
+allow adsprpcd persist_file:lnk_file read;
+allow adsprpcd sysfs_oppo_display:dir search;
+allow adsprpcd sysfs_oppo_display:file { getattr open read };

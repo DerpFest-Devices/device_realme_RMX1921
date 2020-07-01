@@ -1,0 +1,17 @@
+allow priv_app device:dir open;
+allow priv_app proc_interrupts:file open;
+allow priv_app proc_modules:file open;
+allow priv_app proc_net:file { getattr open read };
+allow priv_app sysfs:dir open;
+
+get_prop(priv_app, oppo_debug_prop);
+get_prop(priv_app, vendor_camera_prop);
+get_prop(priv_app, vendor_default_prop);
+get_prop(priv_app, vendor_mpctl_prop);
+
+dontaudit priv_app bt_firmware_file:filesystem getattr;
+dontaudit priv_app firmware_file:filesystem getattr;
+dontaudit priv_app sysfs_android_usb:file open;
+dontaudit priv_app proc:file open;
+dontaudit priv_app mnt_vendor_file:dir search;
+dontaudit priv_app vendor_file:file { execute read };
