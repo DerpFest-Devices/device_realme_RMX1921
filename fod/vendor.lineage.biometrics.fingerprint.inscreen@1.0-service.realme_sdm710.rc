@@ -1,10 +1,14 @@
 on boot
     chmod 0660 /sys/kernel/oppo_display/notify_fppress
     chmod 0660 /sys/kernel/oppo_display/dimlayer_hbm
-    chmod 0660 /sys/kernel/oppo_display/hbm
+    chmod 0660 /sys/kernel/oppo_display/notify_panel_blank
+    chmod 0660 /sys/kernel/oppo_display/aod_light_mode_set
+    chmod 0444 /proc/touchpanel/DOZE_STATUS
     chown system system /sys/kernel/oppo_display/notify_fppress
     chown system system /sys/kernel/oppo_display/dimlayer_hbm
-    chown system system /sys/kernel/oppo_display/hbm
+    chown system system /sys/kernel/oppo_display/notify_panel_blank
+    chown system system /sys/kernel/oppo_display/aod_light_mode_set
+    chown system system /proc/touchpanel/DOZE_STATUS
 
 service fingerprint-inscreen-1-0 /vendor/bin/hw/vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710
     interface vendor.lineage.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
