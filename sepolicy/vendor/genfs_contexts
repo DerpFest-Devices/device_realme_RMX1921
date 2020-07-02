@@ -17,3 +17,6 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.q
 
 # Devinfo
 genfscon proc /devinfo        u:object_r:proc_devinfo:s0
+
+# FPS info
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps        u:object_r:sysfs_graphics:s0

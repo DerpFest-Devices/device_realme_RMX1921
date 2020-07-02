@@ -44,3 +44,6 @@
 
 # sysfs uio
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,oembackup_sharedmem/uio/uio[0-9]+(/.*)?         u:object_r:sysfs_uio_file:s0
+
+# FPS Info
+/sys/class/drm/sde-crtc-0/measured_fps                              u:object_r:sysfs_fps:s0
