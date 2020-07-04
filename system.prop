@@ -104,3 +104,7 @@ persist.sys.oppo.proximity=true
 # Thermal
 persist.sys.enable.oscar=0
 persist.sys.oscar.dc=1
+
+# SSR
+persist.vendor.ssr.enable_ramdumps=0
+persist.vendor.ssr.restart_level=ALL_ENABLE
