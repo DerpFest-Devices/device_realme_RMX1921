@@ -1,1 +1,3 @@
-get_prop(appdomain, camera_prop)
+get_prop(appdomain, camera_prop) 
+get_prop(appdomain, vendor_camera_prop)
+get_prop(appdomain, persist_camera_prop)

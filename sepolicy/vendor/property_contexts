@@ -13,6 +13,7 @@ oppo.optical.             u:object_r:oppo_fingerprint_prop:s0
 vendor.fingerprint.optical.             u:object_r:oppo_fingerprint_prop:s0
 
 # Camera
+vendor.oppo.camera.                  u:object_r:vendor_camera_prop:s0
 oppo.camera.                  u:object_r:vendor_camera_prop:s0
 persist.front.skipdisplay.enable                  u:object_r:vendor_camera_prop:s0
 persist.aec.manual.mode                  u:object_r:vendor_camera_prop:s0
