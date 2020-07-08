@@ -15,3 +15,4 @@ r_dir_file(hal_audio_default, persist_audio_file);
 get_prop(hal_audio_default, vendor_audio_prop);
 allow hal_audio_default sysfs:dir { read open };
 allow hal_audio_default proc_audio_file:file { read };
+get_prop(hal_audio_default, default_prop);

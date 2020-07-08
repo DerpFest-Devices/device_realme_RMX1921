@@ -1,0 +1,1 @@
+allow vendor_ssr_setup sysfs:file { write };

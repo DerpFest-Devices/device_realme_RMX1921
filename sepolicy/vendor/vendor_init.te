@@ -16,7 +16,9 @@ allow vendor_init block_device:lnk_file setattr;
 allow vendor_init default_prop:file read;
 allow vendor_init oppo_debug_prop:file read;
 allow vendor_init persist_debug_prop:file read;
-allow vendor_init media_rw_data_file:file getattr;
+allow vendor_init media_rw_data_file:file { getattr relabelfrom };
+allow vendor_init proc_touchpanel:file { write };
+allow vendor_init bluetooth_prop:property_service { set };
 
 set_prop(vendor_init, vendor_camera_prop)
 set_prop(vendor_init, persist_camera_prop)

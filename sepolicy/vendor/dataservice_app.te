@@ -1,1 +1,2 @@
 allow dataservice_app vendor_file:file { execute read };
+allow qtidataservices_app self:socket { create read write ioctl };
