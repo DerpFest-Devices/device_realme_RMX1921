@@ -447,6 +447,12 @@
     <!--#endif /* VENDOR_EDIT */-->
 
     <!--#ifdef VENDOR_EDIT -->
+    <!--Jianfeng.Qiu@PSW.MM.AudioDriver.feature.1234017, 2017/04/05, Add for ktv loopback-->
+    <ctl name="INT0_MI2S_RX_DL_HL Switch" value="0" />
+    <ctl name="INT0_MI2S_RX Port Mixer INT3_MI2S_TX" value="0" />
+    <!--#endif /* VENDOR_EDIT */-->
+
+    <!--#ifdef VENDOR_EDIT -->
     <!--Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2018/07/31, Add for set micbiase voltage-->
     <ctl name="MicBias_V_Switch" value="V_2P70" />
     <!--#endif /* VENDOR_EDIT */-->
@@ -463,6 +469,39 @@
     <!--xiang.fei@PSW.MM.AudioDriver.feature, 2019/01/16, Add for headphone-->
     <ctl name="INT0_MI2S_RX Format" value="S16_LE" />
     <!--#endif /* VENDOR_EDIT */-->
+
+    <!--Jianfeng.Qiu@PSW.MM.AudioDriver.FTM, 2017/02/22, Add for audio test-->
+    <path name="main-mic-test">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="DEC1 Volume" value="100" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
+    </path>
+
+    <path name="sec-mic-test">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="DEC1 MUX" value="ADC2" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="DEC1 Volume" value="100" />
+        <ctl name="ADC3 Volume" value="6" />
+    </path>
+
+    <path name="anc-mic-test">
+    </path>
+
+    <path name="mmi-mic-record">
+        <ctl name="MicBias_V_Switch" value="V_1P80" />
+        <ctl name="DEC1 MUX" value="ADC1" />
+        <ctl name="DEC2 MUX" value="ADC2" />
+        <ctl name="ADC1_INP1 Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="ADC1 Volume" value="6" />
+        <ctl name="ADC3 Volume" value="6" />
+        <ctl name="INT3_MI2S_TX Channels" value="Two" />
+    </path>
+    <!--Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/02/22, Add for audio test end-->
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="gsm-mode">
@@ -1420,6 +1459,15 @@
         <path name="compress-offload-playback9 speaker" />
     </path>
 
+    <!--#ifdef VENDOR_EDIT -->
+    <!--xiang.fei@PSW.MM.AudioDriver.feature, 2018/02/19, Add for ktv loopback-->
+    <path name="audio-record ktv-afe">
+        <ctl name="MultiMedia1 Mixer INT3_MI2S_TX" value="1" />
+        <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
+        <ctl name="INT0_MI2S_RX Port Mixer INT3_MI2S_TX" value="1" />
+    </path>
+    <!--#endif -->
+
     <path name="audio-record">
         <ctl name="MultiMedia1 Mixer INT3_MI2S_TX" value="1" />
     </path>
@@ -2113,6 +2161,13 @@
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
+    <!--#ifndef VENDOR_EDIT-->
+    <!--Jianfeng.Qiu@PSW.MM.AudioDriver.feature.1234017, 2017/04/05, Add for ktv loopback-->
+    <path name="headset-mic-ktv">
+        <path name="adc2" />
+    </path>
+    <!--#endif /* VENDOR_EDIT */-->
+
     <path name="headset-mic-liquid">
         <path name="adc2" />
     </path>
@@ -2337,6 +2392,11 @@
         <ctl name="DEC1 Volume" value="80" />
         <ctl name="DEC2 Volume" value="80" />
         <ctl name="INT3_MI2S_TX Channels" value="Two" />
+    </path>
+
+    <!--//Jianfeng.Qiu@PSW.MM.AudioDriver.HAL.1065630, 2016/10/14, Add for use two mic for Wechat -->
+    <path name="handset-dmic-weixin-voice-rec">
+        <path name="handset-stereo-dmic-ef" />
     </path>
 
     <!--#ifdef VENDOR_EDIT-->

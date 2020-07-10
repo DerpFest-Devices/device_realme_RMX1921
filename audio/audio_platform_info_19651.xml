@@ -272,6 +272,9 @@
         <device name="SND_DEVICE_OUT_HEADPHONES_AUDIO_PLAYBACK_EFFECT" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_VOICE_PLAYBACK_EFFECT" backend="headphones" interface="INT0_MI2S_RX"/>
         <!--#Yongzhi.Zhang@PSW.MM.AudioDriver.HAL.1508657, 2018/08/02, add for pmic headset in VoiceScence-->
+        <!--#Nan.Zhong@PSW.MM.AudioDriver.HAL, 2019/03/13, add for pmic headset in game dirac effect-->
+        <device name="SND_DEVICE_OUT_HEADPHONES_DIRAC_GAME" backend="headphones" interface="INT0_MI2S_RX"/>
+        <!--#Nan.Zhong@PSW.MM.AudioDriver.HAL, 2019/03/13, add for pmic headset in game dirac effect-->
         <!--#Jianfeng.Qiu@PSW.MM.AudioDriver.HAL, 2017/09/22, Add for oppo config end-->
     </backend_names>
     <!-- below values are for ref purpose to OEM, doesn't contain actual hardware info on MTP -->
