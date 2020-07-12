@@ -82,7 +82,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES +=  \
-    persist.bluetooth.a2dp_offload.disabled=false \
+    persist.bluetooth.a2dp_offload.disabled=true \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
