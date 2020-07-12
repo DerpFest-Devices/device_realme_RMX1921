@@ -85,9 +85,15 @@
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
-        <boolean name="config_oppo_support_viwifi_bool" value="true" />
-        <int name="oppo.operator.ringtone" value="1" />
         <boolean name="support_video_conference_call_bool" value="true" />
+        <boolean name="editable_wfc_mode_bool" value="true" />
+        <boolean name="oppo_support_video_cf_bool" value="true" />
+        <boolean name="config_oppo_support_viwifi_bool" value="true" />
+        <boolean name="config_oppo_sms_ims_support_bool" value="false" />
+        <boolean name="config_oppo_hide_3g_2g" value="true" />
+        <boolean name="config_oppo_lte_preferred_for_second_slot" value="true" />
+        <boolean name="config_oppo_dual_lte_available_bool" value="true" />
+        <boolean name="carrier_name_override_bool" value="false" />
         <boolean name="config_oppo_ignore_nondds_23g_vowifi_disable" value="true" />
         <string-array name="mccmnc" num="23">
             <item value="40402" />
