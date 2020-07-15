@@ -71,6 +71,8 @@ on early-init
     # Load WIGIG platform driver
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy
 
+import /system/etc/init/init.devicesetting.rc
+
 on init
 
     # Support legacy paths
