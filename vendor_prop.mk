@@ -1,5 +1,5 @@
 # Audio
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     persist.vendor.audio.ambisonic.auto.profile=false \
     persist.vendor.audio.ambisonic.capture=false \
@@ -12,8 +12,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     persist.vendor.audio.hifi.int_codec=true \
     persist.vendor.audio.ras.enabled=false \
     persist.vendor.audio.spv3.enable=true \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
-    persist.vendor.bt.aac_frm_ctl.enabled=true \
     ro.vendor.audio.sdk.fluencetype=none \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.apptype.multirec.enabled=false \
@@ -79,9 +77,8 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     vendor.audio.volume.headset.gain.depcal=true \
     vendor.audio_hal.period_size=192
 
-
 # Bluetooth
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.disabled=true \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
@@ -97,7 +94,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
    persist.camera.HAL3.enabled=1
 
 # Codec2
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
    debug.stagefright.omx_default_rank.sw-audio=1 \
    debug.stagefright.omx_default_rank=0
 
@@ -111,30 +108,33 @@ PRODUCT_PROPERTY_OVERRIDES += \
    dalvik.vm.heapmaxfree=8m
 
 # Display
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1 \
     ro.vendor.display.cabl=2 \
     ro.sf.lcd_density=420
 
 # DRM
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
 # FRP
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Graphics
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
     ro.opengles.version=196610
 
 # IMS
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.dbg.ims_volte_enable=1 \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.data_con_rprt=1
 
 # LMKD
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -145,7 +145,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.log_stats=true
 
 # Perf
-PRODUCT_PROPERTY_OVERRIDES +=  \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 # Surfaceflinger properties
@@ -153,4 +153,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
     ro.surface_flinger.has_HDR_display=true \
     ro.surface_flinger.use_color_management=true \
-    ro.surface_flinger.wcg_composition_dataspace=143261696
+    ro.surface_flinger.wcg_composition_dataspace=143261696 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.max_virtual_display_dimension=4096
