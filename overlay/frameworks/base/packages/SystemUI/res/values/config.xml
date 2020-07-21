@@ -26,6 +26,9 @@
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
+    <!-- Doze: does this device support STATE_DOZE_SUSPEND?  -->
+    <bool name="doze_suspend_display_state_supported">true</bool>
+
     <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/class/drm/sde-crtc-0/measured_fps</string>
 
