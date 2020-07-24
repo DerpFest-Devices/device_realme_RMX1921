@@ -965,13 +965,6 @@ vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
-# Keystore
-vendor/lib/libspcom.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
-vendor/lib64/libspcom.so
-vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
-
 # Latency
 product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 product/framework/vendor.qti.latency-V2.0-java.jar
@@ -1153,6 +1146,8 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
+vendor/lib/libspcom.so
+vendor/lib64/libspcom.so
 
 # Power-off alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk
