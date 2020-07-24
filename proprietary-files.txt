@@ -347,7 +347,6 @@ vendor/lib64/libVDSuperPhotoAPI.so
 vendor/lib64/libvidhance.so
 vendor/etc/license.lic
 vendor/lib64/libbokehclient.so
-vendor/lib64/libdisplayconfig.so
 vendor/lib64/libloadalgo_stub.so
 vendor/lib64/libnativehelpers.so
 vendor/lib64/libocam_common.so
