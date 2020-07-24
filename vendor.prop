@@ -119,7 +119,6 @@ persist.vendor.camera.eis.enable=1
 persist.vendor.cne.feature=1
 
 # Codec2
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 
 # Display
