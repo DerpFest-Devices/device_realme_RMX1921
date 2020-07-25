@@ -210,7 +210,6 @@ vendor/lib/libcapiv2vop.so
 vendor/lib/libcom.qti.chinodeutils.so
 vendor/lib/libcvface_api.so
 vendor/lib/libdepthmap.so
-vendor/lib/libmegface.so
 vendor/lib/libmpbase.so
 vendor/lib/libSNPE.so
 vendor/lib/libSNPE_G.so
