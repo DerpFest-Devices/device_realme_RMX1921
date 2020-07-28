@@ -352,7 +352,7 @@ Return<void> HalProxy::debug(const hidl_handle& fd, const hidl_vec<hidl_string>&
         return Void();
     }
 
-    android::base::borrowed_fd writeFd = dup(fd->data[0]);
+    int writeFd = fd->data[0];
 
     std::ostringstream stream;
     stream << "===HalProxy===" << std::endl;
