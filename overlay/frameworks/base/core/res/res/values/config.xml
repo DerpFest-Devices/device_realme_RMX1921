@@ -541,4 +541,8 @@
 
     <!-- The max scale for the wallpaper when it's zoomed in -->
     <item name="config_wallpaperMaxScale" format="float" type="dimen">1.00</item>
+
+    <!-- Whether Device support LiveDisplay or not -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+
 </resources>
