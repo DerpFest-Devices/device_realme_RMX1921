@@ -41,7 +41,7 @@
          to maximize power savings but not all devices support it.
          Refer to power.h for details.
     -->   
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
@@ -515,7 +515,7 @@
 
     <!-- Specifies the maximum burn-in offset displacement from the center.
          If -1, no maximum value will be used. -->
-    <integer name="config_burnInProtectionMaxRadius">70</integer>
+    <integer name="config_burnInProtectionMaxRadius">-1</integer>
 
     <!-- Specifies the minimum burn-in offset horizontally. -->
     <integer name="config_burnInProtectionMinHorizontalOffset">-15</integer>
