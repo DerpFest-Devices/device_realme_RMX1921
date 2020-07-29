@@ -36,4 +36,7 @@
     <bool name="config_statusBarBurnInProtection">true</bool>
     <integer name="config_shift_interval">40</integer>
 
+    <!-- Show battery icon in the QS Panel instead of in the header -->
+    <bool name="config_batteryInQSPanel">false</bool>
+
 </resources>
