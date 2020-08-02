@@ -602,4 +602,7 @@
     <!-- Whether or not we should show vendor mismatch message -->
     <bool name="config_show_vendor_mismatch_message">false</bool>
 
+    <!-- Wired/BT headset focus mode -->
+    <bool name="config_deviceRingtoneFocusMode">true</bool>
+
 </resources>
