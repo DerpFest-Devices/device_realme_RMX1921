@@ -1,1 +1,1 @@
-allow vendor_ssr_setup sysfs:file { write };
+allow vendor_ssr_setup sysfs:file { write open };
