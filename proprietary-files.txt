@@ -106,6 +106,7 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
+vendor/lib/soundfx/libdiraceffect.so
 
 # Audio - Firmware
 vendor/firmware/tfa98xx_19651.cnt
@@ -1068,6 +1069,12 @@ vendor/lib/libOmxWmaDec.so
 # NFC
 vendor/odm/etc/vintf/manifest_nfc_ese.xml
 vendor/odm/etc/vintf/manifest_secure_element_uicc.xml
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
+vendor/lib/vendor.qti.esepowermanager@1.0.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
