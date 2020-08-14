@@ -1152,7 +1152,7 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service charger /charger
+service vendor.charger /system/bin/chargeonlymode
     class charger
     user system
     group system graphics input
