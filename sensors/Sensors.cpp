@@ -58,7 +58,6 @@ Sensors::Sensors()
     : mInitCheck(NO_INIT),
       mSensorModule(nullptr),
       mSensorDevice(nullptr),
-      mSensorHandleProximityWakeup(-1),
       mSensorHandleProximity(-1){
     status_t err = OK;
     if (UseMultiHal()) {
@@ -129,20 +128,10 @@ Return<void> Sensors::getSensorsList(getSensorsList_cb _hidl_cb) {
 
         convertFromSensor(*src, dst);
 
-        if (dst->typeAsString == "qti.sensor.wise_light") {
-            dst->type = SensorType::LIGHT;
+	    if (dst->typeAsString == "android.sensor.tp_proximity") {
+            dst->type = SensorType::PROXIMITY;
+            mSensorHandleProximity = dst->sensorHandle;
             dst->typeAsString = "";
-        }
-
-	 if (dst->typeAsString == "qti.sensor.proximity_fake") {
-             dst->type = SensorType::PROXIMITY;
-             mSensorHandleProximity = dst->sensorHandle;
-             dst->typeAsString = "";
-        }
-
-        // For proximity Wakeup
-        if (dst->name == "proximity_wakeup") { 
-            mSensorHandleProximityWakeup = dst->sensorHandle;
         }
     }
 
@@ -357,26 +346,7 @@ void Sensors::convertFromSensorEvents(
         Event *dst = &(*dstVec)[i];
 
         convertFromSensorEvent(src, dst);
-
-        //dev-harsh1998 add delay to fix proximity event updates
-        // https://www.reddit.com/r/learnprogramming/comments/732hma/is_it_possible_to_make_a_while_loop_for_a_certain
-        if (isProximity(dst->sensorHandle)) {
-            if (dst->u.scalar == 0){ 
-            time_t start = clock();
-            while ((clock() - start) * 0.001 < 0.5f)
-                dst->u.scalar = 0;
-            } else { 
-            time_t start = clock();
-            while ((clock() - start) * 0.001 < 0.5f)
-                dst->u.scalar = 5;
-            }
-        }
     }
-}
-
-bool Sensors::isProximity(int32_t sensor_handle) {
-    return sensor_handle == mSensorHandleProximityWakeup
-        || sensor_handle == mSensorHandleProximity;
 }
 
 ISensors *HIDL_FETCH_ISensors(const char * /* hal */) {
