@@ -805,6 +805,11 @@ vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
 # Graphics (Vulkan)
+vendor/etc/permissions/android.hardware.opengles.aep.xml
+vendor/etc/permissions/android.hardware.vulkan.compute.xml 
+vendor/etc/permissions/android.hardware.vulkan.level.xml 
+vendor/etc/permissions/android.hardware.vulkan.version.xml
+vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 vendor/lib64/hw/vulkan.sdm710.so
 vendor/lib/hw/vulkan.sdm710.so
 
