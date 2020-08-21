@@ -21,7 +21,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-     <!-- Auto-brightness sensor type string -->
+    <!-- Auto-brightness sensor type string -->
     <string name="config_displayLightSensorType">"qti.sensor.wise_light"</string>
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
@@ -107,7 +107,7 @@
     <!-- Fast brightness animation ramp rate in brightness units per second-->
     <integer translatable="false" name="config_brightness_ramp_rate_fast">180</integer>
 
-     <!-- Slow brightness animation ramp rate in brightness units per second-->
+    <!-- Slow brightness animation ramp rate in brightness units per second-->
     <integer translatable="false" name="config_brightness_ramp_rate_slow">60</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
@@ -229,79 +229,6 @@
     
     <!-- Operating volatage for bluetooth controller. 0 by default-->
      <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
-         should be empty. -->     
-    <string-array name="config_tether_bluetooth_regexs">
-        <item>bnep\\d</item>
-        <item>bt-pan</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         Wifi P2P interfaces.  If the device doesn't want to support tethering over Wifi P2p this
-         should be empty.  An example would be "p2p-p2p.*" -->
-    <string-array translatable="false" name="config_tether_wifi_p2p_regexs">
-        <item>"p2p\\d"</item>
-    </string-array>
-
-    <!-- Dhcp range (min, max) to use for tethering purposes -->
-    <!-- USB is  192.168.42.1 and 255.255.255.0
-         Wifi is 192.168.43.1 and 255.255.255.0
-         BT is limited to max default of 5 connections. 192.168.44.1 to 192.168.48.1
-         with 255.255.255.0
-         P2P is 192.168.49.1 and 255.255.255.0
-         Wigig is 192.168.50.1 and 255.255.255.0
-         Wigig P2P is 192.168.51.1 and 255.255.255.0
-    -->    
-    <string-array name="config_tether_dhcp_range">
-        <item>192.168.42.2</item>
-        <item>192.168.42.254</item>
-        <item>192.168.43.2</item>
-        <item>192.168.43.254</item>
-        <item>192.168.44.2</item>
-        <item>192.168.44.254</item>
-        <item>192.168.45.2</item>
-        <item>192.168.45.254</item>
-        <item>192.168.46.2</item>
-        <item>192.168.46.254</item>
-        <item>192.168.47.2</item>
-        <item>192.168.47.254</item>
-        <item>192.168.48.2</item>
-        <item>192.168.48.254</item>
-        <item>192.168.49.2</item>
-        <item>192.168.49.254</item>
-        <item>192.168.50.2</item>
-        <item>192.168.50.254</item>
-        <item>192.168.51.2</item>
-        <item>192.168.51.254</item>
-    </string-array>
-    
-    <integer-array name="config_tether_upstream_types">
-        <item>0</item>
-        <item>1</item>
-        <item>5</item>
-        <item>7</item>
-    </integer-array>
- 
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         USB interfaces.  If the device doesn't want to support tething over USB this should
-         be empty.  An example would be "usb.*" -->   
-    <string-array name="config_tether_usb_regexs">
-        <item>usb\\d</item>
-        <item>rndis\\d</item>
-    </string-array>
-
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
-         should be empty.  An example would be "softap.*" -->
-    <string-array name="config_tether_wifi_regexs">
-        <item>"softap0"</item>
-        <item>"wigig0"</item>
-        <item>"wifi_br0"</item>
-        <item>"wlan0"</item>
-        <item>"wlan1"</item>
-    </string-array>
 
     <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
          [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
@@ -538,7 +465,6 @@
 
     <!-- Specifies the maximum burn-in offset vertically. -->
     <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
-
  
     <!-- The default journal mode to use use when Write-Ahead Logging is not active.
          Choices are: OFF, DELETE, TRUNCATE, PERSIST and MEMORY.
