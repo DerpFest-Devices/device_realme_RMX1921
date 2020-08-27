@@ -31,7 +31,7 @@ import android.util.Log;
 import android.os.Handler;
 
 public class InfraredSensor implements SensorEventListener {
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     private static final String TAG = "InfraredSensor";
     private static final int SENSORID = 33171005; //stk_st2x2x
 
