@@ -31,7 +31,7 @@ import android.util.Log;
 public class RealmeProximityHelperService extends Service {
     private static final String TAG = "RealmeProximityHelperService";
     private static final String PS_STATUS = "/proc/touchpanel/fd_enable";
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
 
     // Create Variable for Infrared sensor class usage
     private DisplayStateHelper mDisplayHelper;
