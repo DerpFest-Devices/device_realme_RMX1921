@@ -31,7 +31,7 @@ import android.util.Log;
 
 public class DisplayStateHelper implements DisplayListener {
      private static final String TAG = "DisplayStateListener";
-     private static final boolean DEBUG = true;
+     private static final boolean DEBUG = false;
      private Context mcontext;
      private InfraredSensor mFakeProximity;
 

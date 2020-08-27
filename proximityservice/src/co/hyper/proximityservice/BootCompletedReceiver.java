@@ -27,10 +27,11 @@ import android.util.Log;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "RealmeProximityHelper";
+    private static final boolean DEBUG = false;
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        Log.d(TAG, "Starting");
+        if (DEBUG) Log.d(TAG, "Starting");
         context.startService(new Intent(context, RealmeProximityHelperService.class));
     }
 }
