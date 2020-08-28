@@ -10,3 +10,6 @@ get_prop(system_app, oppo_debug_prop);
 get_prop(system_app, persist_camera_prop);
 get_prop(system_app, vendor_mpctl_prop);
 get_prop(system_app, vendor_default_prop);
+
+allow system_app sysfs_battery_supply:dir search;
+allow system_app sysfs_battery_supply:file { getattr open read };
