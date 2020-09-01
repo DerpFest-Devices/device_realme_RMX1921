@@ -96,11 +96,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mPocketPreference.setEnabled(dozeEnabled);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
-        // Hide proximity sensor related features if the device doesn't support them
-        if (!DozeUtils.getProxCheckBeforePulse(getActivity())) {
-            getPreferenceScreen().removePreference(proximitySensorCategory);
-        }
-
         // Hide AOD if not supported and set all its dependents otherwise
         if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
