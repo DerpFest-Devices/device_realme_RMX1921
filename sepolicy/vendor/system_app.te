@@ -14,3 +14,5 @@ allow system_app sysfs_scharge:file { getattr open read write };
 allow system_app sysfs_usb_supply:file { getattr open read write };
 allow system_app sysfs_oppo_display:dir search;
 allow system_app sysfs_oppo_display:file { getattr open read write };
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file r_file_perms;
