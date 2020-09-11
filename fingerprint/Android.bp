@@ -16,7 +16,6 @@ cc_binary {
         "libcutils",
         "liblog",
         "libhidlbase",
-        "libhidltransport",
         "libhardware",
         "libutils",
         "libbase",
