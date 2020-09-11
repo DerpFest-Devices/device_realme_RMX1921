@@ -473,11 +473,18 @@
     <!-- RMX1921 : Define dimensions of the notch -->
     <string name="config_mainBuiltInDisplayCutout">M -143,0 L -143,76 L 143,76 L 143,0 Z</string>
     
-    <dimen name="status_bar_height_portrait">32.0dip</dimen>
-    
-    <dimen name="status_bar_icon_size">22.0dip</dimen>
-    <dimen name="status_bar_system_icon_intrinsic_size">17.0dip</dimen>
-    <dimen name="status_bar_system_icon_size">15.0dip</dimen>
+    <dimen name="status_bar_height_portrait">29dp</dimen>
+
+    <!-- Height of the status bar in landscape -->
+    <dimen name="status_bar_height_landscape">24dp</dimen>
+
+    <!-- Radius of the software rounded corners at the top of the display in its natural
+        orientation. If zero, the value of rounded_corner_radius is used. -->
+    <dimen name="rounded_corner_radius_top">90px</dimen>
+
+    <!-- Radius of the software rounded corners at the bottom of the display in its natural
+        orientation. If zero, the value of rounded_corner_radius is used. -->
+    <dimen name="rounded_corner_radius_bottom">94px</dimen>
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
