@@ -1150,7 +1150,6 @@ vendor/lib/libqmiservices.so
 -system_ext/priv-app/ims/ims.apk|cccc15a4fbaff0f412e09e63744fc95c3c339da8
 -system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|344ad9179560cc83b208f62fb009fdc2799609fd
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|a32f88ddcc8f9cba18aa5697ee5bd52201e89b13
-system_ext/framework/qti-telephony-common.jar|e6f7c4df7b925073525d9b678f27087e1f45017f
 system_ext/framework/qcrilhook.jar|ad688364314100318f305ed4ab5defec8766b20a
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
 system_ext/etc/permissions/telephonyservice.xml|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
