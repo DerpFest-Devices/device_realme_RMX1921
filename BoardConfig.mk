@@ -174,7 +174,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_RMX1921

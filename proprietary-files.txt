@@ -1211,7 +1211,6 @@ vendor/lib/libqmiservices.so
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/qcrilhook.jar|3afd31d5a08e220904441d5c8c0bcf43b8ebbbfe
-product/framework/qti-telephony-common.jar|fabeba9162fd802a1ba048ddbb5b3b2d23545183
 product/framework/QtiTelephonyServicelibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|c59fcb4a375dec19a0208dcfcc4696e0ccfd3a13
 -vendor/app/IWlanService/IWlanService.apk
