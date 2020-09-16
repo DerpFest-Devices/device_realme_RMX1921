@@ -196,6 +196,7 @@ on boot
     write /proc/touchpanel/oppo_tp_limit_enable 0
     write /proc/touchpanel/oppo_tp_direction 1
     write /proc/touchpanel/game_switch_enable 1
+    write /proc/touchpanel/tp_fw_update 1
 
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
