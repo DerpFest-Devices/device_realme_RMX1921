@@ -1,5 +1,0 @@
-allow hal_lineage_fod_default sysfs_oppo_display:dir search;
-allow hal_lineage_fod_default sysfs_oppo_display:file rw_file_perms;
-allow hal_lineage_fod_default default_prop:file { getattr };
-allow hal_lineage_fod_default proc_touchpanel:dir search;
-allow hal_lineage_fod_default proc_touchpanel:file { getattr open read };

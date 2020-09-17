@@ -2,9 +2,6 @@
 /mnt/vendor/persist/audio(/.*)?                                                u:object_r:persist_audio_file:s0
 /proc/asound/card0/codecs(/.*)?                                                u:object_r:proc_audio_file:s0
 
-# FOD Hal
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.realme_sdm710    u:object_r:hal_lineage_fod_default_exec:s0
-
 # Goodix Fingerprint device
 /dev/goodix_fp                                                                                           u:object_r:goodix_device:s0
 
