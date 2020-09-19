@@ -164,4 +164,13 @@ $(WCNSS_MAC_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK) $(WCNSS_MAC_SYMLINK)
 
+OPPO_NFC_SYMLINK := $(TARGET_OUT_VENDOR)/etc/permissions/com.oppo.nfc_feature.xml
+$(OPPO_NFC_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating NFC permisisons symlink: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@		
+	$(hide) ln -sf /proc/oppoVersion/nfc_feature $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(OPPO_NFC_SYMLINK)
+
 endif
