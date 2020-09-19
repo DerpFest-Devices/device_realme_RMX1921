@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+<!-- Devices that support MIFARE need to declare NXP's feature constant -->
+    <feature name="com.nxp.mifare" />
+     <!-- This feature indicates that the device supports host-based
+          NFC card emulation -->
+    <feature name="android.hardware.nfc.hce" />
+    <!-- This feature indicates that the device supports host-based
+         NFC-F card emulation -->
+    <feature name="android.hardware.nfc.hcef" />
+    <!-- This is the standard feature indicating that the device can communicate
+         using Near-Field Communications (NFC). -->
+    <feature name="android.hardware.nfc" />
+    <feature name="android.hardware.nfc.any" />
+    <library name="com.android.nfc_extras"
+        file="/system/framework/com.android.nfc_extras.jar" />
+</permissions>
