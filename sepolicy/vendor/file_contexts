@@ -50,3 +50,6 @@
 
 # Dolby
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
+
+# Sensor
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.realme_sdm710                     u:object_r:hal_sensors_default_exec:s0

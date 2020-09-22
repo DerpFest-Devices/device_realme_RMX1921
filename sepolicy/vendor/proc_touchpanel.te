@@ -1,0 +1,1 @@
+allow proc_touchpanel proc:filesystem associate;
