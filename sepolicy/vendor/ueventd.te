@@ -2,3 +2,4 @@ allow ueventd debugfs:dir { read open relabelfrom };
 allow ueventd debugfs:file getattr;
 allow ueventd debugfs_wakeup_sources:file getattr;
 allow ueventd qti_debugfs:dir relabelto;
+allow ueventd self:capability sys_nice;

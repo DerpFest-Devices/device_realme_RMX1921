@@ -10,3 +10,4 @@ allow rild default_prop:property_service set;
 allow rild system_prop:property_service set;
 allow rild oppo_debug_prop:property_service set;
 allow rild opporadio_hwservice:hwservice_manager add;
+allow rild default_android_hwservice:hwservice_manager add;

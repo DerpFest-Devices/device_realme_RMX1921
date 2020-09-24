@@ -20,3 +20,4 @@ get_prop(hal_fingerprint_default, adsprpc_prop);
 
 allow hal_fingerprint_default default_prop:property_service set;
 allow hal_fingerprint_default dcs_hwservice:hwservice_manager find;
+allow hal_fingerprint_default default_android_hwservice:hwservice_manager find;
