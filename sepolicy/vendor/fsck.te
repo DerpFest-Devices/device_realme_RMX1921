@@ -1,5 +1,5 @@
 dontaudit fsck self:capability { dac_override dac_read_search };
-allow fsck block_device:blk_file { open read write };
+allow fsck block_device:blk_file { ioctl open read write };
 allow fsck tmpfs:blk_file getattr;
 allow fsck mnt_vendor_file:dir getattr;
 allow fsck modem_efs_partition_device:blk_file { ioctl open read write };

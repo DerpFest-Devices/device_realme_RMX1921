@@ -1,1 +1,2 @@
 allow mediaprovider sdcardfs:lnk_file getattr;
+allow mediaprovider mnt_media_rw_file:dir getattr;
