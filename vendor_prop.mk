@@ -124,7 +124,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
-    debug.sf.hw=0 \
+    debug.sf.hw=1 \
     ro.opengles.version=196610
 
 # IMS
