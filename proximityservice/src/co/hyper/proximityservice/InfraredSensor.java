@@ -33,7 +33,7 @@ import android.os.Handler;
 public class InfraredSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "InfraredSensor";
-    private static final int SENSORID = 33171005; //stk_st2x2x
+    private static final int SENSORID = 33171027; //stk_st2x2x NonWakeup (High Accuracy)
 
     private static final String PS_STATUS = "/proc/touchpanel/fd_enable";
     private static final String PS_MASK = "/proc/touchpanel/prox_mask";
@@ -49,7 +49,7 @@ public class InfraredSensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Intialising InfraDED sensor constructor");
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(SENSORID, true);
+        mSensor = mSensorManager.getDefaultSensor(SENSORID, false);
     }
 
     @Override
