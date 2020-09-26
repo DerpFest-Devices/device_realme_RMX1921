@@ -58,7 +58,7 @@ public class InfraredSensor implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         /* if we are here this means sensor live and is being used */
         sensorAlive = true;
-        if (event.values[0] <= 3.50f) {
+        if (event.values[0] < 5.0f) {
             /* We don't need to do anything since the sensor is near */
             if (DEBUG) Log.d(TAG, "Near detected, Sending same in 50ms");
 
