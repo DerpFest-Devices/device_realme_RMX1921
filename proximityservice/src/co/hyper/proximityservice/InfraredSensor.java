@@ -34,6 +34,7 @@ public class InfraredSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "InfraredSensor";
     private static final int SENSORID = 33171027; //stk_st2x2x NonWakeup (High Accuracy)
+    private static final int MASK_TIME = 150;
 
     private static final String PS_STATUS = "/proc/touchpanel/fd_enable";
     private static final String PS_MASK = "/proc/touchpanel/prox_mask";
@@ -58,12 +59,13 @@ public class InfraredSensor implements SensorEventListener {
         sensorAlive = true;
         if (event.values[0] < 5.0f) {
             /* We don't need to do anything since the sensor is near */
-            if (DEBUG) Log.d(TAG, "Exiting since near the sensor");    
+            if (DEBUG) Log.d(TAG, "Near detected, Sending same in 50ms");
+            (new Handler()).postDelayed(this::sendNear, MASK_TIME-100);
             return;
         }
         /* Let's do stuff ? */
-        if (DEBUG) Log.d(TAG, "Sending proximity far event in 150ms");
-        (new Handler()).postDelayed(this::sendFar, 150);
+        if (DEBUG) Log.d(TAG, "Sending proximity far event in 150");
+        (new Handler()).postDelayed(this::sendFar, MASK_TIME);
     }
 
     @Override
