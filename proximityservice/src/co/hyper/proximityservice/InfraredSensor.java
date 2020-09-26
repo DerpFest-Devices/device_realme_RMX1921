@@ -98,4 +98,10 @@ public class InfraredSensor implements SensorEventListener {
        if (DEBUG) Log.d(TAG, "Sent far event to Proximity mask node");
        FileHelper.writeValue(PS_MASK, "1");
    }
+
+   /* Set proximity status as near */
+   void sendNear() {
+       if (DEBUG) Log.d(TAG, "Sent near event to proximity mask node");
+       FileHelper.writeValue(PS_MASK, "0");
+    }
 }
