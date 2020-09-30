@@ -255,26 +255,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
            <instance>default</instance>
        </interface>
    </hal>
-    <!-- gnss -->
-    <hal format="hidl">
-        <name>android.hardware.gnss</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IGnss</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IGnss/gnss_vendor</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.gnss</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
-        <interface>
-            <name>ILocHidlGnss</name>
-            <instance>gnss_vendor</instance>
-        </interface>
-    </hal>
     <hal format="hidl">
         <name>vendor.nxp.hardware.nfc</name>
         <transport>hwbinder</transport>
@@ -300,6 +280,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <interface>
             <name>INxpEse</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.secure_element</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISecureElement</name>
+            <instance>SIM1</instance>
+            <instance>SIM2</instance>
         </interface>
     </hal>
    <!-- RIL AUDIO HAL -->
