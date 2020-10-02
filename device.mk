@@ -412,6 +412,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.RMX1921
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
