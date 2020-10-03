@@ -32,6 +32,9 @@ import android.util.Log;
 public class DisplayStateHelper implements DisplayListener {
      private static final String TAG = "DisplayStateListener";
      private static final boolean DEBUG = false;
+     // Do not let the sensor register for non call events such as doze
+     private static final String CALL_ST = "/proc/touchpanel/incall_status";
+
      private Context mcontext;
      private InfraredSensor mFakeProximity;
 
@@ -56,6 +59,10 @@ public class DisplayStateHelper implements DisplayListener {
        if (displayId == Display.DEFAULT_DISPLAY && isDefaultDisplayOff(mcontext)) {
            // register proximity
            if (DEBUG) Log.d(TAG, "Display OFF, Attempting to register proximity sensor");
+           if (!FileHelper.getFileValueAsBoolean(CALL_ST, false)) {
+               if (DEBUG) Log.d(TAG, "Not a call event,possible doze event bailing out");
+               return;
+           }
            mFakeProximity.enable();
        } else {
            // unregister proximity
