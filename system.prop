@@ -56,15 +56,16 @@ persist.debug.wfd.enable=1
 ro.oppo.screen.heteromorphism=444,0:636,76
 
 # Dex
-pm.dexopt.ab-ota=speed-profile
 dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.dex2oat-filter=speed
-dalvik.vm.image-dex2oat-filter=speed
 ro.vendor.qti.am.reschedule_service=true
 ro.sys.fw.dex2oat_thread_count=8
 dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.dex2oat-threads=4
-dalvik.vm.image-dex2oat-threads=4
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.dex2oat-filter=quicken
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.image-dex2oat-filter=quicken
+dalvik.vm.image-dex2oat-threads=8
 
 # Display post-processing
 ro.qualcomm.cabl=0
