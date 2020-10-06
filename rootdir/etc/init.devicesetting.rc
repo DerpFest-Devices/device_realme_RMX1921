@@ -14,7 +14,3 @@ on boot
     chmod 0666 /proc/touchpanel/game_switch_enable
     chmod 0666 /proc/touchpanel/oppo_tp_direction
     chmod 0666 /proc/touchpanel/oppo_tp_limit_enable
-
-    #Preset touchpanel tuner nodes
-    write /proc/touchpanel/oppo_tp_limit_enable 0
-    write /proc/touchpanel/oppo_tp_direction 1
