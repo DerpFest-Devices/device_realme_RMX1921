@@ -14,10 +14,10 @@ vendor.bluetooth.soc=cherokee
 
 # Camera
 ro.camera.hfr.enable=1
+persist.camera.HAL3.enabled=1
 ro.camera.relight.enable=0
 ro.camera.attr.detect.enable=1
 ro.camera.notify_nfc=1
-ro.camera.temperature.limit=470
 camera.disable_zsl_mode=true
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
