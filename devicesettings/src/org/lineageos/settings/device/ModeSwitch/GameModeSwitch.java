@@ -50,6 +50,8 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(getFile(), enabled ? "1" : "0");
+        Utils.writeValue(DeviceSettings.TP_LIMIT_ENABLE, enabled ? "0" : "1" );
+        Utils.writeValue(DeviceSettings.TP_DIRECTION, enabled ? "1" : "0" );
         Log.e(TAG, "game mode set to " + enabled);
         return true;
     }
