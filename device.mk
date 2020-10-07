@@ -431,6 +431,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+#Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.qti
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
