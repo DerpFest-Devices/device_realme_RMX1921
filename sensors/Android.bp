@@ -8,14 +8,14 @@ cc_library_shared {
         "liblog",
         "libcutils",
         "libhardware",
-        "libbase",
-        "libutils",
         "libhidlbase",
         "android.hardware.sensors@1.0",
     ],
     static_libs: [
         "android.hardware.sensors@1.0-convert",
         "multihal_realme_sdm710",
+        "libbase",
+        "libutils",
     ],
 }
 
