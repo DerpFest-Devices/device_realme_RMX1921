@@ -33,7 +33,7 @@ import android.os.Handler;
 public class InfraredSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "InfraredSensor";
-    private static final int SENSORID = 33171027; //stk_st2x2x NonWakeup (High Accuracy)
+    private static final int SENSORID = 33171005; //stk_st2x2x Wakeup
     private static final int MASK_TIME = 150;
 
     private static final String PS_STATUS = "/proc/touchpanel/fd_enable";
@@ -51,14 +51,14 @@ public class InfraredSensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Intialising InfraDED sensor constructor");
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(SENSORID, false);
+        mSensor = mSensorManager.getDefaultSensor(SENSORID, true);
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
         /* if we are here this means sensor live and is being used */
         sensorAlive = true;
-        if (event.values[0] < 5.0f) {
+        if (event.values[0] <= 2.00f) {
             /* We don't need to do anything since the sensor is near */
             if (DEBUG) Log.d(TAG, "Near detected, Sending same in 50ms");
 
