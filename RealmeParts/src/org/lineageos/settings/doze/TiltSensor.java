@@ -22,26 +22,25 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.SystemClock;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.os.SystemClock;
 import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ProximitySensor implements SensorEventListener {
+public class TiltSensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "ProximitySensor";
+    private static final String TAG = "TiltSensor";
 
-    // Maximum wakelock timeout
+    private static final String TILT_SENSOR = "android.sensor.tilt_detector";
+
+    private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int MIN_WAKEUP_INTERVAL_MS = 1000;
     private static final int WAKELOCK_TIMEOUT_MS = 300;
-
-
-    // Minimum time until the device is considered to have been in the pocket: 1.2s
-    private static final int POCKET_MIN_DELTA_NS = 1200 * 1000 * 1000;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -50,13 +49,12 @@ public class ProximitySensor implements SensorEventListener {
     private PowerManager mPowerManager;
     private WakeLock mWakeLock;
 
-    private boolean mSawNear = false;
-    private long mInPocketTime = 0;
+    private long mEntryTimestamp;
 
-    public ProximitySensor(Context context) {
+    public TiltSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(33171005, true); //Stk_st2x2x Wakeup mode
+        mSensor = DozeUtils.getSensor(mSensorManager, TILT_SENSOR);
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
@@ -69,32 +67,35 @@ public class ProximitySensor implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         boolean isRaiseToWake = DozeUtils.isRaiseToWakeEnabled(mContext);
-        boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        if (mSawNear && !isNear) {
-            if (shouldPulse(event.timestamp)) {
-                if (isRaiseToWake) {
-                    mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
-                    mPowerManager.wakeUp(SystemClock.uptimeMillis(),
-                        PowerManager.WAKE_REASON_GESTURE, TAG);
+        boolean isSmartWake = DozeUtils.isSmartWakeEnabled(mContext);
+
+        if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
+
+        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+
+        if (!isSmartWake) {
+            if (isRaiseToWake) {
+                if (delta < MIN_WAKEUP_INTERVAL_MS) {
+                    return;
                 } else {
-                    DozeUtils.launchDozePulse(mContext);
+                    if (delta < MIN_PULSE_INTERVAL_MS) {
+                        return;
+                    }
                 }
             }
-        } else {
-            mInPocketTime = event.timestamp;
         }
-        mSawNear = isNear;
-    }
 
-    private boolean shouldPulse(long timestamp) {
-        long delta = timestamp - mInPocketTime;
+        mEntryTimestamp = SystemClock.elapsedRealtime();
 
-        if (DozeUtils.isPocketGestureEnabled(mContext)) {
-            return true;
-        } else if (DozeUtils.isPocketGestureEnabled(mContext)) {
-            return delta >= POCKET_MIN_DELTA_NS;
+        if (event.values[0] == 0) {
+            if (isRaiseToWake || isSmartWake) {
+                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+                PowerManager.WAKE_REASON_GESTURE, TAG);
+            } else {
+                DozeUtils.launchDozePulse(mContext);
+            }
         }
-        return false;
     }
 
     @Override
@@ -105,6 +106,7 @@ public class ProximitySensor implements SensorEventListener {
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
+            mEntryTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(this, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
         });

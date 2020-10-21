@@ -49,28 +49,25 @@
     <!-- Proximity sensor -->
     <string name="proximity_sensor_title">Proximity sensor</string>
 
-    <!-- Hand wave gesture -->
-    <string name="hand_wave_gesture_title">Hand wave</string>
-    <string name="hand_wave_gesture_summary">Pulse notifications on hand wave</string>
-    <string name="hand_wave_gesture_flat_title">Detect orientation</string>
-    <string name="hand_wave_gesture_flat_summary">Pulse only if the phone is lying face up on a flat surface</string>
-
     <!-- Pick-up gesture -->
     <string name="pick_up_gesture_title">Pick-up</string>
     <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
+
+    <!-- Raise to wake gesture-->
+    <string name="raise_to_wake_gesture_title">Raise to wake</string>
+    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notifications</string>
 
     <!-- Pocket gesture -->
     <string name="pocket_gesture_title">Pocket</string>
     <string name="pocket_gesture_summary">Pulse notifications on removal from pocket</string>
 
-    <!-- Raise to wake strings-->
-    <string name="raise_to_wake_gesture_title">Raise to wake</string>
-    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
-
     <!-- Proximity wake -->
     <string name="proximity_wake_title">Proximity wake</string>
     <string name="proximity_wake_enable_title">Proximity wake</string>
-    <string name="proximity_wake_enable_summary">Wake device on hand wave</string>
+
+    <!-- Smart wake gesture -->
+    <string name="smart_wake_gesture_title">Smart Wake</string>
+    <string name="smart_wake_gesture_summary">Pulse notifications on slight motion of device and wake screen when picked up</string>
 
     <!-- Dialog texts -->
     <string name="dialog_ok">OK</string>

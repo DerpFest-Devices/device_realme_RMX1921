@@ -23,8 +23,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
@@ -33,26 +31,22 @@ import java.util.concurrent.Future;
 
 public class AmdSensor implements SensorEventListener {
 
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     private static final String TAG = "AmdSensor";
 
-    private static final String AMD_SENSOR = "qti.sensor.amd";
-
-    private static final int WAKELOCK_TIMEOUT_MS = 3000;
+    private static final int MIN_PULSE_INTERVAL_MS = 2000;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
-    private PowerManager mPowerManager;
-    private WakeLock mWakeLock;
+
+    private long mEntryTimestamp;
 
     public AmdSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = DozeUtils.getSensor(mSensorManager, AMD_SENSOR);
-        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
-        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+        mSensor = DozeUtils.getSensor(mSensorManager, "qti.sensor.amd");
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -62,17 +56,18 @@ public class AmdSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isRaiseToWake = DozeUtils.isRaiseToWakeEnabled(mContext);
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
-        if (event.values[0] == 2.0f) {
-            if (isRaiseToWake) {
-                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
-                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
-                    PowerManager.WAKE_REASON_GESTURE, TAG);
-            } else {
-                DozeUtils.launchDozePulse(mContext);
-            }
+        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+
+        if (delta < MIN_PULSE_INTERVAL_MS) {
+            return;
+        }
+
+        mEntryTimestamp = SystemClock.elapsedRealtime();
+
+        if (event.values[0] == 2) {
+            DozeUtils.launchDozePulse(mContext);
         }
     }
 
@@ -84,6 +79,7 @@ public class AmdSensor implements SensorEventListener {
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
+            mEntryTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(this, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
         });

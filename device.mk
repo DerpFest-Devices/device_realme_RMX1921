@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    RealmeParts \
+    RealmeDoze \
     devicesettings \
     RealmeProximityHelper
 
