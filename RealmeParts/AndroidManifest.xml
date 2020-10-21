@@ -31,7 +31,7 @@
         android:targetSdkVersion="24" />
 
     <application
-        android:label="@string/device_settings_app_name"
+        android:label="@string/ambient_display_gestures_title"
         android:persistent="true">
 
         <receiver android:name=".BootCompletedReceiver">
@@ -48,7 +48,7 @@
 
         <activity
             android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_title"
+            android:label="@string/ambient_display_gestures_title"
             android:theme="@style/Theme.Main">
         </activity>
 
