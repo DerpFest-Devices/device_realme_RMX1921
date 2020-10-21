@@ -27,7 +27,7 @@ import org.lineageos.settings.doze.DozeUtils;
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "RealmeParts";
+    private static final String TAG = "RealmeDoze";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
