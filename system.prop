@@ -140,7 +140,6 @@ service.qti.ims.enabled=1
 persist.vendor.qti.telephony.vt_cam_interface=2
 ro.telephony.iwlan_operation_mode=legacy
 ril.subscription.types=NV,RUIM
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
