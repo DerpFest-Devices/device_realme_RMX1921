@@ -198,3 +198,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.usb.product_string=Realme XT
     vendor.usb.diag.func.name=diag \
     vendor.usb.use_ffs_mtp=0
+
+# Zygote
+PRODUCT_PROPERTY_OVERRIDES += \
+    zygote.critical_window.minute=10
