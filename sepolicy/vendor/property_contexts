@@ -52,6 +52,9 @@ persist.console.silent.config             u:object_r:oppo_debug_prop:s0
 persist.oppo.wlan.            u:object_r:oppo_wlan_prop:s0
 oppo.wifi.            u:object_r:oppo_wlan_prop:s0
 
+# Thermal
+vendor.thermal.config                   u:object_r:vendor_thermal_prop:s0
+
 # Audio
 audio.volume.listener.dump                      u:object_r:vendor_audio_prop:s0
 audio.volume.headset.gain.depcal                u:object_r:vendor_audio_prop:s0
