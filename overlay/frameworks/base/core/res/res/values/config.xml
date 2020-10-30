@@ -338,9 +338,6 @@
 	<item>"/data/dalvik-cache/arm64/system@system_ext@priv-app@SystemUI@SystemUI.apk@classes.vdex"</item>
     </string-array>
     
-    <!-- Should the pinner service pin the Camera application? -->
-    <bool name="config_pinnerCameraApp">true</bool>
-    
     <!-- Should the pinner service pin the Home application? -->
     <bool name="config_pinnerHomeApp">true</bool>
     
