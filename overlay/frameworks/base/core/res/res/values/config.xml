@@ -630,7 +630,4 @@
     <!-- Whether device has a notch -->
     <bool name="config_haveNotch">true</bool>
 
-    <!-- Custom proximity sensor to be used for pocket detection and doze -->
-    <string name="config_customProximitySensor">"qti.sensor.proximity_fake"</string>
-
 </resources>
