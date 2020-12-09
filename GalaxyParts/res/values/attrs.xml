@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomSeekBarPreference">
+        <attr name="interval" format="integer" />
+        <attr name="showSign" format="boolean" />
+        <attr name="units" format="string|reference" />
+        <attr name="continuousUpdates" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SeekBarPreference">
+        <attr name="max_value" format="integer" />
+        <attr name="min_value" format="integer" />
+        <attr name="default_value" format="integer" />
+    </declare-styleable>
+</resources>
