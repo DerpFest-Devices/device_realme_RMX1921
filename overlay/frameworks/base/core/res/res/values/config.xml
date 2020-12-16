@@ -292,8 +292,6 @@
     <!-- The restoring is handled by modem if it is true-->    
     <bool name="skip_restoring_network_selection">true</bool>
     
-    <bool name="config_enableNetworkLocationOverlay" translatable="false">true</bool>
-    
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
     <bool name="config_camera_sound_forced">false</bool>
 
