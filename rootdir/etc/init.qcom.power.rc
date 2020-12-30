@@ -58,8 +58,8 @@ on property:init.svc.vendor.charger=running
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
     write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu6/online 0
     write /sys/devices/system/cpu/cpu7/online 0
 
     wait /dev/block/bootdevice
@@ -85,33 +85,30 @@ on enable-low-power
     write /sys/class/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
     write /sys/class/devfreq/soc:qcom,memlat-cpu0/mem_latency/ratio_ceil 400
 
-    write /sys/class/devfreq/soc:qcom,memlat-cpu4/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
+    write /sys/class/devfreq/soc:qcom,memlat-cpu6/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,memlat-cpu6/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,memlat-cpu6/mem_latency/ratio_ceil 400
 
     # Enable mem_latency governor for L3 scaling
     write /sys/class/devfreq/soc:qcom,l3-cpu0/governor "mem_latency"
     write /sys/class/devfreq/soc:qcom,l3-cpu0/polling_interval 10
     write /sys/class/devfreq/soc:qcom,l3-cpu0/mem_latency/ratio_ceil 400
 
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/governor "mem_latency"
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/polling_interval 10
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 400
+    write /sys/class/devfreq/soc:qcom,l3-cpu6/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,l3-cpu6/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,l3-cpu6/mem_latency/ratio_ceil 400
 
     # Enable userspace governor for L3 cdsp nodes
     write /sys/class/devfreq/soc:qcom,l3-cdsp/governor "userspace"
     chown system /sys/class/devfreq/soc:qcom,l3-cdsp/userspace/set_freq
 
-    # Gold L3 ratio ceil
-    write /sys/class/devfreq/soc:qcom,l3-cpu4/mem_latency/ratio_ceil 4000
-
     # Set cpuset parameters
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/foreground/boost/cpus 0-3,6-7
-    write /dev/cpuset/foreground/cpus 0-3,6-7
+    write /dev/cpuset/background/cpus 4-5
+    write /dev/cpuset/system-background/cpus 2-5
+    write /dev/cpuset/foreground/boost/cpus 0-5,7
+    write /dev/cpuset/foreground/cpus 0-5,7
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/restricted/cpus 2-5
 
     # Enable idle state listener
     write /sys/class/drm/card0/device/idle_encoder_mask 1
