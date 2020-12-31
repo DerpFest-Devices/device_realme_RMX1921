@@ -81,6 +81,12 @@ persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
 
+# Gboard
+ro.com.google.ime.kb_pad_port_l=7
+ro.com.google.ime.kb_pad_port_r=7
+ro.com.google.ime.kb_pad_land_l=14
+ro.com.google.ime.kb_pad_land_r=14
+
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
