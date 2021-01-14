@@ -10,6 +10,7 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
 IS_PHONE := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_USES_BLUR := true
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Official-ify

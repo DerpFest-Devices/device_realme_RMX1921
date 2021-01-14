@@ -16,7 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="maintainer_name">Kader Bava</string>
-    <string name="maintainer_telegram">https://t.me/Bava7325</string>
+    <string name="maintainer_name">Kader Bava (@Bava7325)</string>
 
 </resources>
