@@ -1,0 +1,43 @@
+on post-fs-data
+    rm /cache/boot_log_full.txt
+    rm /cache/boot_log_crash.txt
+    rm /cache/boot_log_kernel.txt
+    rm /cache/boot_log_avc.txt
+    start boot_log
+    start boot_log_crash
+    start boot_log_kernel
+    start boot_log_avc
+
+service boot_log /system/bin/logcat -b all -D -f /cache/boot_log_full.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_log_crash /system/bin/logcat -b crash -D -f /cache/boot_log_crash.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_log_kernel /system/bin/logcat -b kernel -D -f /cache/boot_log_kernel.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service boot_log_avc /system/bin/logcat -e avc -f /cache/boot_log_avc.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    stop boot_log
+    stop boot_log_crash
+    stop boot_log_kernel
+    stop boot_log_avc
