@@ -1,0 +1,3 @@
+# Executables
+/data/vendor/metadata_apex(/.*)?              u:object_r:apex_metadata_file:s0
+/data/vendor/metadata_apex/sessions(/.*)?     u:object_r:apex_metadata_file:s0
