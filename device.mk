@@ -222,7 +222,8 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libavservices_minijail_32
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -442,6 +443,7 @@ PRODUCT_PACKAGES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
+    libdisplayconfig.qti \
     libdisplayconfig.vendor \
     libnl \
     libqdMetaData \
