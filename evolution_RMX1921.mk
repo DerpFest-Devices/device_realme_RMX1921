@@ -8,8 +8,6 @@
 TARGET_GAPPS_ARCH := arm64
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_BOOT_ANIMATION_RES_EVO := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
 WITH_GAPPS := true
 EXTRA_FOD_ANIMATIONS := true
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
