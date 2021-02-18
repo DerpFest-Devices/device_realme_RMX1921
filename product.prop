@@ -1,12 +1,6 @@
 # LMKD
-ro.lmk.low=1001
-ro.lmk.medium=800
-ro.lmk.critical=0
-ro.lmk.critical_upgrade=false
-ro.lmk.upgrade_pressure=100
-ro.lmk.downgrade_pressure=100
+ro.config.low_ram=false
 ro.lmk.log_stats=true
 
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
-
