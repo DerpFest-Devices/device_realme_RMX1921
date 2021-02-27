@@ -22,3 +22,4 @@ allow hal_camera_default proc_oppoversion:file { open read };
 allow hal_camera_default self:tcp_socket create;
 allow hal_camera_default vendor_file:file execute_no_trans;
 allow hal_camera_default vendor_shell_exec:file execute_no_trans;
+allow hal_camera_default sysfs_thermal:file w_file_perms;

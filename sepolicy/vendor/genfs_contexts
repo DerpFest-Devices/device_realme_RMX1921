@@ -17,3 +17,6 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.q
 
 # Devinfo
 genfscon proc /devinfo        u:object_r:proc_devinfo:s0
+
+# Radio
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc/rtc0/hctosys u:object_r:sysfs_rtc:s0
