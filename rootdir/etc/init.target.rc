@@ -330,14 +330,14 @@ service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
-    group radio log diag
+    group radio log vendor_qti_diag
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
+    group system wifi radio inet log vendor_qti_diag
     disabled
 
 #service mdm_helper /system/bin/mdm_helper
@@ -414,7 +414,7 @@ service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
 service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
    user system
-   group radio diag inet log
+   group radio vendor_qti_diag inet log
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
     restart vendor.ims_rtp_daemon
