@@ -270,6 +270,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                <instance>imsradio1</instance>
            </interface>
     </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.ant</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAntHci</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <!-- dpm QMI hal service -->
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
@@ -278,6 +287,15 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <interface>
             <name>IdpmQmi</name>
             <instance>dpmQmiService</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.bluetooth_sar</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothSar</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <!-- qcrilhook -->
