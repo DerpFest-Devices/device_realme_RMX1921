@@ -97,6 +97,7 @@ persist.dbg.ims_volte_enable=1
 # Iorap
 iorapd.perfetto.enable=true
 iorapd.readahead.enable=true
+ro.iorapd.enable=true
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
