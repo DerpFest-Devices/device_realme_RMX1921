@@ -103,8 +103,9 @@ Return<void> FingerprintInscreen::onPress() {
 
 Return<void> FingerprintInscreen::onRelease() {
     set(FP_PRESS_PATH, FP_ENDIT);
-    if(isDreamState)
-    set(DIMLAYER_PATH, FP_ENDIT);
+    if(isDreamState){
+        set(DIMLAYER_PATH, FP_ENDIT);
+    }
     return Void();
 }
 
