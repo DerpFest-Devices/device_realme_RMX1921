@@ -1,1 +1,5 @@
-allow hal_nfc_default nfc_hwservice:hwservice_manager add;
+allow hal_nfc_default nfc_hwservice:hwservice_manager { add find };
+allow hal_nfc_default hal_secure_element_hwservice:hwservice_manager { find };
+allow hal_nfc_default nfc_vendor_data_file:dir { open read getattr search };
+dontaudit hal_nfc_default nxpese_hwservice:hwservice_manager find;
+dontaudit hal_nfc_default nxpnfc_hwservice:hwservice_manager add;

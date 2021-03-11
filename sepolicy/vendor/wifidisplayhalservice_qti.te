@@ -1,0 +1,2 @@
+allow wifidisplayhalservice_qti mnt_vendor_file:dir { getattr search };
+allow wifidisplayhalservice_qti unlabeled:file { read };

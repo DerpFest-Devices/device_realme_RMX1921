@@ -1,0 +1,1 @@
+allow hal_alarm_qti_default mnt_vendor_file:dir { getattr search };
