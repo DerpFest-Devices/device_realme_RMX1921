@@ -1,2 +1,0 @@
-get_prop(sensors, sensors_dbg_prop)
-get_prop(sensors, sensors_prop)
