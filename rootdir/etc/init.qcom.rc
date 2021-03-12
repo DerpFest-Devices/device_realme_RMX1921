@@ -475,12 +475,6 @@ on post-fs-data
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
-    class late_start
-    group nfc
-    user system
-    oneshot
-
 service iop /system/vendor/bin/iop
     class main
     user root
@@ -544,15 +538,6 @@ on property:persist.vendor.ssr.enable_ramdumps=1
 
 on property:persist.vendor.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
-
-#ifdef VENDOR_EDIT
-#Min.Yi@PSW.CN.Wifi.Production.1065227, 2017/11/21
-#Add for  :start init.oppo.wifi.sh
-service wifiserver /vendor/bin/init.oppo.wifi.sh
-    class core
-    user root
-    oneshot
-#endif
 
 #ifdef VENDOR_EDIT
 #Min.Yi@EXP.CN.WiFi.Hardware.1178256, 2017/12/28
@@ -641,17 +626,6 @@ on property:vendor.wifi.hwtest=0
      stop wifihwftm
 #endif /* VENDOR_EDIT */
 
-#ifdef VENDOR_EDIT
-#Qiulei@PSW.CN.WiFi.Hardware.1769918, 2019/01/02
-#Add for : Wifi BDF version
-service WifibdfVersion /vendor/bin/vendor.autochmod.sh "WifibdfVersion"
-    class late_start
-    user root
-    seclabel u:r:rutilsdaemon:s0
-    group root
-    oneshot
-#endif /* VENDOR_EDIT */
-
 #Lei.Zhang@PSW.CN.WiFi.Basic., 2018/12/24
 #Add for wifi sar setting on Android P
 service wifisar /system/vendor/bin/wifisar
@@ -718,11 +692,6 @@ on property:vendor.bluetooth.startbtlogger=false
 
 on property:vendor.media.target.version=*
     setprop vendor.sys.media.target.version ${vendor.media.target.version}
-
-service qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
 
 service qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
@@ -795,12 +764,6 @@ service qmiproxy /system/bin/qmiproxy
     user radio
     group radio diag
     disabled
-
-service vendor.sensors /vendor/bin/sscrpcd sensorspd
-    class early_hal
-    user system
-    group system wakelock
-    capabilities BLOCK_SUSPEND
 
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
@@ -937,13 +900,6 @@ service iprenew_wigig0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ptt_socket_app /system/vendor/bin/ptt_socket_app -d
-    class main
-    user wifi
-    group wifi system inet net_admin
-    capabilities NET_ADMIN
-    oneshot
-
 service ptt_ffbm /system/vendor/bin/ptt_socket_app -f -d
     user root
     group root
@@ -980,18 +936,6 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ssgqmigd /vendor/bin/ssgqmigd
-    class late_start
-    user radio
-    group radio gps system
-    socket ssgqmig seqpacket 0660 radio inet
-
-service ssgtzd /vendor/bin/ssgtzd
-    class late_start
-    user system
-    group system
-    socket ssgtzd stream 0660 system inet
-
 service mlid /vendor/bin/mlid
     class late_start
     user gps
@@ -1027,11 +971,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
 
 service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
     class core
-    user root
-    oneshot
-
-service crashdata-sh /vendor/bin/init.qcom.crashdata.sh
-    class late_start
     user root
     oneshot
 
@@ -1082,16 +1021,6 @@ on property:sys.boot_completed=1
 
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
-
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
-service vendor.atfwd /vendor/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
 
 service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
     interface android.hardware.wifi.hostapd@1.0::IHostapd default
@@ -1275,16 +1204,6 @@ service vendor.LKCore-rel /vendor/bin/LKCore
     disabled
     user system
     group system log diag
-
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
-    class late_start
-    user system
-    group system
-
-service esepmdaemon /system/vendor/bin/esepmdaemon
-    class core
-    user system
-    group nfc
 
 on charger
     setprop persist.sys.usb.config mass_storage
