@@ -2,6 +2,9 @@
 /mnt/vendor/persist/audio(/.*)?                                                u:object_r:persist_audio_file:s0
 /proc/asound/card0/codecs(/.*)?                                                u:object_r:proc_audio_file:s0
 
+# dpmd
+/(product|system/product)/bin/dpmd                                   u:object_r:vendor_dpmd_exec:s0
+
 # FOD Hal
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.realme_sdm710    u:object_r:hal_lineage_fod_default_exec:s0
 /sys/kernel/oppo_display(/.*)?                               u:object_r:sysfs_oppo_display:s0
@@ -29,7 +32,6 @@
 /sys/class/power_supply/battery/mmi_charging_enable                    u:object_r:sysfs_scharge:s0
 /sys/bus/iio/devices(/.*)?                            u:object_r:sysfs_iio:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:rradc@4500/iio:device0/name                            u:object_r:sysfs_iio:s0
-/sys/devices/platform/soc/62400000.qcom,lpass/subsys[0-9]/restart_level        u:object_r:sysfs_restart:s0
 
 # Rootfs files
 /bt_firmware(/.*)?                            u:object_r:bt_firmware_file:s0

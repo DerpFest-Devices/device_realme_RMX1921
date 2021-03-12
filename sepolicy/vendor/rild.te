@@ -6,6 +6,6 @@ allow rild cache_file:dir { add_name getattr create search write };
 allow rild cache_file:file { create open write };
 allow rild system_data_file:dir getattr;
 allow rild block_device:dir search;
-allow rild opporadio_hwservice:hwservice_manager add;
+allow rild opporadio_hwservice:hwservice_manager { add find };
 allow rild default_android_hwservice:hwservice_manager add;
 set_prop(rild, oppo_debug_prop)
