@@ -11,6 +11,8 @@ sys.oppo.mm.voice.record                u:object_r:vendor_audio_prop:s0
 persist.vendor.fingerprint.             u:object_r:oppo_fingerprint_prop:s0
 oppo.optical.             u:object_r:oppo_fingerprint_prop:s0
 vendor.fingerprint.optical.             u:object_r:oppo_fingerprint_prop:s0
+oppo.fingerprint.gf.package.version             u:object_r:oppo_fingerprint_prop:s0
+ro.separate.soft             u:object_r:oppo_fingerprint_prop:s0
 
 # Camera
 vendor.oppo.camera.                  u:object_r:vendor_camera_prop:s0
@@ -39,6 +41,11 @@ ro.sys.reserve.integrate             u:object_r:oppo_debug_prop:s0
 ro.vendor.aware_available             u:object_r:oppo_debug_prop:s0
 sys.build.display.full_id             u:object_r:oppo_debug_prop:s0
 ro.rf_version             u:object_r:oppo_debug_prop:s0
+persist.oppo.nw.region.lock             u:object_r:oppo_debug_prop:s0
+persist.oppo.network.operator             u:object_r:oppo_debug_prop:s0
+oppo.device.imeicache             u:object_r:oppo_debug_prop:s0
+sys.oppo.network.rffeature             u:object_r:oppo_debug_prop:s0
+oppo.fingerprint.factory             u:object_r:oppo_debug_prop:s0
 
 # Oppo wlan prop
 persist.oppo.wlan.            u:object_r:oppo_wlan_prop:s0

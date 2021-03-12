@@ -14,9 +14,15 @@ genfscon proc /fp_id                     u:object_r:proc_oppo_fp:s0
 
 # RTC
 genfscon sysfs /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc/rtc0/hctosys        u:object_r:sysfs_rtc:s0
+genfscon sysfs /sys/class/rtc/rtc0/hctosys        u:object_r:sysfs_rtc:s0
 
 # Power supply
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/ac   u:object_r:sysfs_batteryinfo:s0
 
 # Devinfo
 genfscon proc /devinfo        u:object_r:proc_devinfo:s0
+
+# FPS info
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps        u:object_r:sysfs_graphics:s0
+
+genfscon sysfs /sys/devices/platform/soc/62400000.qcom,lpass/subsys[0-9]/restart_level        u:object_r:sysfs_restart:s0
