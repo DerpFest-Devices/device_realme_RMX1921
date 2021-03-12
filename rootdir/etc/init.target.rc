@@ -76,11 +76,6 @@ on post-fs
 
     write /dev/ipa 1
 
-service sec_nvm /vendor/bin/sec_nvm
-    class core
-    user system
-    group system
-
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
@@ -464,10 +459,3 @@ on charger
 #     group system
 #     disabled
 #endif
-
-service energy-awareness /system/vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
-
