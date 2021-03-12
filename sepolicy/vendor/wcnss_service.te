@@ -1,2 +1,3 @@
 set_prop(wcnss_service, oppo_wlan_prop);
 allow wcnss_service mnt_vendor_file:file read;
+allow wcnss_service mnt_vendor_file:file { open getattr };
