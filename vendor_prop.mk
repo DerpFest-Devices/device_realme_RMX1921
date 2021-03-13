@@ -141,7 +141,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.wfc_avail_ovr=1 \
     persist.dbg.ims_volte_enable=1 \
     persist.vendor.radio.data_ltd_sys_ind=1 \
-    persist.vendor.radio.data_con_rprt=1
+    persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.add_power_save=1
 
 # Misc tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
