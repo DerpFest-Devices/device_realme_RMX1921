@@ -25,6 +25,7 @@ allow init sysfs_wake_lock:file { open read write };
 allow init self:capability2 block_suspend;
 allow init hal_sensors_hwservice:hwservice_manager { add find };
 allow init oppo_debug_prop:file { read open getattr setattr };
+allow init oppo_debug_prop:property_service set;
 
 # Otg Switch
 allow init sysfs_usb_supply:file setattr;

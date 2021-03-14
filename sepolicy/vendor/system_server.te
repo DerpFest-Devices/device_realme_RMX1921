@@ -11,3 +11,4 @@ allow system_server media_rw_data_file:file { unlink };
 allow system_server init:binder call;
 allow system_server sysfs_rtc:file { open read };
 dontaudit system_server default_android_hwservice:hwservice_manager find;
+allow system_server app_zygote:process { getpgid };
