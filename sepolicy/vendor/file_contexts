@@ -73,3 +73,7 @@
 
 # Sensor
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.realme_sdm710                     u:object_r:hal_sensors_default_exec:s0
+
+# Vulkan
+/(vendor|system/vendor)/lib/hw/vulkan\.adreno.so      u:object_r:vulkan_hal:s0
+/(vendor|system/vendor)/lib64/hw/vulkan\.adreno.so      u:object_r:vulkan_hal:s0
