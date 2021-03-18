@@ -70,3 +70,7 @@
 
 # Touch
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.RMX1921      u:object_r:hal_lineage_touch_default_exec:s0
+
+# Vulkan
+/(vendor|system/vendor)/lib/hw/vulkan\.adreno.so      u:object_r:vulkan_hal:s0
+/(vendor|system/vendor)/lib64/hw/vulkan\.adreno.so      u:object_r:vulkan_hal:s0
