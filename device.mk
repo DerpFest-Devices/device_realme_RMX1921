@@ -430,9 +430,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig \
     libdisplayconfig.qti \
-    libdisplayconfig.vendor \
     libnl \
     libqdMetaData \
     libqdMetaData.system
