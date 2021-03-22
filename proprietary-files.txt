@@ -812,8 +812,8 @@ vendor/etc/permissions/android.hardware.vulkan.compute.xml
 vendor/etc/permissions/android.hardware.vulkan.level.xml 
 vendor/etc/permissions/android.hardware.vulkan.version.xml
 vendor/etc/permissions/android.software.vulkan.deqp.level.xml
-vendor/lib64/hw/vulkan.sdm710.so
-vendor/lib/hw/vulkan.sdm710.so
+vendor/lib64/hw/vulkan.adreno.so
+vendor/lib/hw/vulkan.adreno.so
 
 # IMS - Pinned blobs are from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190828.002/00WW_4_30B:user/release-keys
 -product/app/uceShimService/uceShimService.apk|f30f05dffef88ac4f7a18f9f1d94ef22ddd2f4ea
