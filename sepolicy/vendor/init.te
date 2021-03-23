@@ -20,10 +20,8 @@ allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
 allow init diag_device:chr_file { ioctl open read write };
 allow init self:socket { ioctl read write create };
-allow init sensors_persist_file:file append;
 allow init sysfs_wake_lock:file { open read write };
 allow init self:capability2 block_suspend;
-allow init hal_sensors_hwservice:hwservice_manager { add find };
 allow init oppo_debug_prop:file { read open getattr setattr };
 allow init oppo_debug_prop:property_service set;
 
