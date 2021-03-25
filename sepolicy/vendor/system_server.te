@@ -1,6 +1,7 @@
 get_prop(system_server, persist_camera_prop);
 get_prop(system_server, vendor_default_prop);
 get_prop(system_server, vendor_camera_prop);
+get_prop(system_server, vendor_display_notch_prop);
 
 allow system_server sysfs_battery_supply:file { getattr open read write };
 allow system_server sysfs:file { getattr open read write };
@@ -12,3 +13,6 @@ allow system_server init:binder call;
 allow system_server sysfs_rtc:file { open read };
 dontaudit system_server default_android_hwservice:hwservice_manager find;
 allow system_server app_zygote:process { getpgid };
+allow system_server proc_devinfo:dir { search };
+allow system_server proc_touchpanel:dir { search };
+allow system_server proc_oppoversion:dir { search };
