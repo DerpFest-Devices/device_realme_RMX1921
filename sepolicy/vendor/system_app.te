@@ -1,19 +1,12 @@
-allow system_app hal_rcsservice:binder { call transfer };
-allow system_app system_data_file:dir { add_name create setattr write };
-allow system_app vendor_file:file { execute read };
-allow system_app sysfs_zram:dir search;
-allow system_app init:binder call;
-allow system_app sysfs_zram:file { getattr open read };
-allow system_app selinuxfs:file { open read };
-
-get_prop(system_app, oppo_debug_prop);
-get_prop(system_app, persist_camera_prop);
-get_prop(system_app, vendor_mpctl_prop);
-get_prop(system_app, vendor_default_prop);
-
 allow system_app proc_touchpanel:dir search;
-allow system_app proc_touchpanel:file rw_file_perms;
-allow system_app sysfs_oppo_display:dir search; 
-allow system_app sysfs_oppo_display:file { getattr open read write };
 allow system_app sysfs_usb_supply:dir search;
+allow system_app sysfs_battery_supply:dir search;
+allow system_app sysfs_battery_supply:file { getattr open read };
+allow system_app proc_touchpanel:file { read write open getattr setattr };
+allow system_app vendor_default_prop:file { map getattr open };
+
+# Smart Charging and DeviceSettings
+allow system_app sysfs_scharge:file { getattr open read write };
 allow system_app sysfs_usb_supply:file { getattr open read write };
+allow system_app sysfs_oppo_display:dir search;
+allow system_app sysfs_oppo_display:file { getattr open read write };

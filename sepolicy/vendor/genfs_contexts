@@ -12,6 +12,9 @@ genfscon proc /oppoVersion                      u:object_r:proc_oppoversion:s0
 # Oppo FP
 genfscon proc /fp_id                     u:object_r:proc_oppo_fp:s0
 
+# RTC
+genfscon sysfs /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc/rtc0/hctosys        u:object_r:sysfs_rtc:s0
+
 # Power supply
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/ac   u:object_r:sysfs_batteryinfo:s0
 
