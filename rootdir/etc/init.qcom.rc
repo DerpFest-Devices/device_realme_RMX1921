@@ -1367,10 +1367,12 @@ on property:oppo.wifirftest.enable=0
 
 # Smart Charging
 on boot
-    chmod 0666 /sys/class/power_supply/battery/input_suspend
-    chmod 0666 /sys/class/power_supply/battery/charging_enabled
     chown system system /sys/class/power_supply/battery/input_suspend
     chown system system /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/mmi_charging_enable
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/charging_enabled
+    chmod 0666 /sys/class/power_supply/battery/mmi_charging_enable
 
 # FPS Info
     chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
