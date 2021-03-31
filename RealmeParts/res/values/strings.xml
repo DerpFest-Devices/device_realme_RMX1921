@@ -17,7 +17,24 @@
     <string name="device_title">Realme Parts</string>
     <string name="device_summary">Realme specific settings</string>
     <string name="customize_title">Customize</string>
+    <string name="misc_title">Misc settings</string>
 
+    <!-- DC dimming -->
+    <string name="dc_mode_summary">Reduces screen flicker while brightness is low</string>
+    <string name="dc_mode_title">DC-Dimming</string>
+    <string name="tile_dc_mode">DC-Dimming</string>
+    <!-- HBM mode -->
+    <string name="hbm_mode_summary">Peak brightness for better visibility in outdoors</string>
+    <string name="hbm_mode_title">High brightness mode</string>
+    <string name="tile_hbm_mode">High brightness modes</string>
+    <!-- srgb mode -->
+    <string name="srgb_mode_summary">sRGB mode for simpler colour display</string>
+    <string name="srgb_mode_title">sRGB mode</string>
+    <string name="tile_srgb_mode">sRGB</string>
+    <!-- otg mode -->
+    <string name="otg_mode_summary">Enable USB-OTG power supply for external headphones and flash drives</string>
+    <string name="otg_mode_title">Enable USB-OTG</string>
+    <string name="tile_otg_mode">Enable USB-OTG</string>
     <!-- game mode -->
     <string name="game_mode_summary">Boost Touch Sampling Rate</string>
     <string name="game_mode_title">Game Mode</string>

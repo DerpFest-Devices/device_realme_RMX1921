@@ -25,6 +25,22 @@
             android:persistent="true" />
 
         <SwitchPreference
+            android:key="dc"
+            android:summary="@string/dc_mode_summary"
+            android:title="@string/dc_mode_title" />
+
+        <SwitchPreference
+            android:key="hbm"
+            android:summary="@string/hbm_mode_summary"
+            android:title="@string/hbm_mode_title"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="srgb"
+            android:summary="@string/srgb_mode_summary"
+            android:title="@string/srgb_mode_title" />
+
+        <SwitchPreference
             android:key="game"
             android:icon="@drawable/ic_joystick"
             android:summary="@string/game_mode_summary"
@@ -98,5 +114,15 @@
             android:summary="%s"
             android:icon="@drawable/ic_preset"
             android:title="@string/dirac_preset_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_title">
+
+        <SwitchPreference
+            android:key="otg"
+            android:summary="@string/otg_mode_summary"
+            android:title="@string/otg_mode_title" />
     </PreferenceCategory>
 </PreferenceScreen>

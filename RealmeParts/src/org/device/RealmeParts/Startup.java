@@ -83,7 +83,14 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
    	}
-
+        enabled = sharedPrefs.getBoolean(RealmeParts.KEY_DC_SWITCH, false);
+        restore(DCModeSwitch.getFile(), enabled);
+        enabled = sharedPrefs.getBoolean(RealmeParts.KEY_HBM_SWITCH, false);
+        restore(HBMModeSwitch.getFile(), enabled);
+        enabled = sharedPrefs.getBoolean(RealmeParts.KEY_SRGB_SWITCH, false);
+        restore(SRGBModeSwitch.getFile(), enabled);
+        enabled = sharedPrefs.getBoolean(RealmeParts.KEY_OTG_SWITCH, false);
+        restore(OTGModeSwitch.getFile(), enabled);
     }
 
     private void enableComponent(Context context, String name) {
