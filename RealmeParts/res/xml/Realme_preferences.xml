@@ -19,7 +19,6 @@
 
         <SwitchPreference
             android:key="fps_info"
-            android:icon="@drawable/ic_fps_info"
             android:title="@string/fps_info_title"
             android:summary="@string/fps_info_summary"
             android:persistent="true" />
@@ -42,7 +41,6 @@
 
         <SwitchPreference
             android:key="game"
-            android:icon="@drawable/ic_joystick"
             android:summary="@string/game_mode_summary"
             android:title="@string/game_mode_title" />
     </PreferenceCategory>
@@ -52,7 +50,6 @@
 
         <PreferenceScreen
                 android:key="screen_gestures"
-                android:icon="@drawable/ic_swipe"
                 android:fragment="org.device.RealmeParts.Touch.ScreenOffGestureSettings"
                 android:summary="@string/gestures_dashboard_summary"
                 android:title="@string/screen_off_gestures" />
@@ -64,7 +61,6 @@
                 android:key="kcal"
                 android:fragment="org.device.RealmeParts.kcal.DisplayCalibration"
                 android:summary="@string/kcal_summary"
-                android:icon="@drawable/ic_kcal"
                 android:title="@string/kcal_title" />
     </PreferenceCategory>
 
@@ -79,7 +75,6 @@
             android:entryValues="@array/spectrum_values"
             android:key="spectrum"
             android:summary="@string/spectrum_summary"
-            android:icon="@drawable/ic_spectrum" 
             android:title="@string/spectrum_title" />
 
     </PreferenceCategory>
@@ -92,7 +87,6 @@
             android:defaultValue="false"
             android:key="dirac_enabled"
             android:summary="@string/dirac_summary"
-            android:icon="@drawable/ic_dirac"
             android:title="@string/dirac_title" />
 
         <org.device.RealmeParts.preferences.SecureSettingListPreference
@@ -102,7 +96,6 @@
             android:entryValues="@array/dirac_headset_pref_values"
             android:key="dirac_headset_pref"
             android:summary="%s"
-            android:icon="@drawable/ic_headphone"
             android:title="@string/dirac_headset_title" />
 
         <org.device.RealmeParts.preferences.SecureSettingListPreference
@@ -112,7 +105,6 @@
             android:entryValues="@array/dirac_preset_pref_values"
             android:key="dirac_preset_pref"
             android:summary="%s"
-            android:icon="@drawable/ic_preset"
             android:title="@string/dirac_preset_title" />
     </PreferenceCategory>
 
