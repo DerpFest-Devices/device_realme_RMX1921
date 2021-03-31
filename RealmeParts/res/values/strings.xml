@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="device_title">Realme Parts</string>
+    <string name="device_summary">Realme specific settings</string>
+    <string name="customize_title">Customize</string>
+
+    <!-- game mode -->
+    <string name="game_mode_summary">Boost Touch Sampling Rate</string>
+    <string name="game_mode_title">Game Mode</string>
+    <string name="tile_game_mode">Game Mode</string>
+
+    <!-- FPS Info -->
+    <string name="fps_info_title">FPS Info Overlay</string>
+    <string name="fps_info_summary">Show overlay with current frames per second</string>
+
+    <!-- TouchScreen gestures -->
+    <string name="dlg_ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="group_applications">Applications</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="gestures_dashboard_summary">Simple touchscreen gestures on locked screen</string>
+    <string name="enable_gestures_title">Enable gestures</string>
+    <string name="enable_gestures_summary">Enable screen off gestures</string>
+    <string name="gestures_title">Gestures</string>
+    <string name="gesture_double_tap_title">Gesture Double Tap</string>
+    <string name="gesture_w_title">Gesture W</string>	
+    <string name="gesture_m_title">Gesture M</string>
+    <string name="gesture_s_title">Gesture S</string>
+    <string name="gesture_circle_title">Gesture Circle</string>
+    <string name="gesture_two_swipe_title">Gesture Two Swipe</string>
+    <string name="gesture_up_arrow_title">Gesture Up Arrow</string>
+    <string name="gesture_down_arrow_title">Gesture Down Arrow</string>
+    <string name="gesture_left_arrow_title">Gesture Left Arrow</string>
+    <string name="gesture_right_arrow_title">Gesture Right Arrow</string>
+    <string name="gesture_swipe_up_title">Gesture Swipe Up</string>
+    <string name="gesture_swipe_down_title">Gesture Swipe Down</string>
+    <string name="gesture_swipe_left_title">Gesture Swipe Left</string>
+    <string name="gesture_swipe_right_title">Gesture Swipe Right</string>
+    <string name="KharaMeParts_summary">Gestures and Tweaks</string>
+    <string name="screen_off_gestures">Screen-off gestures</string>
+    <string name="gestures">Gestures</string>
+    <string name="enable_dt2w_title">Enable Double Tap</string>
+    <string name="enable_dt2w_summary">Enable Double Tap Gestures</string>
+    <string name="dt2w_title">Double Tap</string>
+    <string name="haptic_feedback_title">Haptic Feedback</string>
+
+    <!-- Shortcut actions -->
+    <string name="shortcut_action_none">None</string>
+    <string name="shortcut_action_app">Custom app</string>
+    <string name="shortcut_action_home">Home</string>
+    <string name="shortcut_action_back">Back</string>
+    <string name="shortcut_action_menu">Menu</string>
+    <string name="shortcut_action_ime">Open IME Switcher</string>
+    <string name="shortcut_action_power_menu">Power menu</string>
+    <string name="shortcut_action_recent">Recents</string>
+    <string name="shortcut_action_power">Screen Off</string>
+    <string name="shortcut_action_search">Search in app</string>
+    <string name="shortcut_action_now_on_tap">Now on Tap</string>
+    <string name="shortcut_action_ring_vib">Ring/Vib</string>
+    <string name="shortcut_action_ring_silent">Ring/Silent</string>
+    <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
+    <string name="shortcut_action_camera">Camera</string>
+    <string name="shortcut_action_media_next">Music - next track</string>
+    <string name="shortcut_action_media_play_pause">Music - play/pause</string>
+    <string name="shortcut_action_media_previous">Music - previous track</string>
+    <string name="shortcut_action_wake_device">Wake up device</string>
+    <string name="shortcut_action_kill">Kill app</string>
+    <string name="shortcut_action_screenshot">Screenshot</string>
+    <string name="shortcut_action_lastapp">Last app</string>
+    <string name="shortcut_action_notifications">Notifications</string>
+    <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_torch">Flashlight</string>
+    <string name="shortcut_action_longpress">Longpress:</string>
+    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
+    <string name="shortcut_action_select_action">Choose action:</string>
+    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
+    <string name="shortcut_action_reset">Reset</string>
+    <string name="shortcut_action_add">Add</string>
+    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
+    <string name="shortcut_action_max">Maximum entries size has been reached</string>
+    <string name="shortcut_action_warning">Warning</string>
+    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
+    <string name="shortcut_action_required_warning_message">It is not possible to delete required buttons</string>
+    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
+    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
+    <string name="shortcut_action_help_shortcut">shortcut</string>
+    <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_app">app</string>
+    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the reset option.</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Screen off gestures</string>
+
+    <!-- Touchscreen gesture haptic feedback -->
+    <string name="touchscreen_gesture_haptic_feedback">Haptic feedback</string>
+    <string name="touchscreen_gesture_haptic_feedback_summary">Vibrate when a Touchscreen gesture is detected</string>
+
+    <!-- Doze -->
+    <string name="doze_panel_title">Doze</string>
+    <string name="ambient_display_gestures_title">Ambient display gestures</string>
+    <string name="ambient_display_gestures_summary">Additional gestures to wake the screen</string>
+    <string name="doze_settings_help_title">Help</string>
+    <string name="doze_settings_help_text">These features use sensor events to launch a doze notification pulse. The chosen sensor is only enabled when the device receives a notification, this helps to reduce battery usage. There is also an option to enable the chosen sensor as soon as the screen turns off, this will cause higher battery usage.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="switch_bar_off">Off</string>
+    <string name="switch_bar_on">On</string>
+    <string name="ambient_display_title">Ambient display</string>
+    <string name="ambient_display_always_on_title">Always on</string>
+    <string name="ambient_display_always_on_summary">Show time, notification icons, and other info. Increased battery usage.</string>
+    <string name="pickup_sensor_title">Pickup sensor</string>
+    <string name="pick_up_gesture_title">Pick-up</string>
+    <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
+    <string name="raise_to_wake_gesture_title">Raise to wake</string>
+    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
+    <string name="tilt_sensor_title">Tilt sensor</string>
+    <string name="proximity_sensor_title">Proximity sensor</string>
+    <string name="pocket_gesture_title">Pocket</string>
+    <string name="pocket_gesture_summary">Pulse notifications on removal from pocket</string>
+
+    <!-- Hand wave gesture -->
+    <string name="hand_wave_gesture_title">Hand wave</string>
+    <string name="hand_wave_gesture_summary">Pulse notifications on hand wave</string>
+    <string name="hand_wave_gesture_flat_title">Detect orientation</string>
+    <string name="hand_wave_gesture_flat_summary">Pulse only if the phone is lying face up on a flat surface</string>
+
+    <!-- Kcal -->
+    <string name="kcal">Display</string>
+    <string name="kcal_title">Display color control</string>
+    <string name="kcal_summary">Display color calibration using KCAL</string>
+    <string name="kcal_enabled_title">Enable KCAL</string>
+    <string name="kcal_enabled_summary">Turn on display calibration using KCAL</string>
+    <string name="kcal_red">Red</string>
+    <string name="kcal_green">Green</string>
+    <string name="kcal_blue">Blue</string>
+    <string name="kcal_saturation">Saturation</string>
+    <string name="kcal_contrast">Constrast</string>
+    <string name="menu_reset">Reset</string>
+    <string name="kcal_color_temp">Color temperature (K)</string>
+
+    <string name="kcal_greyscale_title">Greyscale</string>
+    <string name="kcal_greyscale_summary">Fully disable saturation</string>
+    <string name="presets_list_title">Load KCAL preset</string>
+    <string name="default_values">Default</string>
+    <string name="version_1">Version 1</string>
+    <string name="version_2">Version 2</string>
+    <string name="version_3">Version 3</string>
+    <string name="triluminous">Triluminous</string>
+    <string name="deep_black_and_white">Deep Black and White</string>
+    <string name="deep_natural">Deep Natural</string>
+    <string name="cool_amoled">Cool Amoled</string>
+    <string name="extreme_amoled">Extreme Amoled</string>
+    <string name="warm_amoled">Warm Amoled</string>
+    <string name="hybrid_mamba">Hybrid Mamba</string>
+    <string name="kcal_hue">Hue</string>
+    <string name="kcal_value">Value</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_profile_title">Spectrum</string>
+    <string name="spectrum_title">Spectrum Profiles</string>
+    <string name="spectrum_summary">Choose your Spectrum Profiles</string>
+    <string name="spectrum_dialogTitle">Choose your Spectrum Profiles</string>
+
+    <!-- Values for Spectrum Presets -->
+    <string name="spectrum_performance">Performance</string>
+    <string name="spectrum_battery">Battery</string>
+    <string name="spectrum_gaming">Gaming</string>
+    <string name="spectrum_balance">Balance</string>
+
+    <!-- Audio -->
+    <string name="audio_title">Audio</string>
+
+    <!-- Dirac settings -->
+    <string name="dirac_title">Dirac Sound Enhancer</string>
+    <string name="dirac_summary">Optimize audio quality</string>
+    <string name="dirac_headset_title">Choose headphones type</string>
+    <string name="dirac_preset_title">Choose a preset</string>
+
+    <!-- Dirac settings: Headset types -->
+    <string name="dirac_headset_default">Default</string>
+    <string name="dirac_headset_earbuds">Mi Earbuds</string>
+    <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
+    <string name="dirac_headset_piston_1">Mi Piston-1</string>
+    <string name="dirac_headset_general">General</string>
+    <string name="dirac_headset_general_inear">General In-Ear</string>
+    <string name="dirac_headset_piston_basic">Basic Edition</string>
+    <string name="dirac_headset_piston_2">Mi Piston-2</string>
+    <string name="dirac_headset_piston_standard">Standard Edition</string>
+    <string name="dirac_headset_headphone">Mi Headphones</string>
+    <string name="dirac_headset_piston_youth">Youth Edition</string>
+    <string name="dirac_headset_piston_color">Color Edition</string>
+    <string name="dirac_headset_in_ear">Mi In-Ear</string>
+    <string name="dirac_headset_capsule">Mi Capsule</string>
+    <string name="dirac_headset_in_ear_pro">Mi In-Ear Pro</string>
+    <string name="dirac_headset_comfort">Mi Comfort</string>
+    <string name="dirac_headset_reduction_noise">Mi Noise Cancelling Type-C</string>
+    <string name="dirac_headset_cancelling">Mi Noise Cancelling 3.5mm</string>
+    <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
+    <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
+    <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
+    <string name="dirac_headset_earphone">Mi Earphones</string>
+
+    <!-- Dirac settings: Equalizer presets -->
+    <string name="dirac_preset_default">Default</string>
+    <string name="dirac_preset_rock">Rock</string>
+    <string name="dirac_preset_jazz">Jazz</string>
+    <string name="dirac_preset_pop">Pop</string>
+    <string name="dirac_preset_classical">Classical</string>
+    <string name="dirac_preset_hiphop">Hip Hop</string>
+    <string name="dirac_preset_blues">Blues</string>
+    <string name="dirac_preset_electronic">Electronic</string>
+    <string name="dirac_preset_country">Country</string>
+    <string name="dirac_preset_dance">Dance</string>
+    <string name="dirac_preset_metal">Metal</string>
+
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Headphone gain</string>
+    <string name="microphone_gain">Microphone gain</string>
+    <string name="earpiece_gain">Earpiece gain (Calls)</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+</resources>

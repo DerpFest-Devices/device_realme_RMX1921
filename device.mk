@@ -154,10 +154,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm@1.4-service.clearkey
 
-# Doze
+# Realme specific packages
 PRODUCT_PACKAGES += \
     RealmeDoze \
-    devicesettings \
+    RealmeParts \
     RealmeProximityHelper
 
 # Fingerprint

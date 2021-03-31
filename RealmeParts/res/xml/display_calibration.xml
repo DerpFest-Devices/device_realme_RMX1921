@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2014 The OmniROM Project
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 2 of the License, or
+  (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreference
+        android:key="kcal_enabled"
+        android:title="@string/kcal_enabled_title"
+        android:summary="@string/kcal_enabled_summary"
+        android:persistent="false" />
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_value"
+        android:title="@string/kcal_value"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="383"
+        app:min_value="128"
+        app:default_value="255"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_color_temp"
+        android:title="@string/kcal_color_temp"        
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="7000"
+        app:min_value="1000"
+        app:default_value="6400"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_red"
+        android:title="@string/kcal_red"        
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="256"
+        app:min_value="0"
+        app:default_value="256"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_green"
+        android:title="@string/kcal_green"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="256"
+        app:min_value="0"
+        app:default_value="256"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_blue"
+        android:title="@string/kcal_blue"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="256"
+        app:min_value="0"
+        app:default_value="256"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_contrast"
+        android:title="@string/kcal_contrast"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="384"
+        app:min_value="128"
+        app:default_value="255"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_saturation"
+        android:title="@string/kcal_saturation"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="383"
+        app:min_value="224"
+        app:default_value="256"/>
+    <org.device.RealmeParts.kcal.utils.SeekBarPreference
+        android:key="kcal_hue"
+        android:title="@string/kcal_hue"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="1536"
+        app:min_value="0"
+        app:default_value="0"/>
+
+     <SwitchPreference
+        android:key="kcal_greyscale"
+        android:title="@string/kcal_greyscale_title"
+        android:summary="@string/kcal_greyscale_summary"
+        android:dependency="kcal_enabled"
+        android:disableDependentsState="true"
+        android:persistent="false"/>
+
+    <ListPreference
+        android:key="presets_list"
+        android:title="@string/presets_list_title"
+        android:summary="%s"
+        android:entries="@array/presets_entries"
+        android:entryValues="@array/presets_values"
+        android:dependency="kcal_enabled"
+        android:defaultValue="0"/>
+
+</PreferenceScreen>

@@ -35,7 +35,7 @@ import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.qcom.factory.rc
 import /vendor/etc/init/hw/init.qcom.test.rc
-import /system/etc/init/init.devicesetting.rc
+import /vendor/etc/init/hw/init.RealmeParts.rc
 
 #ifdef OPLUS_FEATURE_CHG_BASIC
 #Fei.Mo@BSP.CHG.Misc 2018/10/30 add for init.oppo.vendor.motor.rc
