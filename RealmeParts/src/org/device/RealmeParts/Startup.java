@@ -18,7 +18,6 @@
 package org.device.RealmeParts;
 
 import android.app.Activity;
-import android.app.slice.SliceItem;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.content.BroadcastReceiver;
@@ -64,8 +63,6 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
-        SliceItem intent = null;
-        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             enableComponent(context, ScreenOffGesture.class.getName());
             SharedPreferences screenOffGestureSharedPreferences = context.getSharedPreferences(
                     Utils.PREFERENCES, Activity.MODE_PRIVATE);
@@ -75,7 +72,6 @@ public class Startup extends BroadcastReceiver {
             KernelControl.enableDt2w(
                     screenOffGestureSharedPreferences.getBoolean(
                             ScreenOffGesture.PREF_DT2W_ENABLE, true));
-        }
 
         context.startService (new Intent (context, DisplayCalibration.class));
         context.startService(new Intent(context, DiracService.class));
