@@ -75,6 +75,7 @@
     <string name="enable_dt2w_summary">Attiva la gesture col doppio tap</string>
     <string name="dt2w_title">Doppio tap</string>
     <string name="haptic_feedback_title">Feedback aptico</string>
+    <string name="shortcut_action_ambient_display">Mostra il display ambient</string>
 
     <!-- Shortcut actions -->
     <string name="shortcut_action_none">Nessuna</string>

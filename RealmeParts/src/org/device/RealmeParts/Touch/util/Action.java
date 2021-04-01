@@ -28,6 +28,7 @@ import android.hardware.input.InputManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.media.session.MediaSessionLegacyHelper;
+import android.provider.Settings;
 import android.os.PowerManager;
 import android.os.RemoteException;
 import android.os.SystemClock;
@@ -46,6 +47,7 @@ public class Action {
 
     private static final int MSG_INJECT_KEY_DOWN = 1066;
     private static final int MSG_INJECT_KEY_UP = 1067;
+    private static final String PULSE_ACTION = "com.android.systemui.doze.pulse";
 
     private static boolean sTorchEnabled = false;
 
@@ -94,7 +96,16 @@ public class Action {
             } else if (action.equals(ActionConstants.ACTION_IME_NAVIGATION_DOWN)) {
                 triggerVirtualKeypress(KeyEvent.KEYCODE_DPAD_DOWN, isLongpress);
                 return;
-            } else if (action.equals(ActionConstants.ACTION_TORCH)) {
+            }
+	      else if (action.equals(ActionConstants.ACTION_AMBIENT_DISPLAY )) {
+		        final boolean dozeEnabled = Settings.Secure.getInt(context.getContentResolver(),
+                	Settings.Secure.DOZE_ENABLED, 1) != 0;
+        	if (dozeEnabled) {
+            		final Intent intent = new Intent(PULSE_ACTION);
+            		context.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+			}
+	    }
+	      else if (action.equals(ActionConstants.ACTION_TORCH)) {
                 try {
                     CameraManager cameraManager = (CameraManager)
                             context.getSystemService(Context.CAMERA_SERVICE);

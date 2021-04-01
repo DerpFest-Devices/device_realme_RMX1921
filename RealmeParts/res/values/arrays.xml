@@ -27,6 +27,7 @@
         <item>@string/shortcut_action_torch</item>
         <item>@string/shortcut_action_wake_device</item>
         <item>@string/shortcut_action_none</item>
+        <item>@string/shortcut_action_ambient_display</item>
     </string-array>
 
     <string-array name="shortcut_action_screen_off_values" translatable="false">
@@ -41,6 +42,7 @@
         <item>**torch**</item>
         <item>**wake_device**</item>
         <item>**null**</item>
+        <item>**ambient**</item>
     </string-array>
 
     <!-- Arrays for preset entries -->
