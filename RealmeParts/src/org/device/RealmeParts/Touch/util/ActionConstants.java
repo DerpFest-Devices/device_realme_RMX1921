@@ -54,6 +54,9 @@ public class ActionConstants {
     public static final String ACTION_MEDIA_PLAY_PAUSE     = "**media_play_pause**";
     public static final String ACTION_WAKE_DEVICE          = "**wake_device**";
     public static final String ACTION_AMBIENT_DISPLAY = "**ambient**";
+    public static final String ACTION_VOLUME_DOWN = "**vol_down**";
+    public static final String ACTION_VOLUME_UP = "**vol_up**";
+
     // no action
     public static final String ACTION_NULL            = "**null**";
 

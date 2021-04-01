@@ -225,7 +225,14 @@ public class Action {
             } else if (action.equals(ActionConstants.ACTION_MEDIA_PLAY_PAUSE)) {
                 dispatchMediaKeyWithWakeLock(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE, context);
                 return;
-            } else if (action.equals(ActionConstants.ACTION_WAKE_DEVICE)) {
+            } else if (action.equals(ActionConstants.ACTION_VOLUME_DOWN)) {
+                triggerVirtualKeypress(KeyEvent.KEYCODE_VOLUME_DOWN, isLongpress);
+		return;
+	    } else if (action.equals(ActionConstants.ACTION_VOLUME_UP)) {
+                triggerVirtualKeypress(KeyEvent.KEYCODE_VOLUME_UP, isLongpress);
+		return;
+            }
+	      else if (action.equals(ActionConstants.ACTION_WAKE_DEVICE)) {
                 PowerManager powerManager =
                         (PowerManager) context.getSystemService(Context.POWER_SERVICE);
                 if (!powerManager.isScreenOn()) {
@@ -310,5 +317,4 @@ public class Action {
                 InputDevice.SOURCE_KEYBOARD);
         im.injectInputEvent(upEvent, InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
     }
-
 }

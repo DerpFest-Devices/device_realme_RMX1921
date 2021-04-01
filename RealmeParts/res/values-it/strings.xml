@@ -76,6 +76,8 @@
     <string name="dt2w_title">Doppio tap</string>
     <string name="haptic_feedback_title">Feedback aptico</string>
     <string name="shortcut_action_ambient_display">Mostra il display ambient</string>
+    <string name="shortcut_action_vol_up">Volume su</string>
+    <string name="shortcut_action_vol_down">Volume giù</string>
 
     <!-- Shortcut actions -->
     <string name="shortcut_action_none">Nessuna</string>
