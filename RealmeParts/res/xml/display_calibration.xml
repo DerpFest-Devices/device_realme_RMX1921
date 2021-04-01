@@ -48,7 +48,7 @@
         android:layout="@layout/slider_preference"
         android:recycleEnabled="false"
         app:max_value="256"
-        app:min_value="0"
+        app:min_value="70"
         app:default_value="256"/>
     <org.device.RealmeParts.kcal.utils.SeekBarPreference
         android:key="kcal_green"
@@ -58,7 +58,7 @@
         android:layout="@layout/slider_preference"
         android:recycleEnabled="false"
         app:max_value="256"
-        app:min_value="0"
+        app:min_value="70"
         app:default_value="256"/>
     <org.device.RealmeParts.kcal.utils.SeekBarPreference
         android:key="kcal_blue"
@@ -68,7 +68,7 @@
         android:layout="@layout/slider_preference"
         android:recycleEnabled="false"
         app:max_value="256"
-        app:min_value="0"
+        app:min_value="70"
         app:default_value="256"/>
     <org.device.RealmeParts.kcal.utils.SeekBarPreference
         android:key="kcal_contrast"
