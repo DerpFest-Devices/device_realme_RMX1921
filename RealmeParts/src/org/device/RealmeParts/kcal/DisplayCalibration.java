@@ -66,14 +66,11 @@ public class DisplayCalibration extends PreferenceActivity implements
     private ListPreference mKcalPresetsListPreference;
     private boolean mEnabled;
 
-    private String mRed;
-    private String mBlue;
-    private String mGreen;
-
-    private static final String COLOR_FILE = "/sys/module/msm_drm/parameters/kcal";
+    private static final String COLOR_FILE_BLUE = "/sys/module/msm_drm/parameters/kcal_blue";
+    private static final String COLOR_FILE_RED = "/sys/module/msm_drm/parameters/kcal_red";
+    private static final String COLOR_FILE_GREEN = "/sys/module/msm_drm/parameters/kcal_green";
     private static final String COLOR_FILE_CONTRAST = "/sys/module/msm_drm/parameters/kcal_cont";
     private static final String COLOR_FILE_SATURATION = "/sys/module/msm_drm/parameters/kcal_sat";
-    private static final String COLOR_FILE_ENABLE = "/sys/module/msm_drm/parameters/kcal_enable";
     private static final String COLOR_FILE_HUE = "/sys/module/msm_drm/parameters/kcal_hue";
     private static final String COLOR_FILE_VALUE = "/sys/module/msm_drm/parameters/kcal_val";
 
@@ -133,10 +130,6 @@ public class DisplayCalibration extends PreferenceActivity implements
         mKcalGreyscale.setChecked(mPrefs.getBoolean(KEY_KCAL_GREYSCALE, false));
         mKcalGreyscale.setOnPreferenceChangeListener(this);
 
-        mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, mKcalRed.def));
-        mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, mKcalGreen.def));
-        mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, mKcalBlue.def));
-
         mKcalPresetsListPreference = (ListPreference) findPreference(KEY_KCAL_PRESETS_LIST);
         String kcalPresetsValue = mPrefs.getString(KEY_KCAL_PRESETS_LIST, "0");
         mKcalPresetsListPreference.setValue(kcalPresetsValue);
@@ -151,8 +144,6 @@ public class DisplayCalibration extends PreferenceActivity implements
        boolean storeEnabled = PreferenceManager
                 .getDefaultSharedPreferences(context).getBoolean(DisplayCalibration.KEY_KCAL_ENABLED, false);
        if (storeEnabled) {
-           Utils.writeValue(COLOR_FILE_ENABLE, "1");
-           Utils.writeValue(COLOR_FILE, "1");
            int storedRed = PreferenceManager
                    .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_RED, 256);
            int storedGreen = PreferenceManager
@@ -169,9 +160,9 @@ public class DisplayCalibration extends PreferenceActivity implements
                    .getDefaultSharedPreferences(context).getInt(DisplayCalibration.KEY_KCAL_VALUE, 255);
            boolean storedGreyscale = PreferenceManager
                    .getDefaultSharedPreferences(context).getBoolean(DisplayCalibration.KEY_KCAL_GREYSCALE, false);
-           String storedValue = ((String) String.valueOf(storedRed)
-                   + " " + String.valueOf(storedGreen) + " " +  String.valueOf(storedBlue));
-           Utils.writeValue(COLOR_FILE, storedValue);
+           Utils.writeValue(COLOR_FILE_RED, String.valueOf(storedRed));
+           Utils.writeValue(COLOR_FILE_BLUE, String.valueOf(storedBlue));
+           Utils.writeValue(COLOR_FILE_GREEN, String.valueOf(storedGreen));
            Utils.writeValue(COLOR_FILE_CONTRAST, String.valueOf(storedContrast));
            Utils.writeValue(COLOR_FILE_SATURATION, storedGreyscale ? "128" : String.valueOf(storedSaturation));
            Utils.writeValue(COLOR_FILE_HUE, String.valueOf(storedHue));
@@ -225,9 +216,9 @@ public class DisplayCalibration extends PreferenceActivity implements
         mPrefs.edit().putBoolean(KEY_KCAL_GREYSCALE, greyscale).commit();
 	mPrefs.edit().putString(KEY_KCAL_PRESETS_LIST, preset).commit();
 
-        String storedValue = Integer.toString(red) + " " + Integer.toString(green) + " " +  Integer.toString(blue);
-
-        Utils.writeValue(COLOR_FILE, storedValue);
+        Utils.writeValue(COLOR_FILE_RED, Integer.toString(red));
+        Utils.writeValue(COLOR_FILE_GREEN, Integer.toString(green));
+        Utils.writeValue(COLOR_FILE_BLUE, Integer.toString(blue));
         Utils.writeValue(COLOR_FILE_SATURATION, Integer.toString(saturation));
         Utils.writeValue(COLOR_FILE_CONTRAST, Integer.toString(contrast));
         Utils.writeValue(COLOR_FILE_HUE, String.valueOf(hue));
@@ -244,7 +235,9 @@ public class DisplayCalibration extends PreferenceActivity implements
         PreferenceManager.getDefaultSharedPreferences(context).edit().putInt(KEY_KCAL_GREEN, (int) valGreen).commit();
         float valBlue = Float.parseFloat((String) blue);
         PreferenceManager.getDefaultSharedPreferences(context).edit().putInt(KEY_KCAL_BLUE, (int) valBlue).commit();
-        Utils.writeValue(COLOR_FILE, red + " " + green + " " + blue);
+        Utils.writeValue(COLOR_FILE_RED, red);
+        Utils.writeValue(COLOR_FILE_GREEN, green);
+        Utils.writeValue(COLOR_FILE_BLUE, blue);
     }
 
     public static void setValueSat(String newValue) {
@@ -283,26 +276,39 @@ public class DisplayCalibration extends PreferenceActivity implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        String mRed;
+        String mBlue;
+        String mGreen;
         if (preference == mKcalEnabled) {
             Boolean enabled = (Boolean) newValue;
             mPrefs.edit().putBoolean(KEY_KCAL_ENABLED, enabled).commit();
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
-            String storedValue = ((String) String.valueOf(mRed)
-                   + " " + String.valueOf(mGreen) + " " +  String.valueOf(mBlue));
             String mSaturation = String.valueOf(mPrefs.getInt(KEY_KCAL_SATURATION, 256));
             String mContrast = String.valueOf(mPrefs.getInt(KEY_KCAL_CONTRAST, 256));
             String mHue = String.valueOf(mPrefs.getInt(KEY_KCAL_HUE, 0));
             String mValue = String.valueOf(mPrefs.getInt(KEY_KCAL_VALUE, 255));
             Boolean mGreyscale = mPrefs.getBoolean(KEY_KCAL_GREYSCALE, false);
-            Utils.writeValue(COLOR_FILE_ENABLE, enabled ? "1" : "0");
-            Utils.writeValue(COLOR_FILE, storedValue);
-            Utils.writeValue(COLOR_FILE_SATURATION, mSaturation);
-            Utils.writeValue(COLOR_FILE_CONTRAST, mContrast);
-            Utils.writeValue(COLOR_FILE_HUE, mHue);
-            Utils.writeValue(COLOR_FILE_VALUE, mValue);
-
+            if(enabled) {
+                Utils.writeValue(COLOR_FILE_RED, mRed);
+                Utils.writeValue(COLOR_FILE_GREEN, mGreen);
+                Utils.writeValue(COLOR_FILE_BLUE, mBlue);
+                Utils.writeValue(COLOR_FILE_SATURATION, mSaturation);
+                Utils.writeValue(COLOR_FILE_CONTRAST, mContrast);
+                Utils.writeValue(COLOR_FILE_HUE, mHue);
+                Utils.writeValue(COLOR_FILE_VALUE, mValue);
+            }
+            else
+            {
+                Utils.writeValue(COLOR_FILE_RED, Integer.toString(256));
+                Utils.writeValue(COLOR_FILE_GREEN, Integer.toString(256));
+                Utils.writeValue(COLOR_FILE_BLUE, Integer.toString(256));
+                Utils.writeValue(COLOR_FILE_SATURATION, Integer.toString(256));
+                Utils.writeValue(COLOR_FILE_CONTRAST, Integer.toString(256));
+                Utils.writeValue(COLOR_FILE_HUE, Integer.toString(0));
+                Utils.writeValue(COLOR_FILE_VALUE, Integer.toString(255));
+            }
             int cct = Utils.KfromRGB(mPrefs.getInt(KEY_KCAL_RED, 256), mPrefs.getInt(KEY_KCAL_GREEN, 256), mPrefs.getInt(KEY_KCAL_BLUE, 256));
             mKcalColorTemp.setValue(cct);
             return true;
@@ -311,8 +317,10 @@ public class DisplayCalibration extends PreferenceActivity implements
             mPrefs.edit().putInt(KEY_KCAL_RED, (int) val).commit();
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
-            String strVal = ((String) newValue + " " + mGreen + " " +mBlue);
-            Utils.writeValue(COLOR_FILE, strVal);
+            mRed = (String)newValue;
+	    Utils.writeValue(COLOR_FILE_RED, mRed);
+            Utils.writeValue(COLOR_FILE_GREEN, mGreen);
+            Utils.writeValue(COLOR_FILE_BLUE, mBlue);
 
             int cct = Utils.KfromRGB(val, mPrefs.getInt(KEY_KCAL_GREEN, 256), mPrefs.getInt(KEY_KCAL_BLUE, 256));
             mKcalColorTemp.setValue(cct);
@@ -323,7 +331,10 @@ public class DisplayCalibration extends PreferenceActivity implements
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
             mBlue = String.valueOf(mPrefs.getInt(KEY_KCAL_BLUE, 256));
             String strVal = ((String) mRed + " " + newValue + " " +mBlue);
-            Utils.writeValue(COLOR_FILE, strVal);
+            mGreen = (String) newValue;
+	    Utils.writeValue(COLOR_FILE_RED, mRed);
+            Utils.writeValue(COLOR_FILE_GREEN, mGreen);
+            Utils.writeValue(COLOR_FILE_BLUE, mBlue);
 
             int cct = Utils.KfromRGB(mPrefs.getInt(KEY_KCAL_RED, 256), val, mPrefs.getInt(KEY_KCAL_BLUE, 256));
             mKcalColorTemp.setValue(cct);
@@ -333,8 +344,11 @@ public class DisplayCalibration extends PreferenceActivity implements
             mPrefs.edit().putInt(KEY_KCAL_BLUE, (int) val).commit();
             mRed = String.valueOf(mPrefs.getInt(KEY_KCAL_RED, 256));
             mGreen = String.valueOf(mPrefs.getInt(KEY_KCAL_GREEN, 256));
+            mBlue = (String) newValue;
             String strVal = ((String) mRed + " " + mGreen + " " +newValue);
-            Utils.writeValue(COLOR_FILE, strVal);
+            Utils.writeValue(COLOR_FILE_RED, mRed);
+            Utils.writeValue(COLOR_FILE_GREEN, mGreen);
+            Utils.writeValue(COLOR_FILE_BLUE, mBlue);
 
             int cct = Utils.KfromRGB(mPrefs.getInt(KEY_KCAL_RED, 256), mPrefs.getInt(KEY_KCAL_GREEN, 256), val);
             mKcalColorTemp.setValue(cct);
@@ -390,8 +404,9 @@ public class DisplayCalibration extends PreferenceActivity implements
             mPrefs.edit().putInt(KEY_KCAL_GREEN, green).commit();
             mPrefs.edit().putInt(KEY_KCAL_BLUE, blue).commit();
 
-            String storedValue = Integer.toString(red) + " " + Integer.toString(green) + " " +  Integer.toString(blue);
-            Utils.writeValue(COLOR_FILE, storedValue);
+            Utils.writeValue(COLOR_FILE_RED, Integer.toString(red));
+            Utils.writeValue(COLOR_FILE_GREEN, Integer.toString(green));
+            Utils.writeValue(COLOR_FILE_BLUE, Integer.toString(blue));
         }
         return false;
     }
