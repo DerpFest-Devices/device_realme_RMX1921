@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019-2020 The LineageOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="device_title">Настройки Realme</string>
+    <string name="device_summary">Специальные настройки устройства Realme</string>
+    <string name="customize_title">Customize</string>
+    <string name="misc_title">Прочее</string>
+
+    <!-- DC dimming -->
+    <string name="dc_mode_summary">Уменьшает мерцание экрана при низкой яркости</string>
+    <string name="dc_mode_title">DC-Dimming</string>
+    <string name="tile_dc_mode">DC-Dimming</string>
+    <!-- HBM mode -->
+    <string name="hbm_mode_summary">Максимальная яркость для лучшей видимости</string>
+    <string name="hbm_mode_title">Режим высокой яркости </string>
+    <string name="tile_hbm_mode">Режим высокой яркости </string>
+    <!-- srgb mode -->
+    <string name="srgb_mode_summary">Режим sRGB для оптимальной цветовой палитры</string>
+    <string name="srgb_mode_title">Режим sRGB</string>
+    <string name="tile_srgb_mode">sRGB</string>
+    <!-- otg mode -->
+    <string name="otg_mode_summary">Для подключения внешних USB устройств</string>
+    <string name="otg_mode_title">Включить USB-OTG</string>
+    <string name="tile_otg_mode">USB-OTG</string>
+    <!-- game mode -->
+    <string name="game_mode_summary">Повышение частоты опроса сенсорного экрана </string>
+    <string name="game_mode_title">Игровой режим</string>
+    <string name="tile_game_mode">Игровой режим</string>
+
+    <!-- Информация о FPS -->
+    <string name="fps_info_title">Наложение информации о FPS</string>
+    <string name="fps_info_summary">Показывать наложение с текущими кадрами в секунду</string>
+
+    <!-- Жесты -->
+    <string name="dlg_ok">Принять</string>
+    <string name="cancel">Отменить</string>
+    <string name="reset">Сбросить</string>
+    <string name="reset_message">Сбросить все настройки?</string>
+    <string name="group_applications">Приложения</string>
+    <string name="select_custom_app_title">Выбрать своё приложение</string>
+    <string name="gestures_dashboard_summary">Простые жесты на заблокированном экране</string>
+    <string name="enable_gestures_title">Включить жесты</string>
+    <string name="enable_gestures_summary">Включить жесты на выключенном экране</string>
+    <string name="gestures_title">Жесты</string>
+    <string name="gesture_double_tap_title">Жест Двойное Нажатие</string>
+    <string name="gesture_w_title">Жест W</string>	
+    <string name="gesture_m_title">Жест M</string>
+    <string name="gesture_s_title">Жест S</string>
+    <string name="gesture_circle_title">Жест Круг</string>
+    <string name="gesture_two_swipe_title">Жест Два Потягивания</string>
+    <string name="gesture_up_arrow_title">Жест Стрелка Вверх</string>
+    <string name="gesture_down_arrow_title">Жест Стрелка Вниз</string>
+    <string name="gesture_left_arrow_title">Жест Стрелка Влево</string>
+    <string name="gesture_right_arrow_title">Жест Стрелка Вправо</string>
+    <string name="gesture_swipe_up_title">Жест Потянуть вверх</string>
+    <string name="gesture_swipe_down_title">Жест Потянутъ вниз</string>
+    <string name="gesture_swipe_left_title">Жест Потянуть влево</string>
+    <string name="gesture_swipe_right_title">Жест Потянуть вправо</string>
+    <string name="KharaMeParts_summary">Жесты и Твики</string>
+    <string name="screen_off_gestures">Жесты выключенного экрана</string>
+    <string name="gestures">Жесты</string>
+    <string name="enable_dt2w_title">Включить двойное нажатие</string>
+    <string name="enable_dt2w_summary">Включить жесты двойного нажатия</string>
+    <string name="dt2w_title">Двойное нажатие</string>
+    <string name="haptic_feedback_title">Тактильная обратная связь</string>
+
+    <!-- Действия ярлыков -->                                                               
+    <string name="shortcut_action_none">Нет</string>
+    <string name="shortcut_action_app">Своё приложение</string>
+    <string name="shortcut_action_home">Домашний экран</string>
+    <string name="shortcut_action_back">Назад</string>
+    <string name="shortcut_action_menu">Меню</string>
+    <string name="shortcut_action_ime">Открыть IME переключатель</string>
+    <string name="shortcut_action_power_menu">Меню выключения</string>
+    <string name="shortcut_action_recent">Недавние</string>
+    <string name="shortcut_action_power">Выключить экран</string>
+    <string name="shortcut_action_search">Искать в приложении</string>
+    <string name="shortcut_action_now_on_tap">Сейчас на нажатии</string>
+    <string name="shortcut_action_ring_vib">Звонок/Вибрация</string>
+    <string name="shortcut_action_ring_silent">Звонок/Беззвучие</string>
+    <string name="shortcut_action_ring_vib_silent">Звонок/Вибрация/Беззвучие</string>
+    <string name="shortcut_action_camera">Камера</string>
+    <string name="shortcut_action_media_next">Музыка - следующий трек</string>
+    <string name="shortcut_action_media_play_pause">Музыка - воспроизвести/пауза</string>
+    <string name="shortcut_action_media_previous">Музыка - предыдущий трек</string>
+    <string name="shortcut_action_wake_device">Пробуждение устройства</string>
+    <string name="shortcut_action_kill">Убить приложение</string>
+    <string name="shortcut_action_screenshot">Скриншот</string>
+    <string name="shortcut_action_lastapp">Последнее приложение</string>
+    <string name="shortcut_action_notifications">Уведомления</string>
+    <string name="shortcut_action_qs">Панель быстрых настроек</string>
+    <string name="shortcut_action_torch">Фонарик</string>
+    <string name="shortcut_action_longpress">Долгое нажатие:</string>
+    <string name="shortcut_action_select_action_longpress">Выбрать действие долгого нажатия:</string>
+    <string name="shortcut_action_select_action">Выбрать действие:</string>
+    <string name="shortcut_action_select_action_newaction">Выбрать новое действие:</string>
+    <string name="shortcut_action_reset">Сбросить</string>
+    <string name="shortcut_action_add">Добавить</string>
+    <string name="shortcut_action_reset_message">Сбросить все настройки?</string>
+    <string name="shortcut_action_max">Достигнут максимальный размер записей</string>
+    <string name="shortcut_action_warning">Внимание</string>
+    <string name="shortcut_action_warning_message">Невозможно удалить последнюю запись</string>
+    <string name="shortcut_action_required_warning_message">Невозможно удалить требуемые кнопки</string>
+    <string name="shortcut_action_disable_message">Отключить\Добавить запись для включения этой функции</string>
+    <string name="shortcut_image_not_valid">Выбранное приложение не вернуло правильный значок или оно не поддерживает обрезку изображения. Используйте другое приложение.</string>
+    <string name="shortcut_duplicate_entry">Выбранное действие нельзя добавить дважды</string>
+    <string name="shortcut_action_help_shortcut">ярлык</string>
+    <string name="shortcut_action_help_button">кнопка</string>
+    <string name="shortcut_action_help_app">приложение</string>
+    <string name="shortcut_action_help_icon">, при выборе значка появятся параметры настройки</string>
+    <string name="shortcut_action_help_main">Чтобы добавить %1$s, выберите значок Добавить.После добавления %1$s, выбор строки изменит цель%2$s\n\nЧтобы удалить %1$s, проведите по строке горизонтально влево или вправо.Измените порядок %1$s в списке вертикально перетащив якорь влево.\n\nЧтобы сбросить настройки,выберите опцию сброса</string>
+    <string name="shortcut_action_ambient_display">Показывать ambient display</string>
+    <string name="shortcut_action_vol_up">Увеличить громкость</string>
+    <string name="shortcut_action_vol_down">Убавить громкость</string>
+
+    <!-- Специальные настройки устройства -->  
+    <string name="screen_off_gesture_settings_title">Жесты выключенного экрана</string>
+
+    <!-- Жест тактильной обратной связи --> 
+    <string name="touchscreen_gesture_haptic_feedback">Тактильная обратная связь</string>
+    <string name="touchscreen_gesture_haptic_feedback_summary">Вибрировать при обнаружении жеста</string>
+
+    <!-- Kcal -->
+    <string name="kcal">Экран</string>                                                                              
+    <string name="kcal_title">Контроль цвета экрана</string>
+    <string name="kcal_summary">Калибровка цвета экрана с использованием KCAL</string>
+    <string name="kcal_enabled_title">Включить KCAL</string>
+    <string name="kcal_enabled_summary">Включить калибровку экрана с использованием KCAL</string>
+    <string name="kcal_red">Красный</string>
+    <string name="kcal_green">Зелёный</string>
+    <string name="kcal_blue">Синий</string>
+    <string name="kcal_saturation">Насыщенность</string>
+    <string name="kcal_contrast">Контраст</string>
+    <string name="menu_reset">Сбросить</string>
+    <string name="kcal_color_temp">Температура цвета (K)</string>
+
+    <string name="kcal_greyscale_title">Шкала серого</string>                              
+    <string name="kcal_greyscale_summary">Полностью отключить насыщенность</string>
+    <string name="presets_list_title">Загрузить пресет KCAL</string>
+    <string name="default_values">По умолчанию</string>
+    <string name="version_1">Версия 1</string>
+    <string name="version_2">Версия 2</string>
+    <string name="version_3">Версия 3</string>
+    <string name="triluminous">Triluminous</string>
+    <string name="deep_black_and_white">Deep Black and White</string>
+    <string name="deep_natural">Deep Natural</string>
+    <string name="cool_amoled">Cool Amoled</string>
+    <string name="extreme_amoled">Extreme Amoled</string>
+    <string name="warm_amoled">Warm Amoled</string>
+    <string name="hybrid_mamba">Hybrid Mamba</string>
+    <string name="kcal_hue">Оттенок</string>
+    <string name="kcal_value">Значение</string>
+
+    <!-- Профили спектра -->                                                  
+    <string name="spectrum_profile_title">Спектр</string>
+    <string name="spectrum_title">Профили спектра</string>
+    <string name="spectrum_summary">Выбрать свой профиль спектра</string>
+    <string name="spectrum_dialogTitle">Выбрать свой профиль спектра</string>
+
+    <!-- Значения для спектральных пресетов -->  
+    <string name="spectrum_performance">Производительность</string>
+    <string name="spectrum_battery">Заряд</string>
+    <string name="spectrum_gaming">Игра</string>
+    <string name="spectrum_balance">Баланс</string>                                          
+
+    <!-- Аудио -->   
+    <string name="audio_title">Аудио</string>
+
+    <!-- Настройки Dirac -->  
+    <string name="dirac_title">Усилитель звука Dirac</string>
+    <string name="dirac_summary">Оптимизация качества звука</string>
+    <string name="dirac_headset_title">Выбрать тип наушников</string>
+    <string name="dirac_preset_title">Выбрать пресет</string>
+
+    <!-- Настройки Dirac: Виды гарнитуры -->  
+    <string name="dirac_headset_default">По умолчанию</string>
+    <string name="dirac_headset_earbuds">Mi Earbuds</string>
+    <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
+    <string name="dirac_headset_piston_1">Mi Piston-1</string>
+    <string name="dirac_headset_general">Общий</string>
+    <string name="dirac_headset_general_inear">Общий In-Ear</string>
+    <string name="dirac_headset_piston_basic">Basic Edition</string>
+    <string name="dirac_headset_piston_2">Mi Piston-2</string>
+    <string name="dirac_headset_piston_standard">Standard Edition</string>
+    <string name="dirac_headset_headphone">Mi Headphones</string>
+    <string name="dirac_headset_piston_youth">Youth Edition</string>
+    <string name="dirac_headset_piston_color">Color Edition</string>
+    <string name="dirac_headset_in_ear">Mi In-Ear</string>
+    <string name="dirac_headset_capsule">Mi Capsule</string>
+    <string name="dirac_headset_in_ear_pro">Mi In-Ear Pro</string>
+    <string name="dirac_headset_comfort">Mi Comfort</string>
+    <string name="dirac_headset_reduction_noise">Mi Noise Cancelling Type-C</string>
+    <string name="dirac_headset_cancelling">Mi Noise Cancelling 3.5mm</string>
+    <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
+    <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
+    <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
+    <string name="dirac_headset_earphone">Mi Earphones</string>
+
+    <!-- Настройки Dirac: Пресеты эквалайзера -->   
+    <string name="dirac_preset_default">По умолчанию</string>
+    <string name="dirac_preset_rock">Рок</string>
+    <string name="dirac_preset_jazz">Джаз</string>
+    <string name="dirac_preset_pop">Поп</string>
+    <string name="dirac_preset_classical">Классическая</string>
+    <string name="dirac_preset_hiphop">Хип хоп</string>
+    <string name="dirac_preset_blues">Блюз</string>
+    <string name="dirac_preset_electronic">Электронная</string>
+    <string name="dirac_preset_country">Кантри</string>
+    <string name="dirac_preset_dance">Танцевальная</string>
+    <string name="dirac_preset_metal">Метал</string>
+
+</resources>
