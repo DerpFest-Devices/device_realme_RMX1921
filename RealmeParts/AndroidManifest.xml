@@ -63,14 +63,6 @@
         </receiver>
 
         <activity
-            android:name=".Touch.ScreenOffGestureSettings"
-            android:label="@string/screen_off_gestures">
-            <intent-filter>
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name="org.device.RealmeParts.kcal.DisplayCalibration"
             android:label="@string/kcal_title">
             <intent-filter>
@@ -130,32 +122,8 @@
             </intent-filter>
         </service>
         <service
-            android:name="org.device.RealmeParts.SpectrumTileService" 
-            android:icon="@drawable/ic_spectrum" 
-            android:label="@string/spectrum_title" 
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"> 
-            <intent-filter>
-                <action 
-                android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-        <service
             android:name=".DiracService"
             android:enabled="true"
             android:stopWithTask="false" />
-        <service
-            android:name="org.device.RealmeParts.FPSInfoService"
-            android:exported="false">
-        </service>
-        <service
-            android:name=".FPSTileService"
-            android:icon="@drawable/ic_fps_info"
-            android:label="@string/fps_info_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
     </application>
 </manifest>

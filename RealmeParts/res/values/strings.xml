@@ -192,18 +192,6 @@
     <string name="kcal_hue">Hue</string>
     <string name="kcal_value">Value</string>
 
-    <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">Spectrum</string>
-    <string name="spectrum_title">Spectrum Profiles</string>
-    <string name="spectrum_summary">Choose your Spectrum Profiles</string>
-    <string name="spectrum_dialogTitle">Choose your Spectrum Profiles</string>
-
-    <!-- Values for Spectrum Presets -->
-    <string name="spectrum_performance">Performance</string>
-    <string name="spectrum_battery">Battery</string>
-    <string name="spectrum_gaming">Gaming</string>
-    <string name="spectrum_balance">Balance</string>
-
     <!-- Audio -->
     <string name="audio_title">Audio</string>
 
@@ -249,11 +237,6 @@
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
-
-    <!-- Audio amplification -->
-    <string name="headphone_gain">Headphone gain</string>
-    <string name="microphone_gain">Microphone gain</string>
-    <string name="earpiece_gain">Earpiece gain (Calls)</string>
 
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>

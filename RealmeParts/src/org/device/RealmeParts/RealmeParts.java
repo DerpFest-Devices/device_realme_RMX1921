@@ -46,7 +46,6 @@ import androidx.preference.TwoStatePreference;
 
 
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
-import org.device.RealmeParts.Touch.ScreenOffGestureSettings;
 import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.preferences.CustomSeekBarPreference;
 import org.device.RealmeParts.preferences.SecureSettingListPreference;
@@ -56,8 +55,6 @@ public class RealmeParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
-    private static final String PREF_SPECTRUM = "spectrum";
-    private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
     private static final String PREF_ENABLE_DIRAC = "dirac_enabled";
     private static final String PREF_HEADSET = "dirac_headset_pref";
     private static final String PREF_PRESET = "dirac_preset_pref";
@@ -69,7 +66,6 @@ public class RealmeParts extends PreferenceFragment
     public static final String KEY_GAME_SWITCH = "game";
     public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
     public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
-    public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
     private static TwoStatePreference mHBMModeSwitch;
@@ -77,9 +73,7 @@ public class RealmeParts extends PreferenceFragment
     private static TwoStatePreference mSRGBModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
-    private Preference mGesturesPref;
     private Preference mKcalPref;
-    private SecureSettingListPreference mSPECTRUM;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
@@ -115,21 +109,6 @@ public class RealmeParts extends PreferenceFragment
         mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled(this.getContext()));
         mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch());
 
-        mGesturesPref = findPreference("screen_gestures");
-                mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                     @Override
-                     public boolean onPreferenceClick(Preference preference) {
-                         Intent intent = new Intent(getContext(), ScreenOffGestureSettings.class);
-                         startActivity(intent);
-                         return true;
-                     }
-                });
-
-        mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
-        mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
-        mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-        mSPECTRUM.setOnPreferenceChangeListener(this);
-
         mKcalPref = findPreference("kcal");
                 mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                      @Override
@@ -164,21 +143,12 @@ public class RealmeParts extends PreferenceFragment
         mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
         mPreset.setOnPreferenceChangeListener(this);
 
-        SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
-        fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
-        fpsInfo.setOnPreferenceChangeListener(this);
-
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case PREF_SPECTRUM:
-                mSPECTRUM.setValue((String) value);
-                mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-                FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
-                break;
 
             case PREF_ENABLE_DIRAC:
                 try {
@@ -204,16 +174,6 @@ public class RealmeParts extends PreferenceFragment
                 } catch (java.lang.NullPointerException e) {
                     getContext().startService(new Intent(getContext(), DiracService.class));
                     DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                }
-                break;
-
-            case PREF_KEY_FPS_INFO:
-                boolean enabled = (Boolean) value;
-                Intent fpsinfo = new Intent(this.getContext(), org.device.RealmeParts.FPSInfoService.class);
-                if (enabled) {
-                    this.getContext().startService(fpsinfo);
-                } else {
-                    this.getContext().stopService(fpsinfo);
                 }
                 break;
 

@@ -25,8 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
-import org.device.RealmeParts.Touch.util.Utils;
-import org.device.RealmeParts.Touch.ScreenOffGesture;
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
 import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.DiracUtils;
@@ -59,26 +57,8 @@ public class Startup extends BroadcastReceiver {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences (context);
         enabled = sharedPrefs.getBoolean (RealmeParts.KEY_GAME_SWITCH, false);
         restore (GameModeSwitch.getFile ( ), enabled);
-        enabled = sharedPrefs.getBoolean(RealmeParts.PREF_KEY_FPS_INFO, false);
-        if (enabled) {
-            context.startService(new Intent(context, FPSInfoService.class));
-        }
-            enableComponent(context, ScreenOffGesture.class.getName());
-            SharedPreferences screenOffGestureSharedPreferences = context.getSharedPreferences(
-                    Utils.PREFERENCES, Activity.MODE_PRIVATE);
-            KernelControl.enableGestures(
-                    screenOffGestureSharedPreferences.getBoolean(
-                            ScreenOffGesture.PREF_GESTURE_ENABLE, true));
-            KernelControl.enableDt2w(
-                    screenOffGestureSharedPreferences.getBoolean(
-                            ScreenOffGesture.PREF_DT2W_ENABLE, true));
-
         context.startService (new Intent (context, DisplayCalibration.class));
         context.startService(new Intent(context, DiracService.class));
-        enabled = sharedPrefs.getBoolean (RealmeParts.PREF_KEY_FPS_INFO, false);
-        if (enabled) {
-            context.startService(new Intent(context, FPSInfoService.class));
-   	}
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_DC_SWITCH, false);
         restore(DCModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_HBM_SWITCH, false);

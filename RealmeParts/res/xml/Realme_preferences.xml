@@ -18,12 +18,6 @@
             android:title="@string/customize_title">
 
         <SwitchPreference
-            android:key="fps_info"
-            android:title="@string/fps_info_title"
-            android:summary="@string/fps_info_summary"
-            android:persistent="true" />
-
-        <SwitchPreference
             android:key="dc"
             android:summary="@string/dc_mode_summary"
             android:title="@string/dc_mode_title" />
@@ -46,37 +40,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="@string/gestures">
-
-        <PreferenceScreen
-                android:key="screen_gestures"
-                android:fragment="org.device.RealmeParts.Touch.ScreenOffGestureSettings"
-                android:summary="@string/gestures_dashboard_summary"
-                android:title="@string/screen_off_gestures" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
             android:title="@string/kcal">
          <PreferenceScreen
                 android:key="kcal"
                 android:fragment="org.device.RealmeParts.kcal.DisplayCalibration"
                 android:summary="@string/kcal_summary"
                 android:title="@string/kcal_title" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="spectrum_profile"
-        android:title="@string/spectrum_profile_title">
-
-        <org.device.RealmeParts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/spectrum_dialogTitle"
-            android:entries="@array/spectrum_profiles"
-            android:entryValues="@array/spectrum_values"
-            android:key="spectrum"
-            android:summary="@string/spectrum_summary"
-            android:title="@string/spectrum_title" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
