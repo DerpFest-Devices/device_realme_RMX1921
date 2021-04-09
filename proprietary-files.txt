@@ -811,14 +811,25 @@ vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 vendor/lib64/hw/vulkan.adreno.so
 vendor/lib/hw/vulkan.adreno.so
 
-# IMS - Pinned blobs are from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190828.002/00WW_4_30B:user/release-keys
--product/app/uceShimService/uceShimService.apk|f30f05dffef88ac4f7a18f9f1d94ef22ddd2f4ea
+# IMS - Pinned blobs are from PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
+-product/app/uceShimService/uceShimService.apk
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 product/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
 product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
+product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
+product/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
+product/framework/com.qualcomm.qti.uceservice-V2.2-java.jar
+product/framework/vendor.qti.ims.callcapability-V1.0-java.jar
+product/framework/vendor.qti.ims.callinfo-V1.0-java.jar
+product/framework/vendor.qti.ims.factory-V1.0-java.jar
+product/framework/vendor.qti.ims.factory-V1.1-java.jar
+product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
+product/framework/vendor.qti.ims.rcsconfig-V1.1-java.jar
+product/framework/vendor.qti.ims.rcsconfig-2.0-java.jar
+product/framework/vendor.qti.ims.rcsconfig-V2.1-java.jar
 product/lib64/com.qualcomm.qti.imscmservice@1.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.1.so
@@ -840,6 +851,16 @@ product/lib64/vendor.qti.ims.callinfo@1.0.so
 product/lib64/vendor.qti.ims.rcsconfig@1.0.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
+product/lib64/com.qualcomm.qti.uceservice@2.2.so
+product/lib64/vendor.qti.hardware.radio.ims@1.5.so
+product/lib64/vendor.qti.hardware.radio.ims@1.6.so
+product/lib64/vendor.qti.ims.callcapability@1.0.so
+product/lib64/vendor.qti.ims.factory@1.0.so
+product/lib64/vendor.qti.ims.factory@1.1.so
+product/lib64/vendor.qti.ims.rcsconfig@1.1.so
+product/lib64/vendor.qti.ims.rcsconfig@2.0.so
+product/lib64/vendor.qti.ims.rcsconfig@2.1.so
+product/lib64/vendor.qti.imsrtpservice@3.0.so
 product/lib/com.qualcomm.qti.imscmservice@1.0.so
 product/lib/com.qualcomm.qti.imscmservice@2.0.so
 product/lib/com.qualcomm.qti.imscmservice@2.1.so
@@ -861,9 +882,20 @@ product/lib/vendor.qti.ims.callinfo@1.0.so
 product/lib/vendor.qti.ims.rcsconfig@1.0.so
 product/lib/vendor.qti.imsrtpservice@2.0.so
 product/lib/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk|d2e0d617c6c8adcbcecd7d2c29d939081796b2fd
+product/lib/com.qualcomm.qti.uceservice@2.2.so
+product/lib/vendor.qti.hardware.radio.ims@1.5.so
+product/lib/vendor.qti.hardware.radio.ims@1.6.so
+product/lib/vendor.qti.ims.callcapability@1.0.so
+product/lib/vendor.qti.ims.factory@1.0.so
+product/lib/vendor.qti.ims.factory@1.1.so
+product/lib/vendor.qti.ims.rcsconfig@1.1.so
+product/lib/vendor.qti.ims.rcsconfig@2.0.so
+product/lib/vendor.qti.ims.rcsconfig@2.1.so
+product/lib/vendor.qti.imsrtpservice@3.0.so
+-product/priv-app/ims/ims.apk
 product/lib/libdiag_system.so
 product/lib64/libdiag_system.so
+vendor/etc/seccomp_policy/imsrtp.policy
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -903,6 +935,16 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@2.0.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so
+vendor/lib64/libavservices_minijail.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so
+vendor/lib64/vendor.qti.ims.callcapability@1.0.so
+vendor/lib64/vendor.qti.ims.factory@1.0.so
+vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
+vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
+vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
+vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
+vendor/lib64/vendor.qti.imsrtpservice@3.0.so
 vendor/lib/librcc.so
 vendor/lib/lib-imscmservice.so
 vendor/lib/lib-imsdpl.so
@@ -926,6 +968,16 @@ vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib/vendor.qti.imsrtpservice@2.0.so
 vendor/lib/vendor.qti.imsrtpservice@2.1-service-Impl.so
 vendor/lib/vendor.qti.imsrtpservice@2.1.so
+vendor/lib/libavservices_minijail.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.5.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.6.so
+vendor/lib/vendor.qti.ims.callcapability@1.0.so
+vendor/lib/vendor.qti.ims.factory@1.0.so
+vendor/lib/vendor.qti.ims.rcsconfig@1.1.so
+vendor/lib/vendor.qti.ims.rcsconfig@2.0.so
+vendor/lib/vendor.qti.ims.rcsconfig@2.1.so
+vendor/lib/vendor.qti.imsrtpservice@3.0-service-Impl.so
+vendor/lib/vendor.qti.imsrtpservice@3.0.so
 
 # IO prefetcher
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
@@ -1196,6 +1248,10 @@ vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
+
+# RCS - Pinned blobs are from PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
+vendor/lib/lib-rcsconfig.so
+vendor/lib64/lib-rcsconfig.so
 
 # RIL - Pinned blobs are from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190828.002/00WW_4_30B:user/release-keys
 -product/app/QtiTelephonyService/QtiTelephonyService.apk|165109022921de31007f8ebc7304de08ecde6bb4
