@@ -1,0 +1,1 @@
+add_hwservice(cnd, vendor_hal_slmadapter_hwservice)

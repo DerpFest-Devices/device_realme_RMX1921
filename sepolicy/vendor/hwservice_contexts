@@ -18,3 +18,6 @@ vendor.oppo.hardware.radio.oppoappradio::IOppoRadio          u:object_r:opporadi
 
 # Dolby
 vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
+
+# cnd
+vendor.qti.hardware.slmadapter::ISlmAdapter                                   u:object_r:vendor_hal_slmadapter_hwservice:s0
