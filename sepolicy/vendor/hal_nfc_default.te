@@ -1,2 +1,1 @@
-dontaudit hal_nfc_default nfc_hwservice:hwservice_manager find;
-dontaudit hal_nfc_default nfc_hwservice:hwservice_manager add;
+dontaudit hal_nfc_default nfc_hwservice:hwservice_manager { find add };
