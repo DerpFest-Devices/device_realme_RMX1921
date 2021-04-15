@@ -1,0 +1,3 @@
+on post-fs-data
+    mkdir /data/vendor/metadata_apex 0755 root system
+    mkdir /data/vendor/metadata_apex/sessions 0700 root system
