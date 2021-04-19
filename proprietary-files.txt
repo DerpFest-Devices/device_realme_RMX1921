@@ -1025,14 +1025,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|516268b5b3e044429f40b5101aa1f42563e
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|6302b61d7d1580254c091cce8ad5e121dbd73ace
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|25517caf74691b812320b46b477a3f4161cc1bcf
 
-# IO prefetcher - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/lib/libqti-iopd-client.so|89ce02457de1e93a4ef0a3b20f27042350f1c6ac
-vendor/lib/vendor.qti.hardware.iop@1.0.so|ed1c0d67a740e95d5b2c37265ccaae3723c08941
-vendor/lib/vendor.qti.hardware.iop@2.0.so|b9339c98fc47f050e5288d5b27e09d274531206d
-vendor/lib64/libqti-iopd-client.so|512e12a6a86eb2dc5ad73a590c996d0e67e2ec1a
-vendor/lib64/vendor.qti.hardware.iop@1.0.so|68b541490d75f1bedd6ebae09ce5e0d5bf563890
-vendor/lib64/vendor.qti.hardware.iop@2.0.so|9ebadf4f9ac445fa0a767d33d1fe1cd6d64d9190
-
 # IPA Firmware
 vendor/firmware/ipa_fws.b00
 vendor/firmware/ipa_fws.b01
