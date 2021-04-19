@@ -1070,8 +1070,6 @@ vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxWmaDec.so
 
 # NFC
-vendor/odm/etc/vintf/manifest_nfc_ese.xml
-vendor/odm/etc/vintf/manifest_secure_element_uicc.xml
 vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
 vendor/lib/vendor.qti.esepowermanager@1.0.so
