@@ -46,6 +46,20 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
     
+    <privapp-permissions package="com.google.android.apps.cameralite">
+        <permission name="android.permission.WAKE_LOCK"/>
+        <permission name="android.permission.CAMERA"/>
+        <permission name="android.permission.SYSTEM_CAMERA"/>
+        <permission name="android.permission.RECORD_AUDIO"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <permission name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+        <permission name="android.permission.GET_PACKAGE_SIZE"/>
+        <permission name="android.permission.FOREGROUND_SERVICE"/>
+        <permission name="android.permission.INTERNET"/>
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.CAMERA_OPEN_CLOSE_LISTENER"/>
+    </privapp-permissions>
+
     <privapp-permissions package="org.codeaurora.ims">
         <permission name="android.permission.MODIFY_PHONE_STATE"/>
         <permission name="android.permission.READ_PRECISE_PHONE_STATE"/>
