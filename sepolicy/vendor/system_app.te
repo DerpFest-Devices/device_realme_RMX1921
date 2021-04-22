@@ -13,5 +13,6 @@ allow system_app sysfs_fps:file rw_file_perms;
 allow system_app sysfs_usb_supply:file { getattr open read write };
 allow system_app sysfs_oppo_display:dir search;
 allow system_app sysfs_oppo_display:file { getattr open read write };
+allow system_app proc_vmallocinfo:file r_file_perms;
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
