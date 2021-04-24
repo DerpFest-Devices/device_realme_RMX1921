@@ -554,14 +554,14 @@ vendor/etc/OPPO_OLED_AD_calib.cfg
 vendor/firmware/dpAP_full.mbn
 vendor/firmware/dpAP_mini.mbn
 
-# DPM
-product/bin/dpmd
+# DPM - from pnx_sprout - PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
+system_ext/bin/dpmd
 product/etc/dpm/dpm.conf
 product/etc/init/dpmd.rc
 product/etc/permissions/com.qti.dpmframework.xml
 product/etc/permissions/dpmapi.xml
-product/framework/com.qti.dpmframework.jar
-product/framework/dpmapi.jar
+system_ext/framework/com.qti.dpmframework.jar
+system_ext/framework/dpmapi.jar
 product/lib64/com.qualcomm.qti.dpm.api@1.0.so
 product/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so
