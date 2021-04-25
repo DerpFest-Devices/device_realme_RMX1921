@@ -77,3 +77,6 @@
 
 # FPS Info
 /sys/class/drm/sde-crtc-0/measured_fps                              u:object_r:sysfs_fps:s0
+
+# I/O
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc[0-9]:[a-f0-9]+/block/mmcblk[0-9]/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
