@@ -24,9 +24,6 @@ ro.camera.notify_nfc=1
 camera.disable_zsl_mode=true
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
-# CNE
-persist.vendor.cne.feature=1
-
 # Charger
 ro.charger.enable_suspend=true
 
@@ -75,11 +72,6 @@ ro.qualcomm.cabl=0
 ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg
 ro.vendor.display.sensortype=2
-
-# DPM
-persist.vendor.dpm.feature=1
-persist.vendor.dpm.loglevel=0
-persist.vendor.dpm.nsrm.bkg.evt=3955
 
 # Gboard
 ro.com.google.ime.kb_pad_port_l=7

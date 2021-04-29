@@ -93,6 +93,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_PROPERTIES += \
    persist.camera.HAL3.enabled=1
 
+# CNE
+PRODUCT_PRODUCT_PROPERTIES += \
+   persist.vendor.cne.feature=1
+
 # Codec2
 PRODUCT_PROPERTY_OVERRIDES += \
    debug.stagefright.omx_default_rank.sw-audio=1 \
