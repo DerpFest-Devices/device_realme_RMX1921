@@ -33,3 +33,4 @@ set_prop(init, oppo_debug_prop)
 # Netutils
 allow init netutils_wrapper_exec:file { execute read open getattr };
 allow init init:netlink_route_socket { read getattr };
+allow init apex_metadata_file:lnk_file read;
