@@ -1,6 +1,9 @@
 allow platform_app time_daemon:unix_stream_socket connectto;
 allow platform_app vendor_file:file { execute read };
 allow platform_app sysfs:file read;
+allow platform_app sysfs_fps:file { getattr open read };
+allow platform_app sysfs_graphics:dir search;
+allow platform_app sysfs_graphics:file r_file_perms;
 
 get_prop(platform_app, vendor_default_prop);
 get_prop(platform_app, oppo_debug_prop);

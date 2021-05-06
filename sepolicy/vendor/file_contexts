@@ -74,3 +74,6 @@
 # Vulkan
 /(vendor|system/vendor)/lib/hw/vulkan\.adreno.so      u:object_r:vulkan_hal:s0
 /(vendor|system/vendor)/lib64/hw/vulkan\.adreno.so      u:object_r:vulkan_hal:s0
+
+# FPS Info
+/sys/class/drm/sde-crtc-0/measured_fps                              u:object_r:sysfs_fps:s0
