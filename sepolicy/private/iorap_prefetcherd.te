@@ -1,0 +1,4 @@
+allow iorap_prefetcherd media_rw_data_file:dir search;
+allow iorap_prefetcherd media_rw_data_file:file { open read };
+allow iorap_prefetcherd dropbox_data_file:file { open read };
+allow iorap_prefetcherd resourcecache_data_file:file { open read };
