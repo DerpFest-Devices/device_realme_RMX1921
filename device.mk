@@ -204,9 +204,7 @@ SRC_MEDIA_HAL_DIR := hardware/qcom-caf/sdm845/media
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health@2.0-service
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -331,7 +329,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service \
     android.hardware.power.stats@1.0-service.mock \
     vendor.qti.hardware.perf@2.0.vendor
 
