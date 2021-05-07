@@ -473,21 +473,6 @@ vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib/libcne.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libcneoplookup.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libwms.so
-vendor/lib/libwqe.so
-vendor/lib/libxml.so
-vendor/lib/vendor.qti.data.factory@2.0.so
-vendor/lib/vendor.qti.hardware.data.cne.internal.api@1.0.so
-vendor/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so
-vendor/lib/vendor.qti.hardware.data.cne.internal.server@1.0.so
-vendor/lib/vendor.qti.hardware.data.connection@1.0.so
-vendor/lib/vendor.qti.hardware.data.connection@1.1.so
-vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
-vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
 
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
@@ -566,21 +551,14 @@ product/lib64/com.qualcomm.qti.dpm.api@1.0.so
 product/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so
 product/lib64/libdpmtcm.so
-product/lib/com.qualcomm.qti.dpm.api@1.0.so
-product/lib/libdpmctmgr.so
-product/lib/libdpmfdmgr.so
-product/lib/libdpmtcm.so
 -product/priv-app/dpmserviceapp/dpmserviceapp.apk
 system/framework/tcmclient.jar
 vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
-vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
-vendor/lib/libdpmqmihal.so
 
 # DPM - from oneplus8 - qssi-user-11-RP1A.201005.001-2009051300-release-keys
-product/lib/libdpmframework.so
 product/lib64/libdpmframework.so
 
 # DRM
@@ -819,17 +797,6 @@ product/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
 product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 product/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
-product/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
-product/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
-product/framework/com.qualcomm.qti.uceservice-V2.2-java.jar
-product/framework/vendor.qti.ims.callcapability-V1.0-java.jar
-product/framework/vendor.qti.ims.callinfo-V1.0-java.jar
-product/framework/vendor.qti.ims.factory-V1.0-java.jar
-product/framework/vendor.qti.ims.factory-V1.1-java.jar
-product/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
-product/framework/vendor.qti.ims.rcsconfig-V1.1-java.jar
-product/framework/vendor.qti.ims.rcsconfig-2.0-java.jar
-product/framework/vendor.qti.ims.rcsconfig-V2.1-java.jar
 product/lib64/com.qualcomm.qti.imscmservice@1.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.0.so
 product/lib64/com.qualcomm.qti.imscmservice@2.1.so
@@ -861,39 +828,7 @@ product/lib64/vendor.qti.ims.rcsconfig@1.1.so
 product/lib64/vendor.qti.ims.rcsconfig@2.0.so
 product/lib64/vendor.qti.ims.rcsconfig@2.1.so
 product/lib64/vendor.qti.imsrtpservice@3.0.so
-product/lib/com.qualcomm.qti.imscmservice@1.0.so
-product/lib/com.qualcomm.qti.imscmservice@2.0.so
-product/lib/com.qualcomm.qti.imscmservice@2.1.so
-product/lib/com.qualcomm.qti.imscmservice@2.2.so
-product/lib/com.qualcomm.qti.uceservice@2.0.so
-product/lib/com.qualcomm.qti.uceservice@2.1.so
-product/lib/libimscamera_jni.so
-product/lib/libimsmedia_jni.so
-product/lib/lib-imsvideocodec.so
-product/lib/lib-imsvt.so
-product/lib/lib-imsvtextutils.so
-product/lib/lib-imsvtutils.so
-product/lib/vendor.qti.hardware.radio.ims@1.0.so
-product/lib/vendor.qti.hardware.radio.ims@1.1.so
-product/lib/vendor.qti.hardware.radio.ims@1.2.so
-product/lib/vendor.qti.hardware.radio.ims@1.3.so
-product/lib/vendor.qti.hardware.radio.ims@1.4.so
-product/lib/vendor.qti.ims.callinfo@1.0.so
-product/lib/vendor.qti.ims.rcsconfig@1.0.so
-product/lib/vendor.qti.imsrtpservice@2.0.so
-product/lib/vendor.qti.imsrtpservice@2.1.so
-product/lib/com.qualcomm.qti.uceservice@2.2.so
-product/lib/vendor.qti.hardware.radio.ims@1.5.so
-product/lib/vendor.qti.hardware.radio.ims@1.6.so
-product/lib/vendor.qti.ims.callcapability@1.0.so
-product/lib/vendor.qti.ims.factory@1.0.so
-product/lib/vendor.qti.ims.factory@1.1.so
-product/lib/vendor.qti.ims.rcsconfig@1.1.so
-product/lib/vendor.qti.ims.rcsconfig@2.0.so
-product/lib/vendor.qti.ims.rcsconfig@2.1.so
-product/lib/vendor.qti.imsrtpservice@3.0.so
 -product/priv-app/ims/ims.apk
-product/lib/libdiag_system.so
 product/lib64/libdiag_system.so
 vendor/etc/seccomp_policy/imsrtp.policy
 vendor/bin/ims_rtp_daemon
@@ -945,39 +880,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
-vendor/lib/librcc.so
-vendor/lib/lib-imscmservice.so
-vendor/lib/lib-imsdpl.so
-vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsrcs-v2.so
-vendor/lib/lib-imsrcsbaseimpl.so
-vendor/lib/lib-imsvtcore.so
-vendor/lib/lib-imsxml.so
-vendor/lib/lib-rtpcommon.so
-vendor/lib/lib-rtpcore.so
-vendor/lib/lib-rtpsl.so
-vendor/lib/lib-siputility.so
-vendor/lib/lib-uceservice.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.0.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.1.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.2.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.3.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.4.so
-vendor/lib/vendor.qti.ims.callinfo@1.0.so
-vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
-vendor/lib/vendor.qti.imsrtpservice@2.0.so
-vendor/lib/vendor.qti.imsrtpservice@2.1-service-Impl.so
-vendor/lib/vendor.qti.imsrtpservice@2.1.so
-vendor/lib/libavservices_minijail.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.5.so
-vendor/lib/vendor.qti.hardware.radio.ims@1.6.so
-vendor/lib/vendor.qti.ims.callcapability@1.0.so
-vendor/lib/vendor.qti.ims.factory@1.0.so
-vendor/lib/vendor.qti.ims.rcsconfig@1.1.so
-vendor/lib/vendor.qti.ims.rcsconfig@2.0.so
-vendor/lib/vendor.qti.ims.rcsconfig@2.1.so
-vendor/lib/vendor.qti.imsrtpservice@3.0-service-Impl.so
-vendor/lib/vendor.qti.imsrtpservice@3.0.so
 
 # IO prefetcher
 vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
@@ -1250,7 +1152,6 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
 # RCS - Pinned blobs are from PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
-vendor/lib/lib-rcsconfig.so
 vendor/lib64/lib-rcsconfig.so
 
 # RIL - Pinned blobs are from Nokia/Phoenix_00WW/PNX_sprout:10/QKQ1.190828.002/00WW_4_30B:user/release-keys
@@ -1258,7 +1159,6 @@ vendor/lib64/lib-rcsconfig.so
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/qcrilhook.jar|3afd31d5a08e220904441d5c8c0bcf43b8ebbbfe
-product/framework/QtiTelephonyServicelibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|c59fcb4a375dec19a0208dcfcc4696e0ccfd3a13
 -vendor/app/IWlanService/IWlanService.apk
 vendor/bin/hw/qcrild
