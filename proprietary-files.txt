@@ -54,15 +54,16 @@ vendor/lib64/rfsa/adsp/libBeautyShot_skel.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_add_constant.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_skel.so
 
-# ANT+
+# ANT+ - from LA.UM.9.8.r1-02700-SDM710.0
 -lib/libantradio.so
 -lib64/libantradio.so
-product/lib/com.qualcomm.qti.ant@1.0.so
-product/lib64/com.qualcomm.qti.ant@1.0.so
-vendor/lib/com.qualcomm.qti.ant@1.0.so
-vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+system_ext/lib/com.qualcomm.qti.ant@1.0.so|1e95af51d5142a745c90c240a8b2f5b329d7bdd5
+system_ext/lib64/com.qualcomm.qti.ant@1.0.so|3ce00a72441fc4704f742396f48d6aaaf1b871dd
+vendor/lib/com.dsi.ant@1.0.so|9f8f2268e760c0c5e67b8a52c7b25b6a1364dc45
+vendor/lib64/com.dsi.ant@1.0.so|734dcbdaf57f09249489083bd26e2405b17dd062
+vendor/lib/hw/com.dsi.ant@1.0-impl.so|0878e6b855e4b7495214bca404f13de9053b52f6
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so|b5c57fdf48447c68b6308fdcb167d0d21b5c56ed
+vendor/lib64/com.qualcomm.qti.ant@1.0.so|7047ae2e6c796291b4c921bfdd45bce8a04a9ff0
 
 # Audio
 vendor/lib64/libacdb-fts.so
@@ -600,17 +601,17 @@ vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libtzdrmgenprov.so
 
-# FM
-lib64/fm_helium.so
-lib64/libfm-hci.so
-lib/fm_helium.so
-lib/libfm-hci.so
--product/lib64/vendor.qti.hardware.fm@1.0.so
--product/lib/vendor.qti.hardware.fm@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0.so
+# FM - from LA.UM.9.8.r1-02700-SDM710.0
+system_ext/lib64/fm_helium.so|68702cf4304128663a1578150a1ed8063d93ca73
+system_ext/lib64/libfm-hci.so|0da384e2fd4809bb39a36fb25d3c6c0325cea0c3
+system_ext/lib/fm_helium.so|0a810beae107546e3c5dba6ff7309c781f079f60
+system_ext/lib/libfm-hci.so|c08c4df1a388ac7bf11a230230cd8e501a0239b9
+-system_ext/lib64/vendor.qti.hardware.fm@1.0.so|1c78ee9f3e8e4a17cde5494e3a3c83515f6bc338
+-system_ext/lib/vendor.qti.hardware.fm@1.0.so|7c18f6814638142b953564ede033c476b4ff40be
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|1ef66287c181ac47b8562ca180af5a763f115cf5
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|f7494923e84b136a44f02699082a7e0a380f94e9
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|3a903f3c1de7e3dc23692e1e12d2858e6af36075
+vendor/lib/vendor.qti.hardware.fm@1.0.so|c55e61815a03c99dc5367022a959f872360a236c
 
 # Fingerprint
 vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
@@ -873,15 +874,13 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|516268b5b3e044429f40b5101aa1f42563e
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|6302b61d7d1580254c091cce8ad5e121dbd73ace
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|25517caf74691b812320b46b477a3f4161cc1bcf
 
-# IO prefetcher
-vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
+# IO prefetcher - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/lib/libqti-iopd-client.so|89ce02457de1e93a4ef0a3b20f27042350f1c6ac
+vendor/lib/vendor.qti.hardware.iop@1.0.so|ed1c0d67a740e95d5b2c37265ccaae3723c08941
+vendor/lib/vendor.qti.hardware.iop@2.0.so|b9339c98fc47f050e5288d5b27e09d274531206d
+vendor/lib64/libqti-iopd-client.so|512e12a6a86eb2dc5ad73a590c996d0e67e2ec1a
+vendor/lib64/vendor.qti.hardware.iop@1.0.so|68b541490d75f1bedd6ebae09ce5e0d5bf563890
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|9ebadf4f9ac445fa0a767d33d1fe1cd6d64d9190
 
 # IPA Firmware
 vendor/firmware/ipa_fws.b00
@@ -892,8 +891,8 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
-# IRQ balance
-vendor/bin/msm_irqbalance
+# IRQ balance - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/bin/msm_irqbalance|c0910fb319bb8287f176f26078241299455baad0
 vendor/etc/msm_irqbalance.conf
 
 # Keymaster
@@ -911,31 +910,35 @@ vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
-# Latency
-product/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
-product/framework/vendor.qti.latency-V2.0-java.jar
-product/lib/vendor.qti.hardware.data.latency@1.0.so
-product/lib/vendor.qti.latency@2.0.so
-product/lib64/vendor.qti.hardware.data.latency@1.0.so
-product/lib64/vendor.qti.latency@2.0.so
+# Latency - from LA.UM.9.8.r1-02700-SDM710.0
+system_ext/framework/vendor.qti.hardware.data.latency-V1.0-java.jar|482c3c0726ae3a91771c030b8a67e37c9352d7f0
+system_ext/framework/vendor.qti.latency-V2.0-java.jar|f37e41c0c7189de55180c1c085afd8190127aaf3
+system_ext/lib/vendor.qti.hardware.data.latency@1.0.so|9da5cef7104bfb86520086a5e69954120afbf7d6
+system_ext/lib/vendor.qti.latency@2.0.so|0b14f63675e478cfc0738487773be42855e2377b
+system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so|2a8974d59024c61d5ab8eedf19c7d1d303c36234
+system_ext/lib64/vendor.qti.latency@2.0.so|53c8c4f408d5b63a4d70e877967ba17d073c995b
 
-# Listen
-vendor/lib/hw/sound_trigger.primary.sdm710.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libgcs-calwrapper.so
-vendor/lib/libgcs-ipc.so
-vendor/lib/libgcs-osal.so
-vendor/lib/libgcs.so
-vendor/lib/liblistenjni.so
-vendor/lib/liblistensoundmodel2.so
-vendor/lib/libsmwrapper.so
-vendor/lib64/hw/sound_trigger.primary.sdm710.so
-vendor/lib64/libgcs-calwrapper.so
-vendor/lib64/libgcs-ipc.so
-vendor/lib64/libgcs-osal.so
-vendor/lib64/libgcs.so
-vendor/lib64/liblistenjni.so
-vendor/lib64/liblistensoundmodel2.so
+# Listen - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/lib/hw/sound_trigger.primary.sdm710.so|c883f9c30239c3f07acf84eaea343bc81de8b0d6
+vendor/lib/libadpcmdec.so|491fedbdcf9a395340ce4142c277156c0056bcf8
+vendor/lib/libcapiv2svacnn.so|da98f2be1e8bd1aba364610063e70c34cab844d2
+vendor/lib/libcapiv2vop.so|b47caa2eeec81e98de03439548d9b9199222eda7
+vendor/lib/libgcs-calwrapper.so|3ccd371b37495f08960c721dafb22901b7f9e011
+vendor/lib/libgcs-ipc.so|77d9b5b8b072f2cc6d846519fc65a991e06401f3
+vendor/lib/libgcs-osal.so|0e762ecaf6b0d59e5322323b0fef17e8c76d0b4a
+vendor/lib/libgcs.so|6ed6a8bd7ed3142e98a3c69a29ed0e1480b10f25
+vendor/lib/liblistensoundmodel2.so|158936bde01ff29142d3e47b38c4838004623307
+vendor/lib/libmulawdec.so|53257dee0befc2a353ceb84a906a680a33d745f1
+vendor/lib/libsmwrapper.so|4a85352d09277e3cd10cc4fc438e4d48ca83da0e
+vendor/lib64/hw/sound_trigger.primary.sdm710.so|8d466c167ad7f839cba9358fcdce4f70bfab8be5
+vendor/lib64/libcapiv2svacnn.so|a6b186beee18d45b92e14a8e1411e13e4d9330de
+vendor/lib64/libcapiv2vop.so|3a73591503cd935cb6e2e2175037fde5517c2e91
+vendor/lib64/libgcs-calwrapper.so|d84a7f09c9e99c5b2caa33de89eb96b43ca27109
+vendor/lib64/libgcs-ipc.so|03c1f8407658c102c84f28ece49a2618d3ca3ebd
+vendor/lib64/libgcs-osal.so|e5cd3ed3385b3797a67a8f4519eb59d63ae0a5d4
+vendor/lib64/libgcs.so|39c3cffb161f7ff2f52f046920b1243a9de62965
+vendor/lib64/liblistensoundmodel2.so|55b9e9149a1452957027d3cd8e28828343d8a910
+vendor/lib64/libmulawdec.so|8a114d91458cee68b32186afe1a4b6315c0ffcd9
 
 # Media - from LA.UM.9.8.r1-02700-SDM710.0
 system_ext/lib64/libmmosal.so|378098a961e465b5d14a29f5bc2320e10c88580c
@@ -1024,13 +1027,15 @@ system_ext/lib64/extractors/libmmparserextractor.so|f38d208278c68016b945e626186e
 system_ext/lib64/libavenhancements.so|73aa11f9c2749fed1b558861f33abbfbb4b61fa6
 -system_ext/lib/libqct_resampler.so|4186d11e0c418e7366422802635be68e21b9fca6
 
-# ESE
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/lib/vendor.qti.esepowermanager@1.0.so
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+# ESE - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc|3c024c7135ec3dd8658624509ee61396a74f1ede
+vendor/bin/hw/vendor.qti.esepowermanager@1.1-service|0de9474912b1206cfe17459afca9ebb28bdd2468
+vendor/lib/vendor.qti.esepowermanager@1.0.so|d94fecf1aaca02a2d284ef9b08c4dce9524cd09f
+vendor/lib64/vendor.qti.esepowermanager@1.0.so|956996730bcb6207c06f37b156bfd9d24db43034
+vendor/lib/vendor.qti.esepowermanager@1.1.so|a4a91c715665496f44ca27f046865d4ec5c99dfb
+vendor/lib64/vendor.qti.esepowermanager@1.1.so|8b97297a7d728e37eb7c4da3d0cb8509911fea3b
+vendor/lib/hw/vendor.qti.esepowermanager@1.1-impl.so|7f5adb335d12659d76fa13318b635e30ee67da6e
+vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so|17f648402c874e4f981caadd91438a525089e35d
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.2-service-qti
@@ -1098,21 +1103,21 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 
-# Peripheral
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib/libperipheral_client.so
-vendor/lib64/libperipheral_client.so
-vendor/lib/libspcom.so
-vendor/lib64/libspcom.so
+# Peripheral manager - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/bin/pm-proxy|832cbe7995de8177a2ef5bdf3f145131dfe828d4
+vendor/bin/pm-service|28f5e8d8f98c8e97941f514bafdc0b369cc5b600
+vendor/lib/libperipheral_client.so|4f4700270730d4043580a1e76566fd0124b01e18
+vendor/lib64/libperipheral_client.so|8cb65f4c93719767048dd7b1b845473fe6074ff7
+vendor/lib/libspcom.so|b50bdf06832965b7e7a0371eb1232e1b171eb4fd
+vendor/lib64/libspcom.so|d29924f33878c59364362e023c9a53fa40bfeade
 
-# Alarm
--product/app/PowerOffAlarm/PowerOffAlarm.apk
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+# Power-off Alarm - from LA.UM.9.8.r1-02700-SDM710.0
+-product/app/PowerOffAlarm/PowerOffAlarm.apk|88544eea8cd47547bb7e6e52fae573453bea25a3
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|6f58edbe898a0582b02b688ec8a47a57a50707ec
+vendor/bin/power_off_alarm|a22dad49a912473d92bf9c111ef7de6dd927b6f2
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|0119fa4d87505bc5d9426ec8ffe56d9dd3bc9e4f
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|57d936014f89811481712ac7a08d104b85b636b5
 
 # QMI - from from pnx_sprout - PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
 system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
@@ -1339,37 +1344,27 @@ vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.ap.so
 vendor/lib64/sensors.ssc.so
 
-# Snapdragon Computer Vision Engine
-vendor/etc/scve/facereco/gModel.dat
-vendor/lib64/libfastcvopt.so
-vendor/lib64/libfastcvdsp_stub.so
-vendor/lib64/libscveBlobDescriptor.so
-vendor/lib64/libscveBlobDescriptor_stub.so
-vendor/lib64/libscveCommon.so
-vendor/lib64/libscveCommon_stub.so
-vendor/lib64/libscveObjectSegmentation.so
-vendor/lib64/libscveObjectSegmentation_stub.so
-vendor/lib64/libscveObjectTracker.so
-vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libscvePanorama.so
-vendor/lib64/libscvePanorama_lite.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libfastcvdsp_stub.so
-vendor/lib/libscveBlobDescriptor.so
-vendor/lib/libscveBlobDescriptor_stub.so
-vendor/lib/libscveCommon.so
-vendor/lib/libscveCommon_stub.so
-vendor/lib/libscveObjectSegmentation.so
-vendor/lib/libscveObjectSegmentation_stub.so
-vendor/lib/libscveObjectTracker.so
-vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libscvePanorama.so
-vendor/lib/libscvePanorama_lite.so
+# Snapdragon Computer Vision Engine - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/etc/scve/facereco/gModel.dat|447e5e3fefe8bcf36db0f7a8595c63fb326879ba
+vendor/lib64/libfastcvopt.so|dcbd38864009f985e98f8eaea10bb2658385995a
+vendor/lib64/libfastcvdsp_stub.so|de764c199026839848cdc803ed5cb2d8a51ad9b9
+vendor/lib64/libscveCommon.so|96bb978daf460dc5e49716f4222604f0739d9e2f
+vendor/lib64/libscveCommon_stub.so|1549ed1252e64a9f1ae3c8d51927bff247a537d2
+vendor/lib64/libscveObjectSegmentation.so|952b6f3d770c52ab86007d1b5e0ae35749b8cbf6
+vendor/lib64/libscveObjectSegmentation_stub.so|0292cef1811ccca7f40b011fe502920f90ccacb1
+vendor/lib64/libscveObjectTracker.so|e9a50d6898796b6d182be6b45a64716670e8740b
+vendor/lib64/libscveObjectTracker_stub.so|e4e3db0b7674e326e07fa0a49211593cb7bc4963
+vendor/lib/rfsa/adsp/libfastcvadsp.so|4a938b68df77b3611b97abaabf30088c1a69b81e
+vendor/lib/rfsa/adsp/libfastcvdsp_skel.so|5904dd945651bf21a3cda372e77cd8cedfdb3f27
+vendor/lib/rfsa/adsp/libscveT2T_skel.so|378a152d7683e55375ec7a06eabe796c95b90c98
+vendor/lib/libfastcvopt.so|6c2c1c72b99428aa6e76660fe4ccd2bca6517c48
+vendor/lib/libfastcvdsp_stub.so|6ccfd797a035075db44aaf288a87d1eb041288b7
+vendor/lib/libscveCommon.so|c21799b2fa31d5606a4072ad92054d359d5a6e21
+vendor/lib/libscveCommon_stub.so|8e9857589753a7a0402cdedc36e1275d396b394f
+vendor/lib/libscveObjectSegmentation.so|f266e8432026f93aa01852cb9c2473358413ced8
+vendor/lib/libscveObjectSegmentation_stub.so|d6c091d7076be16127912458f2eacf1f30a14653
+vendor/lib/libscveObjectTracker.so|ada37864bae2a20ad6b3d95a4c5b53ae65b713aa
+vendor/lib/libscveObjectTracker_stub.so|94f5f8e76146d6d1ddba875f4b2657bc981c7eb8
 
 # Soter
 -app/SoterService/SoterService.apk
@@ -1385,33 +1380,37 @@ vendor/firmware/tp/19651/FW_S3706_SAMSUNG.img
 vendor/firmware/tp/19651/FW_S3706_SAMSUNG_FAE.img
 vendor/firmware/tp/19651/LIMIT_S3706_SAMSUNG.img
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/lib64/libthermalclient.so
-vendor/lib/libthermalclient.so
+# Thermal - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/bin/thermal-engine|75a541bb2e5005f9391c81d11f21748f1eef9deb
+vendor/lib64/libthermalclient.so|8f2411404f56c6d15e6a185124bbc7f8c2adf195
+vendor/lib/libthermalclient.so|196acc1aaae1810ea9ba56bf9e1bb9ee2e486f6a
 
-# Time Services
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
-vendor/etc/init/init.time_daemon.rc
-vendor/lib64/libtime_genoff.so
-vendor/lib/libtime_genoff.so
+# Time Services - from LA.UM.9.8.r1-02700-SDM710.0
+-vendor/app/TimeService/TimeService.apk|12495431d5cc284822a303a43861c9b3c0c446ac
+vendor/bin/time_daemon|e62d164b8c8b30743837896d4c5e8bca39b364e6
+vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
+vendor/lib64/libtime_genoff.so|3f57de1aeb7aa113a0a579cebed85ab4405b9b49
+vendor/lib/libtime_genoff.so|9f1e0fd1180207b3df81aa65c319b0d5a467d74c
 
-# Trusted Execution Environment Connector
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/libQTEEConnector_vendor.so
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libQTEEConnector_vendor.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+# Trusted Execution Environment Connector - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|f8dc88c7166ffc2c1d997e7d5f16a8eb69c37cfc
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|c966350ee67d3a7c73ca7184e3725264025d16f5
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|51c91307f88ea32af97478e7d6ff35f604963412
+vendor/lib/libGPQTEEC_vendor.so|5578cf76650057158a5ef118b4b75f0549af64cb
+vendor/lib/libGPTEE_vendor.so|ec4e64f998c4437318a94acacf266748c20f1346
+vendor/lib/libQTEEConnector_vendor.so|e7235407c52fed215d089884c8c9b6db9b5a6bae
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so|26e18337f1f8cf041c2a70b858f8ede656b4d854
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|dd9d89e2b85b972e0e4c744d81da0f548ecb76cf
+vendor/lib64/libGPQTEEC_vendor.so|258aacbaa65c588c7c41860263c2db584437f189
+vendor/lib64/libGPTEE_vendor.so|a8896a022e2b977997a40be9c584ff778d25c0f9
+vendor/lib64/libQTEEConnector_vendor.so|62d8993f51e0d4a0c4d6ae2645512ddfc76577f3
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|8c7e2bebeeb0a45737b1c38b193b8e01beb9d6ae
 
-# Trusted User Interface
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+# Trusted User Interface - from LA.UM.9.8.r1-02700-SDM710.0
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|5e8423e080be3febc34152508153a58761c17a0f
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
 # Widevine DRM - (Extracted from vendor/euclid/product.img)
 vendor/lib/liboemcrypto.so|8a9faca380cffe55f062a7ef560499b8bccd07aa
