@@ -124,9 +124,26 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     gralloc.sdm710 \
     memtrack.sdm710 \
+    hwcomposer.sdm710 \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.7 \
+    libdisplayconfig \
+    libdisplayconfig.vendor \
+    libdisplayconfig.qti \
+    libqdMetaData \
+    libqdMetaData.system \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.1.vendor \
+    vendor.display.config@1.2.vendor \
+    vendor.display.config@1.3.vendor \
+    vendor.display.config@1.4.vendor \
+    vendor.display.config@1.5.vendor \
+    vendor.display.config@1.6.vendor \
+    vendor.display.config@1.7.vendor \
+    vendor.display.config@1.8.vendor \
+    vendor.display.config@1.9.vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator@1.0-service
 
 # DRM
@@ -213,6 +230,9 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libminijail \
+    libavservices_minijail \
+    libavservices_minijail.vendor \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -222,8 +242,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw \
-    libavservices_minijail_32
+    libstagefrighthw
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -443,10 +462,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libdisplayconfig.qti \
-    libnl \
-    libqdMetaData \
-    libqdMetaData.system
+    libnl
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
