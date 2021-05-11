@@ -433,10 +433,6 @@ PRODUCT_BOOT_JARS += \
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.RMX1921
-    
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # Thermal
 PRODUCT_PACKAGES += \
