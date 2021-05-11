@@ -950,9 +950,7 @@ system_ext/lib/libmmosal.so|175c890c965a14043777000cd2cfc20264b04810
 system_ext/lib/libmmparser_lite.so|27f2ef75c3582c1c6ba370e819697de7dab92cef
 vendor/bin/vppservice|555301b19a86374900159423c88efd7bd9cea2f9
 vendor/etc/init/vppservice.rc|9daea1a00124d65ecb6978936785273edb74a8ed
-vendor/lib64/libI420colorconvert.so|088f8e9615276d8b95b9b7b81234b755fdc2af79
 vendor/lib64/libOmxVpp.so|d773cc27df9fbd571e96ab103bcb52b2070dbfe3
-vendor/lib64/libmm-color-convertor.so|218c14814a524c3e4331b1aed6807828e22eaec3
 vendor/lib64/libswvdec.so|ae1f55c7094e2a006e28dcfb0f2b9c32634fb849
 vendor/lib64/libvppclient.so|fd099201fd978d9638ee2f7fac79f5aae54209b4
 vendor/lib64/libvpphvx.so|e1cfc643118f32a73d45c78929edc9815705229d
@@ -960,12 +958,10 @@ vendor/lib64/libvpplibrary.so|aed735c3a754b695ed2596cd8ace94f6b7d37565
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so|49bd6d4ad9881c23266f093e2a533a8410953e43
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so|60b902481d0339d292ba1e0f1370470b1f3f68d9
 vendor/lib/libFileMux_proprietary.so|e59edd4604a7c73147118161cab5b7ac6bb16c82
-vendor/lib/libI420colorconvert.so|dd04b1851c394f42aabadeed64fb327cad4a52fa
 vendor/lib/libOmxDsdDec.so|5a58c8b54578c6c7520666df4040a422fea67df9
 vendor/lib/libOmxVideoDSMode.so|5862b9d707ca00cd87b70a7f581df49fa3304d2c
 vendor/lib/libOmxVpp.so|9bd69acccec3f3e0a126e04ccf3f02f746c0e822
 vendor/lib/libdsd2pcm.so|427be2997fcd72e94c33d08b2cf1fde5bf969fd4
-vendor/lib/libmm-color-convertor.so|67b7fa51e3b179531ccb8e502c79a4fbb6af5fa9
 vendor/lib/libswvdec.so|0ebbd44d40c83333e99e47d64509a970a4052859
 vendor/lib/libvppclient.so|b48af3c4ea13e7ef1220ce3e278823e3e01ea8af
 vendor/lib/libvpphvx.so|a3869a611414316250b71be42b69638c31e9a8f9
