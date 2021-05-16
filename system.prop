@@ -94,6 +94,10 @@ persist.vendor.ims.disableUserAgent=0
 persist.data.iwlan.enable=true
 persist.dbg.ims_volte_enable=1
 
+# Iorap
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 ro.media.recorder-max-base-layer-fps=60
