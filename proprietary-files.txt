@@ -1146,11 +1146,11 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
-# Telephony - from LA.QSSI.11.0.r1-09400-qssi.0
--system_ext/priv-app/ims/ims.apk|cccc15a4fbaff0f412e09e63744fc95c3c339da8
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|344ad9179560cc83b208f62fb009fdc2799609fd
+# Telephony - from LA.QSSI.11.0.r1-11600-qssi.0
+-system_ext/priv-app/ims/ims.apk|6ab68813175286f21c963840449a5433b3ad981c
+-system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|175e4412e17b7bbfe75f98d468645ec18c6a33fa
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|a32f88ddcc8f9cba18aa5697ee5bd52201e89b13
-system_ext/framework/qcrilhook.jar|ad688364314100318f305ed4ab5defec8766b20a
+system_ext/framework/qcrilhook.jar|f2888f922b8347417dfa86741feb8348795fce6f
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
 system_ext/etc/permissions/telephonyservice.xml|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
 
