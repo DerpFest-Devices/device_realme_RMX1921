@@ -129,7 +129,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     ro.opengles.version=196610 \
     debug.renderengine.backend=skiaglthreaded \
-    renderthread.skia.reduceopstasksplitting=true \
     debug.sf.disable_client_composition_cache=1 \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno
