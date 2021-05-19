@@ -109,6 +109,7 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+        <service android:name="org.device.RealmeParts.AutoHighBrightnessModeService" />
         <service
             android:name="org.device.RealmeParts.SRGBModeTileService"
             android:icon="@drawable/ic_srgb_tile"

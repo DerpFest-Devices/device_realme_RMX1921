@@ -24,6 +24,10 @@
     <string name="hbm_mode_summary">"Incrementa la luminosità per una maggiore visibilità all'esterno"</string>
     <string name="hbm_mode_title">Alta luminosità</string>
     <string name="tile_hbm_mode">Alta luminosità</string>
+    <string name="hbm_autobrightness_summary"></string>
+    <string name="hbm_autobrightness_title">Alta luminosità automatica</string>
+    <string name="hbm_autobrightness_threshold_summary"></string>
+    <string name="hbm_autobrightness_threshold_title">"Soglia per l'alta luminosità automatica (lux)"</string>
     <!-- srgb mode -->
     <string name="srgb_mode_summary">Modalità sRGB per un display con colori più semplici</string>
     <string name="srgb_mode_title">Modaità sRGB</string>

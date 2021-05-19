@@ -29,6 +29,16 @@
             android:defaultValue="false" />
 
         <SwitchPreference
+            android:key="hbm_autobrightness"
+            android:summary="@string/hbm_autobrightness_summary"
+            android:title="@string/hbm_autobrightness_title" />
+
+        <org.device.RealmeParts.HBMAutobrightnessThresholdPreference
+            android:key="hbm_autobrightness_threshould"
+            android:title="@string/hbm_autobrightness_threshold_title"
+            android:summary="@string/hbm_autobrightness_threshold_summary" />
+
+        <SwitchPreference
             android:key="srgb"
             android:summary="@string/srgb_mode_summary"
             android:title="@string/srgb_mode_title" />

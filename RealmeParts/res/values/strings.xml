@@ -27,6 +27,10 @@
     <string name="hbm_mode_summary">Peak brightness for better visibility in outdoors</string>
     <string name="hbm_mode_title">High brightness mode</string>
     <string name="tile_hbm_mode">High brightness modes</string>
+    <string name="hbm_autobrightness_summary"></string>
+    <string name="hbm_autobrightness_title">Automatic High brightness mode</string>
+    <string name="hbm_autobrightness_threshold_summary"></string>
+    <string name="hbm_autobrightness_threshold_title">Automatic High brightness mode threshold (lux)</string>
     <!-- srgb mode -->
     <string name="srgb_mode_summary">sRGB mode for simpler colour display</string>
     <string name="srgb_mode_title">sRGB mode</string>

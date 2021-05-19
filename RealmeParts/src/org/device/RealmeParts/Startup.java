@@ -24,6 +24,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.RemoteException;
+import android.os.UserHandle;
 import androidx.preference.PreferenceManager;
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
 import org.device.RealmeParts.Touch.util.Utils;
@@ -33,8 +35,10 @@ import org.device.RealmeParts.DiracUtils;
 
 public class Startup extends BroadcastReceiver {
 
+    private boolean mHBM = false;
     private static final String TAG = "BootReceiver";
     private static final String ONE_TIME_TUNABLE_RESTORE = "hardware_tunable_restored";
+    private static boolean mServiceEnabled = false;
 
     private void restore(String file, boolean enabled) {
         if (file == null) {
@@ -80,6 +84,7 @@ public class Startup extends BroadcastReceiver {
         restore(SRGBModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_OTG_SWITCH, false);
         restore(OTGModeSwitch.getFile(), enabled);
+        enableService(context);
     }
 
     private void enableComponent(Context context, String name) {
@@ -95,4 +100,24 @@ public class Startup extends BroadcastReceiver {
         preferences.edit().putBoolean(ONE_TIME_TUNABLE_RESTORE, true).apply();
 
         }
+
+    private static void startService(Context context) {
+        context.startServiceAsUser(new Intent(context, AutoHighBrightnessModeService.class),
+                UserHandle.CURRENT);
+        mServiceEnabled = true;
+    }
+
+    private static void stopService(Context context) {
+        mServiceEnabled = false;
+        context.stopServiceAsUser(new Intent(context, AutoHighBrightnessModeService.class),
+                UserHandle.CURRENT);
+    }
+
+    public static void enableService(Context context) {
+        if (RealmeParts.isHBMAutobrightnessEnabled(context) && !mServiceEnabled) {
+            startService(context);
+        } else if (!RealmeParts.isHBMAutobrightnessEnabled(context) && mServiceEnabled) {
+            stopService(context);
+        }
+    }
     }

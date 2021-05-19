@@ -51,6 +51,7 @@ import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.preferences.CustomSeekBarPreference;
 import org.device.RealmeParts.preferences.SecureSettingListPreference;
 import org.device.RealmeParts.preferences.SecureSettingSwitchPreference;
+import org.device.RealmeParts.Startup;
 
 public class RealmeParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -62,6 +63,8 @@ public class RealmeParts extends PreferenceFragment
 
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
+    public static final String KEY_HBM_AUTOBRIGHTNESS_SWITCH = "hbm_autobrightness";
+    public static final String KEY_HBM_AUTOBRIGHTNESS_THRESHOLD = "hbm_autobrightness_threshould";
     public static final String KEY_DC_SWITCH = "dc";
     public static final String KEY_OTG_SWITCH = "otg";
     public static final String KEY_GAME_SWITCH = "game";
@@ -70,6 +73,7 @@ public class RealmeParts extends PreferenceFragment
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
     private static TwoStatePreference mHBMModeSwitch;
+    private static TwoStatePreference mHBMAutobrightnessSwitch;
     private static TwoStatePreference mDCModeSwitch;
     private static TwoStatePreference mSRGBModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
@@ -95,6 +99,9 @@ public class RealmeParts extends PreferenceFragment
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
+        mHBMAutobrightnessSwitch = (TwoStatePreference) findPreference(KEY_HBM_AUTOBRIGHTNESS_SWITCH);
+        mHBMAutobrightnessSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(RealmeParts.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false));
+        mHBMAutobrightnessSwitch.setOnPreferenceChangeListener(this);
 
         mSRGBModeSwitch = (TwoStatePreference) findPreference(KEY_SRGB_SWITCH);
         mSRGBModeSwitch.setEnabled(SRGBModeSwitch.isSupported());
@@ -192,7 +199,17 @@ public class RealmeParts extends PreferenceFragment
             default:
                 break;
         }
+        if (preference == mHBMAutobrightnessSwitch) {
+                    Boolean enabled = (Boolean) value;
+                    SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+                    prefChange.putBoolean(KEY_HBM_AUTOBRIGHTNESS_SWITCH, enabled).commit();
+                    Startup.enableService(getContext());
+                }
         return true;
+    }
+
+    public static boolean isHBMAutobrightnessEnabled(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(RealmeParts.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false);
     }
 
     private boolean isAppNotInstalled(String uri) {
