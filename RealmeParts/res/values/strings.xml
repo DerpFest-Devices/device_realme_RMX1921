@@ -40,10 +40,6 @@
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
 
-    <!-- FPS Info -->
-    <string name="fps_info_title">FPS Info Overlay</string>
-    <string name="fps_info_summary">Show overlay with current frames per second</string>
-
     <!-- TouchScreen gestures -->
     <string name="dlg_ok">OK</string>
     <string name="cancel">Cancel</string>
@@ -132,34 +128,6 @@
     <!-- Touchscreen gesture haptic feedback -->
     <string name="touchscreen_gesture_haptic_feedback">Haptic feedback</string>
     <string name="touchscreen_gesture_haptic_feedback_summary">Vibrate when a Touchscreen gesture is detected</string>
-
-    <!-- Doze -->
-    <string name="doze_panel_title">Doze</string>
-    <string name="ambient_display_gestures_title">Ambient display gestures</string>
-    <string name="ambient_display_gestures_summary">Additional gestures to wake the screen</string>
-    <string name="doze_settings_help_title">Help</string>
-    <string name="doze_settings_help_text">These features use sensor events to launch a doze notification pulse. The chosen sensor is only enabled when the device receives a notification, this helps to reduce battery usage. There is also an option to enable the chosen sensor as soon as the screen turns off, this will cause higher battery usage.</string>
-    <string name="dialog_ok">OK</string>
-    <string name="switch_bar_off">Off</string>
-    <string name="switch_bar_on">On</string>
-    <string name="ambient_display_title">Ambient display</string>
-    <string name="ambient_display_always_on_title">Always on</string>
-    <string name="ambient_display_always_on_summary">Show time, notification icons, and other info. Increased battery usage.</string>
-    <string name="pickup_sensor_title">Pickup sensor</string>
-    <string name="pick_up_gesture_title">Pick-up</string>
-    <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
-    <string name="raise_to_wake_gesture_title">Raise to wake</string>
-    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
-    <string name="tilt_sensor_title">Tilt sensor</string>
-    <string name="proximity_sensor_title">Proximity sensor</string>
-    <string name="pocket_gesture_title">Pocket</string>
-    <string name="pocket_gesture_summary">Pulse notifications on removal from pocket</string>
-
-    <!-- Hand wave gesture -->
-    <string name="hand_wave_gesture_title">Hand wave</string>
-    <string name="hand_wave_gesture_summary">Pulse notifications on hand wave</string>
-    <string name="hand_wave_gesture_flat_title">Detect orientation</string>
-    <string name="hand_wave_gesture_flat_summary">Pulse only if the phone is lying face up on a flat surface</string>
 
     <!-- Kcal -->
     <string name="kcal">Display</string>

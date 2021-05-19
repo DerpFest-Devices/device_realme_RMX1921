@@ -46,6 +46,7 @@ import androidx.preference.TwoStatePreference;
 
 
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
+import org.device.RealmeParts.Touch.ScreenOffGestureSettings;
 import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.preferences.CustomSeekBarPreference;
 import org.device.RealmeParts.preferences.SecureSettingListPreference;
@@ -73,6 +74,7 @@ public class RealmeParts extends PreferenceFragment
     private static TwoStatePreference mSRGBModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
+    private Preference mGesturesPref;
     private Preference mKcalPref;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
@@ -108,6 +110,16 @@ public class RealmeParts extends PreferenceFragment
         mGameModeSwitch.setEnabled(GameModeSwitch.isSupported());
         mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled(this.getContext()));
         mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch());
+
+        mGesturesPref = findPreference("screen_gestures");
+                mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                     @Override
+                     public boolean onPreferenceClick(Preference preference) {
+                         Intent intent = new Intent(getContext(), ScreenOffGestureSettings.class);
+                         startActivity(intent);
+                         return true;
+                     }
+                });
 
         mKcalPref = findPreference("kcal");
                 mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

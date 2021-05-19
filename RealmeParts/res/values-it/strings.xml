@@ -39,6 +39,95 @@
 
     <string name="customize_title">Impostazioni Realme</string>
 
+    <!-- TouchScreen gestures -->
+    <string name="dlg_ok">OK</string>
+    <string name="cancel">Annulla</string>
+    <string name="reset">Ripristina</string>
+    <string name="reset_message">Ripristina ai valori predefiniti?</string>
+    <string name="group_applications">Applicazioni</string>
+    <string name="select_custom_app_title">"Scegli un'app personalizzata"</string>
+    <string name="gestures_dashboard_summary">Gesti a schermo spento</string>
+    <string name="enable_gestures_title">Attiva i gesti</string>
+    <string name="enable_gestures_summary">Attiva i gesti a schermo spento</string>
+    <string name="gestures_title">Gesti</string>
+    <string name="gesture_double_tap_title">Doppio tocco</string>
+    <string name="gesture_w_title">Gesto della W</string>	
+    <string name="gesture_m_title">Gesto del M</string>
+    <string name="gesture_s_title">Gesture S</string>
+    <string name="gesture_circle_title">Gesto del cerchio</string>
+    <string name="gesture_two_swipe_title">Gesto del doppio swipe</string>
+    <string name="gesture_up_arrow_title">Gesto della freccia su</string>
+    <string name="gesture_down_arrow_title">Gesto della freccia giù</string>
+    <string name="gesture_left_arrow_title">Gesto della freccia a sinistra</string>
+    <string name="gesture_right_arrow_title">Gesto della freccia a destra</string>
+    <string name="gesture_swipe_up_title">Gesto dello swipe in alto</string>
+    <string name="gesture_swipe_down_title">Gesto dello swipe in basso</string>
+    <string name="gesture_swipe_left_title">Gesto dello swipe a sinistra</string>
+    <string name="gesture_swipe_right_title">Gesto dello swipe a destra</string>
+    <string name="KharaMeParts_summary">Gesti e modifiche</string>
+    <string name="screen_off_gestures">Gesti a schermo spento</string>
+    <string name="gestures">Gesti</string>
+    <string name="enable_dt2w_title">Attiva il doppio tap</string>
+    <string name="enable_dt2w_summary">Attiva la gesture col doppio tap</string>
+    <string name="dt2w_title">Doppio tap</string>
+    <string name="haptic_feedback_title">Feedback aptico</string>
+    <string name="shortcut_action_ambient_display">Mostra il display ambient</string>
+    <string name="shortcut_action_vol_up">Volume su</string>
+    <string name="shortcut_action_vol_down">Volume giù</string>
+
+    <!-- Shortcut actions -->
+    <string name="shortcut_action_none">Nessuna</string>
+    <string name="shortcut_action_app">App a scelta</string>
+    <string name="shortcut_action_home">Home</string>
+    <string name="shortcut_action_back">Indietro</string>
+    <string name="shortcut_action_menu">Menu</string>
+    <string name="shortcut_action_ime">Apri lo switch tastiera</string>
+    <string name="shortcut_action_power_menu">Power menu</string>
+    <string name="shortcut_action_recent">Recenti</string>
+    <string name="shortcut_action_power">Schermo spento</string>
+    <string name="shortcut_action_search">Ricerca in app</string>
+    <string name="shortcut_action_now_on_tap">Now on tap</string>
+    <string name="shortcut_action_ring_vib">Suona/Vibra</string>
+    <string name="shortcut_action_ring_silent">Suona/Silenzioso</string>
+    <string name="shortcut_action_ring_vib_silent">Suona/Vibra/Silenzioso</string>
+    <string name="shortcut_action_camera">Camera</string>
+    <string name="shortcut_action_media_next">Musica - traccia successica</string>
+    <string name="shortcut_action_media_play_pause">Musica - play/pausa</string>
+    <string name="shortcut_action_media_previous">Musica - traccia precedente</string>
+    <string name="shortcut_action_wake_device">Risveglia il dispositivo</string>
+    <string name="shortcut_action_kill">"Chiudi l'app"</string>
+    <string name="shortcut_action_screenshot">Screenshot</string>
+    <string name="shortcut_action_lastapp">Ultima app</string>
+    <string name="shortcut_action_notifications">Notifiche</string>
+    <string name="shortcut_action_qs">Pannello impostazioni rapide</string>
+    <string name="shortcut_action_torch">Torcia</string>
+    <string name="shortcut_action_longpress">Pressione prolungata:</string>
+    <string name="shortcut_action_select_action_longpress">"Scegli un'azione per la pressione prolungata:"</string>
+    <string name="shortcut_action_select_action">"Scegli un'azione:"</string>
+    <string name="shortcut_action_select_action_newaction">Scegli una nuova azione:</string>
+    <string name="shortcut_action_reset">Reset</string>
+    <string name="shortcut_action_add">Aggiungi</string>
+    <string name="shortcut_action_reset_message">Ripristina ai valori predefiniti</string>
+    <string name="shortcut_action_max">Raggiunto il numero massimo di azioni</string>
+    <string name="shortcut_action_warning">Attenzione</string>
+    <string name="shortcut_action_warning_message">"Impossibile rimuovere l'ultimo settaggio"</string>
+    <string name="shortcut_action_required_warning_message">Impossibile rimuovere il tasto selezionato</string>
+    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
+    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
+    <string name="shortcut_action_help_shortcut">shortcut</string>
+    <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_app">app</string>
+    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the reset option.</string>
+
+    <!-- Device specific settings -->
+    <string name="screen_off_gesture_settings_title">Gesti a schermo spento</string>
+
+    <!-- Touchscreen gesture haptic feedback -->
+    <string name="touchscreen_gesture_haptic_feedback">Feedback aptico</string>
+    <string name="touchscreen_gesture_haptic_feedback_summary">Vibra quando un gesto viene riconosciuto</string>
+
     <!-- Kcal -->
     <string name="kcal">Display</string>
     <string name="kcal_title">Controllo dei colori del display</string>

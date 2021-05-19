@@ -38,6 +38,96 @@
     <string name="game_mode_title">Modo juego</string>
     <string name="tile_game_mode">Modo juego</string>
 
+    <!-- Gestos -->
+    <string name="dlg_ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="reset">Restablecer</string>
+    <string name="reset_message">Restablecer todos los ajustes?</string>
+    <string name="group_applications">Aplicaciones</string>
+    <string name="select_custom_app_title">Seleccionar una aplicacion personalizada</string>
+    <string name="gestures_dashboard_summary">Gestos simples en pantalla bloqueada</string>
+    <string name="enable_gestures_title">Habilitar gestos</string>
+    <string name="enable_gestures_summary">Habilitar gestos en pantalla apagada</string>
+    <string name="gestures_title">Gestos</string>
+    <string name="gesture_double_tap_title">Gesto Doble Toque</string>
+    <string name="gesture_w_title">Gesto W</string>	
+    <string name="gesture_m_title">Gesto M</string>
+    <string name="gesture_s_title">Gesto S</string>
+    <string name="gesture_circle_title">Gesto Circulo</string>
+    <string name="gesture_two_swipe_title">Gesto Dos Deslizamientos</string>
+    <string name="gesture_up_arrow_title">Gesto Flecha hacia Arriba</string>
+    <string name="gesture_down_arrow_title">Gesto Flecha hacia Abajo</string>
+    <string name="gesture_left_arrow_title">Gesto Flecha a la Izquierda</string>
+    <string name="gesture_right_arrow_title">Gesto Flecha a la derecha</string>
+    <string name="gesture_swipe_up_title">Gesto Deslizar hacia Arriba</string>
+    <string name="gesture_swipe_down_title">Gesto Deslizar hacia abajo</string>
+    <string name="gesture_swipe_left_title">Gesto Deslizar a la Izquierda</string>
+    <string name="gesture_swipe_right_title">Gesto Deslizar a la derecha</string>
+    <string name="KharaMeParts_summary">Gestos y Tweaks</string>
+    <string name="screen_off_gestures">Gestos de pantalla apagada</string>
+    <string name="gestures">Gestos</string>
+    <string name="enable_dt2w_title">Habilitar doble toque</string>
+    <string name="enable_dt2w_summary">Habilitar gestos de doble toque</string>
+    <string name="dt2w_title">Doble toque</string>
+    <string name="haptic_feedback_title">Retroalimentacion tactil</string>
+
+    <!-- Acciones de los atajos -->                                                              
+    <string name="shortcut_action_none">Nada</string>
+    <string name="shortcut_action_app">Aplicacion personalizada</string>
+    <string name="shortcut_action_home">Pantalla de inicio</string>
+    <string name="shortcut_action_back">Atras</string>
+    <string name="shortcut_action_menu">Menu</string>
+    <string name="shortcut_action_ime">Abrir boton IME</string>
+    <string name="shortcut_action_power_menu">Menu de apagado</string>
+    <string name="shortcut_action_recent">Recientes</string>
+    <string name="shortcut_action_power">Apagar la pantalla</string>
+    <string name="shortcut_action_search">Buscar en aplicacion</string>
+    <string name="shortcut_action_now_on_tap">Ahora en el toque</string>
+    <string name="shortcut_action_ring_vib">Sonido/Vibracion</string>
+    <string name="shortcut_action_ring_silent">Sonido/Silencio</string>
+    <string name="shortcut_action_ring_vib_silent">Sonido/Vibracion/Silencio</string>
+    <string name="shortcut_action_camera">Camara</string>
+    <string name="shortcut_action_media_next">Musica - pista siguiente</string>
+    <string name="shortcut_action_media_play_pause">Musica -reproducir/pausa</string>
+    <string name="shortcut_action_media_previous">Musica - pista anterior</string>
+    <string name="shortcut_action_wake_device">Encender el dispositivo</string>
+    <string name="shortcut_action_kill">Cerrar aplicacion</string>
+    <string name="shortcut_action_screenshot">Captura de pantalla</string>
+    <string name="shortcut_action_lastapp">Ultima aplicacion</string>
+    <string name="shortcut_action_notifications">Notificaciones</string>
+    <string name="shortcut_action_qs">Panel de ajustes rapidos</string>
+    <string name="shortcut_action_torch">Linterna</string>
+    <string name="shortcut_action_longpress">Pulsacion larga:</string>
+    <string name="shortcut_action_select_action_longpress">Seleccionar accion de pulsacion larga:</string>
+    <string name="shortcut_action_select_action">Seleccionar accion</string>
+    <string name="shortcut_action_select_action_newaction">Seleccionar accion nueva:</string>
+    <string name="shortcut_action_reset">Restablecer</string>
+    <string name="shortcut_action_add">Añadir</string>
+    <string name="shortcut_action_reset_message">Restablecer todos los ajustes?</string>
+    <string name="shortcut_action_max">Se alcanzo el tamaño maximo de entradas</string>
+    <string name="shortcut_action_warning">Advertencia</string>
+    <string name="shortcut_action_warning_message">No es posible eliminar la ultima entrada</string>
+    <string name="shortcut_action_required_warning_message">No es posible eliminar los botones requeridos</string>
+    <string name="shortcut_action_disable_message">Deshabilitar\Añadir una entrada para habilitar esta funcion</string>
+    <string name="shortcut_image_not_valid">La aplicacion seleccionada no regreso un icono valido o no soporta el recorte de imagenes.Use otra aplicacion.</string>
+    <string name="shortcut_duplicate_entry">No se puede añadir la accion seleccionada dos veces</string>
+    <string name="shortcut_action_help_shortcut">atajo</string>
+    <string name="shortcut_action_help_button">boton</string>
+    <string name="shortcut_action_help_app">aplicacion</string>
+    <string name="shortcut_action_help_icon">, al seleccionar el icono apareceran opciones de personalizacion</string>
+    <string name="shortcut_action_help_main">Para añadir %1$s, seleccione el icono Añadir.Una vez agregado %1$s,al seleccionar la fila se cambiara el objetivo%2$s\n\nPara eliminar %1$s, deslice la fila horizontalmente hacia la izquierda o hacia la derecha. Reordene %1$s en la lista deslizando verticalmente el ancla a la izquierda.\n\nPara restablecer los parametros, seleccione la opcion restablecer.</string>
+    <string name="shortcut_action_ambient_display">Mostrar ambient display</string>
+    <string name="shortcut_action_vol_up">Subir el volumen</string>
+    <string name="shortcut_action_vol_down">Bajar el volumen</string>
+
+    <!-- Ajustes especificos del dispositivo --> 
+    <string name="screen_off_gesture_settings_title">Gestos de pantalla apagada</string>
+
+    <!-- Gesto de retroalimentacion tactil --> 
+    <string name="touchscreen_gesture_haptic_feedback">Retroalimentacion tactil</string>
+    <string name="touchscreen_gesture_haptic_feedback_summary">Vibrar al detectar un gesto</string>
+
+
     <!-- Kcal -->
     <string name="kcal">Pantalla</string>                                                                              
     <string name="kcal_title">Control del color de la pantalla</string>

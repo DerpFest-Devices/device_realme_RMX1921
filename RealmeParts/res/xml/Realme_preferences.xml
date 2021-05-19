@@ -40,6 +40,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:title="@string/gestures">
+
+        <PreferenceScreen
+                android:key="screen_gestures"
+                android:fragment="org.device.RealmeParts.Touch.ScreenOffGestureSettings"
+                android:summary="@string/gestures_dashboard_summary"
+                android:title="@string/screen_off_gestures" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
             android:title="@string/kcal">
          <PreferenceScreen
                 android:key="kcal"

@@ -63,6 +63,14 @@
         </receiver>
 
         <activity
+            android:name=".Touch.ScreenOffGestureSettings"
+            android:label="@string/screen_off_gestures">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="org.device.RealmeParts.kcal.DisplayCalibration"
             android:label="@string/kcal_title">
             <intent-filter>
