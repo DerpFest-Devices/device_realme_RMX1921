@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     libgui_vendor
 
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+
 # Context Hub
 PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
