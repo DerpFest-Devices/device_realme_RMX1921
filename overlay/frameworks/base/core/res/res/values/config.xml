@@ -407,6 +407,9 @@
     <!-- Show a custom view for FOD -->
     <bool name="config_needCustomFODView">true</bool>
 
+    <!-- Default fod pressed color -->
+    <integer name="config_fod_pressed_color">0</integer>
+
     <!-- Default value for proximity check on screen wake
          NOTE! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
     <bool name="config_proximityCheckOnWake">true</bool>
