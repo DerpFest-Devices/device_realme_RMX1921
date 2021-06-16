@@ -34,7 +34,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service-qti                                  u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock                     u:object_r:hal_power_stats_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.qti                     u:object_r:hal_thermal_default_exec:s0
-/sys/class/power_supply/battery/mmi_charging_enable                    u:object_r:sysfs_scharge:s0
 /sys/bus/iio/devices(/.*)?                            u:object_r:sysfs_iio:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:rradc@4500/iio:device0/name                            u:object_r:sysfs_iio:s0
 

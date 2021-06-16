@@ -23,9 +23,6 @@ type proc_audio_file, file_type, data_file_type, core_data_file_type;
 # FPS Info
 type sysfs_fps, sysfs_type, fs_type;
 
-# Smart Charging
-type sysfs_scharge, sysfs_type, fs_type;
-
 # LED/LCD
 type sysfs_led_file, sysfs_type, fs_type;
 type sysfs_lcd_file, sysfs_type, fs_type;

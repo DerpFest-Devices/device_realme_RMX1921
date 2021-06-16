@@ -9,8 +9,7 @@ allow system_app oppo_debug_prop:file { read open getattr };
 # FPS Info
 allow system_app sysfs_fps:file rw_file_perms;
 
-# Smart Charging and DeviceSettings
-allow system_app sysfs_scharge:file { getattr open read write };
+# DeviceSettings
 allow system_app sysfs_usb_supply:file { getattr open read write };
 allow system_app sysfs_oppo_display:dir search;
 allow system_app sysfs_oppo_display:file { getattr open read write };
