@@ -1,3 +1,1 @@
-allow zygote vendor_file:file { execute getattr open read };
-get_prop(zygote, theme_prop);
 allow zygote zygote:capability kill;

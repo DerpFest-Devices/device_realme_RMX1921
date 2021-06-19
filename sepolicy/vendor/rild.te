@@ -1,13 +1,9 @@
-get_prop(rild, oppo_debug_prop);
+get_prop(rild, oppo_debug_prop)
+set_prop(rild, oppo_debug_prop)
+r_dir_file(rild, proc_devinfo)
 
-r_dir_file(rild, proc_devinfo);
-
-allow rild cache_file:dir { add_name getattr create search write };
-allow rild cache_file:file { create open write };
 allow rild system_data_file:dir getattr;
 allow rild block_device:dir search;
 allow rild opporadio_hwservice:hwservice_manager { add find };
-allow rild default_android_hwservice:hwservice_manager { add find };
-set_prop(rild, oppo_debug_prop)
 allow rild vendor_pd_locater_dbg_prop:file { read open getattr };
-set_prop(rild, default_prop)
+dontaudit rild cache_file:dir { search getattr };

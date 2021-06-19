@@ -1,9 +1,6 @@
-allow init system_file:file execute_no_trans;
 allow init persist_file:lnk_file read;
 allow init socket_device:sock_file { create setattr unlink };
 allow init sysfs_battery_supply:file setattr; 
-allow init vendor_file:file { execute execute_no_trans };
-allow init vendor_toolbox_exec:file execute_no_trans;
 allow init sysfs_oppo_display:file rw_file_perms;
 allow init sysfs_oppo_display:file setattr;
 allow init hwservicemanager:binder transfer;
@@ -14,14 +11,10 @@ allow init proc_touchpanel:file { setattr getattr open read write };
 allow init sysfs:file setattr;
 allow init bt_firmware_file:filesystem getattr;
 allow init firmware_file:filesystem getattr;
-
 allow init vendor_data_file:file lock;
 allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
-allow init diag_device:chr_file { ioctl open read write };
-allow init self:socket { ioctl read write create };
-allow init sysfs_wake_lock:file { open read write };
-allow init self:capability2 block_suspend;
+allow init self:socket create;
 allow init oppo_debug_prop:file { read open getattr setattr };
 allow init oppo_debug_prop:property_service set;
 
