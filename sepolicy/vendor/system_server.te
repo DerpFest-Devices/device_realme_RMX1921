@@ -4,12 +4,9 @@ get_prop(system_server, vendor_camera_prop);
 get_prop(system_server, vendor_display_notch_prop);
 
 allow system_server sysfs_battery_supply:file { getattr open read write };
-allow system_server sysfs:file { getattr open read write };
-allow system_server vendor_file:file { open read };
 allow system_server dcs_hwservice:hwservice_manager { add find };
 allow system_server media_rw_data_file:dir { write remove_name };
 allow system_server media_rw_data_file:file { unlink };
-allow system_server init:binder call;
 allow system_server sysfs_rtc:file { open read };
 dontaudit system_server default_android_hwservice:hwservice_manager find;
 allow system_server app_zygote:process { getpgid };
