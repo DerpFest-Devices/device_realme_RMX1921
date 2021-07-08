@@ -407,9 +407,6 @@
     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">true</bool>
 
-    <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_enableSmartPixels">true</bool>
-
     <!-- Whether to intercept inputs on screen off -->
     <bool name="config_enableKeyHandler">true</bool>
 
@@ -427,12 +424,6 @@
 
     <!-- Whether device has vooc charging support -->
     <bool name="config_hasVoocCharger">true</bool>
-
-    <!-- Default value for proximity check on screen wake
-         NOTE! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
-    <bool name="config_proximityCheckOnWake">true</bool>
-    <integer name="config_proximityCheckTimeout">100</integer>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
