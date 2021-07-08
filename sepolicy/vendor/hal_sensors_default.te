@@ -2,3 +2,4 @@ get_prop(hal_sensors_default, oppo_debug_prop)
 r_dir_file(hal_sensors_default, proc_touchpanel)
 get_prop(hal_sensors_default, sensors_prop)
 allow hal_sensors_default proc_touchpanel:file write;
+allow hal_sensors_default diag_device:chr_file rw_file_perms;
