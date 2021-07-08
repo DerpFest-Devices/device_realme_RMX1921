@@ -6,4 +6,5 @@ allow rild system_data_file:dir getattr;
 allow rild block_device:dir search;
 allow rild opporadio_hwservice:hwservice_manager { add find };
 allow rild vendor_pd_locater_dbg_prop:file { read open getattr };
+allow rild diag_device:chr_file rw_file_perms;
 dontaudit rild cache_file:dir { search getattr };

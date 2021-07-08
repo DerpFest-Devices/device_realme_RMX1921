@@ -5,9 +5,7 @@ get_prop(hal_audio_default, vendor_audio_prop);
 
 allow hal_audio_default sysfs:dir read;
 hal_client_domain(hal_audio_default, hal_power);
-userdebug_or_eng(`
-  allow hal_audio diag_device:chr_file rw_file_perms;
-');
+allow hal_audio diag_device:chr_file rw_file_perms;
 allow hal_audio_default mnt_vendor_file:dir search;
 allow hal_audio_default persist_audio_file:dir search;
 allow hal_audio_default persist_audio_file:lnk_file read;
