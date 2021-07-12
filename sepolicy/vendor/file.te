@@ -32,3 +32,6 @@ type sysfs_iio, sysfs_type, fs_type;
 type sysfs_restart, sysfs_type, fs_type;
 
 type vulkan_hal, file_type;
+
+# GCam
+type public_adsprpcd_file, file_type;
