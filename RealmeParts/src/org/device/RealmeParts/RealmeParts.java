@@ -47,6 +47,7 @@ import androidx.preference.TwoStatePreference;
 
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
 import org.device.RealmeParts.Touch.ScreenOffGestureSettings;
+import org.device.RealmeParts.dirac.DiracActivity;
 import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.preferences.CustomSeekBarPreference;
 import org.device.RealmeParts.preferences.SecureSettingListPreference;
@@ -57,9 +58,6 @@ public class RealmeParts extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
-    private static final String PREF_ENABLE_DIRAC = "dirac_enabled";
-    private static final String PREF_HEADSET = "dirac_headset_pref";
-    private static final String PREF_PRESET = "dirac_preset_pref";
 
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
@@ -80,7 +78,7 @@ public class RealmeParts extends PreferenceFragment
     private static TwoStatePreference mGameModeSwitch;
     private Preference mGesturesPref;
     private Preference mKcalPref;
-    private SecureSettingSwitchPreference mEnableDirac;
+    private Preference mDiracPref;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
 
@@ -138,67 +136,20 @@ public class RealmeParts extends PreferenceFragment
                      }
                 });
 
-        boolean enhancerEnabled;
-        try {
-            enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
-        } catch (java.lang.NullPointerException e) {
-            getContext().startService(new Intent(getContext(), DiracService.class));
-            try {
-                enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
-            } catch (NullPointerException ne) {
-                // Avoid crash
-                ne.printStackTrace();
-                enhancerEnabled = false;
-            }
-        }
-
-        mEnableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
-        mEnableDirac.setOnPreferenceChangeListener(this);
-        mEnableDirac.setChecked(enhancerEnabled);
-
-        mHeadsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
-        mHeadsetType.setOnPreferenceChangeListener(this);
-
-        mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
-        mPreset.setOnPreferenceChangeListener(this);
-
+        mDiracPref = findPreference("dirac");
+                mDiracPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                     @Override
+                     public boolean onPreferenceClick(Preference preference) {
+                         Intent intent = new Intent(getContext(), DiracActivity.class);
+                         startActivity(intent);
+                         return true;
+                     }
+                });
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
-        switch (key) {
-
-            case PREF_ENABLE_DIRAC:
-                try {
-                    DiracService.sDiracUtils.setEnabled((boolean) value);
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setEnabled((boolean) value);
-                }
-                break;
-
-            case PREF_HEADSET:
-                try {
-                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
-                }
-                break;
-
-            case PREF_PRESET:
-                try {
-                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                }
-                break;
-
-            default:
-                break;
-        }
         if (preference == mHBMAutobrightnessSwitch) {
                     Boolean enabled = (Boolean) value;
                     SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();

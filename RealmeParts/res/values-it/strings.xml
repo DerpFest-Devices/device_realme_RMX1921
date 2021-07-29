@@ -180,45 +180,52 @@
 
     <!-- Dirac settings -->
     <string name="dirac_title">Equalizzatore Dirac</string>
-    <string name="dirac_summary">Aumenta la qualità audio</string>
-    <string name="dirac_headset_title">Scegli il tipo di cuffie</string>
-    <string name="dirac_preset_title">Scegli un preset</string>
+    <string name="dirac_summary">Migliora la qualità audio</string>
+    <string name="dirac_headset_title">Scegli un tipo di cuffia</string>
+    <string name="dirac_preset_title">Scegli il preset</string>
 
-    <!-- Dirac settings: Headset types -->
     <string name="dirac_headset_default">Predefinito</string>
-    <string name="dirac_headset_earbuds">Mi Earbuds</string>
-    <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
-    <string name="dirac_headset_piston_1">Mi Piston-1</string>
+    <string name="dirac_headset_earbuds">Realme Buds</string>
+    <string name="dirac_headset_in_ear_2013">Realme Buds Neo</string>
+    <string name="dirac_headset_piston_1">Realme Buds Wired</string>
     <string name="dirac_headset_general">Generale</string>
     <string name="dirac_headset_general_inear">Generale In-Ear</string>
-    <string name="dirac_headset_piston_basic">Mi-Piston basic</string>
-    <string name="dirac_headset_piston_2">Mi Piston-2</string>
-    <string name="dirac_headset_piston_standard">Mi-Piston Standard Edition</string>
-    <string name="dirac_headset_headphone">Cuffie XiaomiMi </string>
-    <string name="dirac_headset_piston_youth">Mi Piston Youth Edition</string>
-    <string name="dirac_headset_piston_color">Mi Piston Color Edition</string>
-    <string name="dirac_headset_in_ear">Mi In-Ear</string>
-    <string name="dirac_headset_capsule">Mi Capsule</string>
-    <string name="dirac_headset_in_ear_pro">Mi In-Ear Pro</string>
-    <string name="dirac_headset_comfort">Mi Comfort</string>
-    <string name="dirac_headset_reduction_noise">Mi Noise Cancelling Type-C</string>
-    <string name="dirac_headset_cancelling">Mi Noise Cancelling 3.5mm</string>
-    <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
-    <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
-    <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
-    <string name="dirac_headset_earphone">Mi Earphones</string>
+    <string name="dirac_headset_piston_basic">Basic Edition</string>
+    <string name="dirac_headset_piston_2">Realme Buds 2</string>
+    <string name="dirac_headset_piston_standard">Realme Buds 2 Neo</string>
+    <string name="dirac_headset_headphone">Realme Buds Q</string>
+    <string name="dirac_headset_piston_youth">Youth Edition</string>
+    <string name="dirac_headset_piston_color">Color Edition</string>
+    <string name="dirac_headset_in_ear">In-Ear</string>
+    <string name="dirac_headset_capsule">Capsule</string>
+    <string name="dirac_headset_in_ear_pro">Realme Buds Q2</string>
+    <string name="dirac_headset_comfort">Comfort</string>
+    <string name="dirac_headset_reduction_noise">Type-C con Noise Cancellation</string>
+    <string name="dirac_headset_cancelling">3.5mm con Noise Cancellation</string>
+    <string name="dirac_headset_half_in_ear">Realme Buds Air</string>
+    <string name="dirac_headset_in_ear2">Realme Buds Air 2</string>
+    <string name="dirac_headset_earphone_basic">Cuffie generiche</string>
+    <string name="dirac_headset_earphone">Cuffie Realme</string>
 
-    <!-- Dirac settings: Equalizer presets -->
     <string name="dirac_preset_default">Predefinito</string>
     <string name="dirac_preset_rock">Rock</string>
     <string name="dirac_preset_jazz">Jazz</string>
     <string name="dirac_preset_pop">Pop</string>
     <string name="dirac_preset_classical">Classica</string>
-    <string name="dirac_preset_hiphop">Hip Hop</string>
+    <string name="dirac_preset_hiphop">Hiphop</string>
     <string name="dirac_preset_blues">Blues</string>
     <string name="dirac_preset_electronic">Elettronica</string>
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
+    <!-- QS tile title -->
+    <string name="dirac_qs_tile_title">Realme Dirac</string>
 
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valore: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Predefinito</string>
+    <string name="custom_seekbar_default_value_to_set">Valore predefinito: <xliff:g id="v">%s</xliff:g>\nPremi a lungo per impostare</string>
+    <string name="custom_seekbar_default_value_is_set">Ripristinati i valori di default</string>
+    <string name="switch_bar_on">On</string>
+    <string name="switch_bar_off">Off</string>
 </resources>

@@ -72,29 +72,11 @@
         android:key="audio"
         android:title="@string/audio_title">
 
-        <org.device.RealmeParts.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
-            android:key="dirac_enabled"
-            android:summary="@string/dirac_summary"
-            android:title="@string/dirac_title" />
-
-        <org.device.RealmeParts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dependency="dirac_enabled"
-            android:entries="@array/dirac_headset_pref_entries"
-            android:entryValues="@array/dirac_headset_pref_values"
-            android:key="dirac_headset_pref"
-            android:summary="%s"
-            android:title="@string/dirac_headset_title" />
-
-        <org.device.RealmeParts.preferences.SecureSettingListPreference
-            android:defaultValue="0,0,0,0,0,0,0"
-            android:dependency="dirac_enabled"
-            android:entries="@array/dirac_preset_pref_entries"
-            android:entryValues="@array/dirac_preset_pref_values"
-            android:key="dirac_preset_pref"
-            android:summary="%s"
-            android:title="@string/dirac_preset_title" />
+        <PreferenceScreen
+                android:key="dirac"
+                android:fragment="org.device.RealmeParts.dirac.DiracActivity"
+                android:summary="@string/dirac_summary"
+                android:title="@string/dirac_title" />
     </PreferenceCategory>
 
     <PreferenceCategory
