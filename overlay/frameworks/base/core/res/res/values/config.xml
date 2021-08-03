@@ -519,14 +519,6 @@
          specified name exists on the device, autofill will be disabled by default. -->
     <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
 
-    <!-- Override value to use for proximity sensor as confirmation for proximity_sensor_type. -->
-    <string name="proximity_sensor_secondary_type" translatable="false">33171005</string>
-
-    <!-- If using proximity_sensor_confirmation_type, specifies a threshold value to distinguish
-	 near and far break points. A sensor value less than this is considered "near". -->
-    <item name="proximity_sensor_secondary_threshold" translatable="false" format="float"
-          type="dimen">4.99</item>
-
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
