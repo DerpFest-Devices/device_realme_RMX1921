@@ -87,7 +87,7 @@ public class InfraredSensor implements SensorEventListener {
             if (DEBUG) Log.d(TAG, "Enabling QTI Proximity Sensor fd_enable was 1");
             sensorAlive = true;
             flag = false; // Allow reporting near for initial case
-            mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_FASTEST);
+            mSensorManager.registerListener(this, mSensor, 50000);
         } else {
             if (DEBUG) Log.d(TAG, "Not a touchpanel proximity event");
             return;
