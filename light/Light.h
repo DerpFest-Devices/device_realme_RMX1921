@@ -17,10 +17,6 @@
 #pragma once
 
 #include <aidl/android/hardware/light/BnLights.h>
-#include <android-base/logging.h>
-#include <hardware/hardware.h>
-#include <hardware/lights.h>
-#include <vector>
 
 using ::aidl::android::hardware::light::HwLightState;
 using ::aidl::android::hardware::light::HwLight;
@@ -33,8 +29,12 @@ namespace hardware {
 namespace light {
 
 class Lights : public BnLights {
+public:
       ndk::ScopedAStatus setLightState(int id, const HwLightState& state) override;
       ndk::ScopedAStatus getLights(std::vector<HwLight>* types) override;
+private:
+      uint32_t RgbaToBrightness(uint32_t color);
+      bool WriteToFile(const std::string& path, uint32_t content);
 };
 
 }  // namespace light
