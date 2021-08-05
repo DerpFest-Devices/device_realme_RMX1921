@@ -16,60 +16,53 @@
 
 #include "Light.h"
 
-#include <fstream>
+#include <android-base/file.h>
+#include <android-base/logging.h>
+#include <fcntl.h>
 
-#define LCD_LED         "/sys/class/backlight/panel0-backlight/"
+using ::android::base::WriteStringToFile;
 
-#define BRIGHTNESS      "brightness"
-#define MAX_BRIGHTNESS  "max_brightness"
+namespace aidl {
+namespace android {
+namespace hardware {
+namespace light {
 
+static const std::string kLCDFile = "/sys/class/backlight/panel0-backlight/brightness";
+
+#define AutoHwLight(light) {.id = (int)light, .type = light, .ordinal = 0}
 #define MAX_LCD_BRIGHTNESS    1023
 
-namespace {
-/*
- * Write value to path and close file.
- */
-static void set(std::string path, std::string value) {
-    std::ofstream file(path);
+// List of supported lights
+const static std::vector<HwLight> kAvailableLights = {
+    AutoHwLight(LightType::BACKLIGHT),
+};
 
-    if (!file.is_open()) {
-        LOG(WARNING) << "failed to write " << value.c_str() << " to " << path.c_str();
-        return;
+// AIDL methods
+ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
+    switch (id) {
+        case (int)LightType::BACKLIGHT:
+            WriteToFile(kLCDFile, RgbaToBrightness(state.color));
+            break;
     }
 
-    file << value;
+    return ndk::ScopedAStatus::ok();
 }
 
-static void set(std::string path, int value) {
-    set(path, std::to_string(value));
-}
-
-/*
- * Read max brightness from path and close file.
- */
-static int getMaxBrightness(std::string path) {
-    std::ifstream file(path);
-    int value;
-
-    if (!file.is_open()) {
-        LOG(WARNING) << "failed to read from " << path.c_str();
-        return 0;
+ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
+    for (auto i = kAvailableLights.begin(); i != kAvailableLights.end(); i++) {
+        lights->push_back(*i);
     }
-
-    file >> value;
-    return value;
+    return ndk::ScopedAStatus::ok();
 }
 
-static uint32_t getBrightness(const HwLightState& state) {
-    uint32_t alpha, red, green, blue;
-
-    /*
-     * Extract brightness from AARRGGBB.
-     */
-    alpha = (state.color >> 24) & 0xFF;
-    red = (state.color >> 16) & 0xFF;
-    green = (state.color >> 8) & 0xFF;
-    blue = state.color & 0xFF;
+uint32_t Lights::RgbaToBrightness(uint32_t color) {
+    // Extract brightness from AARRGGBB.
+    uint32_t alpha = (color >> 24) & 0xFF;
+    uint32_t brightness;
+    // Retrieve each of the RGB colors
+    uint32_t red = (color >> 16) & 0xFF;
+    uint32_t green = (color >> 8) & 0xFF;
+    uint32_t blue = color & 0xFF;
 
     /*
      * Scale RGB brightness if Alpha brightness is not 0xFF.
@@ -79,62 +72,18 @@ static uint32_t getBrightness(const HwLightState& state) {
         green = green * alpha / 0xFF;
         blue = blue * alpha / 0xFF;
     }
-
-    return (77 * red + 150 * green + 29 * blue) >> 8;
+    brightness=((77 * red + 150 * green + 29 * blue) >> 8);
+    // Scale the value for our panel
+    brightness=((brightness - 1) * (MAX_LCD_BRIGHTNESS - 1) / (0xFF - 1) + 1);
+    // Prevent errors
+    if (brightness>=1024)
+        brightness=1023;
+    return brightness;
 }
 
-static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
-    if (brightness == 0) {
-        return 0;
-    }
-
-    return (brightness - 1) * (maxBrightness - 1) / (0xFF - 1) + 1;
-}
-
-static inline uint32_t getScaledBrightness(const HwLightState& state, uint32_t maxBrightness) {
-    return scaleBrightness(getBrightness(state), maxBrightness);
-}
-
-static void handleBacklight(const HwLightState& state) {
-    uint32_t brightness = getScaledBrightness(state, getMaxBrightness(LCD_LED MAX_BRIGHTNESS));
-    set(LCD_LED BRIGHTNESS, brightness);
-}
-
-/* Keep sorted in the order of importance. */
-static std::vector<LightType> backends = {
-    LightType::BACKLIGHT,
-};
-
-}  // anonymous namespace
-
-namespace aidl {
-namespace android{
-namespace hardware {
-namespace light {
-
-ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
-    switch(id) {
-        case (int) LightType::BACKLIGHT:
-            handleBacklight(state);
-            return ndk::ScopedAStatus::ok();
-        default:
-            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
-    }
-}
-
-ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
-    int i = 0;
-
-    for (const LightType& backend : backends) {
-        HwLight hwLight;
-        hwLight.id = (int) backend;
-        hwLight.type = backend;
-        hwLight.ordinal = i;
-        lights->push_back(hwLight);
-        i++;
-    }
-
-    return ndk::ScopedAStatus::ok();
+// Write value to path and close file.
+bool Lights::WriteToFile(const std::string& path, uint32_t content) {
+    return WriteStringToFile(std::to_string(content), path);
 }
 
 }  // namespace light

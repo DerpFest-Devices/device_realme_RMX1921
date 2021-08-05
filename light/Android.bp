@@ -5,7 +5,6 @@ cc_binary {
     relative_install_path: "hw",
     shared_libs: [
         "libbase",
-        "libhardware",
         "libbinder_ndk",
         "android.hardware.light-ndk_platform",
     ],
