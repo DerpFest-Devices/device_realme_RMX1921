@@ -77,6 +77,11 @@
                 android:fragment="org.device.RealmeParts.dirac.DiracActivity"
                 android:summary="@string/dirac_summary"
                 android:title="@string/dirac_title" />
+
+        <PreferenceScreen
+                android:key="sound"
+                android:fragment="org.device.RealmeParts.audio.SoundControlSettingsActivity"
+                android:title="@string/audio_gain_settings" />
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -30,6 +30,8 @@ import androidx.preference.PreferenceManager;
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
 import org.device.RealmeParts.Touch.util.Utils;
 import org.device.RealmeParts.Touch.ScreenOffGesture;
+import org.device.RealmeParts.audio.SoundControlSettings;
+import org.device.RealmeParts.audio.SoundControlFileUtils;
 import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.dirac.DiracUtils;
 
@@ -85,6 +87,14 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_OTG_SWITCH, false);
         restore(OTGModeSwitch.getFile(), enabled);
         enableService(context);
+
+        int gain = Settings.Secure.getInt(context.getContentResolver(),
+                SoundControlSettings.PREF_HEADPHONE_GAIN, 4);
+        SoundControlFileUtils.setValue(SoundControlSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
+        SoundControlFileUtils.setValue(SoundControlSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                SoundControlSettings.PREF_MICROPHONE_GAIN, 0));
+        SoundControlFileUtils.setValue(SoundControlSettings.SPEAKER_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                SoundControlSettings.PREF_SPEAKER_GAIN, 0));
     }
 
     private void enableComponent(Context context, String name) {

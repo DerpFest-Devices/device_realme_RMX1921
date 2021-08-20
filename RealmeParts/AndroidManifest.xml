@@ -84,6 +84,17 @@
         </activity>
 
         <activity
+            android:name=".audio.SoundControlSettingsActivity"
+            android:exported="false"
+            android:label="@string/audio_gain_settings">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.sound" />
+        </activity>
+
+        <activity
             android:name="org.device.RealmeParts.kcal.DisplayCalibration"
             android:label="@string/kcal_title">
             <intent-filter>

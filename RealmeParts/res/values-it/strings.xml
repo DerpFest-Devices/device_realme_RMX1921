@@ -228,4 +228,10 @@
     <string name="custom_seekbar_default_value_is_set">Ripristinati i valori di default</string>
     <string name="switch_bar_on">On</string>
     <string name="switch_bar_off">Off</string>
+
+    <string name="audio_gain_settings">Amplificazione audio</string>
+
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Guadagno in cuffia</string>
+    <string name="microphone_gain">Guadagno del microfono</string>
 </resources>

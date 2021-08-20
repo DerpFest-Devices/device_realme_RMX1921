@@ -47,6 +47,7 @@ import androidx.preference.TwoStatePreference;
 
 import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
 import org.device.RealmeParts.Touch.ScreenOffGestureSettings;
+import org.device.RealmeParts.audio.SoundControlSettingsActivity;
 import org.device.RealmeParts.dirac.DiracActivity;
 import org.device.RealmeParts.kcal.DisplayCalibration;
 import org.device.RealmeParts.preferences.CustomSeekBarPreference;
@@ -79,6 +80,7 @@ public class RealmeParts extends PreferenceFragment
     private Preference mGesturesPref;
     private Preference mKcalPref;
     private Preference mDiracPref;
+    private Preference mAudioPref;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
 
@@ -141,6 +143,16 @@ public class RealmeParts extends PreferenceFragment
                      @Override
                      public boolean onPreferenceClick(Preference preference) {
                          Intent intent = new Intent(getContext(), DiracActivity.class);
+                         startActivity(intent);
+                         return true;
+                     }
+                });
+
+        mAudioPref = findPreference("sound");
+                mAudioPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                     @Override
+                     public boolean onPreferenceClick(Preference preference) {
+                         Intent intent = new Intent(getContext(), SoundControlSettingsActivity.class);
                          startActivity(intent);
                          return true;
                      }

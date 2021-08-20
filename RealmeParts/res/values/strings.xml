@@ -218,4 +218,11 @@
     <string name="switch_bar_on">On</string>
     <string name="switch_bar_off">Off</string>
 
+    <string name="audio_gain_settings">Audio Amplification</string>
+
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Headphone gain</string>
+    <string name="microphone_gain">Microphone gain</string>
+    <string name="speaker_gain">Speaker gain</string>
+
 </resources>
