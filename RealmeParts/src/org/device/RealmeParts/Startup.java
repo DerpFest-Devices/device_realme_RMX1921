@@ -93,8 +93,6 @@ public class Startup extends BroadcastReceiver {
         SoundControlFileUtils.setValue(SoundControlSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
         SoundControlFileUtils.setValue(SoundControlSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 SoundControlSettings.PREF_MICROPHONE_GAIN, 0));
-        SoundControlFileUtils.setValue(SoundControlSettings.SPEAKER_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                SoundControlSettings.PREF_SPEAKER_GAIN, 0));
     }
 
     private void enableComponent(Context context, String name) {

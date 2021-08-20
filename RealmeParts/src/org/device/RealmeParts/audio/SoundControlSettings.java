@@ -34,12 +34,9 @@ public class SoundControlSettings extends PreferenceFragment implements
     public static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final String PREF_MICROPHONE_GAIN = "microphone_gain";
     public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
-    public static final String PREF_SPEAKER_GAIN = "speaker_gain";
-    public static final String SPEAKER_GAIN_PATH = "/sys/kernel/sound_control/speaker_gain";
 
     private CustomSeekBarPreference mHeadphoneGain;
     private CustomSeekBarPreference mMicrophoneGain;
-    private CustomSeekBarPreference mSpeakerGain;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -50,9 +47,6 @@ public class SoundControlSettings extends PreferenceFragment implements
 
         mMicrophoneGain = (CustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
         mMicrophoneGain.setOnPreferenceChangeListener(this);
-
-        mSpeakerGain = (CustomSeekBarPreference) findPreference(PREF_SPEAKER_GAIN);
-        mSpeakerGain.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -67,9 +61,6 @@ public class SoundControlSettings extends PreferenceFragment implements
                 SoundControlFileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
                 break;
 
-            case PREF_SPEAKER_GAIN:
-                 SoundControlFileUtils.setValue(SPEAKER_GAIN_PATH, (int) value);
-                break;
             default:
                 break;
         }

@@ -28,11 +28,4 @@
             app:min="-10"
             android:title="@string/microphone_gain" />
 
-        <org.device.RealmeParts.audio.utils.SecureSettingCustomSeekBarPreference 
-            android:defaultValue="0"
-            android:key="speaker_gain" 
-            android:max="20"
-            app:min="-10" 
-            android:title="@string/speaker_gain" />
-
 </PreferenceScreen> 
