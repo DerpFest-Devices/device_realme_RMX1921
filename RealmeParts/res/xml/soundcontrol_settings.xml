@@ -17,7 +17,7 @@
         <org.device.RealmeParts.audio.utils.SecureSettingCustomSeekBarPreference
             android:defaultValue="0"
             android:key="headphone_gain"
-            android:max="20"
+            android:max="15"
             app:min="-40"
             android:title="@string/headphone_gain" />
 
