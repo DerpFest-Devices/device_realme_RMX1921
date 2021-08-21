@@ -16,6 +16,8 @@
     <string name="device_summary">Специальные настройки устройства Realme</string>
     <string name="customize_title">Customize</string>
     <string name="misc_title">Прочее</string>
+    <string name="touch">сенсорный экран</string>
+    <string name="display_title">Экран</string>                                                                              
 
     <!-- DC dimming -->
     <string name="dc_mode_summary">Уменьшает мерцание экрана при низкой яркости</string>
@@ -65,7 +67,6 @@
     <string name="gesture_swipe_right_title">Жест Потянуть вправо</string>
     <string name="KharaMeParts_summary">Жесты и Твики</string>
     <string name="screen_off_gestures">Жесты выключенного экрана</string>
-    <string name="gestures">Жесты</string>
     <string name="enable_dt2w_title">Включить двойное нажатие</string>
     <string name="enable_dt2w_summary">Включить жесты двойного нажатия</string>
     <string name="dt2w_title">Двойное нажатие</string>
@@ -128,7 +129,6 @@
     <string name="touchscreen_gesture_haptic_feedback_summary">Вибрировать при обнаружении жеста</string>
 
     <!-- Kcal -->
-    <string name="kcal">Экран</string>                                                                              
     <string name="kcal_title">Контроль цвета экрана</string>
     <string name="kcal_summary">Калибровка цвета экрана с использованием KCAL</string>
     <string name="kcal_enabled_title">Включить KCAL</string>

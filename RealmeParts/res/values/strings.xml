@@ -18,6 +18,8 @@
     <string name="device_summary">Realme specific settings</string>
     <string name="customize_title">Customize</string>
     <string name="misc_title">Misc settings</string>
+    <string name="display_title">Display</string>
+    <string name="touch">Touchscreen</string>
 
     <!-- DC dimming -->
     <string name="dc_mode_summary">Reduces screen flicker while brightness is low</string>
@@ -71,7 +73,6 @@
     <string name="gesture_swipe_right_title">Gesture Swipe Right</string>
     <string name="KharaMeParts_summary">Gestures and Tweaks</string>
     <string name="screen_off_gestures">Screen-off gestures</string>
-    <string name="gestures">Gestures</string>
     <string name="enable_dt2w_title">Enable Double Tap</string>
     <string name="enable_dt2w_summary">Enable Double Tap Gestures</string>
     <string name="dt2w_title">Double Tap</string>
@@ -134,7 +135,6 @@
     <string name="touchscreen_gesture_haptic_feedback_summary">Vibrate when a Touchscreen gesture is detected</string>
 
     <!-- Kcal -->
-    <string name="kcal">Display</string>
     <string name="kcal_title">Display color control</string>
     <string name="kcal_summary">Display color calibration using KCAL</string>
     <string name="kcal_enabled_title">Enable KCAL</string>
@@ -219,6 +219,7 @@
     <string name="switch_bar_off">Off</string>
 
     <string name="audio_gain_settings">Audio Amplification</string>
+    <string name="gain_summary">Improve audio devices gain</string>
 
     <!-- Audio amplification -->
     <string name="headphone_gain">Headphone gain</string>

@@ -14,8 +14,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-            android:key="graphics"
-            android:title="@string/customize_title">
+        android:key="audio"
+        android:title="@string/audio_title">
+
+        <PreferenceScreen
+                android:key="dirac"
+                android:fragment="org.device.RealmeParts.dirac.DiracActivity"
+                android:summary="@string/dirac_summary"
+                android:title="@string/dirac_title" />
+
+        <PreferenceScreen
+                android:key="sound"
+                android:fragment="org.device.RealmeParts.audio.SoundControlSettingsActivity"
+                android:summary="@string/gain_summary"
+                android:title="@string/audio_gain_settings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/display_title">
 
         <SwitchPreference
             android:key="dc"
@@ -43,24 +59,6 @@
             android:summary="@string/srgb_mode_summary"
             android:title="@string/srgb_mode_title" />
 
-        <SwitchPreference
-            android:key="game"
-            android:summary="@string/game_mode_summary"
-            android:title="@string/game_mode_title" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/gestures">
-
-        <PreferenceScreen
-                android:key="screen_gestures"
-                android:fragment="org.device.RealmeParts.Touch.ScreenOffGestureSettings"
-                android:summary="@string/gestures_dashboard_summary"
-                android:title="@string/screen_off_gestures" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/kcal">
          <PreferenceScreen
                 android:key="kcal"
                 android:fragment="org.device.RealmeParts.kcal.DisplayCalibration"
@@ -69,19 +67,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="audio"
-        android:title="@string/audio_title">
+            android:title="@string/touch">
+
+
+        <SwitchPreference
+            android:key="game"
+            android:summary="@string/game_mode_summary"
+            android:title="@string/game_mode_title" />
 
         <PreferenceScreen
-                android:key="dirac"
-                android:fragment="org.device.RealmeParts.dirac.DiracActivity"
-                android:summary="@string/dirac_summary"
-                android:title="@string/dirac_title" />
-
-        <PreferenceScreen
-                android:key="sound"
-                android:fragment="org.device.RealmeParts.audio.SoundControlSettingsActivity"
-                android:title="@string/audio_gain_settings" />
+                android:key="screen_gestures"
+                android:fragment="org.device.RealmeParts.Touch.ScreenOffGestureSettings"
+                android:summary="@string/gestures_dashboard_summary"
+                android:title="@string/screen_off_gestures" />
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -16,6 +16,8 @@
     <string name="device_summary">Ajustes especiales Realme</string>
     <string name="customize_title">Customize</string>
     <string name="misc_title">Otros</string>
+    <string name="touch">Touchscreen</string>
+    <string name="display_title">Display</string>
 
     <!-- DC dimming -->
     <string name="dc_mode_summary">Disminuye el parpadeo de la pantalla con brillo bajo</string>
@@ -65,7 +67,6 @@
     <string name="gesture_swipe_right_title">Gesto Deslizar a la derecha</string>
     <string name="KharaMeParts_summary">Gestos y Tweaks</string>
     <string name="screen_off_gestures">Gestos de pantalla apagada</string>
-    <string name="gestures">Gestos</string>
     <string name="enable_dt2w_title">Habilitar doble toque</string>
     <string name="enable_dt2w_summary">Habilitar gestos de doble toque</string>
     <string name="dt2w_title">Doble toque</string>
@@ -129,7 +130,6 @@
 
 
     <!-- Kcal -->
-    <string name="kcal">Pantalla</string>                                                                              
     <string name="kcal_title">Control del color de la pantalla</string>
     <string name="kcal_summary">Calibracion del color de la pantalla usando KCAL</string>
     <string name="kcal_enabled_title">Habilitar KCAL</string>

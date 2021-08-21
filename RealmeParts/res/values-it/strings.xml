@@ -15,6 +15,7 @@
     <string name="device_summary">Impostazioni specifiche per il tuo Realme</string>
     <string name="display_title">Schermo</string>
     <string name="misc_title">Impostazioni varie</string>
+    <string name="touch">Touchscreen</string>
 
     <!-- DC dimming -->
     <string name="dc_mode_summary">Riduci lo sfarfallio dello schermo quando la luminosità è bassa</string>
@@ -70,7 +71,6 @@
     <string name="gesture_swipe_right_title">Gesto dello swipe a destra</string>
     <string name="KharaMeParts_summary">Gesti e modifiche</string>
     <string name="screen_off_gestures">Gesti a schermo spento</string>
-    <string name="gestures">Gesti</string>
     <string name="enable_dt2w_title">Attiva il doppio tap</string>
     <string name="enable_dt2w_summary">Attiva la gesture col doppio tap</string>
     <string name="dt2w_title">Doppio tap</string>
@@ -133,7 +133,6 @@
     <string name="touchscreen_gesture_haptic_feedback_summary">Vibra quando un gesto viene riconosciuto</string>
 
     <!-- Kcal -->
-    <string name="kcal">Display</string>
     <string name="kcal_title">Controllo dei colori del display</string>
     <string name="kcal_summary">Controlla i colori del display con KCAL</string>
     <string name="kcal_enabled_title">Attiva KCAL</string>
@@ -230,7 +229,7 @@
     <string name="switch_bar_off">Off</string>
 
     <string name="audio_gain_settings">Amplificazione audio</string>
-
+    <string name="gain_summary">Aumenta il volume dei dispositivi audio</string>
     <!-- Audio amplification -->
     <string name="headphone_gain">Guadagno in cuffia</string>
     <string name="microphone_gain">Guadagno del microfono</string>
