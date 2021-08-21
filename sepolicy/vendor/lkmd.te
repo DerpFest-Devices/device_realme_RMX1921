@@ -1,1 +1,2 @@
 allow lmkd self:capability2 block_suspend;
+allow lmkd self:capability { sys_admin };
