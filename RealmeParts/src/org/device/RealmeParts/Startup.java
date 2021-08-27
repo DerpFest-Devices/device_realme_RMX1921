@@ -33,7 +33,6 @@ import org.device.RealmeParts.Touch.ScreenOffGesture;
 import org.device.RealmeParts.audio.SoundControlSettings;
 import org.device.RealmeParts.audio.SoundControlFileUtils;
 import org.device.RealmeParts.kcal.DisplayCalibration;
-import org.device.RealmeParts.dirac.DiracUtils;
 
 public class Startup extends BroadcastReceiver {
 
@@ -77,7 +76,6 @@ public class Startup extends BroadcastReceiver {
                         ScreenOffGesture.PREF_DT2W_ENABLE, true));
 
         context.startService (new Intent (context, DisplayCalibration.class));
-        new DiracUtils(context).onBootCompleted();
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_DC_SWITCH, false);
         restore(DCModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_HBM_SWITCH, false);

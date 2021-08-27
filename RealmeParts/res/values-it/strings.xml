@@ -177,49 +177,6 @@
     <!-- Audio -->
     <string name="audio_title">Audio</string>
 
-    <!-- Dirac settings -->
-    <string name="dirac_title">Equalizzatore Dirac</string>
-    <string name="dirac_summary">Migliora la qualità audio</string>
-    <string name="dirac_headset_title">Scegli un tipo di cuffia</string>
-    <string name="dirac_preset_title">Scegli il preset</string>
-
-    <string name="dirac_headset_default">Predefinito</string>
-    <string name="dirac_headset_earbuds">Realme Buds</string>
-    <string name="dirac_headset_in_ear_2013">Realme Buds Neo</string>
-    <string name="dirac_headset_piston_1">Realme Buds Wired</string>
-    <string name="dirac_headset_general">Generale</string>
-    <string name="dirac_headset_general_inear">Generale In-Ear</string>
-    <string name="dirac_headset_piston_basic">Basic Edition</string>
-    <string name="dirac_headset_piston_2">Realme Buds 2</string>
-    <string name="dirac_headset_piston_standard">Realme Buds 2 Neo</string>
-    <string name="dirac_headset_headphone">Realme Buds Q</string>
-    <string name="dirac_headset_piston_youth">Youth Edition</string>
-    <string name="dirac_headset_piston_color">Color Edition</string>
-    <string name="dirac_headset_in_ear">In-Ear</string>
-    <string name="dirac_headset_capsule">Capsule</string>
-    <string name="dirac_headset_in_ear_pro">Realme Buds Q2</string>
-    <string name="dirac_headset_comfort">Comfort</string>
-    <string name="dirac_headset_reduction_noise">Type-C con Noise Cancellation</string>
-    <string name="dirac_headset_cancelling">3.5mm con Noise Cancellation</string>
-    <string name="dirac_headset_half_in_ear">Realme Buds Air</string>
-    <string name="dirac_headset_in_ear2">Realme Buds Air 2</string>
-    <string name="dirac_headset_earphone_basic">Cuffie generiche</string>
-    <string name="dirac_headset_earphone">Cuffie Realme</string>
-
-    <string name="dirac_preset_default">Predefinito</string>
-    <string name="dirac_preset_rock">Rock</string>
-    <string name="dirac_preset_jazz">Jazz</string>
-    <string name="dirac_preset_pop">Pop</string>
-    <string name="dirac_preset_classical">Classica</string>
-    <string name="dirac_preset_hiphop">Hiphop</string>
-    <string name="dirac_preset_blues">Blues</string>
-    <string name="dirac_preset_electronic">Elettronica</string>
-    <string name="dirac_preset_country">Country</string>
-    <string name="dirac_preset_dance">Dance</string>
-    <string name="dirac_preset_metal">Metal</string>
-    <!-- QS tile title -->
-    <string name="dirac_qs_tile_title">Realme Dirac</string>
-
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valore: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">Predefinito</string>
@@ -233,4 +190,8 @@
     <!-- Audio amplification -->
     <string name="headphone_gain">Guadagno in cuffia</string>
     <string name="microphone_gain">Guadagno del microfono</string>
+
+    <!-- Dolby -->
+    <string name="dolby_summary">"Apri l'app Dolby"</string>
+    <string name="dolby_title">Equalizzatore Dolby Atmos</string>
 </resources>
