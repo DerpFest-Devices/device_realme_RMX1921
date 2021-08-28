@@ -32,7 +32,7 @@ import org.device.RealmeParts.Touch.util.Utils;
 import org.device.RealmeParts.Touch.ScreenOffGesture;
 import org.device.RealmeParts.audio.SoundControlSettings;
 import org.device.RealmeParts.audio.SoundControlFileUtils;
-import org.device.RealmeParts.kcal.DisplayCalibration;
+import org.device.RealmeParts.kcal.KcalService;
 
 public class Startup extends BroadcastReceiver {
 
@@ -60,7 +60,6 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
-        context.startService(new Intent(context, DisplayCalibration.class));
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences (context);
         enabled = sharedPrefs.getBoolean (RealmeParts.KEY_GAME_SWITCH, false);
         restore (GameModeSwitch.getFile ( ), enabled);
@@ -75,7 +74,9 @@ public class Startup extends BroadcastReceiver {
                 screenOffGestureSharedPreferences.getBoolean(
                         ScreenOffGesture.PREF_DT2W_ENABLE, true));
 
-        context.startService (new Intent (context, DisplayCalibration.class));
+        Intent kcalIntent  = new Intent(context , KcalService.class);
+        context.startService(kcalIntent);
+
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_DC_SWITCH, false);
         restore(DCModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_HBM_SWITCH, false);

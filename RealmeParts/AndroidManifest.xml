@@ -82,12 +82,13 @@
         </activity>
 
         <activity
-            android:name="org.device.RealmeParts.kcal.DisplayCalibration"
+            android:name=".kcal.DisplayCalibration"
             android:label="@string/kcal_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
         </activity>
+        <service android:name="org.device.RealmeParts.kcal.KcalService"></service>
 
         <!-- Quick Settings Tiles -->
         <service
