@@ -42,3 +42,36 @@ on property:sys.boot_completed=1
   restorecon_recursive /sys/kernel/sound_control
   chmod 0660 /sys/kernel/sound_control/headphone_gain
   chmod 0660 /sys/kernel/sound_control/mic_gain
+
+# Perf
+  chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+  chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+  restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq
+  restorecon_recursive /sys/devices/system/cpu/cpu6/cpufreq
+  chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+  chmod 0666 /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+
+  chown system system /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+  restorecon_recursive /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+  chmod 0644 /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+  
+  chown system system /sys/module/cpu_boost/parameters/sched_boost_on_input
+  chmod 0644 /sys/module/cpu_boost/parameters/sched_boost_on_input
+  restorecon_recursive /sys/module/cpu_input_boost/parameters
+  chown system system /sys/module/cpu_input_boost/parameters/input_boost_duration
+  chmod 0644 /sys/module/cpu_input_boost/parameters/input_boost_duration
+
+  chown system system /sys/module/cpu_boost/parameters/input_boost_freq
+  chown system system /sys/module/cpu_boost/parameters/input_boost_ms
+  restorecon_recursive /sys/module/cpu_boost/parameters
+  chmod 0644 /sys/module/cpu_boost/parameters/input_boost_freq
+  chmod 0644 /sys/module/cpu_boost/parameters/input_boost_ms
+
+  chown system system /sys/module/adreno_idler/parameters/adreno_idler_active
+  chown system system /sys/module/adreno_idler/parameters/adreno_idler_idleworkload
+  chown system system /sys/module/adreno_idler/parameters/adreno_idler_downdifferential
+  chown system system /sys/module/adreno_idler/parameters/adreno_idler_idlewait
+  chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_active
+  chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_idleworkload
+  chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_downdifferential
+  chmod 0644 /sys/module/adreno_idler/parameters/adreno_idler_idlewait

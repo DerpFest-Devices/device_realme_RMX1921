@@ -59,6 +59,7 @@ public class RealmeParts extends PreferenceFragment
 
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
 
+    public static final String KEY_PERFORMANCE = "perf_tuner";
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_HBM_AUTOBRIGHTNESS_SWITCH = "hbm_autobrightness";

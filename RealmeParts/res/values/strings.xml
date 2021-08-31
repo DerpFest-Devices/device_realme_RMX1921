@@ -185,4 +185,16 @@
     <!-- Dolby -->
     <string name="dolby_summary">Open Dolby Atmos app</string>
     <string name="dolby_title">Dolby App</string>
+
+    <!-- Performance Profiles -->
+    <string name="performance_profile_title">Performance</string>
+    <string name="performance_title">Performance Profiles</string>
+    <string name="performance_summary">Performance tuning</string>
+    <string name="performance_dialogTitle">Choose your performance profile</string>
+
+    <!-- Values for performance presets -->
+    <string name="performance_extreme">Extreme</string>
+    <string name="performance_battery">Battery</string>
+    <string name="performance_gaming">Gaming</string>
+    <string name="performance_balance">Balance</string>
 </resources>

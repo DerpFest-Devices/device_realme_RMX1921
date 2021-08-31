@@ -119,6 +119,16 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+        <service
+            android:name="org.device.RealmeParts.PerfTileService" 
+            android:icon="@drawable/ic_perf" 
+            android:label="@string/performance_title" 
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"> 
+            <intent-filter>
+                <action 
+                android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
         <service android:name="org.device.RealmeParts.AutoHighBrightnessModeService" />
         <service
             android:name="org.device.RealmeParts.SRGBModeTileService"

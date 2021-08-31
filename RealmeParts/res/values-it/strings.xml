@@ -194,4 +194,16 @@
     <!-- Dolby -->
     <string name="dolby_summary">"Apri l'app Dolby"</string>
     <string name="dolby_title">Equalizzatore Dolby Atmos</string>
+
+    <!-- Performance Profiles -->
+    <string name="performance_profile_title">Prestazioni</string>
+    <string name="performance_title">Profili prestazioni</string>
+    <string name="performance_summary">Ottimizzazione performance e batteria</string>
+    <string name="performance_dialogTitle">Scegli il tuo profilo prestazioni</string>
+
+    <!-- Values for Performance Presets -->
+    <string name="performance_extreme">Performance</string>
+    <string name="performance_battery">Batteria</string>
+    <string name="performance_gaming">Gaming</string>
+    <string name="performance_balance">Bilanciato</string>
 </resources>
