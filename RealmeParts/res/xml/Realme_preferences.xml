@@ -97,6 +97,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="vibration"
+        android:title="@string/vibration_title">
+        <Preference
+                android:key="vibrator"
+                android:title="@string/vibration_title"
+                android:summary="@string/vibration_summary">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetClass="org.device.RealmeParts.vibrator.VibratorSettingsActivity"
+                    android:targetPackage="org.device.RealmeParts" />
+            </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="misc"
         android:title="@string/misc_title">
 

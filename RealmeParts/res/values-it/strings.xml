@@ -210,4 +210,11 @@
     <string name="clear_speaker_title">"Pulisci l'altoparlante"</string>
     <string name="clear_speaker_summary">"Ascolta un audio di trenta secondi per pulire l'altoparlante"</string>
     <string name="clear_speaker_description">"Esegui questo comando se hai notato che l'altoparlante è bloccato dalla polvere, alza il volume al massimo e metti il telefono con l'altoparlante verso il basso.\n\nSe non risolvi con una sola esecuzione ripeti 2-5 volte mentre sbatti il telefono.\n\nATTENZIONE: Controlla che le cuffie siano disconnesse."</string>
+
+    <!-- Vibration -->
+    <string name="vibration_title">Vibrazione</string>
+    <string name="vibration_summary">"Modifica l'intensità della vibrazione"</string>
+    <string name="vibration_strength_system_title">Vibrazione di sistema</string>
+    <string name="vibration_strength_notification_title">Vibrazione notifiche</string>
+    <string name="vibration_strength_call_title">Vibrazione chiamate</string>
 </resources>

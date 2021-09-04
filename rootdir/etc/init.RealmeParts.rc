@@ -43,6 +43,17 @@ on property:sys.boot_completed=1
   chmod 0660 /sys/kernel/sound_control/headphone_gain
   chmod 0660 /sys/kernel/sound_control/mic_gain
 
+# Vibrate
+  chown system system /sys/class/leds/vibrator/vmax_mv_call
+  chown system system /sys/class/leds/vibrator/vmax_mv_strong
+  chown system system /sys/class/leds/vibrator/vmax_mv_user
+  chown system system /sys/class/leds/vibrator/vmax_override
+  chmod 0660 /sys/class/leds/vibrator/vmax_mv_call
+  chmod 0660 /sys/class/leds/vibrator/vmax_mv_strong
+  chmod 0660 /sys/class/leds/vibrator/vmax_mv_user
+  chmod 0660 /sys/class/leds/vibrator/vmax_override
+  write /sys/class/leds/vibrator/vmax_override 1
+
 # Perf
   chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
   chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor

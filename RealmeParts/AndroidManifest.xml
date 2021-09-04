@@ -97,6 +97,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".vibrator.VibratorSettingsActivity"
+            android:exported="false"
+            android:label="@string/vibration_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+        </activity>
         <!-- Quick Settings Tiles -->
         <service
             android:name="org.device.RealmeParts.GameModeTileService"

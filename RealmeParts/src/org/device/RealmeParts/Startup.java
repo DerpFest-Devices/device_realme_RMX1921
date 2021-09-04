@@ -33,6 +33,8 @@ import org.device.RealmeParts.Touch.ScreenOffGesture;
 import org.device.RealmeParts.audio.SoundControlSettings;
 import org.device.RealmeParts.audio.SoundControlFileUtils;
 import org.device.RealmeParts.kcal.KcalService;
+import org.device.RealmeParts.vibrator.VibratorSettings;
+import org.device.RealmeParts.vibrator.utils.VibrateFileUtils;
 
 public class Startup extends BroadcastReceiver {
 
@@ -92,6 +94,12 @@ public class Startup extends BroadcastReceiver {
         SoundControlFileUtils.setValue(SoundControlSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
         SoundControlFileUtils.setValue(SoundControlSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 SoundControlSettings.PREF_MICROPHONE_GAIN, 0));
+        VibrateFileUtils.setValue(VibratorSettings.CALL_LEVEL, Settings.Secure.getInt(context.getContentResolver(),
+                VibratorSettings.PREF_CALL_LEVEL, 3596));
+        VibrateFileUtils.setValue(VibratorSettings.NOTIFICATION_LEVEL, Settings.Secure.getInt(context.getContentResolver(),
+                VibratorSettings.PREF_NOTIFICATION_LEVEL, 3596));
+        VibrateFileUtils.setValue(VibratorSettings.USER_LEVEL, Settings.Secure.getInt(context.getContentResolver(),
+                VibratorSettings.PREF_USER_LEVEL, 3300));
     }
 
     private void enableComponent(Context context, String name) {
