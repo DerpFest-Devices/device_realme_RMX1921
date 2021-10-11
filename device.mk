@@ -17,6 +17,9 @@ $(call inherit-product-if-exists, vendor/realme/RMX1921/RMX1921-vendor.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# HIDL
+$(call inherit-product, $(LOCAL_PATH)/RMX1921-hidl.mk)
+
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 RELAX_USES_LIBRARY_CHECK := true
 
