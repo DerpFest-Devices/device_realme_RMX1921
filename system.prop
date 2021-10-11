@@ -108,6 +108,9 @@ ro.vendor.qti.sys.fw.bservice_enable=true
 # Netflix custom property
 ro.netflix.bsp_rev=Q670-14477-1
 
+# One handed mode
+ro.support_one_handed_mode=true
+
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
