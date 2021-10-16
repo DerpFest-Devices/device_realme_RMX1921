@@ -416,6 +416,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    kernel/realme/RMX1921 \
     hardware/qcom-caf/sdm845 \
     hardware/google/pixel
 
