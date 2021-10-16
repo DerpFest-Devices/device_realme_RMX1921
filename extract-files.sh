@@ -1,8 +1,10 @@
 #!/bin/bash
 #
-# Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
+#
 
 set -e
 
@@ -24,32 +26,36 @@ source "${HELPER}"
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
-SECTION=
-KANG=
 
-while [ "$1" != "" ]; do
-    case "$1" in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
-                                ;;
-        -k | --kang)            KANG="--kang"
-                                ;;
-        -s | --section )        shift
-                                SECTION="$1"
-                                CLEAN_VENDOR=false
-                                ;;
-        * )                     SRC="$1"
-                                ;;
+KANG=
+SECTION=
+
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        -n | --no-cleanup )
+                CLEAN_VENDOR=false
+                ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1}"
+                ;;
     esac
     shift
 done
 
 if [ -z "${SRC}" ]; then
-    SRC=adb
+    SRC="adb"
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 
 "${MY_DIR}/setup-makefiles.sh"
