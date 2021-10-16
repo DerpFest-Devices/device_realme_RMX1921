@@ -541,4 +541,12 @@
 
     <!-- Screen off delay --> 
     <integer name="config_screen_off_delay">0</integer>
+
+    <!-- The properties of UDFPS sensor in pixels, in the order listed below: -->
+    <integer-array name="config_udfps_sensor_props" translatable="false" >
+    <item>540</item>
+    <item>2084</item>
+    <item>98</item>
+    </integer-array>
+
 </resources>
