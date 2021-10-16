@@ -14,8 +14,8 @@
 /dev/block/by-name/vendor                               /vendor                  ext4    ro,barrier=1                                         wait,first_stage_mount
 /dev/block/by-name/odm                                  /odm                     ext4    ro,barrier=1                                         wait,first_stage_mount
 /dev/block/bootdevice/by-name/userdata                  /data                    ext4    noatime,nosuid,noatime,nodev,barrier=1,noauto_da_alloc,async_discard,lazytime,errors=panic       latemount,wait,check,fileencryption=ice,quota,reservedsize=128M
-/devices/platform/soc/8804000.sdhci/mmc_host*           /storage/sdcard1         vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto
-/devices/platform/soc/1da4000.ufshc_card/host*          /storage/sdcard1         vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto
+/devices/platform/soc/8804000.sdhci/mmc_host*           /storage/sdcard1         vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
+/devices/platform/soc/1da4000.ufshc_card/host*          /storage/sdcard1         vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
 /dev/block/bootdevice/by-name/bluetooth                 /vendor/bt_firmware      vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=222,fmask=333,context=u:object_r:bt_firmware_file:s0 wait
 /dev/block/bootdevice/by-name/dsp                       /vendor/dsp              ext4    ro,nosuid,nodev,barrier=1                            wait
 /dev/block/bootdevice/by-name/modem                     /vendor/firmware_mnt     vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=222,fmask=333,context=u:object_r:firmware_file:s0 wait
