@@ -64,7 +64,6 @@ dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
 dalvik.vm.dex2oat-filter=quicken
 dalvik.vm.dex2oat-threads=8
 dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.image-dex2oat-filter=quicken
 dalvik.vm.image-dex2oat-threads=8
 
 # Display post-processing
@@ -140,7 +139,6 @@ service.qti.ims.enabled=1
 persist.vendor.qti.telephony.vt_cam_interface=2
 ro.telephony.iwlan_operation_mode=legacy
 ril.subscription.types=NV,RUIM
-ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 telephony.lteOnCdmaDevice=1
 persist.vendor.ims.disableADBLogs=1
