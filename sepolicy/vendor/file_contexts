@@ -18,7 +18,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.biometrics\.fingerprint@2\.1-service              u:object_r:hal_fingerprint_default_exec:s0       
 
 # Light Hal
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.realme_sdm710                      u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.lights-service\.realme_sdm710        u:object_r:hal_light_default_exec:s0
 /sys/class/lcd_bias/secure_mode                                                u:object_r:sysfs_lcd_file:s0
 /sys/class/leds/wled/secure_mode                                                u:object_r:sysfs_led_file:s0
 
