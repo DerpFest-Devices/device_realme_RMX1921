@@ -27,7 +27,23 @@
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
     Software implementation will be used if config_hardware_auto_brightness_available is not set --> 
     <bool name="config_automatic_brightness_available">true</bool>
-    
+
+    <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
+         device from the display on/off state.
+         When false, autosuspend_disable() will be called before the display is turned on
+         and autosuspend_enable() will be called after the display is turned off.
+         This mode provides best compatibility for devices using legacy power management
+         features such as early suspend / late resume.
+         When true, autosuspend_display() and autosuspend_enable() will be called
+         independently of whether the display is being turned on or off.  This mode
+         enables the power manager to suspend the application processor while the
+         display is on.
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+         Refer to autosuspend.h for details.
+    -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
          When false, setInteractive(..., true) will be called before the display is turned on
@@ -40,69 +56,710 @@
          This resource should be set to "true" when a doze component has been specified
          to maximize power savings but not all devices support it.
          Refer to power.h for details.
-    -->   
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
-    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    -->
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->    
     <bool name="config_showNavigationBar">true</bool>
-    
+
     <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
-    
+
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
-    
+
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
-    
+
     <!-- Whether or not to skip the initial brightness ramps when the display transitions to
          STATE_ON. Setting this to true will skip the brightness ramp to the last stored active
          brightness value and will repeat for the following ramp if autobrightness is enabled. -->
     <bool name="config_skipScreenOnBrightnessRamp">true</bool>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
-         The N entries of this array define N  1 zones as follows:
-         Zone 0:        0 <= LUX < array[0]
-         Zone 1:        array[0] <= LUX < array[1]
+         The N entries of this array define N + 1 zones as follows:
+         Zone 0: 0 <= LUX < array[0]
+         Zone 1: array[0] <= LUX < array[1]
          ...
-         Zone N:        array[N - 1] <= LUX < array[N]
-         Zone N + 1     array[N] <= LUX < infinity
+         Zone N: array[N - 1] <= LUX < array[N]
+         Zone N + 1: array[N] <= LUX < infinity
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
         <item>45</item>
-        <item>1025</item>
-        <item>1480</item>
-        <item>2250</item>
-        <item>3300</item>
+        <item>50</item>
+        <item>55</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>100</item>
+        <item>120</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>220</item>
+        <item>240</item>
+        <item>260</item>
+        <item>280</item>
+        <item>300</item>
+        <item>320</item>
+        <item>340</item>
+        <item>360</item>
+        <item>380</item>
+        <item>400</item>
+        <item>420</item>
+        <item>440</item>
+        <item>460</item>
+        <item>480</item>
+        <item>500</item>
+        <item>700</item>
+        <item>900</item>
+        <item>1100</item>
+        <item>1300</item>
+        <item>1500</item>
+        <item>1700</item>
+        <item>1900</item>
+        <item>2200</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
         <item>10000</item>
     </integer-array>
-    
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
+
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>17</item>
+        <item>24</item>
+        <item>31</item>
+        <item>34</item>
+        <item>46</item>
+        <item>59</item>
+        <item>76</item>
+        <item>81</item>
+        <item>82</item>
+        <item>82</item>
+        <item>82</item>
+        <item>83</item>
+        <item>83</item>
+        <item>83</item>
+        <item>84</item>
+        <item>84</item>
+        <item>85</item>
+        <item>85</item>
+        <item>85</item>
+        <item>85</item>
+        <item>86</item>
+        <item>86</item>
+        <item>87</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>93</item>
+        <item>94</item>
+        <item>96</item>
+        <item>97</item>
+        <item>99</item>
+        <item>100</item>
+        <item>101</item>
+        <item>104</item>
+        <item>105</item>
+        <item>106</item>
+        <item>108</item>
+        <item>109</item>
+        <item>111</item>
+        <item>112</item>
+        <item>114</item>
+        <item>116</item>
+        <item>137</item>
+        <item>157</item>
+        <item>180</item>
+        <item>205</item>
+        <item>226</item>
+        <item>257</item>
+        <item>280</item>
+        <item>295</item>
+        <item>369</item>
+        <item>434</item>
+        <item>495</item>
+        <item>495</item>
+        <item>495</item>
+        <item>600</item>
+    </array>
+
+    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
+         percent. The length of this array is assumed to be one greater than
+         config_dynamicHysteresisLuxLevels. The brightening threshold is calculated as
+         lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
+         the screen brightness is recalculated. See the config_dynamicHysteresisLuxLevels
+         description for how the constraint value is chosen. -->
+    <integer-array name="config_dynamicHysteresisBrightLevels">
+        <item>30</item>
+    </integer-array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
         <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
         <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
         <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
         <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>104</item>
+        <item>105</item>
+        <item>106</item>
+        <item>107</item>
+        <item>108</item>
+        <item>109</item>
+        <item>110</item>
+        <item>111</item>
+        <item>112</item>
+        <item>113</item>
+        <item>114</item>
+        <item>115</item>
+        <item>116</item>
+        <item>117</item>
+        <item>118</item>
+        <item>119</item>
+        <item>120</item>
+        <item>121</item>
+        <item>122</item>
+        <item>123</item>
+        <item>124</item>
+        <item>125</item>
+        <item>126</item>
+        <item>127</item>
         <item>128</item>
+        <item>129</item>
+        <item>130</item>
+        <item>131</item>
+        <item>132</item>
+        <item>133</item>
+        <item>134</item>
+        <item>135</item>
+        <item>136</item>
+        <item>137</item>
+        <item>138</item>
+        <item>139</item>
+        <item>140</item>
+        <item>141</item>
+        <item>142</item>
+        <item>143</item>
+        <item>144</item>
+        <item>145</item>
+        <item>146</item>
+        <item>147</item>
+        <item>148</item>
+        <item>149</item>
+        <item>150</item>
+        <item>151</item>
+        <item>152</item>
+        <item>153</item>
+        <item>154</item>
+        <item>155</item>
+        <item>156</item>
+        <item>157</item>
+        <item>158</item>
+        <item>159</item>
+        <item>160</item>
+        <item>161</item>
+        <item>162</item>
+        <item>163</item>
+        <item>164</item>
+        <item>165</item>
+        <item>166</item>
+        <item>167</item>
+        <item>168</item>
+        <item>169</item>
+        <item>170</item>
+        <item>171</item>
+        <item>172</item>
+        <item>173</item>
+        <item>174</item>
+        <item>175</item>
+        <item>176</item>
+        <item>177</item>
+        <item>178</item>
+        <item>179</item>
+        <item>180</item>
+        <item>181</item>
+        <item>182</item>
+        <item>183</item>
+        <item>184</item>
+        <item>185</item>
+        <item>186</item>
+        <item>187</item>
+        <item>188</item>
+        <item>189</item>
+        <item>190</item>
+        <item>191</item>
+        <item>192</item>
+        <item>193</item>
+        <item>194</item>
+        <item>195</item>
+        <item>196</item>
+        <item>197</item>
+        <item>198</item>
+        <item>199</item>
+        <item>200</item>
+        <item>201</item>
+        <item>202</item>
+        <item>203</item>
+        <item>204</item>
+        <item>205</item>
         <item>206</item>
+        <item>207</item>
+        <item>208</item>
+        <item>209</item>
+        <item>210</item>
+        <item>211</item>
+        <item>212</item>
+        <item>213</item>
+        <item>214</item>
+        <item>215</item>
+        <item>216</item>
+        <item>217</item>
+        <item>218</item>
+        <item>219</item>
+        <item>220</item>
+        <item>221</item>
+        <item>222</item>
+        <item>223</item>
+        <item>224</item>
+        <item>225</item>
+        <item>226</item>
+        <item>227</item>
+        <item>228</item>
+        <item>229</item>
+        <item>230</item>
+        <item>231</item>
+        <item>232</item>
+        <item>233</item>
+        <item>234</item>
+        <item>235</item>
+        <item>236</item>
+        <item>237</item>
+        <item>238</item>
+        <item>239</item>
+        <item>240</item>
+        <item>241</item>
+        <item>242</item>
+        <item>243</item>
+        <item>244</item>
+        <item>245</item>
+        <item>246</item>
+        <item>247</item>
+        <item>248</item>
+        <item>249</item>
+        <item>250</item>
+        <item>251</item>
+        <item>252</item>
+        <item>253</item>
+        <item>254</item>
         <item>255</item>
     </integer-array>
-    
-    <integer-array name="config_autoBrightnessLuxMaxLimit">
-        <item>5</item>
-        <item>150</item>
-        <item>1150</item>
-        <item>1900</item>
-        <item>2800</item>
-        <item>4000</item>
-        <item>80000</item>
-    </integer-array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <array name="config_screenBrightnessNits">
+        <item>2.0</item>
+        <item>3.76</item>
+        <item>5.53</item>
+        <item>7.29</item>
+        <item>9.06</item>
+        <item>10.82</item>
+        <item>12.58</item>
+        <item>14.34</item>
+        <item>16.11</item>
+        <item>17.87</item>
+        <item>19.64</item>
+        <item>21.40</item>
+        <item>23.17</item>
+        <item>24.93</item>
+        <item>26.92</item>
+        <item>28.46</item>
+        <item>30.22</item>
+        <item>31.98</item>
+        <item>33.75</item>
+        <item>35.51</item>
+        <item>37.28</item>
+        <item>39.04</item>
+        <item>40.80</item>
+        <item>42.57</item>
+        <item>44.33</item>
+        <item>46.09</item>
+        <item>47.86</item>
+        <item>49.62</item>
+        <item>51.39</item>
+        <item>53.15</item>
+        <item>54.91</item>
+        <item>56.68</item>
+        <item>58.44</item>
+        <item>60.20</item>
+        <item>61.97</item>
+        <item>63.73</item>
+        <item>65.5</item>
+        <item>67.26</item>
+        <item>69.02</item>
+        <item>70.79</item>
+        <item>72.55</item>
+        <item>74.31</item>
+        <item>76.08</item>
+        <item>77.84</item>
+        <item>79.61</item>
+        <item>81.37</item>
+        <item>83.13</item>
+        <item>84.9</item>
+        <item>86.66</item>
+        <item>88.43</item>
+        <item>90.19</item>
+        <item>91.95</item>
+        <item>93.72</item>
+        <item>95.48</item>
+        <item>97.24</item>
+        <item>99.01</item>
+        <item>100.77</item>
+        <item>102.54</item>
+        <item>104.3</item>
+        <item>106.06</item>
+        <item>107.83</item>
+        <item>109.59</item>
+        <item>111.35</item>
+        <item>113.12</item>
+        <item>114.88</item>
+        <item>116.65</item>
+        <item>118.41</item>
+        <item>120.17</item>
+        <item>121.94</item>
+        <item>123.7</item>
+        <item>125.46</item>
+        <item>127.23</item>
+        <item>128.99</item>
+        <item>130.76</item>
+        <item>132.52</item>
+        <item>134.28</item>
+        <item>136.05</item>
+        <item>137.81</item>
+        <item>139.57</item>
+        <item>141.34</item>
+        <item>143.1</item>
+        <item>144.87</item>
+        <item>146.63</item>
+        <item>148.39</item>
+        <item>150.16</item>
+        <item>151.92</item>
+        <item>153.69</item>
+        <item>155.45</item>
+        <item>157.21</item>
+        <item>158.98</item>
+        <item>160.74</item>
+        <item>162.5</item>
+        <item>164.27</item>
+        <item>166.03</item>
+        <item>167.8</item>
+        <item>169.56</item>
+        <item>171.32</item>
+        <item>173.09</item>
+        <item>174.85</item>
+        <item>176.61</item>
+        <item>178.38</item>
+        <item>180.14</item>
+        <item>181.91</item>
+        <item>183.67</item>
+        <item>185.43</item>
+        <item>187.2</item>
+        <item>188.96</item>
+        <item>190.72</item>
+        <item>192.49</item>
+        <item>194.25</item>
+        <item>196.02</item>
+        <item>197.78</item>
+        <item>199.54</item>
+        <item>201.31</item>
+        <item>203.07</item>
+        <item>204.83</item>
+        <item>206.6</item>
+        <item>208.36</item>
+        <item>210.13</item>
+        <item>211.89</item>
+        <item>213.65</item>
+        <item>215.42</item>
+        <item>217.18</item>
+        <item>218.94</item>
+        <item>220.71</item>
+        <item>222.47</item>
+        <item>224.24</item>
+        <item>226</item>
+        <item>227.76</item>
+        <item>229.53</item>
+        <item>231.29</item>
+        <item>233.06</item>
+        <item>234.82</item>
+        <item>236.58</item>
+        <item>238.35</item>
+        <item>240.11</item>
+        <item>241.87</item>
+        <item>243.64</item>
+        <item>245.4</item>
+        <item>247.17</item>
+        <item>248.93</item>
+        <item>250.69</item>
+        <item>252.46</item>
+        <item>254.22</item>
+        <item>255.98</item>
+        <item>257.75</item>
+        <item>259.51</item>
+        <item>261.28</item>
+        <item>263.04</item>
+        <item>264.8</item>
+        <item>266.57</item>
+        <item>268.33</item>
+        <item>270.09</item>
+        <item>271.86</item>
+        <item>273.62</item>
+        <item>275.39</item>
+        <item>277.15</item>
+        <item>278.91</item>
+        <item>280.68</item>
+        <item>282.44</item>
+        <item>284.2</item>
+        <item>285.97</item>
+        <item>287.73</item>
+        <item>289.5</item>
+        <item>291.26</item>
+        <item>293.02</item>
+        <item>294.79</item>
+        <item>296.55</item>
+        <item>298.31</item>
+        <item>300.08</item>
+        <item>301.84</item>
+        <item>303.61</item>
+        <item>305.37</item>
+        <item>307.13</item>
+        <item>308.9</item>
+        <item>310.66</item>
+        <item>312.43</item>
+        <item>314.18</item>
+        <item>315.95</item>
+        <item>317.72</item>
+        <item>319.48</item>
+        <item>321.24</item>
+        <item>323.01</item>
+        <item>324.77</item>
+        <item>326.54</item>
+        <item>328.3</item>
+        <item>330.06</item>
+        <item>331.83</item>
+        <item>333.59</item>
+        <item>335.35</item>
+        <item>337.12</item>
+        <item>338.88</item>
+        <item>340.65</item>
+        <item>342.41</item>
+        <item>344.17</item>
+        <item>345.94</item>
+        <item>347.7</item>
+        <item>349.46</item>
+        <item>351.23</item>
+        <item>352.99</item>
+        <item>354.76</item>
+        <item>356.52</item>
+        <item>358.28</item>
+        <item>360.05</item>
+        <item>361.81</item>
+        <item>363.57</item>
+        <item>365.34</item>
+        <item>367.1</item>
+        <item>368.87</item>
+        <item>370.63</item>
+        <item>372.39</item>
+        <item>374.16</item>
+        <item>375.92</item>
+        <item>377.69</item>
+        <item>379.45</item>
+        <item>381.21</item>
+        <item>382.98</item>
+        <item>384.74</item>
+        <item>386.5</item>
+        <item>388.26</item>
+        <item>390.03</item>
+        <item>391.79</item>
+        <item>393.55</item>
+        <item>395.32</item>
+        <item>397.08</item>
+        <item>398.85</item>
+        <item>400.61</item>
+        <item>402.37</item>
+        <item>404.14</item>
+        <item>405.9</item>
+        <item>407.67</item>
+        <item>409.63</item>
+        <item>411.2</item>
+        <item>412.96</item>
+        <item>414.72</item>
+        <item>416.49</item>
+        <item>418.25</item>
+        <item>420.01</item>
+        <item>421.78</item>
+        <item>423.54</item>
+        <item>425.31</item>
+        <item>427.07</item>
+        <item>428.83</item>
+        <item>430.6</item>
+        <item>432.36</item>
+        <item>434.16</item>
+        <item>435.9</item>
+        <item>437.65</item>
+        <item>439.42</item>
+        <item>441.18</item>
+        <item>442.94</item>
+        <item>444.71</item>
+        <item>446.47</item>
+        <item>448.24</item>
+        <item>450</item>
+    </array>
+
+    <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
+    <integer name="config_shutdownBatteryTemperature">600</integer>
+
+    <!-- Fast brightness animation ramp rate in brightness units per second-->
+    <integer translatable="false" name="config_brightness_ramp_rate_fast">180</integer>
     
     <!-- Slow brightness animation ramp rate in float. -->
     <item name="config_brightnessRampRateSlowFloat" format="float" type="dimen">0.098039</item>
@@ -112,20 +769,20 @@
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">1</integer>
-   
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+
     <!-- Maximum screen brightness allowed by the power manager.
          The user is forbidden from setting the brightness above this level. -->
     <integer name="config_screenBrightnessSettingMaximum">255</integer>
 
-     <!-- Default screen brightness setting.
+    <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">44</integer>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">4</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
@@ -133,13 +790,35 @@
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
         <item>0</item> <!-- COLOR_MODE_NATURAL -->
+        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
+        <item>2</item> <!-- COLOR_MODE_SATURATED -->
+        <item>3</item> <!-- COLOR_MODE_ADAPTIVE -->
+    </integer-array>
+
+    <!-- The following two arrays specify which color space to use for display composition when a
+         certain color mode is active.
+         Composition color spaces are defined in android.view.Display.COLOR_MODE_xxx, and color
+         modes are defined in ColorDisplayManager.COLOR_MODE_xxx and
+         ColorDisplayManager.VENDOR_COLOR_MODE_xxx.
+         The color space COLOR_MODE_DEFAULT (0) lets the system select the most appropriate
+         composition color space for currently displayed content. Other values (e.g.,
+         COLOR_MODE_SRGB) override system selection; these other color spaces must be supported by
+         the device for for display composition.
+         If a color mode does not have a corresponding color space specified in this array, the
+         currently set composition color space will not be modified.-->
+    <integer-array name="config_displayCompositionColorModes">
+        <item>0</item> <!-- COLOR_MODE_NATURAL   -->
+        <item>1</item> <!-- COLOR_MODE_BOOSTED   -->
         <item>2</item> <!-- COLOR_MODE_SATURATED -->
         <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
     </integer-array>
-    
-    <!-- The maximum range of gamma adjustment possible using the screen
-         auto-brightness adjustment setting. -->
-    <fraction name="config_autoBrightnessAdjustmentMaxGamma">300.0%</fraction>
+
+    <integer-array name="config_displayCompositionColorSpaces">
+        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
+        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
+        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
+        <item>9</item> <!-- COLOR_MODE_DISPLAY_P3 -->
+    </integer-array>
 
     <!-- User activity timeout: Maximum screen dim duration in milliseconds.
 
@@ -158,16 +837,16 @@
     <integer name="config_maximumScreenDimDuration">18000</integer>
 
     <!-- User activity timeout: Maximum screen dim duration as a percentage of screen off timeout.
-    
+
          This resource is similar to config_maximumScreenDimDuration but the maximum
          screen dim duration is defined as a ratio of the overall screen off timeout
          instead of as an absolute value in milliseconds.  This is useful for reducing
          the dim duration when the screen off timeout is very short.
-    
+
          When computing the screen dim duration, the power manager uses the lesser
          of the effective durations expressed by config_maximumScreenDimDuration and
          config_maximumScreenDimRatio.
-    
+
          This value must be between 0% and 100%.  If the value is zero, the screen will not
          dim before the device goes to sleep.
     -->
@@ -178,37 +857,40 @@
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
- 
+
+    <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
+    <integer name="config_autoBrightnessLightSensorRate">500</integer>
+
     <!-- Flag specifying whether VoLTE should be available for carrier: independent of
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
          provisioning, availability etc -->    
     <bool name="config_carrier_volte_available">true</bool>
-    
+
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->    
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
     <!-- Flag specifying whether VoLTE is available on device -->    
     <bool name="config_device_volte_available">true</bool>
-    
+
     <!-- Flag specifying whether VT is available on device -->
     <bool name="config_device_vt_available">true</bool>
-    
+
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
-    
+
     <!-- Is the device capable of hot swapping an ICC Card -->
     <bool name="config_hotswapCapable">true</bool>
-    
+
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
-    
+
     <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of
          phone object irrespective of this config -->    
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
-    
+
     <string-array name="config_mobile_tcp_buffers">
         <item>5gnr:2097152,6291456,16777216,512000,2097152,8388608</item>
         <item>lte:2097152,4194304,8388608,262144,524288,1048576</item>
@@ -222,12 +904,12 @@
         <item>gprs:4092,8760,11680,4096,8760,11680</item>
         <item>evdo:4094,87380,524288,4096,16384,262144</item>
     </string-array>
-    
+
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-    
+
     <!-- Operating volatage for bluetooth controller. 0 by default-->
-     <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
+    <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
 
     <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
          [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
@@ -286,11 +968,17 @@
          flag is set for wifi displays.
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
-    
+
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->    
     <bool name="skip_restoring_network_selection">true</bool>
-    
+
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">Android-Mms/2.0</string>
+
+    <!-- MMS user agent prolfile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
+
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
     <bool name="config_camera_sound_forced">false</bool>
 
@@ -318,7 +1006,7 @@
         <item>/system/lib64/libRSCpuRef.so</item>
         <item>/system/lib64/libblas.so</item>
     </string-array>
-    
+
     <!-- List of files pinned by the Pinner Service with the JIT Zygote boot image b/119800099 -->
     <string-array translatable="false" name="config_jitzygoteBootImagePinnerServiceFiles">
         <item>"/system/framework/framework.jar"</item>
@@ -331,10 +1019,10 @@
 	<item>"/data/dalvik-cache/arm64/system@system_ext@priv-app@SystemUI@SystemUI.apk@classes.dex"</item>
 	<item>"/data/dalvik-cache/arm64/system@system_ext@priv-app@SystemUI@SystemUI.apk@classes.vdex"</item>
     </string-array>
-    
+
     <!-- Should the pinner service pin the Home application? -->
     <bool name="config_pinnerHomeApp">false</bool>
-    
+
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -344,13 +1032,13 @@
          Note that doze dreams are not subject to the same start conditions as ordinary dreams.
          Doze dreams will run whenever the power manager is in a dozing state. -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
-    
+
     <!-- If true, the doze component is not started until after the screen has been turned off
          and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">false</bool>
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
-     
+
     <!-- Delay that allows some content to arrive at the display before switching
          from DOZE to ON, in millis. -->
     <integer name="config_wakeUpDelayDoze">95</integer>
@@ -362,10 +1050,13 @@
 
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
-    
+
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
-    
+
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+
     <!-- RMX1921 : Define dimensions of the notch -->
     <string name="config_mainBuiltInDisplayCutout">M -143,0 L -143,76 L 143,76 L 143,0 Z</string>
     
@@ -394,7 +1085,7 @@
     <!-- Whether device has a physical display cutout -->
     <bool name="config_physicalDisplayCutout">true</bool>
 
-    <!-- The list of components which should be automatically disabled for a specific package. --> 
+    <!-- The list of components which should be automatically disabled for a specific package. -->
     <string-array name="config_disabledComponents" translatable="false">
 	<item>com.google.android.googlequicksearchbox/com.google.android.hotword.service.HotwordService</item>
     </string-array>
@@ -417,6 +1108,13 @@
         <item>com.android.touch.gestures.KeyHandler</item>
     </string-array>
 
+    <!-- True if the device supports Sustained Performance Mode-->
+    <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- If true, the screen can be rotated via the accelerometer in all 4
+         rotations as the default behavior. -->
+    <bool name="config_allowAllRotations">true</bool>
+
     <!-- Whether device has vooc charging support -->
     <bool name="config_hasVoocCharger">true</bool>
 
@@ -438,7 +1136,7 @@
 
     <!-- Specifies the maximum burn-in offset vertically. -->
     <integer name="config_burnInProtectionMaxVerticalOffset">40</integer>
- 
+
     <!-- The default journal mode to use use when Write-Ahead Logging is not active.
          Choices are: OFF, DELETE, TRUNCATE, PERSIST and MEMORY.
          PERSIST may improve performance by reducing how often journal blocks are
@@ -492,7 +1190,7 @@
 
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
-    
+
     <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay, an
          empty string is passed in -->
     <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
@@ -506,6 +1204,32 @@
 
     <!-- Whether device has a notch -->
     <bool name="config_haveNotch">true</bool>
+
+    <!-- The device supports freeform window management. Windows have title bars and can be moved
+         and resized. If you set this to true, you also need to add
+         PackageManager.FEATURE_FREEFORM_WINDOW_MANAGEMENT feature to your device specification.
+         The duplication is necessary, because this information is used before the features are
+         available to the system.-->
+    <bool name="config_freeformWindowManagement">true</bool>
+
+    <!-- Controls the navigation bar interaction mode:
+         0: 3 button mode (back, home, overview buttons)
+         1: 2 button mode (back, home buttons + swipe up for overview)
+         2: gestures only for back, home and overview -->
+    <integer name="config_navBarInteractionMode">2</integer>
+
+    <!-- Controls whether hints for gestural navigation are shown when the device is setup.
+         This should only be set when the device has gestural navigation enabled by default. -->
+    <bool name="config_showGesturalNavigationHints">true</bool>
+
+    <!-- The percentage of the screen width to use for the default width or height of
+         picture-in-picture windows. Regardless of the percent set here, calculated size will never
+         be smaller than @dimen/default_minimal_size_pip_resizable_task. -->
+    <item name="config_pictureInPictureDefaultSizePercent" format="float" type="dimen">0.40</item>
+
+    <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
+         we only enabled it while the device has ability of mixed color spaces composition -->
+    <bool name="config_enableWcgMode">true</bool>
 
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
@@ -526,6 +1250,9 @@
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+
+    <!-- Flag indicating whether we should enable the adaptive sleep.-->
+    <bool name="config_adaptive_sleep_available">true</bool>
 
     <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
     <bool name="config_zramWriteback">true</bool>
