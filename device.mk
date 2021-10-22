@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0-impl.generic \
     android.hardware.contexthub@1.0-service
 
+# Crypto
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.filenames_mode=aes-256-cts
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.2-service \
