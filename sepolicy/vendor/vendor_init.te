@@ -15,3 +15,4 @@ set_prop(vendor_init, oppo_debug_prop)
 set_prop(vendor_init, vendor_camera_prop)
 set_prop(vendor_init, vendor_persist_camera_prop)
 allow vendor_init oppo_wlan_prop:file { open read getattr };
+get_prop(vendor_init, persist_debug_prop)
