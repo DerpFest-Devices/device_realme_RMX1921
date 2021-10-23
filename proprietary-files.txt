@@ -483,17 +483,17 @@ vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede025
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|eb1a99915765fca7add8de87d7c4ef9bf031e155
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|3e517ec6b4603c6c1f5945b3f131aa69bccb0b08
 
-# Display (HDR) - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/lib64/libhdr_tm.so|7ac38563480eab0583cb440e667a44cfa596167a
-vendor/lib/libhdr_tm.so|1e8a647523db0a09c9587a77f1f7b132a03c2354
+# Display (HDR)
+vendor/lib64/libhdr_tm.so
+vendor/lib/libhdr_tm.so
 
-# Display (SDM) - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/lib64/libqseed3.so|f5990f19a99ec5f33b5a262493c4e642a1429f69
-vendor/lib64/libsdm-disp-vndapis.so|4c6916fed1e304effa4c06c7207fb0e1b604f3ae
-vendor/lib64/libtinyxml2_1.so|92101861d95cbdf9625d192d0b2295baa5960b68
-vendor/lib/libqseed3.so|ea8d3775ab13c9ebfcdc2a02e60f56cc49a9d695
-vendor/lib/libsdm-disp-vndapis.so|8f433d5996f90c584530ed5a6eba504c3b4cc2b1
-vendor/lib/libtinyxml2_1.so|f00b8f6218271d57fd1fb67b192db956e42e66fb
+# Display (SDM)
+vendor/lib64/libqseed3.so
+vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libtinyxml2_1.so
+vendor/lib/libqseed3.so
+vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libtinyxml2_1.so
 
 # Display (SDM)
 vendor/lib64/hw/hwcomposer.sdm710.so
@@ -509,28 +509,28 @@ vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
 vendor/lib/libsdmcore.so
 
-# Display postprocessing - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/bin/hw/vendor.display.color@1.0-service|a9d360976833d863f74df381298de696daea8acb
-vendor/bin/mm-pp-dpps|e825298dc12603df29c35aa6ad86fd0d0a7646a2
-vendor/bin/ppd|8b60669c32f091dd5832579892c91dc3eb0e8130
-vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
-vendor/lib64/libdisp-aba.so|e76d6756cbb0532bc83ff98a06c4ca02fecdd8fe
-vendor/lib64/libdisplayqos.so|c3d45315871e402053dd1f353e9bde5cbf757277
-vendor/lib64/vendor.display.color@1.0.so|b1db446a13b1598675a8f538fe1d18d3b08ef570
-vendor/lib64/vendor.display.color@1.1.so|dd12242ccc66729458aa01b1960bff0a3f391d8a
-vendor/lib64/vendor.display.color@1.2.so|9d8a103b13bbae99cc5513251b4f8f361eb17d6c
-vendor/lib64/vendor.display.color@1.3.so|07bfdb50206d5802cced637c84dfa319d9b9a527
-vendor/lib64/vendor.display.color@1.4.so|0f566f339a3e93494eda56cf9c7af4e14cc71733
-vendor/lib64/vendor.display.color@1.5.so|ff11f083fbdcd120592a2e602263987f6bfd1224
+# Display postprocessing
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/mm-pp-dpps
+vendor/bin/ppd
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib64/libdisp-aba.so
+vendor/lib64/libdisplayqos.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.color@1.3.so
+vendor/lib64/vendor.display.color@1.4.so
+vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so|9d70df811e194e4dc6dce9a6a0c87cd74c507e9d
-vendor/lib/libdisp-aba.so|9271ecfa4d389d99bc592ab2a460eacef7515836
-vendor/lib/libdisplayqos.so|7b83c36716bae758c71d34b85401d7d77afa2c23
-vendor/lib/vendor.display.color@1.0.so|886f413c1b931a29893fe4d9f5f4796aca3fa6f1
-vendor/lib/vendor.display.color@1.1.so|44bb898bd34f99d803b16ddfac97e79c745ddcb6
-vendor/lib/vendor.display.color@1.2.so|08b78c5c66feced0effe286f4c838eb0e24931dc
-vendor/lib/vendor.display.color@1.3.so|0ff93cf272445878eca3bafcc48092766c45fefc
-vendor/lib/vendor.display.color@1.4.so|cf82bef31cea23f288322dddf77f88e132239b81
-vendor/lib/vendor.display.color@1.5.so|f405e74f80d5fefe45694059eebb0600d62e8ffb
+vendor/lib/libdisp-aba.so
+vendor/lib/libdisplayqos.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib/vendor.display.color@1.3.so
+vendor/lib/vendor.display.color@1.4.so
+vendor/lib/vendor.display.color@1.5.so
 vendor/lib/vendor.display.postproc@1.0.so|3a3350370df9609dbf74e6a2273174c45992ac28
 
 # Display Calibration
@@ -729,41 +729,41 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
-# Graphics (Adreno) - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/lib64/egl/eglSubDriverAndroid.so|cd1cb25bfd16f15e0d7c6495493359838a1b6e96
-vendor/lib64/egl/libEGL_adreno.so|96a44c8e3c18c534eb1f333956541955e9f5bd7e
-vendor/lib64/egl/libGLESv1_CM_adreno.so|e2e8a079e680bf92f686fb79146651c158f6e130
-vendor/lib64/egl/libGLESv2_adreno.so|ba9e5618266e50a4d2ef723756e08979e0b4d12b
-vendor/lib64/egl/libq3dtools_adreno.so|046be35d03cbea2c73a1339eefa1bffc87ab6ebc
-vendor/lib64/egl/libq3dtools_esx.so|fe5b3f2dabe3b927544d109ac7d7926d8e3275d6
-vendor/lib64/libC2D2.so|6fb775e393ce7161b30e3a71fa0f320e86374425
-vendor/lib64/libCB.so|bfb47fec90627dd68df536dbb4734453ebae1cf6
-vendor/lib64/libOpenCL.so|4eefe5848a02894166a337abbbc5baddb72c46fb
-vendor/lib64/libVkLayer_q3dtools.so|4fc15fd2c49e32b2151fb00034d389d45cf240c1
-vendor/lib64/libadreno_utils.so|010d7079615cf09413640521ed2db53e91721437
-vendor/lib64/libc2d30_bltlib.so|aa37c84cf6cc1e1ac670b433c97d0bf41308f9ca
-vendor/lib64/libgpudataproducer.so|7d3c8de131f4d64a8ec82840e097f78f8b9ce004
-vendor/lib64/libgsl.so|edcab73069716f117394de07be423331631f9366
-vendor/lib64/libllvm-glnext.so|c11e3f0f5b6d21d1badcca3bc8cac947c781deeb
-vendor/lib64/libllvm-qcom.so|a80c58c8f316af15a7a2d089536f824836f6c056
-vendor/lib64/libpvr.so|ac4805ba7a7c78570a60340d01248d258046e456
-vendor/lib/egl/eglSubDriverAndroid.so|cc5acc02889131a29b624b4c19ab90b8273f393d
-vendor/lib/egl/libEGL_adreno.so|ae30bbf20dc911308407da99cb263e8de6b2eecb
-vendor/lib/egl/libGLESv1_CM_adreno.so|b94ba8188a14dd262abac1b8d667bce3319cf344
-vendor/lib/egl/libGLESv2_adreno.so|fc0454b2c9d9997f9b7f0b320482fac6db5cab2c
-vendor/lib/egl/libq3dtools_adreno.so|2ac81ee05dd4afb34ef6e56342ee1757f2db1409
-vendor/lib/egl/libq3dtools_esx.so|86bab4e474d680accbc76582c9905fe6824f702d
-vendor/lib/libC2D2.so|267be7bd6768fa3b9bed2b9a42062cb5a77ca59b
-vendor/lib/libCB.so|c4c8fbcb73a48aa1dc14a453b47ed7f1223bb933
-vendor/lib/libOpenCL.so|cbc00e31eedea81f43cc7358181a794503b867b1
-vendor/lib/libVkLayer_q3dtools.so|a52a6eba8415169a5895b4615f879f966f81d5e2
-vendor/lib/libadreno_utils.so|0796bc7ce75dbad3d85e52d3aacd4ba8b59fbaf3
-vendor/lib/libc2d30_bltlib.so|950c705e6dbc02b646a0129e66e94e192f5cd87f
-vendor/lib/libgpudataproducer.so|c8623c9b2e8f330e7f5e77e5d435677719bf5688
-vendor/lib/libgsl.so|777dab024670cceb8c60054cfadcccef33151640
-vendor/lib/libllvm-qcom.so|063963a7d6dfa90c6fa2cbca55943b23a870e02a
-vendor/lib/libllvm-glnext.so|a20bdbe458c401e9c1726f475f50fb52f9f6fa12
-vendor/lib/libpvr.so|9d7e50e1deb16ef03e05141e1babcc49160f840c
+# Graphics (Adreno)
+vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libCB.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libVkLayer_q3dtools.so
+vendor/lib64/libadreno_utils.so
+vendor/lib64/libc2d30_bltlib.so
+vendor/lib64/libgpudataproducer.so
+vendor/lib64/libgsl.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/libpvr.so
+vendor/lib/egl/eglSubDriverAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
+vendor/lib/libC2D2.so
+vendor/lib/libCB.so
+vendor/lib/libOpenCL.so
+vendor/lib/libVkLayer_q3dtools.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libc2d30_bltlib.so
+vendor/lib/libgpudataproducer.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/libllvm-glnext.so
+vendor/lib/libpvr.so
 
 # Graphics (Adreno firmware)
 vendor/firmware/a615_zap.b00
@@ -776,9 +776,9 @@ vendor/firmware/a630_sqe.fw
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
-# Graphics (Vulkan) - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/lib64/hw/vulkan.adreno.so|fcc99045aaf7eed0925ac2b64ff2af085212954a
-vendor/lib/hw/vulkan.adreno.so|b2680e5b899d75fa3f82b457635e15c6998202a4
+# Graphics (Vulkan)
+vendor/lib64/hw/vulkan.adreno.so
+vendor/lib/hw/vulkan.adreno.so
 
 # IMS - from pnx_sprout -  PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
 -system_ext/app/uceShimService/uceShimService.apk|644eec82ed9ecf1c1324241271ac5c9b5fe68f8b
