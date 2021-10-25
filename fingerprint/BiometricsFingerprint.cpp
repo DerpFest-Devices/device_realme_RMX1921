@@ -15,7 +15,9 @@
  */
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
-
+#define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
+#define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
+#define FP_ENDIT 0
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
@@ -23,6 +25,7 @@
 #include <inttypes.h>
 #include <unistd.h>
 #include <utils/Log.h>
+#include <fstream>
 #include <thread>
 
 namespace android {
@@ -39,6 +42,13 @@ BiometricsFingerprint::BiometricsFingerprint() {
         sleep(10);
     }
     if(mOppoBiometricsFingerprint == nullptr) exit(0);
+}
+
+template <typename T>
+static inline void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+    //LOG(INFO) << "wrote path: " << path << ", value: " << value << "\n";
 }
 
 static bool receivedCancel;
@@ -71,6 +81,8 @@ public:
         ALOGE("onAuthenticated %lu %u %u", deviceId, fingerId, groupId);
         if(mClientCallback != nullptr)
             mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
+        set(FP_PRESS_PATH, FP_ENDIT);
+        set(DIMLAYER_PATH, FP_ENDIT);
         return Void();
     }
 
