@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
-#define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710"
+#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710"
+#define FP_PRESS_NOTIFY "/sys/kernel/oppo_display/notify_fppress"
 #define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
-#define FP_ENDIT 0
-#include <hardware/hardware.h>
-#include <hardware/fingerprint.h>
+#define NOTIFY_BLANK_PATH "/sys/kernel/oppo_display/notify_panel_blank"
+#define AOD_MODE_PATH "/sys/kernel/oppo_display/aod_light_mode_set"
+#define DOZE_STATUS "/proc/touchpanel/DOZE_STATUS"
+#define ON 1
+#define OFF 0
+
 #include "BiometricsFingerprint.h"
 
 #include <inttypes.h>
@@ -32,7 +35,7 @@ namespace android {
 namespace hardware {
 namespace biometrics {
 namespace fingerprint {
-namespace V2_1 {
+namespace V2_3 {
 namespace implementation {
 
 BiometricsFingerprint::BiometricsFingerprint() {
@@ -48,7 +51,15 @@ template <typename T>
 static inline void set(const std::string& path, const T& value) {
     std::ofstream file(path);
     file << value;
-    //LOG(INFO) << "wrote path: " << path << ", value: " << value << "\n";
+}
+
+template <typename T>
+static inline T get(const std::string& path, const T& def) {
+    std::ifstream file(path);
+    T result;
+
+    file >> result;
+    return file.fail() ? def : result;
 }
 
 static bool receivedCancel;
@@ -81,8 +92,8 @@ public:
         ALOGE("onAuthenticated %lu %u %u", deviceId, fingerId, groupId);
         if(mClientCallback != nullptr)
             mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
-        set(FP_PRESS_PATH, FP_ENDIT);
-        set(DIMLAYER_PATH, FP_ENDIT);
+        set(FP_PRESS_NOTIFY, OFF);
+        set(DIMLAYER_PATH, OFF);
         return Void();
     }
 
@@ -113,8 +124,25 @@ public:
         return Void();
     }
 
-    Return<void> onTouchUp(uint64_t deviceId) { return Void(); }
-    Return<void> onTouchDown(uint64_t deviceId) { return Void(); }
+    Return<void> onTouchUp(uint64_t deviceId) {
+        set(FP_PRESS_NOTIFY, OFF);
+        set(DIMLAYER_PATH, OFF);
+        return Void();
+    }
+
+    Return<void> onTouchDown(uint64_t deviceId) { 
+        if(get(DOZE_STATUS, OFF)) {
+            //set(NOTIFY_BLANK_PATH, ON);
+            set(AOD_MODE_PATH, ON);
+            set(DIMLAYER_PATH, ON);
+            set(FP_PRESS_NOTIFY, ON);
+        }else{
+            set(DIMLAYER_PATH, ON);
+            set(FP_PRESS_NOTIFY, ON);
+        }
+        return Void();
+    }
+
     Return<void> onSyncTemplates(uint64_t deviceId, const hidl_vec<uint32_t>& fingerId, uint32_t remaining) {
         ALOGE("onSyncTemplates %lu %zu %u", deviceId, fingerId.size(), remaining);
         myDeviceId = deviceId;
@@ -265,8 +293,22 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, 
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->authenticate(operationId, gid));
 }
 
-} // namespace implementation
-}  // namespace V2_1
+Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
+    return true;
+}
+
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    //moved to onTouchDown as it gets called before
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onFingerUp() {
+    //moved to onTouchUp
+    return Void();
+}
+
+}  // namespace implementation
+}  // namespace V2_3
 }  // namespace fingerprint
 }  // namespace biometrics
 }  // namespace hardware

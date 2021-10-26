@@ -20,3 +20,8 @@ allow hal_fingerprint_default dcs_hwservice:hwservice_manager find;
 allow hal_fingerprint_default sysfs_oppo_display:dir search;
 dontaudit hal_fingerprint_default default_android_hwservice:hwservice_manager find;
 dontaudit hal_fingerprint_default default_prop:file read;
+allow hal_fingerprint_default oppo_debug_prop:property_service set;
+allow hal_fingerprint_default sysfs_oppo_display:file { read open getattr write };
+allow hal_fingerprint_default system_suspend_hwservice:hwservice_manager find;
+allow hal_fingerprint_default system_suspend_hwservice:binder { call transfer };
+wakelock_use(hal_fingerprint_default)

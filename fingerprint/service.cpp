@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,48 +14,38 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710"
 
 #include <android-base/logging.h>
+#include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
-
+#include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
 #include "BiometricsFingerprint.h"
 
-using android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
-using android::hardware::biometrics::fingerprint::V2_1::implementation::BiometricsFingerprint;
+using android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
+using android::hardware::biometrics::fingerprint::V2_3::implementation::BiometricsFingerprint;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
-using android::OK;
 using android::sp;
+
+using android::OK;
 using android::status_t;
 
 int main() {
-    sp<BiometricsFingerprint> biometricsFingerprint;
-    status_t status;
-
-    LOG(INFO) << "Fingerprint HAL Adapter service is starting.";
-
-    biometricsFingerprint = new BiometricsFingerprint();
-    if (biometricsFingerprint == nullptr) {
-        LOG(ERROR) << "Can not create an instance of Fingerprint HAL Adapter BiometricsFingerprint Iface, exiting.";
-        goto shutdown;
-    }
+    android::sp<IBiometricsFingerprint> service = new BiometricsFingerprint();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status = biometricsFingerprint->registerAsService();
+    status_t status = service->registerAsService();
     if (status != OK) {
-        LOG(ERROR) << "Could not register service for Fingerprint HAL Adapter BiometricsFingerprint Iface ("
-                   << status << ")";
-        goto shutdown;
+        LOG(ERROR) << "Cannot register Biometrics 2.3 HAL service.";
+        return 1;
     }
 
-    LOG(INFO) << "Fingerprint HAL Adapter service is ready.";
-    joinRpcThreadpool();
-    // Should not pass this line
+    LOG(INFO) << "Biometrics 2.3 HAL service ready.";
 
-shutdown:
-    // In normal operation, we don't expect the thread pool to shutdown
-    LOG(ERROR) << "Fingerprint HAL Adapter service is shutting down.";
+    joinRpcThreadpool();
+
+    LOG(ERROR) << "Biometrics 2.3 HAL service failed to join thread pool.";
     return 1;
 }
