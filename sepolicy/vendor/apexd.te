@@ -1,2 +1,0 @@
-allow apexd sysfs_mmc_host:file rw_file_perms;
-allow apexd apex_metadata_file:lnk_file r_file_perms;
