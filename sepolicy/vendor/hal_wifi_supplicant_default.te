@@ -1,0 +1,1 @@
+allow hal_wifi_supplicant_default self:capability sys_admin; 

@@ -1,2 +1,3 @@
 allow thermal-engine sysfs:dir { open read };
 allow thermal-engine sysfs_devfreq:dir { search read };
+allow thermal-engine self:capability sys_admin;

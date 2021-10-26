@@ -1,3 +1,4 @@
 dontaudit fsck self:capability { dac_override dac_read_search };
 allow fsck tmpfs:blk_file getattr;
 allow fsck modem_efs_partition_device:blk_file { ioctl open read write };
+allow fsck self:capability { sys_admin };

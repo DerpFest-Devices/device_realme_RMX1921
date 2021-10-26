@@ -3,3 +3,4 @@ allow rmt_storage proc_oppoversion:dir search;
 allow rmt_storage proc_oppoversion:file { open read write };
 get_prop(rmt_storage, oppo_debug_prop);
 dontaudit rmt_storage default_prop:file read;
+allow rmt_storage self:capability sys_admin;

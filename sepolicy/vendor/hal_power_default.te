@@ -1,6 +1,13 @@
 allow hal_power_default input_device:dir search;
 allow hal_power_default input_device:chr_file rw_file_perms;
+typeattribute hal_power_default mlstrustedsubject;
+
 allow hal_power_default proc_touchpanel:dir search;
 allow hal_power_default proc_touchpanel:file rw_file_perms;
 
 get_prop(hal_power_default, vendor_mpctl_prop);
+allow hal_power_default cgroup:file r_file_perms;
+allow hal_power_default appdomain:process { getsched setsched };
+allow hal_power_default self:capability sys_nice;
+allow hal_power_default system_server:process setsched;
+allow hal_power_default proc:{ file lnk_file } rw_file_perms;

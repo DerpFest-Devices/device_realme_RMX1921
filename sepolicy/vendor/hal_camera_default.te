@@ -1,5 +1,5 @@
 allow hal_camera_default persist_camera_file:file rw_file_perms;
-allow hal_camera_default persist_camera_file:dir { add_name search write open };
+allow hal_camera_default persist_camera_file:dir { add_name search write open getattr };
 allow hal_camera_default persist_camera_file:file { setattr create open getattr };
 allow hal_camera_default proc:file rw_file_perms;
 

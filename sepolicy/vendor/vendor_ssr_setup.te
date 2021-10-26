@@ -1,2 +1,3 @@
 allow vendor_ssr_setup sysfs_restart:file { write open };
 allow vendor_ssr_setup sysfs:file { write open };
+allow vendor_ssr_setup self:capability sys_admin;

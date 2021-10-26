@@ -1,1 +1,3 @@
 allow ueventd debugfs:dir read;
+allow ueventd self:capability sys_admin;
+allow ueventd metadata_file:dir { read search };

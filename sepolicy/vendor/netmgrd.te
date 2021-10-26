@@ -1,1 +1,2 @@
 allow netmgrd diag_device:chr_file rw_file_perms;
+allow netmgrd self:capability sys_admin;

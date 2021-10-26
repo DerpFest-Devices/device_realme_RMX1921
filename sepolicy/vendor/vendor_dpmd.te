@@ -1,1 +1,2 @@
 allow vendor_dpmd diag_device:chr_file rw_file_perms;
+allow vendor_dpmd self:capability sys_admin;

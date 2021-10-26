@@ -29,3 +29,5 @@ allow init init:netlink_route_socket { read getattr };
 allow init apex_metadata_file:lnk_file read;
 allow init sysfs_battery_supply:file setattr;
 allow init adsprpcd_file:file mounton;
+allow init hwservicemanager:binder { call transfer };
+allow init hidl_base_hwservice:hwservice_manager add;
