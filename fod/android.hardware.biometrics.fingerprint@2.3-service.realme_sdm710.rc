@@ -10,9 +10,7 @@ on boot
     chown system system /sys/kernel/oppo_display/aod_light_mode_set
     chown system system /proc/touchpanel/DOZE_STATUS
 
-service fingerprint-inscreen-1-0 /vendor/bin/hw/vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.realme_sdm710
-    interface vendor.lineage.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
-    class hal
+service fps_hal.realme_sdm710 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710
+    class late_start
     user system
-    group system
-    shutdown critical
+    group system input uhid
