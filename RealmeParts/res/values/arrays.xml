@@ -79,6 +79,18 @@
         <item>10</item>
     </string-array>
 
+    <string-array name="seed_profiles">
+        <item>@string/seed_normal</item>
+        <item>@string/seed_p3</item>
+        <item>@string/seed_srgb</item>
+    </string-array>
+
+    <string-array name="seed_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Performance Values -->
     <string-array name="performance_profiles">
         <item>@string/performance_balance</item>

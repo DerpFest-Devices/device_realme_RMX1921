@@ -42,6 +42,7 @@ public class Startup extends BroadcastReceiver {
     private static final String TAG = "BootReceiver";
     private static final String ONE_TIME_TUNABLE_RESTORE = "hardware_tunable_restored";
     private static boolean mServiceEnabled = false;
+    private static final String SEED_PATH = "/sys/kernel/oppo_display/seed";
 
     private void restore(String file, boolean enabled) {
         if (file == null) {
@@ -62,6 +63,7 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
+        int value = 0;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences (context);
         enabled = sharedPrefs.getBoolean (RealmeParts.KEY_GAME_SWITCH, false);
         restore (GameModeSwitch.getFile ( ), enabled);
@@ -83,8 +85,8 @@ public class Startup extends BroadcastReceiver {
         restore(DCModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_HBM_SWITCH, false);
         restore(HBMModeSwitch.getFile(), enabled);
-        enabled = sharedPrefs.getBoolean(RealmeParts.KEY_SRGB_SWITCH, false);
-        restore(SRGBModeSwitch.getFile(), enabled);
+        value = sharedPrefs.getInt(RealmeParts.KEY_SEED, 0);
+        Utils.writeValue(SEED_PATH, Integer.toString(value));
         enabled = sharedPrefs.getBoolean(RealmeParts.KEY_OTG_SWITCH, false);
         restore(OTGModeSwitch.getFile(), enabled);
         enableService(context);

@@ -33,10 +33,13 @@
     <string name="hbm_autobrightness_title">Automatic High brightness mode</string>
     <string name="hbm_autobrightness_threshold_summary"></string>
     <string name="hbm_autobrightness_threshold_title">Automatic High brightness mode threshold (lux)</string>
-    <!-- srgb mode -->
-    <string name="srgb_mode_summary">sRGB mode for simpler colour display</string>
-    <string name="srgb_mode_title">sRGB mode</string>
-    <string name="tile_srgb_mode">sRGB</string>
+    <!-- seed mode -->
+    <string name="seed_mode_summary">Choose how the colors will be rendered</string>
+    <string name="seed_summary">Display mode</string>
+    <string name="seed_title">Display mode</string>
+    <string name="seed_normal">Default</string>
+    <string name="seed_p3">P3</string>
+    <string name="seed_srgb">SRgb</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">Enable USB-OTG power supply for external headphones and flash drives</string>
     <string name="otg_mode_title">Enable USB-OTG</string>

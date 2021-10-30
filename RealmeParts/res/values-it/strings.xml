@@ -29,10 +29,13 @@
     <string name="hbm_autobrightness_title">Alta luminosità automatica</string>
     <string name="hbm_autobrightness_threshold_summary"></string>
     <string name="hbm_autobrightness_threshold_title">"Soglia per l'alta luminosità automatica (lux)"</string>
-    <!-- srgb mode -->
-    <string name="srgb_mode_summary">Modalità sRGB per un display con colori più semplici</string>
-    <string name="srgb_mode_title">Modaità sRGB</string>
-    <string name="tile_srgb_mode">sRGB</string>
+    <!-- seed mode -->
+    <string name="seed_mode_summary">Scegli in che modo i colori verranno mostrati</string>
+    <string name="seed_summary">Modalità del display</string>
+    <string name="seed_title">Modalità del display</string>
+    <string name="seed_normal">Predefinito</string>
+    <string name="seed_p3">P3</string>
+    <string name="seed_srgb">sRGB</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">"Abilita l'uscita USB-OTG per fornire energia a dispositivi come pen-drive o cuffie"</string>
     <string name="otg_mode_title">Abilita USB-OTG</string>

@@ -68,10 +68,14 @@
             android:title="@string/hbm_autobrightness_threshold_title"
             android:summary="@string/hbm_autobrightness_threshold_summary" />
 
-        <SwitchPreference
-            android:key="srgb"
-            android:summary="@string/srgb_mode_summary"
-            android:title="@string/srgb_mode_title" />
+        <org.device.RealmeParts.preferences.SecureSettingListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/seed_summary"
+            android:entries="@array/seed_profiles"
+            android:entryValues="@array/seed_values"
+            android:key="seed"
+            android:summary="@string/seed_mode_summary"
+            android:title="@string/seed_title" />
 
          <PreferenceScreen
                 android:key="kcal"

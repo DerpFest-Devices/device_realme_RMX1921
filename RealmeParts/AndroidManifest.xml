@@ -148,9 +148,9 @@
         </service>
         <service android:name="org.device.RealmeParts.AutoHighBrightnessModeService" />
         <service
-            android:name="org.device.RealmeParts.SRGBModeTileService"
+            android:name="org.device.RealmeParts.SeedTileService"
             android:icon="@drawable/ic_srgb_tile"
-            android:label="@string/tile_srgb_mode"
+            android:label="@string/seed_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action

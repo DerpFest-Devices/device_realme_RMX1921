@@ -60,7 +60,7 @@ public class RealmeParts extends PreferenceFragment
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
 
     public static final String KEY_PERFORMANCE = "perf_tuner";
-    public static final String KEY_SRGB_SWITCH = "srgb";
+    public static final String KEY_SEED = "seed";
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_HBM_AUTOBRIGHTNESS_SWITCH = "hbm_autobrightness";
     public static final String KEY_HBM_AUTOBRIGHTNESS_THRESHOLD = "hbm_autobrightness_threshould";
@@ -69,13 +69,14 @@ public class RealmeParts extends PreferenceFragment
     public static final String KEY_GAME_SWITCH = "game";
     public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
     public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
+    private static final String SEED_PATH = "/sys/kernel/oppo_display/seed";
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
     private static TwoStatePreference mEnableDolbyAtmos;
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mHBMAutobrightnessSwitch;
     private static TwoStatePreference mDCModeSwitch;
-    private static TwoStatePreference mSRGBModeSwitch;
+    protected static SecureSettingListPreference mSeedModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
     private Preference mGesturesPref;
@@ -101,10 +102,10 @@ public class RealmeParts extends PreferenceFragment
         mHBMAutobrightnessSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(RealmeParts.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false));
         mHBMAutobrightnessSwitch.setOnPreferenceChangeListener(this);
 
-        mSRGBModeSwitch = (TwoStatePreference) findPreference(KEY_SRGB_SWITCH);
-        mSRGBModeSwitch.setEnabled(SRGBModeSwitch.isSupported());
-        mSRGBModeSwitch.setChecked(SRGBModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mSRGBModeSwitch.setOnPreferenceChangeListener(new SRGBModeSwitch());
+        mSeedModeSwitch = (SecureSettingListPreference) findPreference(KEY_SEED);
+        mSeedModeSwitch.setValue(Utils.getFileValue(SEED_PATH, "0"));
+        mSeedModeSwitch.setSummary(mSeedModeSwitch.getEntry());
+        mSeedModeSwitch.setOnPreferenceChangeListener(this);
 
         mOTGModeSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
         mOTGModeSwitch.setEnabled(OTGModeSwitch.isSupported());
@@ -156,6 +157,14 @@ public class RealmeParts extends PreferenceFragment
                     prefChange.putBoolean(KEY_HBM_AUTOBRIGHTNESS_SWITCH, enabled).commit();
                     Startup.enableService(getContext());
                 }
+        if (preference == mSeedModeSwitch){
+            int thisvalue = Integer.valueOf((String) value);
+            mSeedModeSwitch.setValue((String) value);
+            mSeedModeSwitch.setSummary(mSeedModeSwitch.getEntry());
+            SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+            prefChange.putInt(KEY_SEED, thisvalue).commit();
+            Utils.writeValue(SEED_PATH, (String) value);
+        }
         return true;
     }
 
