@@ -912,7 +912,6 @@ system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so|2a8974d59024c61d5ab8eed
 system_ext/lib64/vendor.qti.latency@2.0.so|53c8c4f408d5b63a4d70e877967ba17d073c995b
 
 # Listen - from LA.UM.9.8.r1-02700-SDM710.0
-vendor/lib/hw/sound_trigger.primary.sdm710.so|c883f9c30239c3f07acf84eaea343bc81de8b0d6
 vendor/lib/libadpcmdec.so|491fedbdcf9a395340ce4142c277156c0056bcf8
 vendor/lib/libcapiv2svacnn.so|da98f2be1e8bd1aba364610063e70c34cab844d2
 vendor/lib/libcapiv2vop.so|b47caa2eeec81e98de03439548d9b9199222eda7
@@ -923,7 +922,6 @@ vendor/lib/libgcs.so|6ed6a8bd7ed3142e98a3c69a29ed0e1480b10f25
 vendor/lib/liblistensoundmodel2.so|158936bde01ff29142d3e47b38c4838004623307
 vendor/lib/libmulawdec.so|53257dee0befc2a353ceb84a906a680a33d745f1
 vendor/lib/libsmwrapper.so|4a85352d09277e3cd10cc4fc438e4d48ca83da0e
-vendor/lib64/hw/sound_trigger.primary.sdm710.so|8d466c167ad7f839cba9358fcdce4f70bfab8be5
 vendor/lib64/libcapiv2svacnn.so|a6b186beee18d45b92e14a8e1411e13e4d9330de
 vendor/lib64/libcapiv2vop.so|3a73591503cd935cb6e2e2175037fde5517c2e91
 vendor/lib64/libgcs-calwrapper.so|d84a7f09c9e99c5b2caa33de89eb96b43ca27109
