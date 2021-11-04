@@ -27,10 +27,6 @@
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
-    <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="24" />
-
     <application
         android:label="@string/ambient_display_gestures_title"
         android:persistent="true">
