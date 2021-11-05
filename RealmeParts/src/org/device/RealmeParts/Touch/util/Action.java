@@ -211,9 +211,7 @@ public class Action {
                 }
                 return;
             } else if (action.equals(ActionConstants.ACTION_CAMERA)) {
-                // ToDo: Send for secure keyguard secure camera intent.
-                // We need to add support for it first.
-                Intent intent = new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA, null);
+                Intent intent = new Intent(Intent.ACTION_SCREEN_CAMERA_GESTURE);
                 startActivity(context, intent);
                 return;
             } else if (action.equals(ActionConstants.ACTION_MEDIA_PREVIOUS)) {
