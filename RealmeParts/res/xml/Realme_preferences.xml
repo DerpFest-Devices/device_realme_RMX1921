@@ -11,7 +11,8 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/device_title">
 
     <PreferenceCategory
         android:key="audio"
@@ -21,7 +22,8 @@
                 android:key="sound"
                 android:fragment="org.device.RealmeParts.audio.SoundControlSettingsActivity"
                 android:summary="@string/gain_summary"
-                android:title="@string/audio_gain_settings" />
+                android:title="@string/audio_gain_settings"
+                settings:iconSpaceReserved="false"/>
 
         <Preference
             android:key="audio_dolby_atmos"
@@ -81,7 +83,8 @@
                 android:key="kcal"
                 android:fragment="org.device.RealmeParts.kcal.DisplayCalibration"
                 android:summary="@string/kcal_summary"
-                android:title="@string/kcal_title" />
+                android:title="@string/kcal_title"
+                settings:iconSpaceReserved="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -97,7 +100,8 @@
                 android:key="screen_gestures"
                 android:fragment="org.device.RealmeParts.Touch.ScreenOffGestureSettings"
                 android:summary="@string/gestures_dashboard_summary"
-                android:title="@string/screen_off_gestures" />
+                android:title="@string/screen_off_gestures"
+                settings:iconSpaceReserved="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory

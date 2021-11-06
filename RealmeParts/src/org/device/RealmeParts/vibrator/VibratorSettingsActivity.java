@@ -1,11 +1,12 @@
 package org.device.RealmeParts.vibrator;
 
-import android.app.Activity;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class VibratorSettingsActivity extends Activity {
+public class VibratorSettingsActivity extends CollapsingToolbarBaseActivity {
 
     private VibratorSettings mVibrateSettingsFragment;
 
@@ -13,25 +14,15 @@ public class VibratorSettingsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
         if (fragment == null) {
             mVibrateSettingsFragment = new VibratorSettings();
             getFragmentManager().beginTransaction()
-                    .add(android.R.id.content, mVibrateSettingsFragment)
+                    .add(R.id.content_frame, mVibrateSettingsFragment)
                     .commit();
         } else {
             mVibrateSettingsFragment = (VibratorSettings) fragment;
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 } 

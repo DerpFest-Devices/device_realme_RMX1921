@@ -17,7 +17,8 @@
 */
 package org.device.RealmeParts;
 
-import android.app.Activity;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -29,8 +30,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
+import com.android.settingslib.collapsingtoolbar.R;
 
-public class RealmePartsActivity extends Activity {
+public class RealmePartsActivity extends CollapsingToolbarBaseActivity {
 
     private RealmeParts mRealmePartsFragment;
 
@@ -40,11 +42,11 @@ public class RealmePartsActivity extends Activity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
         if (fragment == null) {
             mRealmePartsFragment = new RealmeParts();
             getFragmentManager().beginTransaction()
-                .add(android.R.id.content, mRealmePartsFragment)
+                .add(R.id.content_frame, mRealmePartsFragment)
                 .commit();
         } else {
             mRealmePartsFragment = (RealmeParts) fragment;

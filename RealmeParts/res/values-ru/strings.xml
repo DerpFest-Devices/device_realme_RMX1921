@@ -27,10 +27,6 @@
     <string name="hbm_mode_summary">Максимальная яркость для лучшей видимости</string>
     <string name="hbm_mode_title">Режим высокой яркости </string>
     <string name="tile_hbm_mode">Режим высокой яркости </string>
-    <!-- srgb mode -->
-    <string name="srgb_mode_summary">Режим sRGB для оптимальной цветовой палитры</string>
-    <string name="srgb_mode_title">Режим sRGB</string>
-    <string name="tile_srgb_mode">sRGB</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">Для подключения внешних USB устройств</string>
     <string name="otg_mode_title">Включить USB-OTG</string>

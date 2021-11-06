@@ -16,12 +16,13 @@
 
 package org.device.RealmeParts.audio;
 
-import android.app.Activity;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class SoundControlSettingsActivity extends Activity {
+public class SoundControlSettingsActivity extends CollapsingToolbarBaseActivity {
 
     private SoundControlSettings mSoundControlSettingsFragment;
 
@@ -31,11 +32,11 @@ public class SoundControlSettingsActivity extends Activity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
         if (fragment == null) {
             mSoundControlSettingsFragment = new SoundControlSettings();
             getFragmentManager().beginTransaction()
-                    .add(android.R.id.content, mSoundControlSettingsFragment)
+                    .add(R.id.content_frame, mSoundControlSettingsFragment)
                     .commit();
         } else {
             mSoundControlSettingsFragment = (SoundControlSettings) fragment;

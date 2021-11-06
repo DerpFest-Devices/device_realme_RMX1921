@@ -38,8 +38,8 @@
     <string name="seed_summary">Display mode</string>
     <string name="seed_title">Display mode</string>
     <string name="seed_normal">Default</string>
-    <string name="seed_p3">P3</string>
-    <string name="seed_srgb">SRgb</string>
+    <string name="seed_p3">HDR-Disabled</string>
+    <string name="seed_srgb">sRGB</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">Enable USB-OTG power supply for external headphones and flash drives</string>
     <string name="otg_mode_title">Enable USB-OTG</string>

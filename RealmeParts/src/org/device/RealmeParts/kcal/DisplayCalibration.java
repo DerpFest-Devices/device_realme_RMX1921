@@ -82,7 +82,6 @@ public class DisplayCalibration extends PreferenceActivity implements
         context = this;
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.display_cal);
 
         ImageView imageView = (ImageView) findViewById(R.id.calibration_pic);

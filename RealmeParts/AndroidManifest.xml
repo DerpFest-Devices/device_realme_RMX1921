@@ -13,33 +13,38 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:sharedUserId="android.uid.system"
     package="org.device.RealmeParts"
     android:versionCode="4"
     android:versionName="4.0" >
 
-    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+    <uses-permission android:name="android.permission.INJECT_EVENTS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"
+        tools:ignore="ProtectedPermissions" />
 
     <protected-broadcast android:name="org.device.RealmeParts.UPDATE_SETTINGS" />
 
     <uses-sdk
-        android:minSdkVersion="30"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="31" />
 
     <application
         android:icon="@drawable/ic_realmeparts"
         android:label="@string/customize_title"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.SubSettingsBase">
 
         <!-- Realme Parts -->
         <activity
             android:name=".RealmePartsActivity"
-            android:label="@string/device_title">
+            android:label="@string/device_title"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -53,10 +58,15 @@
                 android:resource="@string/device_summary" />
         </activity>
 
-        <activity android:name=".RealmeParts" />
-        <activity android:name=".KeyHandler" />
+        <activity android:name=".RealmeParts" 
+                  android:theme="@style/Theme.SubSettingsBase"
+                  android:exported="true"/>
+        <activity android:name=".KeyHandler" 
+                  android:exported="true"
+                  android:theme="@style/Theme.SubSettingsBase"/>
 
-        <receiver android:name="org.device.RealmeParts.Startup" >
+        <receiver android:name="org.device.RealmeParts.Startup" 
+                  android:exported="true">
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -64,7 +74,9 @@
 
         <activity
             android:name=".Touch.ScreenOffGestureSettings"
-            android:label="@string/screen_off_gestures">
+            android:label="@string/screen_off_gestures"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -72,7 +84,8 @@
 
         <activity
             android:name=".audio.SoundControlSettingsActivity"
-            android:exported="false"
+            android:exported="true"
+            android:theme="@style/Theme.SubSettingsBase"
             android:label="@string/audio_gain_settings">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -81,7 +94,9 @@
 
         <activity
             android:name=".kcal.DisplayCalibration"
-            android:label="@string/kcal_title">
+            android:theme="@style/Theme.SubSettingsBase"
+            android:label="@string/kcal_title"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -91,7 +106,8 @@
         <activity
             android:name=".speaker.ClearSpeakerActivity"
             android:label="@string/clear_speaker_title"
-            android:theme="@style/Theme.Main">
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -99,8 +115,9 @@
 
         <activity
             android:name=".vibrator.VibratorSettingsActivity"
-            android:exported="false"
-            android:label="@string/vibration_title">
+            android:label="@string/vibration_title"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -110,7 +127,8 @@
             android:name="org.device.RealmeParts.GameModeTileService"
             android:icon="@drawable/ic_game_tile"
             android:label="@string/tile_game_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -120,7 +138,8 @@
             android:name="org.device.RealmeParts.DCModeTileService"
             android:icon="@drawable/ic_dc_tile"
             android:label="@string/tile_dc_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -130,7 +149,8 @@
             android:name="org.device.RealmeParts.HBMModeTileService"
             android:icon="@drawable/ic_hbm_tile"
             android:label="@string/tile_hbm_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -140,7 +160,8 @@
             android:name="org.device.RealmeParts.PerfTileService" 
             android:icon="@drawable/ic_perf" 
             android:label="@string/performance_title" 
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"> 
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action 
                 android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -151,7 +172,8 @@
             android:name="org.device.RealmeParts.SeedTileService"
             android:icon="@drawable/ic_srgb_tile"
             android:label="@string/seed_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -161,7 +183,8 @@
             android:name="org.device.RealmeParts.OtgToggleService"
             android:icon="@drawable/ic_otg_tile"
             android:label="@string/tile_otg_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>

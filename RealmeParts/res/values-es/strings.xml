@@ -27,10 +27,6 @@
     <string name="hbm_mode_summary">Brillo maximo para mejor visibilidad</string>
     <string name="hbm_mode_title">Modo de brillo alto </string>
     <string name="tile_hbm_mode">Modo de brillo alto </string>
-    <!-- srgb mode -->
-    <string name="srgb_mode_summary">Modo sRGB para una optima gama cromatica</string>
-    <string name="srgb_mode_title">Modo sRGB</string>
-    <string name="tile_srgb_mode">sRGB</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">Para conectar dispositivos USB externos</string>
     <string name="otg_mode_title">Habilitar USB-OTG</string>
