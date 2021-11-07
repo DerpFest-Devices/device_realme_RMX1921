@@ -4,6 +4,7 @@ allow platform_app sysfs_graphics:file { getattr open read };
 
 get_prop(platform_app, oppo_debug_prop);
 get_prop(platform_app, boottime_prop);
+get_prop(platform_app, audio_config_prop)
 
 allow platform_app sysfs_battery_supply:dir search;
 allow platform_app sysfs_battery_supply:file { getattr open read };
