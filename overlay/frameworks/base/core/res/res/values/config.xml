@@ -1272,8 +1272,8 @@
     <!-- The properties of UDFPS sensor in pixels, in the order listed below: -->
     <integer-array name="config_udfps_sensor_props" translatable="false" >
     <item>540</item>
-    <item>2083</item>
-    <item>95</item>
+    <item>2066</item>
+    <item>96</item>
     </integer-array>
 
     <!-- How long it takes for the HW to start illuminating after the illumination is requested. -->
