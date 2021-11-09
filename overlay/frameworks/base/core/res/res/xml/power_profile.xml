@@ -53,8 +53,8 @@
   <item name="camera.flashlight">95</item> <!-- Avg. power for camera flash, ~160mA -->
   <item name="camera.avg">750</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
   <item name="gps.on">50</item> <!-- ~50mA -->
-  <item name="dsp.audio">16</item> <!-- new add ~10mA -->
-  <item name="dsp.video">41</item> <!-- new add ~50mA -->
+  <item name="audio">16</item> <!-- new add ~10mA -->
+  <item name="video">41</item> <!-- new add ~50mA -->
   <item name="bluetooth.controller.idle">1.7</item>  <!--new add -->
   <item name="bluetooth.controller.rx">76</item>  <!--new add  -->
   <item name="bluetooth.controller.tx">176</item>  <!--new add  -->
