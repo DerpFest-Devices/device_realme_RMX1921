@@ -41,11 +41,13 @@
     <string name="otg_mode_title">Abilita USB-OTG</string>
     <string name="tile_otg_mode">USB-OTG</string>
     <!-- game mode -->
-    <string name="game_mode_summary">Incrementa la frequenza di campionamento dei tocchi sullo schermo</string>
+    <string name="game_mode_summary">Incrementa la frequenza di campionamento dei tocchi sullo schermo, setta DnD e profilo prestazioni</string>
     <string name="game_mode_title">Modalità gaming</string>
     <string name="tile_game_mode">Modalità gaming</string>
     <string name="dnd_title">Non disturbare</string>
     <string name="dnd_summary">Attiva automaticamente la modalità DnD quando sei in modalità gaming</string>
+    <string name="gamingperf_title">Modalità prestazioni automatica</string>
+    <string name="gamingperf_summary">Attiva automaticamente la modalità prestazioni gaming quando la modalità gaming è attiva</string>
 
     <string name="customize_title">Impostazioni Realme</string>
 

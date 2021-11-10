@@ -40,6 +40,8 @@ public class GameModeTileService extends TileService {
     private Context mContext;
     private boolean DnD;
     private boolean HeadsUpOldState;
+    private boolean Perf;
+    private int PerfOldState;
 
     @Override
     public void onDestroy() {
@@ -84,7 +86,21 @@ public class GameModeTileService extends TileService {
         Utils.writeValue(RealmeParts.TP_DIRECTION, enabled ? "0" : "1" );
         if (sharedPrefs.getBoolean("dnd", false))
             DnD = true;
+        else 
+            DnD = false;
+        if (sharedPrefs.getBoolean("gamingperf", false))
+            Perf = true;
+        else 
+            Perf = false;
         boolean status = !enabled;
+        if (status && Perf){
+            PerfOldState = sharedPrefs.getInt (RealmeParts.KEY_PERFORMANCE, 0);
+            sharedPrefs.edit().putInt(RealmeParts.KEY_BACKUP_PERF, PerfOldState).commit();
+            sharedPrefs.edit().putInt(RealmeParts.KEY_PERFORMANCE, 3).commit();
+        } else if (!status && Perf){
+            PerfOldState = sharedPrefs.getInt (RealmeParts.KEY_BACKUP_PERF, 0);
+            sharedPrefs.edit().putInt(RealmeParts.KEY_PERFORMANCE, PerfOldState).commit();
+        }
         if (status && DnD) {
             final boolean isHeadsUpEnabledByUser = Settings.Global.getInt(mContext.getContentResolver(),
                               Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1;

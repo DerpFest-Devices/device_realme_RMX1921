@@ -46,11 +46,13 @@
     <string name="tile_otg_mode">Enable USB-OTG</string>
     <!-- game mode -->
     <string name="gaming_title">Gaming</string>
-    <string name="game_mode_summary">Boost Touch Sampling Rate</string>
+    <string name="game_mode_summary">Boost Touch Sampling Rate, set performance profiles and DnD</string>
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
     <string name="dnd_title">Do Not Disturb</string>
     <string name="dnd_summary">DND will be activated if Game Mode is enabled</string>
+    <string name="gamingperf_title">Gaming performance mode</string>
+    <string name="gamingperf_summary">Gaming performance mode will be activated if Game Mode is enabled</string>
     <!-- TouchScreen gestures -->
     <string name="dlg_ok">OK</string>
     <string name="cancel">Cancel</string>

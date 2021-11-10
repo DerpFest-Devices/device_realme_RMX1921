@@ -43,6 +43,8 @@ public class GameModeSwitch implements Preference.OnPreferenceChangeListener {
     private static final String GAMING_SCREEN_BRIGHTNESS_MODE = "gaming_screen_brightness_mode";
     private boolean HeadsUpOldState;
     private boolean DnD;
+    private boolean Perf;
+    private int PerfOldState;
 
     public GameModeSwitch(Context context) {
         mContext = context;
@@ -75,6 +77,18 @@ public class GameModeSwitch implements Preference.OnPreferenceChangeListener {
             DnD = true;
         else 
             DnD = false;
+        if (sharedPrefs.getBoolean("gamingperf", false))
+            Perf = true;
+        else 
+            Perf = false;
+        if (status && Perf){
+            PerfOldState = sharedPrefs.getInt (RealmeParts.KEY_PERFORMANCE, 0);
+            sharedPrefs.edit().putInt(RealmeParts.KEY_BACKUP_PERF, PerfOldState).commit();
+            sharedPrefs.edit().putInt(RealmeParts.KEY_PERFORMANCE, 3).commit();
+        } else if (!status && Perf){
+            PerfOldState = sharedPrefs.getInt (RealmeParts.KEY_BACKUP_PERF, 0);
+            sharedPrefs.edit().putInt(RealmeParts.KEY_PERFORMANCE, PerfOldState).commit();
+        }
         if (status && DnD) {
             final boolean isHeadsUpEnabledByUser = Settings.Global.getInt(mContext.getContentResolver(),
                               Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1;

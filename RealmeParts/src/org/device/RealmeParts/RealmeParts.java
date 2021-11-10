@@ -72,6 +72,8 @@ public class RealmeParts extends PreferenceFragment
     private static final String SEED_PATH = "/sys/kernel/oppo_display/seed";
     public static final String KEY_HEADS_UP = "headsupstatus";
     public static final String KEY_DND_SWITCH = "dnd";
+    public static final String KEY_BACKUP_PERF = "perfoldstate";
+    public static final String KEY_GAMING_PERF = "gamingperf";
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
     private static TwoStatePreference mEnableDolbyAtmos;
@@ -82,6 +84,7 @@ public class RealmeParts extends PreferenceFragment
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
     public static TwoStatePreference mDNDSwitch;
+    private static TwoStatePreference mGamePerfSwitch;
     private Preference mGesturesPref;
     private Preference mKcalPref;
     private Preference mAudioPref;
@@ -122,6 +125,10 @@ public class RealmeParts extends PreferenceFragment
         mDNDSwitch = (TwoStatePreference) findPreference(KEY_DND_SWITCH);
         mDNDSwitch.setChecked(prefs.getBoolean(KEY_DND_SWITCH, false));
         mDNDSwitch.setOnPreferenceChangeListener(this);
+
+        mGamePerfSwitch = (TwoStatePreference) findPreference(KEY_GAMING_PERF);
+        mGamePerfSwitch.setChecked(prefs.getBoolean(KEY_GAMING_PERF, false));
+        mGamePerfSwitch.setOnPreferenceChangeListener(this);
 
         mGesturesPref = findPreference("screen_gestures");
                 mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

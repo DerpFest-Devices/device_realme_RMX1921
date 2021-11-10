@@ -99,6 +99,11 @@
             android:key="dnd"
             android:title="@string/dnd_title"
             android:summary="@string/dnd_summary" />
+
+        <SwitchPreference
+            android:key="gamingperf"
+            android:title="@string/gamingperf_title"
+            android:summary="@string/gamingperf_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
