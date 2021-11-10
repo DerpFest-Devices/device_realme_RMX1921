@@ -75,3 +75,4 @@ oppo.wifirftest.enable                  u:object_r:oppo_debug_prop:s0
 persist.usb.hvdcp.detect                  u:object_r:oppo_debug_prop:s0
 ro.oppo.nw.singlecard                  u:object_r:oppo_debug_prop:s0
 ro.logdumpd.enabled                  u:object_r:oppo_debug_prop:s0
+oppo.eng.factory.no			u:object_r:oppo_debug_prop:s0

@@ -1,6 +1,5 @@
 get_prop(priv_app, oppo_debug_prop);
 get_prop(priv_app, vendor_camera_prop);
-get_prop(priv_app, vendor_default_prop);
 get_prop(priv_app, vendor_mpctl_prop);
 get_prop(priv_app, persist_camera_prop);
 
