@@ -44,6 +44,8 @@
     <string name="game_mode_summary">Incrementa la frequenza di campionamento dei tocchi sullo schermo</string>
     <string name="game_mode_title">Modalità gaming</string>
     <string name="tile_game_mode">Modalità gaming</string>
+    <string name="dnd_title">Non disturbare</string>
+    <string name="dnd_summary">Attiva automaticamente la modalità DnD quando sei in modalità gaming</string>
 
     <string name="customize_title">Impostazioni Realme</string>
 

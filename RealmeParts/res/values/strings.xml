@@ -45,10 +45,12 @@
     <string name="otg_mode_title">Enable USB-OTG</string>
     <string name="tile_otg_mode">Enable USB-OTG</string>
     <!-- game mode -->
+    <string name="gaming_title">Gaming</string>
     <string name="game_mode_summary">Boost Touch Sampling Rate</string>
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
-
+    <string name="dnd_title">Do Not Disturb</string>
+    <string name="dnd_summary">DND will be activated if Game Mode is enabled</string>
     <!-- TouchScreen gestures -->
     <string name="dlg_ok">OK</string>
     <string name="cancel">Cancel</string>
@@ -146,7 +148,7 @@
     <string name="kcal_green">Green</string>
     <string name="kcal_blue">Blue</string>
     <string name="kcal_saturation">Saturation</string>
-    <string name="kcal_contrast">Constrast</string>
+    <string name="kcal_contrast">Contrast</string>
     <string name="menu_reset">Reset</string>
     <string name="kcal_color_temp">Color temperature (K)</string>
 

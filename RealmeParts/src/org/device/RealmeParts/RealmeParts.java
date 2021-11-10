@@ -70,6 +70,8 @@ public class RealmeParts extends PreferenceFragment
     public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
     public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
     private static final String SEED_PATH = "/sys/kernel/oppo_display/seed";
+    public static final String KEY_HEADS_UP = "headsupstatus";
+    public static final String KEY_DND_SWITCH = "dnd";
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
     private static TwoStatePreference mEnableDolbyAtmos;
@@ -79,6 +81,7 @@ public class RealmeParts extends PreferenceFragment
     protected static SecureSettingListPreference mSeedModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
+    public static TwoStatePreference mDNDSwitch;
     private Preference mGesturesPref;
     private Preference mKcalPref;
     private Preference mAudioPref;
@@ -114,7 +117,11 @@ public class RealmeParts extends PreferenceFragment
         mGameModeSwitch = (TwoStatePreference) findPreference(KEY_GAME_SWITCH);
         mGameModeSwitch.setEnabled(GameModeSwitch.isSupported());
         mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch());
+        mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch(this.getContext()));
+
+        mDNDSwitch = (TwoStatePreference) findPreference(KEY_DND_SWITCH);
+        mDNDSwitch.setChecked(prefs.getBoolean(KEY_DND_SWITCH, false));
+        mDNDSwitch.setOnPreferenceChangeListener(this);
 
         mGesturesPref = findPreference("screen_gestures");
                 mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

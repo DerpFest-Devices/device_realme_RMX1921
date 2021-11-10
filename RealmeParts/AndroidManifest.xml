@@ -28,6 +28,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"
         tools:ignore="ProtectedPermissions" />
+    <!-- Required to enable dnd during game mode -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <protected-broadcast android:name="org.device.RealmeParts.UPDATE_SETTINGS" />
 

@@ -88,13 +88,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:title="@string/touch">
-
+            android:title="@string/gaming_title">
 
         <SwitchPreference
             android:key="game"
             android:summary="@string/game_mode_summary"
             android:title="@string/game_mode_title" />
+
+        <SwitchPreference
+            android:key="dnd"
+            android:title="@string/dnd_title"
+            android:summary="@string/dnd_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/touch">
+
 
         <PreferenceScreen
                 android:key="screen_gestures"
