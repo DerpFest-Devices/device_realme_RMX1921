@@ -41,6 +41,7 @@ public final class DozeUtils {
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
     protected static final String GESTURE_RAISE_TO_WAKE = "gesture_raise_to_wake";
     protected static final String GESTURE_SMART_WAKE_KEY = "gesture_smart_wake";
+    protected static final String DOZE_ENABLE = "doze_enable";
     private static final String TAG = "DozeUtils";
     private static final boolean DEBUG = false;
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
