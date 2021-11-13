@@ -40,7 +40,7 @@ namespace implementation {
 
 BiometricsFingerprint::BiometricsFingerprint() {
     for(int i=0; i<10; i++) {
-        mOppoBiometricsFingerprint = vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint::tryGetService();
+        mOppoBiometricsFingerprint = vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint::getService();
         if(mOppoBiometricsFingerprint != nullptr) break;
         sleep(10);
     }
