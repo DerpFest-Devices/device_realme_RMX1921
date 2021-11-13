@@ -63,6 +63,15 @@
         <item>@string/extreme_amoled</item>
         <item>@string/warm_amoled</item>
         <item>@string/hybrid_mamba</item>
+        <item>@string/deep_amoled</item>
+        <item>@string/cold_amoled</item>
+        <item>@string/clean_deep</item>
+        <item>@string/shamshung</item>
+        <item>@string/nature</item>
+        <item>@string/shamshung_cold</item>
+        <item>@string/cold_as_ice</item>
+        <item>@string/deep_saturated</item>
+        <item>@string/black_af</item>
     </string-array>
 
     <string-array name="presets_values">
@@ -77,6 +86,15 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
     </string-array>
 
     <string-array name="seed_profiles">

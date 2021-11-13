@@ -168,6 +168,15 @@
     <string name="extreme_amoled">Extreme Amoled</string>
     <string name="warm_amoled">Warm Amoled</string>
     <string name="hybrid_mamba">Hybrid Mamba</string>
+    <string name="deep_amoled">Deep Amoled</string>
+    <string name="cold_amoled">Cold New Amoled</string>
+    <string name="clean_deep">Deep and Clean</string>
+    <string name="shamshung">Shamshung</string>
+    <string name="nature">Nature</string>
+    <string name="shamshung_cold">Cool Shamshung</string>
+    <string name="cold_as_ice">Extreme Cold</string>
+    <string name="deep_saturated">Deep and Saturated</string>
+    <string name="black_af">Deep Saturated Black</string>
     <string name="kcal_hue">Hue</string>
     <string name="kcal_value">Value</string>
 

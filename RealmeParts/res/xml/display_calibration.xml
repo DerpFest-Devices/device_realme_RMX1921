@@ -37,8 +37,8 @@
         android:persistent="false"
         android:layout="@layout/slider_preference"
         android:recycleEnabled="false"
-        app:max_value="7000"
-        app:min_value="1000"
+        app:max_value="12500"
+        app:min_value="1800"
         app:default_value="6400"/>
     <org.device.RealmeParts.kcal.utils.SeekBarPreference
         android:key="kcal_red"

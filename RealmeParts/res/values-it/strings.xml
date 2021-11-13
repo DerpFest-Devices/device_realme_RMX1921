@@ -166,6 +166,15 @@
     <string name="extreme_amoled">Amoled estremo</string>
     <string name="warm_amoled">Amoled caldi</string>
     <string name="hybrid_mamba">Mamba ibrido</string>
+    <string name="deep_amoled">Amoled profondi</string>
+    <string name="cold_amoled">Amoled freddi 2</string>
+    <string name="clean_deep">Puliti e profondi</string>
+    <string name="shamshung">Shamshung</string>
+    <string name="nature">Natura</string>
+    <string name="shamshung_cold">Shamshung freddi</string>
+    <string name="cold_as_ice">Freddi profondi</string>
+    <string name="deep_saturated">Profondi e saturi</string>
+    <string name="black_af">Neri profondi e saturi</string>
     <string name="kcal_hue">Hue</string>
     <string name="kcal_value">Valore</string>
 
