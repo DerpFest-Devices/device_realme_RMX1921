@@ -72,4 +72,13 @@
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
 
+    <!-- Respect drawable/rounded.xml intrinsic size for multiple radius corner path customization -->
+    <bool name="config_roundedCornerMultipleRadius">true</bool>
+
+    <bool name="config_enableDisplayCutoutProtection">true</bool>
+
+    <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">M -219 -0.9  L 0 -0.9  L 200.9 -0.9  C 200.9 -0.9 233 0 219 -0.9  C 132.7 2.8 117.2 5.9 101.5 13.6  C 90.2 19.2 81.3 26.6 60.8 47.3  C 43 65.2 38.4 68.5 24.3 73.5  C 15.9 76.5 14.8 76.6 0 76.6  C -14.8 76.6 -15.9 76.5 -24.3 73.5  C -38.4 68.5 -43 65.2 -60.8 47.3  C -81.3 26.6 -90.2 19.2 -101.5 13.6  C -117.2 5.9 -132.7 2.8 -164.7 1.1  C -200.9 -0.9 -223 0 -219 -0.9  Z</string>
+
+    <string translatable="false" name="config_rounded_mask">M21,0C19.94,0.01 18.83,0.04 17.73,0.11C16.91,0.17 16.09,0.25 15.3,0.36C14.5,0.48 13.72,0.62 12.95,0.81C11.42,1.19 9.97,1.72 8.65,2.43C7.32,3.14 6.12,4.02 5.08,5.07C4.04,6.11 3.15,7.31 2.44,8.64C1.73,9.97 1.19,11.42 0.82,12.94C0.63,13.7 0.48,14.49 0.37,15.29C0.25,16.09 0.17,16.9 0.12,17.72C0.05,18.82 0.02,19.93 0.01,21.55</string>
+
 </resources>

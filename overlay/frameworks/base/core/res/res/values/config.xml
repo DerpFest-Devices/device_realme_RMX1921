@@ -1058,20 +1058,26 @@
     <integer name="config_multiuserMaximumUsers">4</integer>
 
     <!-- RMX1921 : Define dimensions of the notch -->
-    <string name="config_mainBuiltInDisplayCutout">M -143,0 L -143,76 L 143,76 L 143,0 Z</string>
-    
-    <dimen name="status_bar_height_portrait">28dp</dimen>
+    <string name="config_mainBuiltInDisplayCutout">M -219 -0.9 L 0 -0.9 L 200.9 -0.9 C 200.9 -0.9 233 0 219 -0.9 C 132.7 2.8 117.2 5.9 101.5 13.6 C 90.2 19.2 81.3 26.6 60.8 47.3 C 43 65.2 38.4 68.5 24.3 73.5 C 15.9 76.5 14.8 76.6 0 76.6 C -14.8 76.6 -15.9 76.5 -24.3 73.5 C -38.4 68.5 -43 65.2 -60.8 47.3 C -81.3 26.6 -90.2 19.2 -101.5 13.6 C -117.2 5.9 -132.7 2.8 -164.7 1.1 C -200.9 -0.9 -223 0 -219 -0.9 Z</string>
+
+    <string name="config_mainBuiltInDisplayCutoutRectApproximation">M -80 -1 L 80 -1 L 80 76.5 L -80 76.5 Z</string>
+
+    <dimen name="quick_qs_offset_height">154px</dimen>
+
+    <!-- Height of the status bar in portrait -->
+    <dimen name="status_bar_height_portrait">77px</dimen>
 
     <!-- Height of the status bar in landscape -->
-    <dimen name="status_bar_height_landscape">24dp</dimen>
+    <dimen name="status_bar_height_landscape">28dp</dimen>
 
-    <!-- Radius of the software rounded corners at the top of the display in its natural
-        orientation. If zero, the value of rounded_corner_radius is used. -->
-    <dimen name="rounded_corner_radius_top">90px</dimen>
+    <!-- Radius of the software rounded corners. -->
+    <dimen name="rounded_corner_radius">116px</dimen>
 
     <!-- Radius of the software rounded corners at the bottom of the display in its natural
         orientation. If zero, the value of rounded_corner_radius is used. -->
-    <dimen name="rounded_corner_radius_bottom">94px</dimen>
+    <dimen name="rounded_corner_radius_bottom">113px</dimen>
+
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
