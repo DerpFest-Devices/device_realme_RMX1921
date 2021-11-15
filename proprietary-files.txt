@@ -780,6 +780,10 @@ vendor/firmware/leia_pm4_470.fw
 vendor/lib64/hw/vulkan.adreno.so
 vendor/lib/hw/vulkan.adreno.so
 
+# Health
+vendor/bin/hw/android.hardware.health@2.1-service
+vendor/etc/init/android.hardware.health@2.1-service.rc
+
 # IMS - from pnx_sprout -  PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
 -system_ext/app/uceShimService/uceShimService.apk|644eec82ed9ecf1c1324241271ac5c9b5fe68f8b
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|59e4d10c89daa7a7116efa3cd6000026a1938a22
