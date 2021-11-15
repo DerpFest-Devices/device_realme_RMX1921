@@ -414,9 +414,6 @@ vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libfastrpc_utf_stub.so
 vendor/lib64/libsysmon_cdsp_skel.so
 
-# Charger
-vendor/bin/hvdcp_opti
-
 # Charger Firmware
 vendor/firmware/fastchg/19651/oppo_vooc_fw.bin
 
