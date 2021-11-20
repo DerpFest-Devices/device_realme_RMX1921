@@ -185,7 +185,7 @@ public class ScreenOffGesture extends PreferenceFragment implements
         mEnableDt2w.setOnPreferenceChangeListener(this);
 
         boolean enableGestures =
-                mScreenOffGestureSharedPreferences.getBoolean(PREF_GESTURE_ENABLE, true);
+                mScreenOffGestureSharedPreferences.getBoolean(PREF_GESTURE_ENABLE, false);
         mEnableGestures.setChecked(enableGestures);
         mEnableGestures.setOnPreferenceChangeListener(this);
 
@@ -306,7 +306,7 @@ public class ScreenOffGesture extends PreferenceFragment implements
         mScreenOffGestureSharedPreferences.edit()
                 .putBoolean(PREF_DT2W_ENABLE, true).commit();
         mScreenOffGestureSharedPreferences.edit()
-                .putBoolean(PREF_GESTURE_ENABLE, true).commit();
+                .putBoolean(PREF_GESTURE_ENABLE, false).commit();
 
         editor.putString(PREF_GESTURE_DOUBLE_TAP,
                 ActionConstants.ACTION_WAKE_DEVICE).commit();

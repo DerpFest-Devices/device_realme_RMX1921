@@ -73,7 +73,7 @@ public class Startup extends BroadcastReceiver {
                 Utils.PREFERENCES, Activity.MODE_PRIVATE);
         KernelControl.enableGestures(
                 screenOffGestureSharedPreferences.getBoolean(
-                        ScreenOffGesture.PREF_GESTURE_ENABLE, true));
+                        ScreenOffGesture.PREF_GESTURE_ENABLE, false));
         KernelControl.enableDt2w(
                 screenOffGestureSharedPreferences.getBoolean(
                         ScreenOffGesture.PREF_DT2W_ENABLE, true));
