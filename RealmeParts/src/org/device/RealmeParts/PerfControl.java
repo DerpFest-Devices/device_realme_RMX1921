@@ -15,6 +15,8 @@ public final class PerfControl {
     private static String BOOST_FREQ_PATH = "/sys/module/cpu_boost/parameters/input_boost_freq";
     private static String BOOST_MS_PATH = "/sys/module/cpu_boost/parameters/input_boost_ms";
     private static String INPUTBOOST_MS_PATH = "/sys/module/cpu_input_boost/parameters/input_boost_duration";
+    private static String INPUTBOOST_FREQ_BIG = "/sys/module/cpu_input_boost/parameters/input_boost_freq_big";
+    private static String INPUTBOOST_FREQ_LITTLE = "/sys/module/cpu_input_boost/parameters/input_boost_freq_little";
     private static final String TAG = "PerfControl";
 
     private PerfControl() {
@@ -24,31 +26,30 @@ public final class PerfControl {
     public static void setPerf(int value){
         switch (value) {
             case 0:
-                setGovernorLittle("schedutil");
-                setGovernorBig("schedutil");
+                setGovernor("schedutil");
                 setAdrenoboost("1");
                 setAdrenoidler("Y");
                 setAdrenoidlerWL("6000");
                 setAdrenoidlerDD("15");
                 setAdrenoidlerIW("25");
-                setBoostFreq("0:1209600 1:1209600 2:1209600 3:1209600 4:1209600 5:1209600 6:979200 7:979200");
-                setBoostMS("96");
+                setInputBoostFreqBig("1132800");
+                setInputBoostFreqLittle("1209600");
+                setBoostMS("0");
                 setInputboostMS("96");
                 setSchedBoost("1");
                 break;
             case 1:
-                setGovernorLittle("schedutil");
-                setGovernorBig("schedutil");
+                setGovernor("schedutil");
                 setAdrenoboost("3");
                 setAdrenoidler("N");
-                setBoostFreq("0:1612800 1:1612800 2:1612800 3:1612800 4:1612800 5:1612800 6:2169600 7:2169600");
-                setBoostMS("600");
+                setInputBoostFreqBig("1843200");
+                setInputBoostFreqLittle("1612800");
+                setBoostMS("0");
                 setInputboostMS("600");
                 setSchedBoost("1");
                 break;
             case 2:
-                setGovernorLittle("energy_dcfc");
-                setGovernorBig("energy_dcfc");
+                setGovernor("energy_dcfc");
                 setAdrenoboost("0");
                 setAdrenoidler("Y");
                 setAdrenoidlerWL("10000");
@@ -56,19 +57,19 @@ public final class PerfControl {
                 setAdrenoidlerIW("15");
                 setBoostFreq("0:998400 1:998400 2:998400 3:998400 4:998400 5:998400 6:825600 7:825600");
                 setBoostMS("35");
-                setInputboostMS("35");
+                setInputboostMS("0");
                 setSchedBoost("0");
                 break;
             case 3:
-                setGovernorLittle("schedutil");
-                setGovernorBig("schedutil");
+                setGovernor("schedutil");
                 setAdrenoboost("2");
                 setAdrenoidler("Y");
                 setAdrenoidlerWL("5000");
                 setAdrenoidlerDD("15");
                 setAdrenoidlerIW("40");
-                setBoostFreq("0:1516800 1:1516800 2:1516800 3:1516800 4:1516800 5:1516800 6:1747200 7:1747200");
-                setBoostMS("300");
+                setInputBoostFreqBig("1747200");
+                setInputBoostFreqLittle("1516800");
+                setBoostMS("0");
                 setInputboostMS("500");
                 setSchedBoost("1");
                 break;
@@ -76,13 +77,10 @@ public final class PerfControl {
        return;
     }
 
-    public static void setGovernorLittle(String value) {
+    public static void setGovernor(String value) {
             if (new File(GOVERNOR_LITTLE_PATH).exists()) {
                 Utils.writeValue(GOVERNOR_LITTLE_PATH, value);
             }
-    }
-
-    public static void setGovernorBig(String value) {
             if (new File(GOVERNOR_BIG_PATH).exists()) {
                 Utils.writeValue(GOVERNOR_BIG_PATH, value);
             }
@@ -138,6 +136,18 @@ public final class PerfControl {
     public static void setInputboostMS(String value) {
             if (new File(INPUTBOOST_MS_PATH).exists()) {
                 Utils.writeValue(INPUTBOOST_MS_PATH, value);
+            }
+    }
+
+    public static void setInputBoostFreqBig(String value) {
+            if (new File(INPUTBOOST_FREQ_BIG).exists()) {
+                Utils.writeValue(INPUTBOOST_FREQ_BIG, value);
+            }
+    }
+
+    public static void setInputBoostFreqLittle(String value) {
+            if (new File(INPUTBOOST_FREQ_LITTLE).exists()) {
+                Utils.writeValue(INPUTBOOST_FREQ_LITTLE, value);
             }
     }
 }
