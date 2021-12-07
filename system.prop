@@ -77,7 +77,6 @@ ro.com.google.ime.kb_pad_land_l=14
 ro.com.google.ime.kb_pad_land_r=14
 
 # Graphics
-debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 persist.demo.hdmirotationlock=false
