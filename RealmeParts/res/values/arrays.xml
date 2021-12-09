@@ -19,6 +19,7 @@
     <string-array name="shortcut_action_screen_off_entries">
         <item>@string/shortcut_action_app</item>
         <item>@string/shortcut_action_camera</item>
+        <item>@string/shortcut_action_assist</item>
         <item>@string/shortcut_action_media_next</item>
         <item>@string/shortcut_action_media_play_pause</item>
         <item>@string/shortcut_action_media_previous</item>
@@ -36,6 +37,7 @@
     <string-array name="shortcut_action_screen_off_values" translatable="false">
         <item>**app**</item>
         <item>**camera**</item>
+        <item>**assist**</item>
         <item>**media_next**</item>
         <item>**media_play_pause**</item>
         <item>**media_previous**</item>

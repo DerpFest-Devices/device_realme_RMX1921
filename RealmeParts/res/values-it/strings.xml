@@ -89,15 +89,7 @@
     <!-- Shortcut actions -->
     <string name="shortcut_action_none">Nessuna</string>
     <string name="shortcut_action_app">App a scelta</string>
-    <string name="shortcut_action_home">Home</string>
-    <string name="shortcut_action_back">Indietro</string>
-    <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Apri lo switch tastiera</string>
-    <string name="shortcut_action_power_menu">Power menu</string>
-    <string name="shortcut_action_recent">Recenti</string>
-    <string name="shortcut_action_power">Schermo spento</string>
-    <string name="shortcut_action_search">Ricerca in app</string>
-    <string name="shortcut_action_now_on_tap">Now on tap</string>
+    <string name="shortcut_action_assist">Assistente Google</string>
     <string name="shortcut_action_ring_vib">Suona/Vibra</string>
     <string name="shortcut_action_ring_silent">Suona/Silenzioso</string>
     <string name="shortcut_action_ring_vib_silent">Suona/Vibra/Silenzioso</string>
@@ -106,11 +98,6 @@
     <string name="shortcut_action_media_play_pause">Musica - play/pausa</string>
     <string name="shortcut_action_media_previous">Musica - traccia precedente</string>
     <string name="shortcut_action_wake_device">Risveglia il dispositivo</string>
-    <string name="shortcut_action_kill">"Chiudi l'app"</string>
-    <string name="shortcut_action_screenshot">Screenshot</string>
-    <string name="shortcut_action_lastapp">Ultima app</string>
-    <string name="shortcut_action_notifications">Notifiche</string>
-    <string name="shortcut_action_qs">Pannello impostazioni rapide</string>
     <string name="shortcut_action_torch">Torcia</string>
     <string name="shortcut_action_longpress">Pressione prolungata:</string>
     <string name="shortcut_action_select_action_longpress">"Scegli un'azione per la pressione prolungata:"</string>

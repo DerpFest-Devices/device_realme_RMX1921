@@ -71,15 +71,7 @@
     <!-- Действия ярлыков -->                                                               
     <string name="shortcut_action_none">Нет</string>
     <string name="shortcut_action_app">Своё приложение</string>
-    <string name="shortcut_action_home">Домашний экран</string>
-    <string name="shortcut_action_back">Назад</string>
-    <string name="shortcut_action_menu">Меню</string>
-    <string name="shortcut_action_ime">Открыть IME переключатель</string>
-    <string name="shortcut_action_power_menu">Меню выключения</string>
-    <string name="shortcut_action_recent">Недавние</string>
-    <string name="shortcut_action_power">Выключить экран</string>
-    <string name="shortcut_action_search">Искать в приложении</string>
-    <string name="shortcut_action_now_on_tap">Сейчас на нажатии</string>
+    <string name="shortcut_action_assist">Сейчас на нажатии</string>
     <string name="shortcut_action_ring_vib">Звонок/Вибрация</string>
     <string name="shortcut_action_ring_silent">Звонок/Беззвучие</string>
     <string name="shortcut_action_ring_vib_silent">Звонок/Вибрация/Беззвучие</string>
@@ -88,11 +80,6 @@
     <string name="shortcut_action_media_play_pause">Музыка - воспроизвести/пауза</string>
     <string name="shortcut_action_media_previous">Музыка - предыдущий трек</string>
     <string name="shortcut_action_wake_device">Пробуждение устройства</string>
-    <string name="shortcut_action_kill">Убить приложение</string>
-    <string name="shortcut_action_screenshot">Скриншот</string>
-    <string name="shortcut_action_lastapp">Последнее приложение</string>
-    <string name="shortcut_action_notifications">Уведомления</string>
-    <string name="shortcut_action_qs">Панель быстрых настроек</string>
     <string name="shortcut_action_torch">Фонарик</string>
     <string name="shortcut_action_longpress">Долгое нажатие:</string>
     <string name="shortcut_action_select_action_longpress">Выбрать действие долгого нажатия:</string>

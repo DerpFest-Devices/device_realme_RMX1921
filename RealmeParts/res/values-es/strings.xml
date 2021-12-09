@@ -71,15 +71,7 @@
     <!-- Acciones de los atajos -->                                                              
     <string name="shortcut_action_none">Nada</string>
     <string name="shortcut_action_app">Aplicacion personalizada</string>
-    <string name="shortcut_action_home">Pantalla de inicio</string>
-    <string name="shortcut_action_back">Atras</string>
-    <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Abrir boton IME</string>
-    <string name="shortcut_action_power_menu">Menu de apagado</string>
-    <string name="shortcut_action_recent">Recientes</string>
-    <string name="shortcut_action_power">Apagar la pantalla</string>
-    <string name="shortcut_action_search">Buscar en aplicacion</string>
-    <string name="shortcut_action_now_on_tap">Ahora en el toque</string>
+    <string name="shortcut_action_assist">Ahora en el toque</string>
     <string name="shortcut_action_ring_vib">Sonido/Vibracion</string>
     <string name="shortcut_action_ring_silent">Sonido/Silencio</string>
     <string name="shortcut_action_ring_vib_silent">Sonido/Vibracion/Silencio</string>
@@ -88,11 +80,6 @@
     <string name="shortcut_action_media_play_pause">Musica -reproducir/pausa</string>
     <string name="shortcut_action_media_previous">Musica - pista anterior</string>
     <string name="shortcut_action_wake_device">Encender el dispositivo</string>
-    <string name="shortcut_action_kill">Cerrar aplicacion</string>
-    <string name="shortcut_action_screenshot">Captura de pantalla</string>
-    <string name="shortcut_action_lastapp">Ultima aplicacion</string>
-    <string name="shortcut_action_notifications">Notificaciones</string>
-    <string name="shortcut_action_qs">Panel de ajustes rapidos</string>
     <string name="shortcut_action_torch">Linterna</string>
     <string name="shortcut_action_longpress">Pulsacion larga:</string>
     <string name="shortcut_action_select_action_longpress">Seleccionar accion de pulsacion larga:</string>
