@@ -1569,12 +1569,14 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
+# Widevine DRM - Sargo
+vendor/lib64/libwvhidl.so|c20b93dd8549816d03e977d050d91da694e43482
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine|23f5dd5911cf58a86574ec9575c57bb5259eab8d
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|81e132e89eed714416874dc599336508f029866c
+
 # Widevine DRM
-vendor/bin/hw/android.hardware.drm@1.3-service.widevine
-vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
-vendor/lib64/mediadrm/libwvdrmengine.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/liboemcrypto.so
+odm/lib64/mediadrm/libwvdrmengine.so
+odm/lib64/liboemcrypto.so
 vendor/lib64/libhdcpsrm.so
 
 # UFS Firmware
