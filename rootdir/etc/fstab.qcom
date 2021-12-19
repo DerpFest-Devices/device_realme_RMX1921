@@ -8,7 +8,7 @@
 #<src>                                                 <mnt_point>               <type>  <mnt_flags and options>                            <fs_mgr_flags>
 /dev/block/bootdevice/by-name/system                    /                        ext4    ro,barrier=1,discard                                 wait,avb
 /dev/block/bootdevice/by-name/cache                     /cache                   ext4    nosuid,noatime,nodev,barrier=1,discard                               wait,check
-/dev/block/bootdevice/by-name/userdata                  /data                    ext4    noatime,nosuid,noatime,nodev,barrier=1,noauto_da_alloc,discard,lazytime,errors=panic       latemount,wait,check,fileencryption=ice:aes-256-cts,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/userdata                  /data                    ext4    noatime,nosuid,noatime,nodev,barrier=1,noauto_da_alloc,discard,lazytime,errors=panic       latemount,wait,check,fileencryption=ice,quota,reservedsize=128M
 /devices/platform/soc/8804000.sdhci/mmc_host*           /storage/sdcard1         vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
 /devices/platform/soc/1da4000.ufshc_card/host*          /storage/sdcard1         vfat    nosuid,nodev                                         wait,voldmanaged=sdcard1:auto,encryptable=footer
 /dev/block/bootdevice/by-name/modem                     /vendor/firmware_mnt     vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait
