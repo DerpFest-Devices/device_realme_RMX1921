@@ -339,7 +339,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.lpa</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
@@ -517,16 +517,33 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <hal format="hidl">
        <name>android.hardware.radio</name>
        <transport>hwbinder</transport>
-       <fqname>@1.4::IRadio/slot1</fqname>
-       <fqname>@1.4::IRadio/slot2</fqname>
+       <fqname>@1.5::IRadio/slot1</fqname>
+       <fqname>@1.5::IRadio/slot2</fqname>
        <fqname>@1.2::ISap/slot1</fqname>
        <fqname>@1.2::ISap/slot2</fqname>
    </hal>
-    <!-- RADIO CONFIG -->
+   <hal format="hidl"> 
+        <name>vendor.oplus.hardware.radio</name> 
+        <transport>hwbinder</transport> 
+        <fqname>@1.0::IOplusRadio/oplus_slot1</fqname> 
+        <fqname>@1.0::IOplusRadio/oplus_slot2</fqname>
+   </hal>
+   <hal format="hidl"> 
+        <name>vendor.oplus.hardware.appradio</name> 
+        <transport>hwbinder</transport> 
+        <fqname>@1.0::IOplusAppRadio/oplus_app_slot1</fqname> 
+        <fqname>@1.0::IOplusAppRadio/oplus_app_slot2</fqname>
+   </hal>
+   <hal format="hidl"> 
+        <name>vendor.oplus.hardware.ims</name> 
+        <transport>hwbinder</transport> 
+        <fqname>@1.0::IOplusImsRadio/oplusimsradio</fqname>
+   </hal>
+   <!-- RADIO CONFIG -->
    <hal format="hidl">
        <name>android.hardware.radio.config</name>
        <transport>hwbinder</transport>
-       <version>1.1</version>
+       <version>1.2</version>
        <interface>
            <name>IRadioConfig</name>
            <instance>default</instance>
