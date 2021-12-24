@@ -25,3 +25,4 @@ vendor.dolby.hardware.dms::IDms                                            u:obj
 
 # cnd
 vendor.qti.hardware.slmadapter::ISlmAdapter                                   u:object_r:vendor_hal_slmadapter_hwservice:s0
+vendor.qti.diaghal::Idiag                                            u:object_r:hal_diag_hwservice:s0
