@@ -6,6 +6,7 @@
 
 # Inherit some common DerpFest stuff
 TARGET_BOOT_ANIMATION_RES := 1080
+EXTRA_UDFPS_ANIMATIONS := true
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Official-ify
