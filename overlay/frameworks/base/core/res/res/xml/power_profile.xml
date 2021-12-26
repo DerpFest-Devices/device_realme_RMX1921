@@ -27,7 +27,7 @@
     OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
     IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
 -->
-
+<!-- project:19651 -->
 
 <device name="Android">
   <!-- Most values are the incremental current used by a feature,
@@ -40,6 +40,7 @@
        significantly, so should be measured on the shipping platform
        with a power meter. -->
   <item name="none">0</item>
+  <item name="ambient on">35</item>
   <item name="screen.on">100</item>  <!-- ~200mA -->
   <item name="screen.full">240</item>  <!-- ~300mA -->
   <item name="bluetooth.active">80</item> <!-- Bluetooth data transfer, ~10mA -->
@@ -47,30 +48,41 @@
   <item name="wifi.on">2.8</item>  <!-- ~3mA -->
   <item name="wifi.active">190</item>  <!-- WIFI data transfer, ~200mA -->
   <item name="wifi.scan">130</item>  <!-- WIFI network scanning, ~100mA -->
-  <item name="audio">40</item> <!-- ~10mA -->
-  <item name="video">85</item> <!-- ~50mA -->
+  <item name="audio">0</item> <!-- ~10mA -->
+  <item name="video">0</item> <!-- ~50mA -->
   <item name="camera.flashlight">95</item> <!-- Avg. power for camera flash, ~160mA -->
   <item name="camera.avg">750</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
   <item name="gps.on">50</item> <!-- ~50mA -->
+  <item name="dsp.audio">16</item> <!-- new add ~10mA -->
+  <item name="dsp.video">41</item> <!-- new add ~50mA -->
+  <item name="bluetooth.controller.idle">1.7</item>  <!--new add -->
+  <item name="bluetooth.controller.rx">76</item>  <!--new add  -->
+  <item name="bluetooth.controller.tx">176</item>  <!--new add  -->
+  <item name="bluetooth.controller.voltage">3300</item>  <!--new add -->
 
   <!-- Radio related values. For modems without energy reporting support in firmware, use
        radio.active, radio.scanning, and radio.on. -->
-  <item name="radio.active">50</item> <!-- ~200mA -->
-  <item name="radio.scanning">3.8</item> <!-- cellular radio scanning for signal, ~10mA -->
+  <item name="radio.active">191.5</item> <!-- ~200mA -->
+  <item name="radio.scanning">143.5</item> <!-- cellular radio scanning for signal, ~10mA -->
   <!-- Current consumed by the radio at different signal strengths, when paging -->
-  <array name="radio.on"> <!-- Strength 0 to BINS-1 -->
-      <value>2</value> <!-- ~2mA -->
-      <value>1</value> <!-- ~1mA -->
+  <array name="radio.on"> <!-- Strength 0 to BINS-1 delete 1 line-->
+      <value>1</value> <!-- ~2mA -->
   </array>
 
 
   <!-- Radio related values. For modems WITH energy reporting support in firmware, use
        modem.controller.idle, modem.controller.tx, modem.controller.rx, modem.controller.voltage.
        -->
-  <item name="modem.controller.idle">0</item>
-  <item name="modem.controller.rx">0</item>
-  <item name="modem.controller.tx">0</item>
-  <item name="modem.controller.voltage">0</item>
+  <item name="modem.controller.idle">1</item>
+  <item name="modem.controller.rx">200.8</item>
+  <array name="modem.controller.tx">
+      <value>176.4</value>
+      <value>246.8</value>
+      <value>323.3</value>
+      <value>484.6</value>
+      <value>646.8</value>
+  </array>
+  <item name="modem.controller.voltage">800</item>
 
   <!-- A list of heterogeneous CPU clusters, where the value for each cluster represents the
        number of CPU cores for that cluster.
@@ -106,15 +118,15 @@
        Like cpu.speeds.cluster0, there must be one of these present for
        each heterogeneous CPU cluster. -->
   <array name="cpu.core_power.cluster0">
-      <value>31</value>  <!-- 300  MHz -->
-      <value>46</value>  <!-- 576  MHz -->
-      <value>59</value>  <!-- 744.8 MHz -->
-      <value>86</value>  <!-- 998.4 MHz -->
-      <value>99</value>  <!-- 1209.6 MHz -->
-      <value>134</value>  <!-- 1324.8 MHz -->
-      <value>158</value>  <!-- 1516.8 MHz -->
-      <value>178</value>  <!-- 1612.8 MHz -->
-      <value>202</value>  <!-- 1708.8 MHz -->
+      <value>36</value>  <!-- ~14mA -->
+      <value>39</value>  <!-- ~25mA -->
+      <value>42</value>  <!-- ~31mA -->
+      <value>45</value>  <!-- ~46mA -->
+      <value>47</value>  <!-- ~57mA -->
+      <value>57</value>  <!-- ~84mA -->
+      <value>60</value>  <!-- ~96mA -->
+      <value>62</value>  <!-- ~114mA -->
+      <value>69</value>  <!-- ~139mA -->
   </array>
 
    <array name="cpu.core_speeds.cluster1">
@@ -131,29 +143,25 @@
       <value>2054400</value>  <!-- 2054  MHz CPU speed -->
       <value>2169600</value>  <!-- 2169  MHz CPU speed -->
       <value>2208000</value>  <!-- 2208  MHz CPU speed -->
-      <value>2304000</value>  <!-- 2304  MHz CPU speed -->
   </array>
 
   <!-- Current at each CPU speed for cluster 1, as per 'cpu.speeds.cluster1'.
        Like cpu.speeds.cluster1, there must be one of these present for
        each heterogeneous CPU cluster. -->
   <array name="cpu.core_power.cluster1">
-      <value>29</value>  <!-- 300  MHz -->
-      <value>54</value>  <!-- 652  MHz -->
-      <value>67</value>  <!-- 852  MHz -->
-      <value>81</value>  <!-- 979  MHz -->
-      <value>103</value>  <!-- 1132  MHz -->
-      <value>144</value>  <!-- 1363  MHz -->
-      <value>178</value>  <!-- 1536  MHz -->
-      <value>218</value>  <!-- 1747  MHz -->
-      <value>258</value>  <!-- 1843  MHz -->
-      <value>303</value>  <!-- 1996  MHz -->
-      <value>364</value>  <!-- 2054  MHz -->
-      <value>409</value>  <!-- 2169  MHz -->
-      <value>444</value>  <!-- 2208  MHz -->
-      <value>467</value>  <!-- 2304  MHz -->
-
-
+      <value>49</value>  <!-- ~256mA -->
+      <value>57</value>  <!-- ~307mA -->
+      <value>63</value>  <!-- ~332mA -->
+      <value>71</value>  <!-- ~382mA -->
+      <value>80</value>  <!-- ~408mA -->
+      <value>95</value>  <!-- ~448mA -->
+      <value>109</value>  <!-- ~586mA -->
+      <value>128</value>  <!-- ~641mA -->
+      <value>160</value>  <!-- ~659mA -->
+      <value>190</value>  <!-- ~696mA -->
+      <value>203</value>  <!-- ~876mA -->
+      <value>232</value>  <!-- ~900mA -->
+      <value>241</value>  <!-- ~924mA -->
   </array>
 
   <!-- Current when CPU is awake -->
