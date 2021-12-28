@@ -8,3 +8,5 @@ allow rild opporadio_hwservice:hwservice_manager { add find };
 allow rild vendor_pd_locater_dbg_prop:file { read open getattr };
 allow rild diag_device:chr_file rw_file_perms;
 dontaudit rild cache_file:dir { search getattr };
+allow rild mnt_vendor_file:dir search;
+allow rild mnt_vendor_file:file { read write open };

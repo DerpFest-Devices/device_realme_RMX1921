@@ -32,3 +32,4 @@ allow init adsprpcd_file:file mounton;
 allow init hwservicemanager:binder { call transfer };
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init proc:file { write };
+allow init iorapd_data_file:file getattr;

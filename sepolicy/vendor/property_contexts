@@ -64,6 +64,7 @@ audio_hal.period_size                           u:object_r:vendor_audio_prop:s0
 persist.audio.dualmic.config                    u:object_r:vendor_audio_prop:s0
 persist.vendor.dolby.loglevel                   u:object_r:vendor_dolby_loglevel_prop:s0
 
+# Oppo
 ro.bluetooth.ftm_enabled             u:object_r:oppo_debug_prop:s0
 persist.env.fastdorm.enabled                  u:object_r:oppo_debug_prop:s0
 ro.data.large_tcp_window_size                  u:object_r:oppo_debug_prop:s0
@@ -76,3 +77,7 @@ persist.usb.hvdcp.detect                  u:object_r:oppo_debug_prop:s0
 ro.oppo.nw.singlecard                  u:object_r:oppo_debug_prop:s0
 ro.logdumpd.enabled                  u:object_r:oppo_debug_prop:s0
 oppo.eng.factory.no			u:object_r:oppo_debug_prop:s0
+zeroth.debuglog.logmask                  u:object_r:oppo_debug_prop:s0
+ro.build.display.full_id                  u:object_r:oppo_debug_prop:s0
+vendor.vold.serialno                  u:object_r:oppo_debug_prop:s0
+persist.vendor.data.qmipriod_load                  u:object_r:oppo_debug_prop:s0

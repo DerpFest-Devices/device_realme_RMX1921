@@ -2,6 +2,7 @@ allow hal_camera_default persist_camera_file:file rw_file_perms;
 allow hal_camera_default persist_camera_file:dir { add_name search write open getattr };
 allow hal_camera_default persist_camera_file:file { setattr create open getattr };
 allow hal_camera_default proc:file rw_file_perms;
+allow hal_camera_default diag_device:chr_file rw_file_perms;
 
 get_prop(hal_camera_default, vendor_camera_prop);
 set_prop(hal_camera_default, vendor_camera_prop);

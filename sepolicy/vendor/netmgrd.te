@@ -1,2 +1,5 @@
 allow netmgrd diag_device:chr_file rw_file_perms;
 allow netmgrd self:capability sys_admin;
+allow netmgrd property_socket:sock_file write;
+allow netmgrd init:unix_stream_socket connectto;
+set_prop(netmgrd, oppo_debug_prop)

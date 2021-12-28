@@ -1,3 +1,7 @@
 set_prop(wcnss_service, oppo_wlan_prop);
+set_prop(wcnss_service, oppo_debug_prop);
 allow wcnss_service mnt_vendor_file:file read;
 allow wcnss_service mnt_vendor_file:file { open getattr };
+allow wcnss_service vendor_shell_exec:file rx_file_perms;
+allow wcnss_service vendor_toolbox_exec:file rx_file_perms; 
+allow wcnss_service kmsg_device:chr_file { read open write };
