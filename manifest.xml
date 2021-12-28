@@ -538,7 +538,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
    <hal format="hidl"> 
         <name>vendor.oplus.hardware.ims</name> 
         <transport>hwbinder</transport> 
-        <fqname>@1.0::IOplusImsRadio/oplusimsradio</fqname>
+        <fqname>@1.0::IOplusImsRadio/oplusimsradio0</fqname>
+        <fqname>@1.0::IOplusImsRadio/oplusimsradio1</fqname>
    </hal>
    <!-- RADIO CONFIG -->
    <hal format="hidl">
