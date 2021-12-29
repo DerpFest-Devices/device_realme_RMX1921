@@ -760,6 +760,10 @@ vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
+# DRM - from google/coral/coral:12/SQ1A.211205.008/7888514:user/release-keys
+vendor/lib64/libspl.so|f8bbe0322ce06a545f5dc79c888183ac61673b68
+vendor/lib/libspl.so|26c6a5f3246a27314f6489a487e21a586f443bc0
+
 # DSP
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
