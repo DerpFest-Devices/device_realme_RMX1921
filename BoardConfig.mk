@@ -179,7 +179,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-06-05
+VENDOR_SECURITY_PATCH := 2021-08-05
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
