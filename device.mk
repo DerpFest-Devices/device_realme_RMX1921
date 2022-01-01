@@ -444,7 +444,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sdio.sh \
     init.qti.chg_policy.sh \
     init.qcom.rc \
-    init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
