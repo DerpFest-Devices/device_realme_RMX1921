@@ -40,12 +40,15 @@ public final class PerfControl {
                 break;
             case 1:
                 setGovernor("schedutil");
-                setAdrenoboost("3");
-                setAdrenoidler("N");
-                setInputBoostFreqBig("1843200");
-                setInputBoostFreqLittle("1612800");
+                setAdrenoboost("2");
+                setAdrenoidler("Y");
+                setAdrenoidlerWL("5000");
+                setAdrenoidlerDD("15");
+                setAdrenoidlerIW("40");
+                setInputBoostFreqBig("1747200");
+                setInputBoostFreqLittle("1516800");
                 setBoostMS("0");
-                setInputboostMS("600");
+                setInputboostMS("300");
                 setSchedBoost("1");
                 break;
             case 2:
@@ -62,15 +65,12 @@ public final class PerfControl {
                 break;
             case 3:
                 setGovernor("schedutil");
-                setAdrenoboost("2");
-                setAdrenoidler("Y");
-                setAdrenoidlerWL("5000");
-                setAdrenoidlerDD("15");
-                setAdrenoidlerIW("40");
-                setInputBoostFreqBig("1747200");
-                setInputBoostFreqLittle("1516800");
+                setAdrenoboost("3");
+                setAdrenoidler("N");
+                setInputBoostFreqBig("1843200");
+                setInputBoostFreqLittle("1612800");
                 setBoostMS("0");
-                setInputboostMS("500");
+                setInputboostMS("400");
                 setSchedBoost("1");
                 break;
         }

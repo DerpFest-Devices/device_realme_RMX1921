@@ -67,7 +67,8 @@ public class Startup extends BroadcastReceiver {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences (context);
         enabled = sharedPrefs.getBoolean (RealmeParts.KEY_GAME_SWITCH, false);
         restore (GameModeSwitch.getFile ( ), enabled);
-
+        value = sharedPrefs.getInt (RealmeParts.KEY_PERFORMANCE, 0);
+        PerfControl.setPerf(value);
         enableComponent(context, ScreenOffGesture.class.getName());
         SharedPreferences screenOffGestureSharedPreferences = context.getSharedPreferences(
                 Utils.PREFERENCES, Activity.MODE_PRIVATE);
