@@ -2,3 +2,7 @@
 persist.vendor.dpm.feature=11
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
+
+# Telephony
+ro.telephony.sim_slots.count=2
+telephony.active_modems.max_count=2
