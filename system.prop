@@ -6,9 +6,6 @@ ro.af.client_heap_size_kbyte=7168
 audio.sys.noisy.broadcast.delay=600
 audio.sys.offload.pstimeout.secs=3
 
-# BPF
-ro.kernel.ebpf.supported=true
-
 # Bluetooth
 ro.bluetooth.wipower=false 
 ro.bluetooth.emb_wp_mode=false
