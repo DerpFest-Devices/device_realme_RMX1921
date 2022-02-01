@@ -48,6 +48,7 @@
             android:exported="true"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
             <meta-data
