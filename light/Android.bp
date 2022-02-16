@@ -13,4 +13,8 @@ cc_binary {
         "service.cpp",
     ],
     proprietary: true,
+    overrides: [
+        "lights.qcom",
+        "android.hardware.lights-service.qti",
+    ],
 }
