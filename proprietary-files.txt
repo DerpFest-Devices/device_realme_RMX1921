@@ -702,21 +702,21 @@ vendor/firmware/dpAP_full.mbn
 vendor/firmware/dpAP_mini.mbn
 vendor/firmware/dpMSA.mbn
 
-# DPM - from LA.QSSI.12.0.r1-05100-qssi.0
+# DPM - from LA.QSSI.12.0.r1-05800.02-qssi.0
 framework/tcmclient.jar|60fc12be7581c89cbdc3a5ba0526b423af492baa
 system_ext/bin/dpmd|b11102e06c7e169b3da762a0db408cb8e16d7b01
 system_ext/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
 system_ext/etc/init/dpmd.rc|738b638ff04cda368e22c03e16baf90ba157a6fc
 system_ext/etc/permissions/com.qti.dpmframework.xml|c4b7ad0879d00c1eba4f3fe3a88ddb8aa153629a
 system_ext/etc/permissions/dpmapi.xml|255903759a60a31c0876ec004e74554c753270fe
-system_ext/framework/com.qti.dpmframework.jar|065a1864f817cda3dc59a96c3f62b0f1df517129
+system_ext/framework/com.qti.dpmframework.jar|5e60f7b8cde0526767c909e80512a22edef373cb
 system_ext/framework/dpmapi.jar|005e8092687849615ce119b5d6c188f08e397d79
 system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so|10563c1f60c2e7cb80729c30dc131114e63ef2f3
-system_ext/lib64/libdpmctmgr.so|6c2ef69d4166802f60ec36b7229585c769bffdb1
+system_ext/lib64/libdpmctmgr.so|5351d3a64687a8066ff972394e495ed6255caa44
 system_ext/lib64/libdpmfdmgr.so|3b7c5a6c652948fa86790478d4fcbd0df3172947
-system_ext/lib64/libdpmframework.so|89684b3e906ba879cfde173d8a6cc6e6d5e2c755
+system_ext/lib64/libdpmframework.so|3e2d68ddd6f944b44368be4190bc3c8f3d73fe6c
 system_ext/lib64/libdpmtcm.so|ac8bb063de43870f67e2aba15eee5baaa9864c84
--system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|9f90b48e9afe72e6c22d24e5924d3b1b4e17f4f8
+-system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|d2651605b9b1dcc84d84b411a5b238c7f73aed77
 
 # DPM
 vendor/bin/dpmQmiMgr
@@ -975,8 +975,8 @@ vendor/lib64/hw/vulkan.adreno.so
 vendor/bin/hw/android.hardware.health@2.1-service
 vendor/etc/init/android.hardware.health@2.1-service.rc
 
-# IMS - from LA.QSSI.12.0.r1-05100-qssi.0
--system_ext/app/ImsRcsService/ImsRcsService.apk|587e9a8c888728f8bbf6e2ba8fc130e20fbb7f62
+# IMS - from LA.QSSI.12.0.r1-05800.02-qssi.0
+-system_ext/app/ImsRcsService/ImsRcsService.apk|3179256a4fce9b7694534a906a97abe23ccb0523
 -system_ext/app/uceShimService/uceShimService.apk|d3a55dbb95418751fc4564964ff18f63b9ff1b3b
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|bd9fc166b542b4e730f194ebc996957770d9d497
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml|b40fc74f7d5e58b4e918f952b89a79cf2a5c4088
@@ -999,11 +999,11 @@ system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so|b15fc0ba498184d9a1706693c8db
 system_ext/lib64/com.qualcomm.qti.uceservice@2.1.so|94048225f2a95b752a4e9d9886fe1f45a96edbd7
 system_ext/lib64/com.qualcomm.qti.uceservice@2.2.so|65d8b7d47d5124d6940e9fe3a3169ed88673a469
 system_ext/lib64/com.qualcomm.qti.uceservice@2.3.so|bb3d1577838bcac98653affb00188feefbf03c5b
-system_ext/lib64/lib-imsvideocodec.so|5aed0217e9735d15e44ea6b9f397075a9b569614
-system_ext/lib64/lib-imsvt.so|784d1165217430ec9850baa1d9be706eb0d9d92d
+system_ext/lib64/lib-imsvideocodec.so|621285ea1c86cb7f0d74cff8d5464382c36a46a8
+system_ext/lib64/lib-imsvt.so|38b39cafe351be5abc7b6ae5055ea1f390032502
 system_ext/lib64/lib-imsvtextutils.so|16bed08e80919635fcb7ace934bd5f16f059c182
 system_ext/lib64/lib-imsvtutils.so|9e45b76b14600df92782e6c8213af0dcddbe80be
-system_ext/lib64/libdiag_system.so|3e98fc604d3d81490b69d72ef65495377e463e2e
+system_ext/lib64/libdiag_system.so|7f098303ab5c5d7fb300b8e43910b7120351f699
 system_ext/lib64/libimscamera_jni.so|ff3d65093f5bf19fba95798b0a121ee510b0f72e
 system_ext/lib64/libimsmedia_jni.so|9f192af40439abb04d5d5f0f3de5b772c9381114
 system_ext/lib64/vendor.qti.diaghal@1.0.so|0158bec299e6bef47604a946145ab321184b2c24
@@ -1287,9 +1287,11 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
+# QMI - from LA.QSSI.12.0.r1-05800.02-qssi.0
+system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
+system_ext/etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
+
 # QMI
-system_ext/etc/permissions/qti_libpermissions.xml
-system_ext/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/etc/sec_config
 vendor/lib/libdiag.so
@@ -1325,13 +1327,13 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 
-# RIL - from LA.QSSI.12.0.r1-05100-qssi.0
+# RIL - from LA.QSSI.12.0.r1-05800.02-qssi.0
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|c8a2ce9a86e542daf835dc0bfa1a63ed7e412d84
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|4f0056403f56928b8c75a617ba582f17061f89ae
 system_ext/framework/qcrilhook.jar|f251fd8cf621c66a970597954c257d69b6136eda
-system_ext/framework/qti-telephony-common.jar|2ba72ac401a98fe15d23d58867757a2033d51f67
--system_ext/priv-app/ims/ims.apk|2ee8394e862775e36711e86ca902e5b0ef3e6e68
+system_ext/framework/qti-telephony-common.jar|fee3a1ee6888cd849ad7b7294e7c50c26ef80ac1
+-system_ext/priv-app/ims/ims.apk|34e0485aea9b680756aa88794b18f8dca024fb33
 -system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|47ff9a1712950fc9f877691f2712d8aa7fcf3420
 
 # RIL
