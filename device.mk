@@ -411,6 +411,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     kernel/realme/RMX1921 \
+    vendor/qcom/opensource/usb/etc \
     hardware/qcom-caf/sdm845 \
     hardware/google/pixel \
     hardware/nxp
