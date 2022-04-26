@@ -8,6 +8,7 @@
 TARGET_BOOT_ANIMATION_RES := 1080
 USE_LEGACY_BOOTANIMATION := true
 EXTRA_UDFPS_ANIMATIONS := true
+TARGET_USES_BLUR := true
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Official-ify
