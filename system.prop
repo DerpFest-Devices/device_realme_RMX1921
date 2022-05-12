@@ -58,6 +58,7 @@ ro.com.google.ime.kb_pad_land_r=14
 # Graphics
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
+debug.hwui.skia_atrace_enabled=false
 persist.demo.hdmirotationlock=false
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=0
