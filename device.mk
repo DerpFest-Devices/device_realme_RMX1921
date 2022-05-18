@@ -428,15 +428,9 @@ PRODUCT_PACKAGES += \
     init.RealmeParts.rc \
     init.oppo.rc \
     init.oppo.display.rc \
-    init.qcom.factory.rc \
-    init.crda.sh \
-    init.mdm.sh \
     init.qcom.class_core.sh \
-    init.qcom.coex.sh \
     init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
     init.qti.chg_policy.sh \
     init.qcom.rc \
     init.qcom.sh \

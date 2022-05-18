@@ -30,11 +30,8 @@
 import init.oppo.rc
 #endif /*  OPLUS_FEATURE_CHG_BASIC */
 
-import /vendor/etc/init/hw/init.qti.ufs.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.qcom.factory.rc
-import /vendor/etc/init/hw/init.qcom.test.rc
 import /vendor/etc/init/hw/init.RealmeParts.rc
 
 #ifdef OPLUS_FEATURE_CHG_BASIC
