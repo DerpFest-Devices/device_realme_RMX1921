@@ -70,7 +70,7 @@ on property:init.svc.vendor.charger=running
 
     write /sys/module/msm_thermal/parameters/enabled "N"
 
-    symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mkdir /mnt/vendor/persist
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
