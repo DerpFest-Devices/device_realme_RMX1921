@@ -112,6 +112,7 @@ ro.bluetooth.a2dp_offload.supported=true
 # Camera
 persist.camera.HAL3.enabled=1
 persist.camera.gyro.disable=0
+persist.vendor.camera.is_type=4
 
 # CNE
 persist.vendor.cne.feature=1
