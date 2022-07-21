@@ -26,3 +26,12 @@ on boot
     # Silead Fingerprint
     chown system system /dev/silead_fp
     chmod 0666 /dev/silead_fp
+
+service vendor.sensors-hal-2-0-multihal /vendor/bin/hw/android.hardware.sensors@2.0-service.multihal
+    override
+    class hal
+    user system
+    group system wakelock context_hub input
+    writepid /dev/cpuset/system-background/tasks
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10

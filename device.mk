@@ -420,8 +420,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.realme_sdm710 \
-    android.hardware.sensors@1.0-service.realme_sdm710 \
+    android.hardware.sensors@2.0-service.multihal \
     libsensorndkbridge
 
 # Soong namespaces
