@@ -9,5 +9,5 @@ allow hal_dms_default platform_app:binder call;
 allow hal_dms_default vendor_data_file:file { rw_file_perms create };
 allow hal_dms_default vendor_data_file:dir { rw_file_perms add_name };
 
-allow hal_dms_default vendor_media_data_file:dir { add_name remove_name read write search open };
+allow hal_dms_default vendor_media_data_file:dir { add_name remove_name read write search open getattr };
 allow hal_dms_default vendor_media_data_file:file { read write open create ioctl getattr lock unlink };
