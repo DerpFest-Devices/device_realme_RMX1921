@@ -183,15 +183,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "PMQoSCpuDmaLatency",
-      "Path": "/dev/cpu_dma_latency",
-      "Values": [
-        "2c",
-        "64"
-      ],
-      "HoldFd": true
-    },
-    {
       "Name": "ForegroundCpuset",
       "Path": "/dev/cpuset/foreground/cpus",
       "Values": [
@@ -321,12 +312,6 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 3000,
-      "Value": "2c"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "CPUBWHystTriggerCount",
       "Duration": 3000,
       "Value": "0"
@@ -416,12 +401,6 @@
       "Value": "9999999"
     },
     {
-      "PowerHint": "CAMERA_LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 1000,
-      "Value": "2c"
-    },
-    {
       "PowerHint": "CAMERA_STREAMING_MID",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
@@ -554,12 +533,6 @@
       "Value": "9999999"
     },
     {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 1000,
-      "Value": "2c"
-    },
-    {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "PowerHALRenderingState",
       "Duration": 0,
@@ -576,12 +549,6 @@
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "504000000"
-    },
-    {
-      "PowerHint": "ML_ACC",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 2000,
-      "Value": "2c"
     }
   ]
 }
