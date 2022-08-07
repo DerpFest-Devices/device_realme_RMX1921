@@ -29,6 +29,11 @@
 #include <functional>
 #include <thread>
 
+#include <unistd.h>
+#include <fstream>
+#include <cmath>
+#define NEAR "/proc/touchpanel/prox_near"
+
 namespace android {
 namespace hardware {
 namespace sensors {
@@ -45,6 +50,23 @@ typedef V2_0::implementation::ISensorsSubHal*(SensorsHalGetSubHalFunc)(uint32_t*
 typedef V2_1::implementation::ISensorsSubHal*(SensorsHalGetSubHalV2_1Func)(uint32_t*);
 
 static constexpr int32_t kBitsAfterSubHalIndex = 24;
+static float moving;
+static bool saved;
+template <typename T>
+static inline void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
+
+template <typename T>
+static inline T get(const std::string& path, const T& def) {
+    std::ifstream file(path);
+    T result;
+
+    file >> result;
+    return file.fail() ? def : result;
+}
+
 
 /**
  * Set the subhal index as first byte of sensor handle and return this modified version.
@@ -650,12 +672,27 @@ void HalProxy::resetSharedWakelock() {
     mWakelockTimeoutResetTime = getTimeNow();
 }
 
-void HalProxy::postEventsToMessageQueue(const std::vector<Event>& events, size_t numWakeupEvents,
+void HalProxy::postEventsToMessageQueue(const std::vector<Event>& eventsList, size_t numWakeupEvents,
                                         V2_0::implementation::ScopedWakelock wakelock) {
     size_t numToWrite = 0;
     std::lock_guard<std::mutex> lock(mEventQueueWriteMutex);
     if (wakelock.isLocked()) {
         incrementRefCountAndMaybeAcquireWakelock(numWakeupEvents);
+    }
+    std::vector<Event> events(eventsList);
+    for (auto& event : events) {
+        if (event.sensorType == SensorType::ACCELEROMETER){
+            if(get(NEAR,0)){
+                if (!saved){
+                    moving = abs(event.u.scalar);
+                    saved = true;
+                }
+                if ((abs(moving-abs(event.u.scalar))) >= 4){
+                    saved = false;
+                    set(NEAR,0);
+                }
+            }
+        }
     }
     if (mPendingWriteEventsQueue.empty()) {
         numToWrite = std::min(events.size(), mEventQueue->availableToWrite());
