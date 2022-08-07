@@ -33,26 +33,19 @@
     <string name="hbm_autobrightness_title">Automatic High brightness mode</string>
     <string name="hbm_autobrightness_threshold_summary"></string>
     <string name="hbm_autobrightness_threshold_title">Automatic High brightness mode threshold (lux)</string>
-    <!-- seed mode -->
-    <string name="seed_mode_summary">Choose how the colors will be rendered</string>
-    <string name="seed_summary">Display mode</string>
-    <string name="seed_title">Display mode</string>
-    <string name="seed_normal">Default</string>
-    <string name="seed_p3">HDR-Disabled</string>
-    <string name="seed_srgb">sRGB</string>
+    <!-- srgb mode -->
+    <string name="srgb_mode_summary">sRGB mode for simpler colour display</string>
+    <string name="srgb_mode_title">sRGB mode</string>
+    <string name="tile_srgb_mode">sRGB</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">Enable USB-OTG power supply for external headphones and flash drives</string>
     <string name="otg_mode_title">Enable USB-OTG</string>
     <string name="tile_otg_mode">Enable USB-OTG</string>
     <!-- game mode -->
-    <string name="gaming_title">Gaming</string>
-    <string name="game_mode_summary">Boost Touch Sampling Rate, set performance profiles and DnD</string>
+    <string name="game_mode_summary">Boost Touch Sampling Rate</string>
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
-    <string name="dnd_title">Do Not Disturb</string>
-    <string name="dnd_summary">DND will be activated if Game Mode is enabled</string>
-    <string name="gamingperf_title">Gaming performance mode</string>
-    <string name="gamingperf_summary">Gaming performance mode will be activated if Game Mode is enabled</string>
+
     <!-- TouchScreen gestures -->
     <string name="dlg_ok">OK</string>
     <string name="cancel">Cancel</string>
@@ -137,7 +130,7 @@
     <string name="kcal_green">Green</string>
     <string name="kcal_blue">Blue</string>
     <string name="kcal_saturation">Saturation</string>
-    <string name="kcal_contrast">Contrast</string>
+    <string name="kcal_contrast">Constrast</string>
     <string name="menu_reset">Reset</string>
     <string name="kcal_color_temp">Color temperature (K)</string>
 
@@ -188,18 +181,6 @@
     <!-- Dolby -->
     <string name="dolby_summary">Open Dolby Atmos app</string>
     <string name="dolby_title">Dolby App</string>
-
-    <!-- Performance Profiles -->
-    <string name="performance_profile_title">Performance</string>
-    <string name="performance_title">Performance Profiles</string>
-    <string name="performance_summary">Performance tuning</string>
-    <string name="performance_dialogTitle">Choose your performance profile</string>
-
-    <!-- Values for performance presets -->
-    <string name="performance_extreme">Extreme</string>
-    <string name="performance_battery">Battery</string>
-    <string name="performance_gaming">Gaming</string>
-    <string name="performance_balance">Balance</string>
 
     <!-- Clear speaker -->
     <string name="clear_speaker_title">Clear speaker</string>

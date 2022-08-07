@@ -144,13 +144,4 @@
     <!-- Аудио -->   
     <string name="audio_title">Аудио</string>
 
-    <string name="performance_profile_title">представление</string>
-    <string name="performance_title">Профили представление</string>
-    <string name="performance_summary">Выбрать свой профиль представление</string>
-    <string name="performance_dialogTitle">Выбрать свой профиль представление</string>
-
-    <string name="performance_extreme">Производительность</string>
-    <string name="performance_battery">Заряд</string>
-    <string name="performance_gaming">Игра</string>
-    <string name="performance_balance">Баланс</string>
 </resources>

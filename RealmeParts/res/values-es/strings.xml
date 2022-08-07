@@ -145,13 +145,4 @@
     <!-- Audio -->  
     <string name="audio_title">Audio</string>
 
-    <string name="performance_profile_title">Performance</string>
-    <string name="performance_title">Perfiles de performance</string>
-    <string name="performance_summary">Seleccionar perfil de performance propio</string>
-    <string name="performance_dialogTitle">Seleccionar perfil de performance propio</string>
-
-    <string name="performance_extreme">Rendimiento</string>
-    <string name="performance_battery">Bateria</string>
-    <string name="performance_gaming">Juego</string>
-    <string name="performance_balance">Balance</string>
 </resources>

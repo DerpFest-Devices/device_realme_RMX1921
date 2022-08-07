@@ -29,25 +29,18 @@
     <string name="hbm_autobrightness_title">Alta luminosità automatica</string>
     <string name="hbm_autobrightness_threshold_summary"></string>
     <string name="hbm_autobrightness_threshold_title">"Soglia per l'alta luminosità automatica (lux)"</string>
-    <!-- seed mode -->
-    <string name="seed_mode_summary">Scegli in che modo i colori verranno mostrati</string>
-    <string name="seed_summary">Modalità del display</string>
-    <string name="seed_title">Modalità del display</string>
-    <string name="seed_normal">Predefinito</string>
-    <string name="seed_p3">P3</string>
-    <string name="seed_srgb">sRGB</string>
+    <!-- srgb mode -->
+    <string name="srgb_mode_summary">Modalità sRGB per un display con colori più semplici</string>
+    <string name="srgb_mode_title">Modaità sRGB</string>
+    <string name="tile_srgb_mode">sRGB</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">"Abilita l'uscita USB-OTG per fornire energia a dispositivi come pen-drive o cuffie"</string>
     <string name="otg_mode_title">Abilita USB-OTG</string>
     <string name="tile_otg_mode">USB-OTG</string>
     <!-- game mode -->
-    <string name="game_mode_summary">Incrementa la frequenza di campionamento dei tocchi sullo schermo, setta DnD e profilo prestazioni</string>
+    <string name="game_mode_summary">Incrementa la frequenza di campionamento dei tocchi sullo schermo</string>
     <string name="game_mode_title">Modalità gaming</string>
     <string name="tile_game_mode">Modalità gaming</string>
-    <string name="dnd_title">Non disturbare</string>
-    <string name="dnd_summary">Attiva automaticamente la modalità DnD quando sei in modalità gaming</string>
-    <string name="gamingperf_title">Modalità prestazioni automatica</string>
-    <string name="gamingperf_summary">Attiva automaticamente la modalità prestazioni gaming quando la modalità gaming è attiva</string>
 
     <string name="customize_title">Impostazioni Realme</string>
 
@@ -197,18 +190,6 @@
     <!-- Dolby -->
     <string name="dolby_summary">"Apri l'app Dolby"</string>
     <string name="dolby_title">Equalizzatore Dolby Atmos</string>
-
-    <!-- Performance Profiles -->
-    <string name="performance_profile_title">Prestazioni</string>
-    <string name="performance_title">Profili prestazioni</string>
-    <string name="performance_summary">Ottimizzazione performance e batteria</string>
-    <string name="performance_dialogTitle">Scegli il tuo profilo prestazioni</string>
-
-    <!-- Values for Performance Presets -->
-    <string name="performance_extreme">Performance</string>
-    <string name="performance_battery">Batteria</string>
-    <string name="performance_gaming">Gaming</string>
-    <string name="performance_balance">Bilanciato</string>
 
     <string name="clear_speaker_title">"Pulisci l'altoparlante"</string>
     <string name="clear_speaker_summary">"Ascolta un audio di trenta secondi per pulire l'altoparlante"</string>

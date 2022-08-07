@@ -28,8 +28,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"
         tools:ignore="ProtectedPermissions" />
-    <!-- Required to enable dnd during game mode -->
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <protected-broadcast android:name="org.device.RealmeParts.UPDATE_SETTINGS" />
 
@@ -159,29 +157,7 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-        <service
-            android:name="org.device.RealmeParts.PerfTileService" 
-            android:icon="@drawable/ic_perf" 
-            android:label="@string/performance_title" 
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="true">
-            <intent-filter>
-                <action 
-                android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
         <service android:name="org.device.RealmeParts.AutoHighBrightnessModeService" />
-        <service
-            android:name="org.device.RealmeParts.SeedTileService"
-            android:icon="@drawable/ic_srgb_tile"
-            android:label="@string/seed_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="true">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
         <service
             android:name="org.device.RealmeParts.OtgToggleService"
             android:icon="@drawable/ic_otg_tile"

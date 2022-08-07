@@ -59,32 +59,22 @@ public class RealmeParts extends PreferenceFragment
 
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
 
-    public static final String KEY_PERFORMANCE = "perf_tuner";
-    public static final String KEY_SEED = "seed";
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_HBM_AUTOBRIGHTNESS_SWITCH = "hbm_autobrightness";
     public static final String KEY_HBM_AUTOBRIGHTNESS_THRESHOLD = "hbm_autobrightness_threshould";
     public static final String KEY_DC_SWITCH = "dc";
     public static final String KEY_OTG_SWITCH = "otg";
     public static final String KEY_GAME_SWITCH = "game";
-    public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
-    public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
-    private static final String SEED_PATH = "/sys/kernel/oppo_display/seed";
-    public static final String KEY_HEADS_UP = "headsupstatus";
-    public static final String KEY_DND_SWITCH = "dnd";
-    public static final String KEY_BACKUP_PERF = "perfoldstate";
-    public static final String KEY_GAMING_PERF = "gamingperf";
+    public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oplus_tp_limit_enable";
+    public static final String TP_DIRECTION = "/proc/touchpanel/oplus_tp_direction";
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
     private static TwoStatePreference mEnableDolbyAtmos;
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mHBMAutobrightnessSwitch;
     private static TwoStatePreference mDCModeSwitch;
-    protected static SecureSettingListPreference mSeedModeSwitch;
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
-    public static TwoStatePreference mDNDSwitch;
-    private static TwoStatePreference mGamePerfSwitch;
     private Preference mGesturesPref;
     private Preference mKcalPref;
     private Preference mAudioPref;
@@ -107,11 +97,6 @@ public class RealmeParts extends PreferenceFragment
         mHBMAutobrightnessSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(RealmeParts.KEY_HBM_AUTOBRIGHTNESS_SWITCH, false));
         mHBMAutobrightnessSwitch.setOnPreferenceChangeListener(this);
 
-        mSeedModeSwitch = (SecureSettingListPreference) findPreference(KEY_SEED);
-        mSeedModeSwitch.setValue(Utils.getFileValue(SEED_PATH, "0"));
-        mSeedModeSwitch.setSummary(mSeedModeSwitch.getEntry());
-        mSeedModeSwitch.setOnPreferenceChangeListener(this);
-
         mOTGModeSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
         mOTGModeSwitch.setEnabled(OTGModeSwitch.isSupported());
         mOTGModeSwitch.setChecked(OTGModeSwitch.isCurrentlyEnabled(this.getContext()));
@@ -120,15 +105,7 @@ public class RealmeParts extends PreferenceFragment
         mGameModeSwitch = (TwoStatePreference) findPreference(KEY_GAME_SWITCH);
         mGameModeSwitch.setEnabled(GameModeSwitch.isSupported());
         mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch(this.getContext()));
-
-        mDNDSwitch = (TwoStatePreference) findPreference(KEY_DND_SWITCH);
-        mDNDSwitch.setChecked(prefs.getBoolean(KEY_DND_SWITCH, false));
-        mDNDSwitch.setOnPreferenceChangeListener(this);
-
-        mGamePerfSwitch = (TwoStatePreference) findPreference(KEY_GAMING_PERF);
-        mGamePerfSwitch.setChecked(prefs.getBoolean(KEY_GAMING_PERF, false));
-        mGamePerfSwitch.setOnPreferenceChangeListener(this);
+        mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch());
 
         mGesturesPref = findPreference("screen_gestures");
                 mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -170,14 +147,6 @@ public class RealmeParts extends PreferenceFragment
                     prefChange.putBoolean(KEY_HBM_AUTOBRIGHTNESS_SWITCH, enabled).commit();
                     Startup.enableService(getContext());
                 }
-        if (preference == mSeedModeSwitch){
-            int thisvalue = Integer.valueOf((String) value);
-            mSeedModeSwitch.setValue((String) value);
-            mSeedModeSwitch.setSummary(mSeedModeSwitch.getEntry());
-            SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-            prefChange.putInt(KEY_SEED, thisvalue).commit();
-            Utils.writeValue(SEED_PATH, (String) value);
-        }
         return true;
     }
 
