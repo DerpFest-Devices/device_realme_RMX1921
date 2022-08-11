@@ -17,6 +17,14 @@
 import common
 import re
 
+def FullOTA_Assertions(info):
+  OTA_Assertions(info)
+  return
+
+def IncrementalOTA_Assertions(info):
+  OTA_Assertions(info)
+  return
+
 def FullOTA_InstallEnd(info):
   OTA_InstallEnd(info)
   return
@@ -34,6 +42,10 @@ def AddImage(info, basename, dest):
   common.ZipWriteStr(info.output_zip, basename, data)
   info.script.Print("Patching {} image unconditionally...".format(dest.split('/')[-1]))
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (basename, dest))
+
+def OTA_Assertions(info):
+  info.script.AppendExtra('assert(getprop("ro.device.latest_fw") == "true" || abort("Older firmware detected. Kindly update firmware to realme UI 2 and retry flashing."););');
+  return
 
 def OTA_InstallEnd(info):
   AddImage(info, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
