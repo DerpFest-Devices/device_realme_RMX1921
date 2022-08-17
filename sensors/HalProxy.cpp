@@ -261,8 +261,8 @@ Return<Result> HalProxy::initializeCommon(
         Result currRes = mSubHalList[i]->initialize(this, this, i);
         if (currRes != Result::OK) {
             result = currRes;
-            ALOGE("Subhal '%s' failed to initialize.", mSubHalList[i]->getName().c_str());
-            break;
+            ALOGE("Subhal '%s' failed to initialize with reason %" PRId32 ".",
+                  mSubHalList[i]->getName().c_str(), static_cast<int32_t>(currRes));
         }
     }
 
