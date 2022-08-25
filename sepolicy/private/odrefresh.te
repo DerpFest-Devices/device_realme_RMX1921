@@ -1,0 +1,1 @@
+allow odrefresh self:capability kill;
