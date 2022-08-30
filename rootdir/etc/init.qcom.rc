@@ -424,24 +424,6 @@ on post-fs-data
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
-    # copy prebuilt camera firmware dump
-    copy /vendor/etc/camera/prebuilt/aecWarmStartCamera_0.txt /data/vendor/camera/aecWarmStartCamera_0.txt
-    copy /vendor/etc/camera/prebuilt/aecWarmStartCamera_1.txt /data/vendor/camera/aecWarmStartCamera_1.txt
-    copy /vendor/etc/camera/prebuilt/aecWarmStartCamera_2.txt /data/vendor/camera/aecWarmStartCamera_2.txt
-    copy /vendor/etc/camera/prebuilt/aecWarmStartCamera_3.txt /data/vendor/camera/aecWarmStartCamera_3.txt
-    copy /vendor/etc/camera/prebuilt/af_calibration_s5kgw1_p24c128e_sunny.bin /data/vendor/camera/af_calibration_s5kgw1_p24c128e_sunny.bin
-    copy /vendor/etc/camera/prebuilt/awbWarmStartCamera_0.txt /data/vendor/camera/awbWarmStartCamera_0.txt
-    copy /vendor/etc/camera/prebuilt/awbWarmStartCamera_1.txt /data/vendor/camera/awbWarmStartCamera_1.txt
-    copy /vendor/etc/camera/prebuilt/awbWarmStartCamera_2.txt /data/vendor/camera/awbWarmStartCamera_2.txt
-    copy /vendor/etc/camera/prebuilt/awbWarmStartCamera_3.txt /data/vendor/camera/awbWarmStartCamera_3.txt
-    copy /vendor/etc/camera/prebuilt/mapx.bin /data/vendor/camera/mapx.bin
-    copy /vendor/etc/camera/prebuilt/mapy.bin /data/vendor/camera/mapy.bin
-    copy /vendor/etc/camera/prebuilt/pdaf2D_calibration_s5kgw1_p24c128e_sunny.bin /data/vendor/camera/pdaf2D_calibration_s5kgw1_p24c128e_sunny.bin
-    copy /vendor/etc/camera/prebuilt/pdafdcc_calibration_s5kgw1_p24c128e_sunny.bin /data/vendor/camera/pdafdcc_calibration_s5kgw1_p24c128e_sunny.bin
-    copy /vendor/etc/camera/prebuilt/sony_imx471_cross_talk.bin /data/vendor/camera/sony_imx471_cross_talk.bin
-    copy /vendor/etc/camera/prebuilt/sony_imx471_dpc_tbl.bin /data/vendor/camera/sony_imx471_dpc_tbl.bin
-    copy /vendor/etc/camera/prebuilt/spc_calibration_s5kgw1_p24c128e_sunny.bin /data/vendor/camera/spc_calibration_s5kgw1_p24c128e_sunny.bin
-
     #Create SWAP related dirs
     mkdir /data/vendor/swap 0770 root system
     chmod 2770 /data/vendor/swap

@@ -392,24 +392,6 @@ vendor/etc/camera/oppo_camera_config.xml
 vendor/etc/camera/skinSeg.model
 vendor/etc/camera/vidhance_calibration
 
-# Camera Firmware Dump (From C05)
-vendor/etc/camera/prebuilt/aecWarmStartCamera_0.txt
-vendor/etc/camera/prebuilt/aecWarmStartCamera_1.txt
-vendor/etc/camera/prebuilt/aecWarmStartCamera_2.txt
-vendor/etc/camera/prebuilt/aecWarmStartCamera_3.txt
-vendor/etc/camera/prebuilt/af_calibration_s5kgw1_p24c128e_sunny.bin
-vendor/etc/camera/prebuilt/awbWarmStartCamera_0.txt
-vendor/etc/camera/prebuilt/awbWarmStartCamera_1.txt
-vendor/etc/camera/prebuilt/awbWarmStartCamera_2.txt
-vendor/etc/camera/prebuilt/awbWarmStartCamera_3.txt
-vendor/etc/camera/prebuilt/mapx.bin
-vendor/etc/camera/prebuilt/mapy.bin
-vendor/etc/camera/prebuilt/pdaf2D_calibration_s5kgw1_p24c128e_sunny.bin
-vendor/etc/camera/prebuilt/pdafdcc_calibration_s5kgw1_p24c128e_sunny.bin
-vendor/etc/camera/prebuilt/sony_imx471_cross_talk.bin
-vendor/etc/camera/prebuilt/sony_imx471_dpc_tbl.bin
-vendor/etc/camera/prebuilt/spc_calibration_s5kgw1_p24c128e_sunny.bin
-
 # Camera Firmware (From C05)
 vendor/firmware/CAMERA_ICP.elf
 
