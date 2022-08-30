@@ -184,9 +184,4 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.usb.product_string=Realme XT \
-    persist.vendor.usb.config.extra=none \
-    vendor.usb.dpl.inst.name=dpl \
-    vendor.usb.rmnet.func.name=rmnet_bam \
-    vendor.usb.rmnet.inst.name=rmnet \
-    vendor.usb.rndis.func.name=rndis_bam
+    vendor.usb.product_string=Realme XT
