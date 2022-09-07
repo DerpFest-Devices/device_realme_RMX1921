@@ -31,3 +31,8 @@ genfscon sysfs /bus/msm_subsys/devices/subsys[0-9]/restart_level        u:object
 # Realmeparts
 genfscon sysfs /kernel/sound_control/headphone_gain u:object_r:sysfs_hgain:s0
 genfscon sysfs /kernel/sound_control/mic_gain u:object_r:sysfs_mgain:s0
+
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,usb-pdphy@1700/extcon          u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/88e0000.qcom,msm-eud/extcon          u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/extcon        u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-ext-disp/extcon			u:object_r:sysfs_extcon:s0
