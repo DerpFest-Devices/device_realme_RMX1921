@@ -401,10 +401,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_RMX1921
-
 # Remove Unwanted Packages
 PRODUCT_PACKAGES += \
     RemovePackages
