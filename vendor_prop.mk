@@ -93,7 +93,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
-   persist.camera.HAL3.enabled=1
+   persist.camera.HAL3.enabled=1 \
+   persist.camera.gyro.disable=0
 
 # CNE
 PRODUCT_PRODUCT_PROPERTIES += \

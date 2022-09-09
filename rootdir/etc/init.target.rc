@@ -28,19 +28,13 @@
 #
 
 on early-init
-    #ifndef VENDOR_EDIT
+    #ifndef OPLUS_ARCH_EXTENDS
     #Jianfeng.Qiu@PSW.MM.AudioDriver.Codec, 2018/04/20, Modify for audio config
     #exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710
-    #else /*VENDOR_EDIT*/
+    #else
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710 \
-    audio_tfa98xx-v6 audio_tfa98xx
-    #endif /*VENDOR_EDIT*/
-
-    #ifdef VENDOR_EDIT
-    #xiang.fei@PSW.MM.AudioDriver.Codec, 2019/07/04, Add for dbmdx
-    insmod /oppo_product/lib/modules/audio_dspg_dbmdx.ko
-    #endif /*VENDOR_EDIT*/
-
+    audio_tfa98xx-v6 audio_ak4376 audio_max20328 audio_dspg_dbmdx
+    #endif
     write /proc/sys/kernel/sched_boost 1
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
@@ -60,10 +54,6 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    #ifdef VENDOR_EDIT
-    #Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
-    mkdir /mnt/vendor/opporeserve 0771 system system
-    #endif /*VENDOR_EDIT*/
     mount_all /vendor/etc/fstab.qcom --early
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
@@ -76,6 +66,11 @@ on post-fs
 
     write /dev/ipa 1
 
+service sec_nvm /vendor/bin/sec_nvm
+    class core
+    user system
+    group system
+
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
@@ -85,38 +80,29 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-#ifndef VENDOR_EDIT
-#Guqcai@psw.bsp.tp 2018/03/12 del for closing hbtp
-#    mkdir /data/vendor/hbtp 0750 system system
-#endif
+    #mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/nnhal 0700 system system
-    #ifdef VENDOR_EDIT
-    mkdir /data/vendor/dolby 0770 media media
-    #endif /*VENDOR_EDIT*/
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
 on boot
-#ifndef VENDOR_EDIT
-#Guqcai@psw.bsp.tp 2018/03/12 del for closing hbtp
-#    chown system system /sys/kernel/hbtp/display_pwr
-#endif
+    #chown system system /sys/kernel/hbtp/display_pwr
     start rmt_storage
     start rfs_access
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
-    #ifndef VENDOR_EDIT
-    #Jiaquan.He@RM.AD.Performance , 2019/12/17, Add for boost boot time
-    #write /dev/cpuset/background/cpus 0-7
-    #else /*VENDOR_EDIT*/
     write /dev/cpuset/background/cpus 0-3
-    #endif /*VENDOR_EDIT*/
     write /dev/cpuset/system-background/cpus 0-7
 
-    # set default schedTune value for camera-daemon
-    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
-    write /dev/stune/camera-daemon/schedtune.boost 0
+# Add a cpuset for the camera daemon
+# We want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-3
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
 
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
@@ -228,25 +214,25 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #   user root
 #   group root
 
-service adsprpcd /vendor/bin/adsprpcd rootpd
-   class main
-   user system
-   group system
+#service adsprpcd /vendor/bin/adsprpcd rootpd
+#   class main
+#   user system
+#   group system
 
-service adsprpcd_audiopd /vendor/bin/adsprpcd audiopd
-   class main
-   user media
-   group media
+#service adsprpcd_audiopd /vendor/bin/adsprpcd audiopd
+#   class main
+#   user media
+#   group media
 
-service adsprpcd_sensorspd /vendor/bin/adsprpcd sensorspd
-   class core
-   user system
-   group system
-
-service cdsprpcd /vendor/bin/cdsprpcd
-   class main
-   user system
-   group system
+#service adsprpcd_sensorspd /vendor/bin/adsprpcd sensorspd
+#   class core
+#   user system
+#   group system
+#
+#service cdsprpcd /vendor/bin/cdsprpcd
+#   class main
+#  user system
+#  group system
 
 #service audiod /vendor/bin/audiod
 #   class late_start
@@ -315,21 +301,6 @@ service cdsprpcd /vendor/bin/cdsprpcd
 #
 #
 #
-## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
-    class main
-    user system
-    socket ims_qmid stream 0660 system radio
-    group radio log vendor_qti_diag
-
-# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
-    class main
-    user system
-    socket ims_datad stream 0660 system radio
-    group system wifi radio inet log vendor_qti_diag
-    disabled
-
 #service mdm_helper /system/bin/mdm_helper
 #    class core
 #    onrestart setprop ro.service.mdm_helper_restarted "true"
@@ -383,31 +354,17 @@ service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
 #   group gps system qcom_diag diag log inet net_raw
 #   disabled
 
-service vendor.imsrcsservice /system/vendor/bin/imsrcsd
-    class main
-    user system
-    group radio diag inet log wakelock
-
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
-
+#ifndef OPLUS_BUG_COMPATIBILITY
+#//ZhangPan@CONNECTIVITY.WIFI.BASIC.LOG.1072015,2016/08/03, Remove for wifi log enhance function
 #on property:vold.decrypt=trigger_restart_framework
-   #start cnss_diag
+#    start cnss_diag
 
-service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
-   class main
-   user system
-   group system wifi inet sdcard_rw media_rw diag
-   oneshot
-   disabled
-
-service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-   class main
-   user system
-   group radio vendor_qti_diag inet log
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
+#service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
+#    class main
+#    user system
+#    group system wifi inet sdcard_rw media_rw diag
+#    oneshot
+#endif /* OPLUS_BUG_COMPATIBILITY */
 
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
@@ -424,6 +381,18 @@ on property:init.svc.vendor.hwcomposer-2-3=running
 
 on property:init.svc.vendor.hwcomposer-2-3=restarting
     stop ppd
+
+#ifdef VENDOR_EDIT
+#Rongchun.zhang@PSW.MM.Display.feature, 2018/11/09, Add for restart ppd aftern FDE
+on property:init.svc.zygote=stopped
+    stop ppd
+
+on property:init.svc.zygote=running
+    start ppd
+
+on property:init.svc.zygote=restarting
+    stop ppd
+#endif/*VENDOR_EDIT*/
 
 #service nqs /system/bin/nqs
 #    class late_start
@@ -446,11 +415,22 @@ on property:init.svc.vendor.hwcomposer-2-3=restarting
 on charger
      setprop sys.usb.configfs 1
 
-#ifndef VENDOR_EDIT
-#Guqcai@psw.bsp.tp 2018/03/12 del for closing hbtp
 #service hbtp /system/vendor/bin/hbtp_daemon
 #     class main
 #     user system
 #     group system
 #     disabled
-#endif
+
+service energy-awareness /system/vendor/bin/energy-awareness
+    class main
+    user system
+    group system
+    oneshot
+
+service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service
+    override
+    class hal
+    interface android.hardware.contexthub@1.0::IContexthub default
+    user system
+    group system
+    disabled

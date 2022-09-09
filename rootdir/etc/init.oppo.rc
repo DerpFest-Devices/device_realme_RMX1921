@@ -1,0 +1,28 @@
+on boot
+    # Disable edge limit control interface
+    chmod 0660 /proc/touchpanel/oppo_tp_limit_enable
+    chmod 0660 /proc/touchpanel/oppo_tp_direction
+    chown system system /proc/touchpanel/oppo_tp_limit_enable
+    chown system system /proc/touchpanel/oppo_tp_direction
+    write /proc/touchpanel/oppo_tp_limit_enable 0
+    write /proc/touchpanel/oppo_tp_direction 1
+
+    # Enable OTG by default
+    write /sys/class/power_supply/usb/otg_switch 1
+
+    # TP FW Update
+    write /proc/touchpanel/tp_fw_update 0
+
+    # FPC Fingerprint 16051 config
+    chown system system /sys/bus/platform/devices/soc:fpc_fpc1020*/irq
+    chown system system /sys/bus/platform/devices/soc:fpc_fpc1020*/irq_enable
+    chown system system /sys/bus/platform/devices/soc:fpc_fpc1020*/wakelock_enable
+
+    # FPC Fingerprint 16037 config
+    chown system system /sys/bus/platform/devices/fpc_fpc1020*/irq
+    chown system system /sys/bus/platform/devices/fpc_fpc1020*/irq_enable
+    chown system system /sys/bus/platform/devices/fpc_fpc1020*/wakelock_enable
+
+    # Silead Fingerprint
+    chown system system /dev/silead_fp
+    chmod 0666 /dev/silead_fp
