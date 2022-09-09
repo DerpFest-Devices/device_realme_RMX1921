@@ -29,19 +29,6 @@ persist.data.profile_update=true
 persist.data.wda.enable=true 
 persist.rmnet.data.enable=true
 
-# Display - oppo
-persist.sys.enable.rc=1
-ro.display.rc.size=108,108,111,111
-ro.lcd.backlight.samsung_tenbit=10,517,103,303,355,457,563,676,805,883,1023
-ro.lcd.backlight.config_dsjm=11,958,13,334,517,794,1055,1325,1617,1770,1989,2047
-ro.vendor.display.backlightapp=1
-ro.display.underscreenfingerprint=1
-ro.display.underscreen.lightsensor.support=1
-ro.lcd.display.screen.underlightsensor.region=624,28,672,76
-ro.display.underscreen.lightsensor.screenshot.period=50
-persist.debug.wfd.enable=1
-ro.oppo.screen.heteromorphism=444,0:636,76
-
 # Dex
 dalvik.vm.dex2oat64.enabled=true
 ro.vendor.qti.am.reschedule_service=true
@@ -55,13 +42,12 @@ dalvik.vm.image-dex2oat-filter=quicken
 dalvik.vm.image-dex2oat-threads=8
 
 # Display post-processing
+persist.vendor.display.lcd.panel=true
+vendor.display.comp_mask=2
 ro.qualcomm.cabl=0
 ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg
 ro.vendor.display.sensortype=2
-
-# Disable remote keyguard animation
-persist.wm.enable_remote_keyguard_animation=0
 
 # Gboard
 ro.com.google.ime.kb_pad_port_l=7
@@ -131,7 +117,7 @@ service.qti.ims.enabled=1
 persist.vendor.qti.telephony.vt_cam_interface=2
 ro.telephony.iwlan_operation_mode=legacy
 ril.subscription.types=NV,RUIM
-ro.telephony.default_network=22,22
+ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 persist.vendor.ims.disableADBLogs=1
 persist.vendor.ims.disableDebugLogs=1
@@ -150,6 +136,10 @@ persist.sys.oscar.dc=1
 # SSR
 persist.vendor.ssr.enable_ramdumps=0
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Wi-Fi display
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
 
 # ZRAM writeback
 ro.zram.mark_idle_delay_mins=60

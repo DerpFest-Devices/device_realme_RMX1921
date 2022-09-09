@@ -120,6 +120,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.cabl=2 \
     ro.sf.lcd_density=420
 
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpmhalservice.enable=1
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
@@ -158,9 +162,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.mt_sms_ack=30
 
-# Misc tweaks
+# Keystore
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.sleep_mode=1
+    ro.hardware.keystore_desede=true
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -199,3 +203,5 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.usb.product_string=Realme XT
+    vendor.usb.diag.func.name=diag \
+    vendor.usb.use_ffs_mtp=0
