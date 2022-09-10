@@ -1,17 +1,18 @@
-# All unpinned blobs are from RUI 2.0 F03 and other blobs are from RUI 1.0 C05
+# All unpinned blobs are from RUI 2.0 F06
 
-# ACDB (From C05)
-vendor/etc/acdbdata/19651/Bluetooth_cal.acdb
-vendor/etc/acdbdata/19651/General_cal.acdb
-vendor/etc/acdbdata/19651/Global_cal.acdb
-vendor/etc/acdbdata/19651/Handset_cal.acdb
-vendor/etc/acdbdata/19651/Hdmi_cal.acdb
-vendor/etc/acdbdata/19651/Headset_cal.acdb
-vendor/etc/acdbdata/19651/Speaker_cal.acdb
+# ACDB
+odm/etc/acdbdata/Bluetooth_cal.acdb
+odm/etc/acdbdata/General_cal.acdb
+odm/etc/acdbdata/Global_cal.acdb
+odm/etc/acdbdata/Handset_cal.acdb
+odm/etc/acdbdata/Hdmi_cal.acdb
+odm/etc/acdbdata/Headset_cal.acdb
+odm/etc/acdbdata/Speaker_cal.acdb
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
-# ADSP (From C05)
+# ADSP
 vendor/bin/adsprpcd
+vendor/etc/init/vendor.qti.adsprpc-sscrpc-service.rc
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
 vendor/lib/libmdsprpc.so
@@ -21,7 +22,12 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# ADSP Modules (From C05)
+# ADSP Modules
+odm/lib/libbsproxy.so
+odm/lib64/libbsproxy.so
+system_ext/lib/rfsa/adsp/libaiboost_skel.so
+system_ext/lib/rfsa/adsp/libaiboost_skel_v65.so
+system_ext/lib/rfsa/adsp/libaiboost_skel_v66.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/libVC1Dec.so
@@ -33,13 +39,24 @@ vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libarcsoft_dualcam_refocus_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_hdrplus_hvx_skel.so
 vendor/lib/rfsa/adsp/libarcsoft_portraitSN_hvx_skel.so
+vendor/lib/rfsa/adsp/libc++.so.1
+vendor/lib/rfsa/adsp/libc++abi.so.1
 vendor/lib/rfsa/adsp/libcamera_nn_skel.so
-vendor/lib/rfsa/adsp/libclock_adjust_skel.so
-vendor/lib/rfsa/adsp/libcvpdsp_skel.so
 vendor/lib/rfsa/adsp/libdepthmap_skel.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
+vendor/lib/rfsa/adsp/libktvdrc.so
+vendor/lib/rfsa/adsp/libktveffect.so
+vendor/lib/rfsa/adsp/libktveq.so
+vendor/lib/rfsa/adsp/libktvns.so
+vendor/lib/rfsa/adsp/libktvpitchshift.so
+vendor/lib/rfsa/adsp/libktvreverb.so
+vendor/lib/rfsa/adsp/libktvvolume.so
 vendor/lib/rfsa/adsp/libproxy_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
@@ -47,6 +64,8 @@ vendor/lib/rfsa/adsp/libthread_blur_skel.so
 vendor/lib64/rfsa/adsp/libBeautyShot_skel.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_add_constant.so
 vendor/lib64/rfsa/adsp/libdsp_streamer_skel.so
+vendor/lib64/rfsa/adsp/libsns_device_mode_skel.so
+vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so
 
 # ANT+
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
@@ -55,9 +74,9 @@ vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib/com.dsi.ant@1.0.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/com.dsi.ant@1.0.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so
 
-# Audio (From C05)
+# Audio
+vendor/lib/hw/sound_trigger.primary.sdm710.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -66,8 +85,13 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
+vendor/lib/libcirrusspkrprot.so
+vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
+vendor/lib/libssrec.so
+vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libtinycompress.so
+vendor/lib64/hw/sound_trigger.primary.sdm710.so
 vendor/lib64/liba2dpoffload.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -75,22 +99,23 @@ vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
+vendor/lib64/libcirrusspkrprot.so
 vendor/lib64/libqtigef.so
+vendor/lib64/libssrec.so
 vendor/lib64/libtinycompress.so
 
-# Audio HAL (From C05)
+# Audio HAL
+odm/lib/libaudioEngineerTest.so
+odm/lib64/libaudioEngineerTest.so
 vendor/lib/hw/audio.primary.sdm710.so
-vendor/lib/libaudioEngineerTest.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib64/hw/audio.primary.sdm710.so
-vendor/lib64/libaudioEngineerTest.so
 vendor/lib64/libaudio_log_utils.so
 
-# Audio FX Modules (From C05)
-etc/permissions/audiosphere.xml
-framework/audiosphere.jar
+# Audio FX Modules
+system_ext/etc/permissions/audiosphere.xml
+system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libdiraceffect.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -101,39 +126,234 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
 
-# Audio Firmware (From C05)
-vendor/firmware/dbmd4_va_fw.bin
-vendor/firmware/tfa98xx_19651.cnt
-vendor/firmware/voice_amodel.bin
+# Audio Firmware
+odm/firmware/tfa98xx.cnt
 
-# Bluetooth (From C05)
+# Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib/btaudio_offload_if.so
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib/libbluetooth_audio_session_qti.so
-vendor/lib/libbtnv.so
+vendor/lib/libbluetooth_audio_session_qti_2_1.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
+vendor/lib64/libbluetooth_audio_session_qti_2_1.so
+vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
 # Bluetooth (aptX) - from crosshatch - QQ3A.200605.001
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
-# Camera (From C05)
-vendor/etc/license.lic
+# Camera
+odm/etc/camera/singleblur/Charming.cng
+odm/etc/camera/singleblur/M_Verify_Faster_Common_wp.model
+odm/etc/camera/singleblur/doubleloss_large.model
+odm/etc/camera/singleblur/faceTpl0.rgb32
+odm/etc/camera/singleblur/faceTpl1.rgb32
+odm/etc/camera/singleblur/gasryuv.model
+odm/etc/camera/singleblur/merged_model
+odm/etc/camera/singleblur/merged_model_post
+odm/etc/camera/oppo_camera_config.xml
+odm/etc/camera/stereoParams.bin
+odm/lib/libSNPE_G.so
+odm/lib64/libormshalclient.so
+odm/lib64/libswresample.so
+odm/lib64/libswscale.so
+odm/lib64/vendor.oplus.hardware.orms@1.0.so
+vendor/etc/camera/Charming.cng
+vendor/etc/camera/M_Attribute_Gender_Age_1.0.model
+vendor/etc/camera/M_Verify_Faster_Common_4.0.0_wp.model
+vendor/etc/camera/arc_golden.bin
+vendor/etc/camera/distortionParams.bin
+vendor/etc/camera/faceTpl0.rgb32
+vendor/etc/camera/faceTpl1.rgb32
+vendor/etc/camera/gasryuv.model
+vendor/etc/camera/license.lic
+vendor/etc/camera/mtStereoParams.bin
+vendor/etc/camera/mwStereoParams.bin
+vendor/etc/camera/skinSeg.model
+vendor/etc/camera/vidhance_calibration
+vendor/lib/camera/data.zip
+vendor/lib/camera/fdconfigpreview.bin
+vendor/lib/camera/fdconfigpreviewlite.bin
+vendor/lib/camera/fdconfigvideo.bin
+vendor/lib/camera/fdconfigvideolite.bin
+vendor/lib/hw/camera.qcom.so
+vendor/lib/hw/com.qti.chi.override.so
+vendor/lib/libOPPORectify.so
+vendor/lib/libOccluDetect.so
+vendor/lib/libOppoAPSMemMgr.so
+vendor/lib/libOppoAlgoClient.so
+vendor/lib/libPolarrRender.so
+vendor/lib/libSCES.so
+vendor/lib/libSNPE.so
+vendor/lib/libSTDualCamCaptureBokeh.so
+vendor/lib/libSTDualCamPreviewBokeh.so
+vendor/lib/libSTdisp.so
+vendor/lib/libSonyIMX471RmscLibrary.so
+vendor/lib/libSonyIMX519MbrLibrary.so
+vendor/lib/libVDImageAdjustment.so
+vendor/lib/libVDRTImageAdjustment.so
+vendor/lib/libarcsoft_distortion_correction.so
+vendor/lib/libarcsoft_distortion_correction_710.so
+vendor/lib/libarcsoft_dualcam_portrait_shot.so
+vendor/lib/libarcsoft_hdr_couple_api.so
+vendor/lib/libarcsoft_hdr_denoise_api.so
+vendor/lib/libarcsoft_high_dynamic_range.so
+vendor/lib/libarcsoft_high_dynamic_range_couple.so
+vendor/lib/libarcsoft_low_light_hdr.so
+vendor/lib/libarcsoft_picauto.so
+vendor/lib/libarcsoft_smart_denoise.so
+vendor/lib/libblur_channel.so
+vendor/lib/libbokehclient.so
+vendor/lib/libc++_shared.so
+vendor/lib/libcamera_core_hwi.so
+vendor/lib/libcamera_nn_stub.so
+vendor/lib/libcamhidlsensor.so
+vendor/lib/libcamxfdalgov7.so
+vendor/lib/libcamxfdalgov8.so
+vendor/lib/libcamxfdengine.so
+vendor/lib/libcamxstatscore.so
+vendor/lib/libcamxswprocessalgo.so
+vendor/lib/libcamxtintlessalgo.so
+vendor/lib/libcom.qti.chinodeutils.so
+vendor/lib/libcvface_api.so
+vendor/lib/libdepthmap.so
+vendor/lib/libfastcrc.so
+vendor/lib/libiu456_datapath_filt_lib.so
+vendor/lib/libiu456_datapath_processor.so
+vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_faceproc2.so
+vendor/lib/libmpbase.so
+vendor/lib/libnnp.so
+vendor/lib/libobcdepth_hal.so
+vendor/lib/libocam_common.so
+vendor/lib/libocam_snapshot_intf.so
+vendor/lib/liboppo_aisd.so
+vendor/lib/liboppo_log_print.so
+vendor/lib/liboppo_platform_hwi.so
+vendor/lib/liboppoalgolib.so
+vendor/lib/liboppocamalgo_daemon.so
+vendor/lib/libopposfr.so
+vendor/lib/libsdk_3d.so
+vendor/lib/libsdk_common.so
+vendor/lib/libsns_device_mode_stub.so
+vendor/lib/libsns_fastRPC_util.so
+vendor/lib/libsns_low_lat_stream_stub.so
+vendor/lib/libsns_registry_skel.so
+vendor/lib/libsnsdiaglog.so
+vendor/lib/libst_personblur.so
+vendor/lib/libst_scb_dep1.so
+vendor/lib/libst_segmentation.so
+vendor/lib/libstblur_capture_api.so
+vendor/lib/libstface_fd_api.so
+vendor/lib/libstface_seg_ocl.so
+vendor/lib/libswregistrationalgo.so
+vendor/lib/libswvdec.so
+vendor/lib/libsymphony-cpu.so
+vendor/lib/libsymphonypower.so
+vendor/lib/libthread_blur.so
+vendor/lib/libtriplecam_image_optical_zoom.so
+vendor/lib/libtriplecam_optical_zoom_control.so
+vendor/lib/libtriplecam_video_optical_zoom.so
+vendor/lib/libvideoutils.so
+vendor/lib/libvidhance.so
+vendor/lib/qcom.camera.log.so
+vendor/lib/vendor.oplus.hardware.commondcs@1.0.so
+vendor/lib64/camera/fdconfigpreview.bin
+vendor/lib64/camera/fdconfigpreviewlite.bin
+vendor/lib64/camera/fdconfigvideo.bin
+vendor/lib64/camera/fdconfigvideolite.bin
+vendor/lib64/hw/camera.qcom.so
+vendor/lib64/hw/com.qti.chi.override.so
+vendor/lib64/lib3DSlender.so
+vendor/lib64/libOPPORectify.so
+vendor/lib64/libOppoAPSMemMgr.so
+vendor/lib64/libOppoAlgoClient.so
+vendor/lib64/libPerfectlyClearCrux.so
+vendor/lib64/libPolarrRender.so
+vendor/lib64/libSNPE.so
+vendor/lib64/libSonyIMX471RmscLibrary.so
+vendor/lib64/libVDBlurlessAPI_v2.so
+vendor/lib64/libVDDualCameraBlurlessAPI.so
+vendor/lib64/libVDEyeEnhance.so
+vendor/lib64/libVDPostureDetection.so
+vendor/lib64/libVDSuperPhotoAPI.so
+vendor/lib64/libarcsoft_beautyshot.so
+vendor/lib64/libarcsoft_distortion_correction.so
+vendor/lib64/libarcsoft_distortion_correction_710.so
+vendor/lib64/libarcsoft_dualcam_bokeh_api.so
+vendor/lib64/libarcsoft_dualcam_refocus_left.so
+vendor/lib64/libarcsoft_dualcam_refocus_preview.so
+vendor/lib64/libarcsoft_dualcam_refocus_right.so
+vendor/lib64/libarcsoft_hdr_denoise_api.so
+vendor/lib64/libarcsoft_hdrplus_hvx_stub.so
+vendor/lib64/libarcsoft_high_dynamic_range.so
+vendor/lib64/libarcsoft_low_light_hdr.so
+vendor/lib64/libarcsoft_portraitSN_hvx_stub.so
+vendor/lib64/libarcsoft_portrait_super_night_raw.so
+vendor/lib64/libarcsoft_relighting_pro_image.so
+vendor/lib64/libarcsoft_smart_denoise.so
+vendor/lib64/libarcsoft_super_night_raw.so
+vendor/lib64/libbokehclient.so
+vendor/lib64/libc++_shared.so
+vendor/lib64/libcamera_core_hwi.so
+vendor/lib64/libcamera_nn_stub.so
+vendor/lib64/libcamhidlsensor.so
+vendor/lib64/libcamxfdalgov7.so
+vendor/lib64/libcamxfdalgov8.so
+vendor/lib64/libcamxfdengine.so
+vendor/lib64/libcamxstatscore.so
+vendor/lib64/libcamxswprocessalgo.so
+vendor/lib64/libcamxtintlessalgo.so
+vendor/lib64/libcom.qti.chinodeutils.so
+vendor/lib64/libcvface_api.so
+vendor/lib64/libloadalgo_stub.so
+vendor/lib64/libmmcamera_faceproc.so
+vendor/lib64/libmmcamera_faceproc2.so
+vendor/lib64/libmpbase.so
+vendor/lib64/libnativehelpers.so
+vendor/lib64/libocam_common.so
+vendor/lib64/libocam_snapshot_intf.so
+vendor/lib64/liboppo_aisd.so
+vendor/lib64/liboppo_log_print.so
+vendor/lib64/liboppo_platform_hwi.so
+vendor/lib64/liboppoalgolib.so
+vendor/lib64/libopposfr.so
+vendor/lib64/libsnpe_dsp_domains_v2.so
+vendor/lib64/libsnpeml.so
+vendor/lib64/libsns_fastRPC_util.so
+vendor/lib64/libsns_low_lat_stream_stub.so
+vendor/lib64/libstface_fd_api.so
+vendor/lib64/libswregistrationalgo.so
+vendor/lib64/libswvdec.so
+vendor/lib64/libsymphony-cpu.so
+vendor/lib64/libsymphonypower.so
+vendor/lib64/libtriplecam_image_optical_zoom.so
+vendor/lib64/libtriplecam_optical_zoom_control.so
+vendor/lib64/libtriplecam_video_optical_zoom.so
+vendor/lib64/libvidhance.so
+vendor/lib64/qcom.camera.log.so
+vendor/lib64/vendor.oplus.hardware.commondcs@1.0.so
+
+# Camera (Components)
 vendor/lib/camera/components/com.arcsoft.node.yuvhdr.so
 vendor/lib/camera/components/com.oppo.node.bokeh.so
 vendor/lib/camera/components/com.oppo.node.drawafinfo.so
@@ -182,51 +402,6 @@ vendor/lib/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib/camera/components/com.slam.node.process.so
 vendor/lib/camera/components/com.vidhance.node.eis.so
 vendor/lib/camera/components/com.vidhance.stats.aec_dmbr.so
-vendor/lib/camera/com.qti.sensor.gc2375h.so
-vendor/lib/camera/com.qti.sensor.hi846.so
-vendor/lib/camera/com.qti.sensor.imx471.so
-vendor/lib/camera/com.qti.sensor.s5kgw1.so
-vendor/lib/camera/com.qti.sensor.sp2509v.so
-vendor/lib/camera/data.zip
-vendor/lib/hw/camera.qcom.so
-vendor/lib/hw/com.qti.chi.override.so
-vendor/lib/libSNPE.so
-vendor/lib/libSNPE_G.so
-vendor/lib/libSTDualCamCaptureBokeh.so
-vendor/lib/libSTDualCamPreviewBokeh.so
-vendor/lib/libSTdisp.so
-vendor/lib/libSonyIMX471RmscLibrary.so
-vendor/lib/libSonyIMX519MbrLibrary.so
-vendor/lib/libVDImageAdjustment.so
-vendor/lib/libVDRTImageAdjustment.so
-vendor/lib/libc++_shared.so
-vendor/lib/libcamera_core_hwi.so
-vendor/lib/libcamera_nn_stub.so
-vendor/lib/libcamhidlsensor.so
-vendor/lib/libcamxfdalgov7.so
-vendor/lib/libcamxfdalgov8.so
-vendor/lib/libcamxfdengine.so
-vendor/lib/libcamxstatscore.so
-vendor/lib/libcamxswprocessalgo.so
-vendor/lib/libcamxtintlessalgo.so
-vendor/lib/libcom.qti.chinodeutils.so
-vendor/lib/libcvface_api.so
-vendor/lib/libdepthmap.so
-vendor/lib/libmpbase.so
-vendor/lib/libsns_device_mode_stub.so
-vendor/lib/libsns_fastRPC_util.so
-vendor/lib/libsns_low_lat_stream_stub.so
-vendor/lib/libsnsapi.so
-vendor/lib/libsnsdiaglog.so
-vendor/lib/libstblur_capture_api.so
-vendor/lib/libswregistrationalgo.so
-vendor/lib/libsymphony-cpu.so
-vendor/lib/libsymphonypower.so
-vendor/lib/libtriplecam_image_optical_zoom.so
-vendor/lib/libtriplecam_optical_zoom_control.so
-vendor/lib/libtriplecam_video_optical_zoom.so
-vendor/lib/libvideoutils.so
-vendor/lib/libvidhance.so
 vendor/lib64/camera/components/com.arcsoft.node.yuvhdr.so
 vendor/lib64/camera/components/com.oppo.node.bokeh.so
 vendor/lib64/camera/components/com.oppo.node.drawafinfo.so
@@ -275,134 +450,68 @@ vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib64/camera/components/com.slam.node.process.so
 vendor/lib64/camera/components/com.vidhance.node.eis.so
 vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
+
+# Camera (Sensors)
+vendor/lib/camera/com.qti.sensor.gc2375h.so
+vendor/lib/camera/com.qti.sensor.gc5035.so
+vendor/lib/camera/com.qti.sensor.hi846.so
+vendor/lib/camera/com.qti.sensor.imx316.so
+vendor/lib/camera/com.qti.sensor.imx362.so
+vendor/lib/camera/com.qti.sensor.imx471.so
+vendor/lib/camera/com.qti.sensor.imx519.so
+vendor/lib/camera/com.qti.sensor.imx586.so
+vendor/lib/camera/com.qti.sensor.s5k2x5.so
+vendor/lib/camera/com.qti.sensor.s5k3p9sp.so
+vendor/lib/camera/com.qti.sensor.s5kgw1.so
+vendor/lib/camera/com.qti.sensor.sp2509v.so
+vendor/lib/camera/com.qti.sensormodule.holitech_gc2375h.bin
+vendor/lib/camera/com.qti.sensormodule.holitech_sp2509v.bin
+vendor/lib/camera/com.qti.sensormodule.sunny_hi846.bin
+vendor/lib/camera/com.qti.sensormodule.trulyi2c20_imx471.bin
+vendor/lib/camera/com.qti.tuned.holitech_gc2375h.bin
+vendor/lib/camera/com.qti.tuned.holitech_sp2509v.bin
+vendor/lib/camera/com.qti.tuned.sunny_hi846.bin
+vendor/lib/camera/com.qti.tuned.truly_imx471.bin
 vendor/lib64/camera/com.qti.sensor.gc2375h.so
+vendor/lib64/camera/com.qti.sensor.gc5035.so
 vendor/lib64/camera/com.qti.sensor.hi846.so
+vendor/lib64/camera/com.qti.sensor.imx316.so
+vendor/lib64/camera/com.qti.sensor.imx362.so
 vendor/lib64/camera/com.qti.sensor.imx471.so
+vendor/lib64/camera/com.qti.sensor.imx519.so
+vendor/lib64/camera/com.qti.sensor.imx586.so
+vendor/lib64/camera/com.qti.sensor.s5k2x5.so
+vendor/lib64/camera/com.qti.sensor.s5k3p9sp.so
 vendor/lib64/camera/com.qti.sensor.s5kgw1.so
 vendor/lib64/camera/com.qti.sensor.sp2509v.so
 vendor/lib64/camera/com.qti.sensormodule.holitech_gc2375h.bin
 vendor/lib64/camera/com.qti.sensormodule.holitech_sp2509v.bin
-vendor/lib64/camera/com.qti.sensormodule.qtech_s5kgw1.bin
 vendor/lib64/camera/com.qti.sensormodule.sunny_hi846.bin
-vendor/lib64/camera/com.qti.sensormodule.sunny_s5kgw1.bin
-vendor/lib64/camera/com.qti.sensormodule.sunny_s5kgw1_evt0_2.bin
 vendor/lib64/camera/com.qti.sensormodule.trulyi2c20_imx471.bin
 vendor/lib64/camera/com.qti.tuned.holitech_gc2375h.bin
 vendor/lib64/camera/com.qti.tuned.holitech_sp2509v.bin
-vendor/lib64/camera/com.qti.tuned.qtech_s5kgw1.bin
 vendor/lib64/camera/com.qti.tuned.sunny_hi846.bin
-vendor/lib64/camera/com.qti.tuned.sunny_s5kgw1.bin
 vendor/lib64/camera/com.qti.tuned.truly_imx471.bin
-vendor/lib64/camera/fdconfigpreview.bin
-vendor/lib64/camera/fdconfigpreviewlite.bin
-vendor/lib64/camera/fdconfigvideo.bin
-vendor/lib64/camera/fdconfigvideolite.bin
-vendor/lib64/hw/camera.qcom.so
-vendor/lib64/hw/com.qti.chi.override.so
-vendor/lib64/libPerfectlyClearCrux.so
-vendor/lib64/libPolarrRender.so
-vendor/lib64/libSNPE.so
-vendor/lib64/libSonyIMX471RmscLibrary.so
-vendor/lib64/libVDBlurlessAPI_v2.so
-vendor/lib64/libVDDualCameraBlurlessAPI.so
-vendor/lib64/libVDEyeEnhance.so
-vendor/lib64/libVDPostureDetection.so
-vendor/lib64/libVDSuperPhotoAPI.so
-vendor/lib64/libbokehclient.so
-vendor/lib64/libc++_shared.so
-vendor/lib64/libcamera_core_hwi.so
-vendor/lib64/libcamera_nn_stub.so
-vendor/lib64/libcamhidlsensor.so
-vendor/lib64/libcamxfdalgov7.so
-vendor/lib64/libcamxfdalgov8.so
-vendor/lib64/libcamxfdengine.so
-vendor/lib64/libcamxstatscore.so
-vendor/lib64/libcamxswprocessalgo.so
-vendor/lib64/libcamxtintlessalgo.so
-vendor/lib64/libcom.qti.chinodeutils.so
-vendor/lib64/libcvface_api.so
-vendor/lib64/libloadalgo_stub.so
-vendor/lib64/libmpbase.so
-vendor/lib64/libnativehelpers.so
-vendor/lib64/libocam_common.so
-vendor/lib64/libocam_snapshot_intf.so
-vendor/lib64/libsnpe_dsp_domains_v2.so
-vendor/lib64/libsnpeml.so
-vendor/lib64/libsns_device_mode_stub.so
-vendor/lib64/libsns_fastRPC_util.so
-vendor/lib64/libsns_low_lat_stream_stub.so
-vendor/lib64/libsnsapi.so
-vendor/lib64/libsnsdiaglog.so
-vendor/lib64/libstface_fd_api.so
-vendor/lib64/libswregistrationalgo.so
-vendor/lib64/libsymphony-cpu.so
-vendor/lib64/libsymphonypower.so
-vendor/lib64/libtriplecam_image_optical_zoom.so
-vendor/lib64/libtriplecam_optical_zoom_control.so
-vendor/lib64/libtriplecam_video_optical_zoom.so
-vendor/lib64/libvidhance.so
-vendor/lib64/qcom.camera.log.so
 
-# Camera (arcsoft) (From C05)
-vendor/lib/libarcsoft_distortion_correction.so
-vendor/lib/libarcsoft_distortion_correction_710.so
-vendor/lib/libarcsoft_dualcam_portrait_shot.so
-vendor/lib/libarcsoft_hdr_couple_api.so
-vendor/lib/libarcsoft_hdr_denoise_api.so
-vendor/lib/libarcsoft_high_dynamic_range.so
-vendor/lib/libarcsoft_high_dynamic_range_couple.so
-vendor/lib/libarcsoft_low_light_hdr.so
-vendor/lib/libarcsoft_picauto.so
-vendor/lib/libarcsoft_smart_denoise.so
-vendor/lib64/libarcsoft_beautyshot.so
-vendor/lib64/libarcsoft_distortion_correction.so
-vendor/lib64/libarcsoft_distortion_correction_710.so
-vendor/lib64/libarcsoft_dualcam_bokeh_api.so
-vendor/lib64/libarcsoft_dualcam_refocus_left.so
-vendor/lib64/libarcsoft_dualcam_refocus_preview.so
-vendor/lib64/libarcsoft_dualcam_refocus_right.so
-vendor/lib64/libarcsoft_hdr_denoise_api.so
-vendor/lib64/libarcsoft_hdrplus_hvx_stub.so
-vendor/lib64/libarcsoft_high_dynamic_range.so
-vendor/lib64/libarcsoft_low_light_hdr.so
-vendor/lib64/libarcsoft_portraitSN_hvx_stub.so
-vendor/lib64/libarcsoft_portrait_super_night_raw.so
-vendor/lib64/libarcsoft_relighting_pro_image.so
-vendor/lib64/libarcsoft_smart_denoise.so
-vendor/lib64/libarcsoft_super_night_raw.so
+# Camera (Device)
+vendor/lib/camera/com.qti.sensormodule.qtech_s5kgw1.bin
+vendor/lib/camera/com.qti.sensormodule.sunny_s5kgw1.bin
+vendor/lib/camera/com.qti.sensormodule.sunny_s5kgw1_evt0_2.bin
+vendor/lib/camera/com.qti.tuned.qtech_s5kgw1.bin
+vendor/lib/camera/com.qti.tuned.sunny_s5kgw1.bin
+vendor/lib/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
+vendor/lib64/camera/com.qti.sensormodule.qtech_s5kgw1.bin
+vendor/lib64/camera/com.qti.sensormodule.sunny_s5kgw1.bin
+vendor/lib64/camera/com.qti.sensormodule.sunny_s5kgw1_evt0_2.bin
+vendor/lib64/camera/com.qti.tuned.qtech_s5kgw1.bin
+vendor/lib64/camera/com.qti.tuned.sunny_s5kgw1.bin
 
-# Camera - Extracted from euclid (From C05)
-vendor/etc/camera/engineer_camera_config|88e9081d8f73d4d245e9d2d80902536495c49ddc
-vendor/etc/camera/oppo_camera_config.xml|eb5577b427191549662162c6d634b521b78bd9db
-vendor/etc/camera/stereoParams.bin|e202cd15fcfdbc8352471d12c0e448ae5849e278
-
-# Camera Configs (From C05)
-vendor/etc/camera/Charming.cng
-vendor/etc/camera/M_Verify_Faster_Common_4.0.0_wp.model
-vendor/etc/camera/arc_golden.bin
-vendor/etc/camera/attribute.model
-vendor/etc/camera/distortionParams.bin
-vendor/etc/camera/faceTpl0.rgb32
-vendor/etc/camera/faceTpl1.rgb32
-vendor/etc/camera/gasryuv.model
-vendor/etc/camera/license.lic
-vendor/etc/camera/mtStereoParams.bin
-vendor/etc/camera/mwStereoParams.bin
-vendor/etc/camera/oppo_camera_config.xml
-vendor/etc/camera/skinSeg.model
-vendor/etc/camera/vidhance_calibration
-
-# Camera Firmware (From C05)
+# Camera Firmware
 vendor/firmware/CAMERA_ICP.elf
 
-# Camera Sensors (From C05)
-vendor/lib/libmmcamera_faceproc.so
-vendor/lib/libmmcamera_faceproc2.so
-vendor/lib64/libmmcamera_faceproc.so
-vendor/lib64/libmmcamera_faceproc2.so
-
-# CDSP (From C05)
+# CDSP
 vendor/bin/cdsprpcd
+vendor/etc/init/vendor.qti.cdsprpc-service.rc
 vendor/lib/libcdsp_default_listener.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libfastrpc_utf_stub.so
@@ -413,7 +522,6 @@ vendor/lib64/libfastrpc_utf_stub.so
 vendor/lib64/libsysmon_cdsp_skel.so
 
 # Charger
-system/bin/charger:bin/chargeonlymode
 vendor/bin/hvdcp_opti
 
 # Charger Firmware
@@ -575,6 +683,7 @@ vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/qseecomd
 vendor/etc/init/qseecomd.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
+vendor/etc/gpfspath_oem_config.xml
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libQSEEComAPI.so
@@ -612,6 +721,15 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 vendor/lib/libspl.so|26c6a5f3246a27314f6489a487e21a586f443bc0
 vendor/lib64/libspl.so|f8bbe0322ce06a545f5dc79c888183ac61673b68
 
+# DRM Widevine
+odm/bin/hw/android.hardware.drm@1.3-service.widevine
+odm/etc/init/android.hardware.drm@1.3-service.widevine.rc
+-odm/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
+odm/lib64/mediadrm/libwvdrmengine.so
+odm/lib64/liboemcrypto.so
+odm/lib64/libwvhidl.so
+vendor/lib64/libtrustedapploader.so
+
 # DSP
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
@@ -626,7 +744,7 @@ system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Fingerprint (From C05)
+# Fingerprint - From Q
 vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/qfp-daemon
 vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc
@@ -649,7 +767,7 @@ vendor/lib64/libhypnusclient.so
 vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# Fingerprint Firmware - Goodix (Extracted from vendor/euclid/product.img) (From C05)
+# Fingerprint Firmware - From Q
 vendor/firmware/goodixfp.b00
 vendor/firmware/goodixfp.b01
 vendor/firmware/goodixfp.b02
@@ -659,6 +777,12 @@ vendor/firmware/goodixfp.b05
 vendor/firmware/goodixfp.b06
 vendor/firmware/goodixfp.b07
 vendor/firmware/goodixfp.mdt
+
+# Fingerprint Helper - From Q
+vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
+vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
+vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
+vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
 
 # GPS - from PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_21F-release-keys
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti|bd3d5174f69cf65047c8d8b159554515b0f3d022
@@ -1031,45 +1155,11 @@ vendor/lib64/unnhal-acc-adreno.so
 vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hvx.so
 
-# Oppo Camera AlgoProcessService (From C05)
-vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service
-vendor/etc/init/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service.rc
-vendor/lib/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
-vendor/lib/libOppoAPSMemMgr.so
-vendor/lib/libOppoAlgoClient.so
-vendor/lib/liboppo_log_print.so
-vendor/lib/liboppoalgolib.so
-vendor/lib/liboppocamalgo_daemon.so
-vendor/lib/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
-vendor/lib64/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-impl.so
-vendor/lib64/libOppoAPSMemMgr.so
-vendor/lib64/libOppoAlgoClient.so
-vendor/lib64/liboppo_log_print.so
-vendor/lib64/liboppoalgolib.so
-vendor/lib64/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0.so
-
-# Oppo Camera HalAssist (From C05)
-vendor/lib/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
-vendor/lib64/hw/vendor.oppo.hardware.camera.oppoHalAssist@1.0-impl.so
-vendor/lib64/vendor.oppo.hardware.camera.oppoHalAssist@1.0.so
-
 # Oppo
+odm/etc/init/init.network.rc
 odm/lib64/vendor.oplus.hardware.appradio@1.0.so
 odm/lib64/vendor.oplus.hardware.ims@1.0.so
 odm/lib64/vendor.oplus.hardware.radio@1.0.so
-vendor/lib/libOPPORectify.so
-vendor/lib/liboppo_aisd.so
-vendor/lib/liboppo_platform_hwi.so
-vendor/lib/libopposfr.so
-vendor/lib/vendor.oppo.hardware.commondcs@1.0.so
-vendor/lib/vendor.oppo.hardware.hypnus@1.0.so
-vendor/lib64/libOPPORectify.so
-vendor/lib64/liboppo_aisd.so
-vendor/lib64/liboppo_platform_hwi.so
-vendor/lib64/libopposfr.so
-vendor/lib64/vendor.oppo.hardware.commondcs@1.0.so
-vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
 
 # Peripheral Manager
 vendor/bin/pm-proxy
@@ -1245,7 +1335,7 @@ vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
 vendor/radio/qcril_database/qcril.db
 
-# Sensor Calibrate (From C05)
+# Sensor Calibrate
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
 vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml
@@ -1254,23 +1344,39 @@ vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
-# Sensor Configs (From C05)
+# Sensor Configs
+odm/etc/sensor/config/alsps.json
+odm/etc/sensor/config/holi_ak991x_0.json
+odm/etc/sensor/config/holi_alsps.json
+odm/etc/sensor/config/holi_bmi160_0.json
+odm/etc/sensor/config/holi_lsm6ds3c_0.json
+odm/etc/sensor/config/holi_mmc5603x_0.json
+odm/etc/sensor/config/holi_mxg4300_0.json
+odm/etc/sensor/sensor_config.json
 vendor/etc/sensors/config/ak991x_dri_0.json
+vendor/etc/sensors/config/ak991x_polling_0.json
 vendor/etc/sensors/config/bmi160_0.json
 vendor/etc/sensors/config/bmi26x_0.json
 vendor/etc/sensors/config/devinfo_0.json
 vendor/etc/sensors/config/lsm6ds3c_0.json
+vendor/etc/sensors/config/lsm6dsm_0.json
+vendor/etc/sensors/config/mmc3530kj_0.json
 vendor/etc/sensors/config/mmc5603nj_0.json
 vendor/etc/sensors/config/sdm710_ak991x_0.json
+vendor/etc/sensors/config/sdm710_ak991x_1.json
 vendor/etc/sensors/config/sdm710_bmi160_0.json
 vendor/etc/sensors/config/sdm710_default_sensors.json
 vendor/etc/sensors/config/sdm710_irq.json
 vendor/etc/sensors/config/sdm710_lsm6ds3c_0.json
-vendor/etc/sensors/config/sdm710_mmc5603nj_0.json
+vendor/etc/sensors/config/sdm710_lsm6dso_0.json
 vendor/etc/sensors/config/sdm710_power_0.json
+vendor/etc/sensors/config/sdm710_shtw2_0.json
 vendor/etc/sensors/config/sdm710_stk2x2x_0.json
+vendor/etc/sensors/config/sdm710_stk2x3x_0.json
 vendor/etc/sensors/config/sdm710_stk3x3x_0.json
+vendor/etc/sensors/config/sdm710_sx932x_0.json
 vendor/etc/sensors/config/sdm710_tsl2540_0.json
+vendor/etc/sensors/config/shtw2_0.json
 vendor/etc/sensors/config/sns_amd.json
 vendor/etc/sensors/config/sns_amd_sw_disabled.json
 vendor/etc/sensors/config/sns_amd_sw_enabled.json
@@ -1279,6 +1385,7 @@ vendor/etc/sensors/config/sns_basic_gestures.json
 vendor/etc/sensors/config/sns_bring_to_ear.json
 vendor/etc/sensors/config/sns_ccd.json
 vendor/etc/sensors/config/sns_ccd_v2_walk.json
+vendor/etc/sensors/config/sns_ccd_v3_1_walk.json
 vendor/etc/sensors/config/sns_ccd_v3_walk.json
 vendor/etc/sensors/config/sns_cm.json
 vendor/etc/sensors/config/sns_dae.json
@@ -1288,6 +1395,7 @@ vendor/etc/sensors/config/sns_distance_bound.json
 vendor/etc/sensors/config/sns_dpc.json
 vendor/etc/sensors/config/sns_facing.json
 vendor/etc/sensors/config/sns_fmv.json
+vendor/etc/sensors/config/sns_fmv_legacy.json
 vendor/etc/sensors/config/sns_geomag_rv.json
 vendor/etc/sensors/config/sns_gyro_cal.json
 vendor/etc/sensors/config/sns_heart_rate.json
@@ -1304,35 +1412,39 @@ vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/config/sns_wrist_pedo.json
 vendor/etc/sensors/config/stk2x2x_0.json
+vendor/etc/sensors/config/stk2x3x_0.json
 vendor/etc/sensors/config/stk3x3x_0.json
+vendor/etc/sensors/config/sx932x_0.json
 vendor/etc/sensors/config/tsl2540_0.json
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 
-# Sensors (From C05)
+# Sensors
+odm/lib/oplus.sensors.ssc.so
+odm/lib64/oplus.sensors.ssc.so
+vendor/bin/init.qcom.sensors.sh
 vendor/bin/sensors.qti
-vendor/lib/hw/sensors.sdm710.so
+vendor/etc/init/init.vendor.sensors.rc
+vendor/etc/init/vendor.sensors.qti.rc
 vendor/lib/libsensorcal.so
 vendor/lib/libsensorslog.so
+vendor/lib/libsnsapi.so
 vendor/lib/libssc.so
 vendor/lib/libssc_default_listener.so
-vendor/lib/sensors.ap.so
 vendor/lib/sensors.ssc.so
-vendor/lib64/hw/sensors.sdm710.so
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
+vendor/lib64/libsns_device_mode_stub.so
+vendor/lib64/libsnsapi.so
+vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libssc.so
 vendor/lib64/libssc_default_listener.so
-vendor/lib64/sensors.ap.so
 vendor/lib64/sensors.ssc.so
 
 # Seccomp
 vendor/etc/seccomp_policy/qti-systemd.policy
 
 # Snapdragon Computer Vision Engine
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/libfastcvdsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libscveCommon.so
@@ -1364,6 +1476,7 @@ odm/firmware/tp/19651/LIMIT_S3706_SAMSUNG.img
 
 # Thermal
 vendor/bin/thermal-engine
+vendor/etc/init/init_thermal-engine.rc
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
 
@@ -1394,27 +1507,8 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Widevine DRM - Sargo
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|23f5dd5911cf58a86574ec9575c57bb5259eab8d
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|81e132e89eed714416874dc599336508f029866c
-vendor/lib64/libwvhidl.so|c20b93dd8549816d03e977d050d91da694e43482
-
-# Widevine DRM
-odm/lib64/mediadrm/libwvdrmengine.so
-odm/lib64/liboemcrypto.so
-vendor/lib64/libhdcpsrm.so
-
-# UFS Firmware
-odm/firmware/ufs/MICRON-MT064GASAO2U21.bin
-odm/firmware/ufs/SKhynix-H9HQ15AECMBDAR.bin
-odm/firmware/ufs/SKhynix-H9HQ21AFAMADAR.bin
-odm/firmware/ufs/move_target_ufs_fw_to_opporeserve1.sh
-
 # WiFi
 vendor/bin/cnss-daemon
-vendor/etc/wifi/sar-vendor-cmd.xml
-vendor/firmware/wlan/qca_cld/wlan_mac.bin
-vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 
 # MotoDolbyV3 - from sofiap_ao_eea-user-11-RPR31.Q4U-20-26-2-a10bb-release-keys
 -system/app/MotoDolbyV3/MotoDolbyV3.apk|574fa2a08b435824076ca60e66d42c950e82e296
