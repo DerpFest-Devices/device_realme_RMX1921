@@ -7,7 +7,7 @@
 /(vendor|system/vendor)/lib(64)?/com\.qualcomm\.qti\.dpm\.api@[0-9]+\.[0-9]+\.so    u:object_r:same_process_hal_file:s0
 
 # FOD Hal
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3\-service\.realme_sdm710    u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3\-service\.xt    u:object_r:hal_fingerprint_default_exec:s0
 /sys/kernel/oppo_display(/.*)?                               u:object_r:sysfs_oppo_display:s0
 
 # Goodix Fingerprint device

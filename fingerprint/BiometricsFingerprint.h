@@ -67,7 +67,11 @@ public:
     Return<void> onFingerDown(uint32_t x, uint32_t y, float minor, float major) override;
     Return<void> onFingerUp() override;
 
+    // our own functions
+    void setFingerprintScreenState(const bool on);
+
 private:
+    bool isEnrolling;
     sp<vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint> mOppoBiometricsFingerprint;
     sp<OppoClientCallback> mOppoClientCallback;
     static Return<RequestStatus> OppoToAOSPRequestStatus(vendor::oppo::hardware::biometrics::fingerprint::V2_1::RequestStatus req);

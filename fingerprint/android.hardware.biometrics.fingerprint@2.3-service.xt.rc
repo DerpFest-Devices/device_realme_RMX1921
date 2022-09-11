@@ -49,16 +49,14 @@ on post-fs-data
 on boot
     chmod 0660 /sys/kernel/oppo_display/notify_fppress
     chmod 0660 /sys/kernel/oppo_display/dimlayer_hbm
-    chmod 0660 /sys/kernel/oppo_display/notify_panel_blank
-    chmod 0660 /sys/kernel/oppo_display/aod_light_mode_set
-    chmod 0444 /proc/touchpanel/DOZE_STATUS
     chown system system /sys/kernel/oppo_display/notify_fppress
     chown system system /sys/kernel/oppo_display/dimlayer_hbm
-    chown system system /sys/kernel/oppo_display/notify_panel_blank
-    chown system system /sys/kernel/oppo_display/aod_light_mode_set
-    chown system system /proc/touchpanel/DOZE_STATUS
 
-service fps_hal.realme_sdm710 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710
+service fps_hal.xt /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-service.xt
+    interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint default
+    interface android.hardware.biometrics.fingerprint@2.2::IBiometricsFingerprint default
+    interface android.hardware.biometrics.fingerprint@2.3::IBiometricsFingerprint default
+    interface vendor.oppo.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint default
     class late_start
     user system
     group system input uhid
