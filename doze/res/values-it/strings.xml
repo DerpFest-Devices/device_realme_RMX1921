@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2016 The CyanogenMod Project
+               (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- DO NOT TRANSLATE Empty summary for dynamic preferences -->
+    <string name="summary_empty" translatable="false"></string>
+
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_on">On</string>
+
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_off">Off</string>
+
+    <!-- Device specific settings -->
+    <string name="device_settings_app_name">Impostazioni avanzate</string>
+
+    <!-- Ambient settings -->
+    <string name="ambient_enable">Usa il display ambient</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_title">Display ambient</string>
+    <string name="ambient_display_enable_title">Display ambient</string>
+    <string name="ambient_display_enable_summary">Risveglia lo schermo quando ricevi una notifica</string>
+    <string name="ambient_display_gestures_title">Gesti ambient display</string>
+    <string name="ambient_display_gestures_summary">Gesti aggiuntivi per risvegliare lo schermo</string>
+    <string name="ambient_display_summary">"Risveglia lo schermo all'arrivo di una nuova notifica"</string>
+    <string name="ambient_display_summary_on">Lo schermo si risveglierà quando riceverai una notifica</string>
+    <string name="ambient_display_summary_off">Lo schermo non si risveglierà quando riceverai una notifica</string>
+    <string name="ambient_display_always_on_title">Sempre attivo</string>
+    <string name="ambient_display_always_on_summary">"Mostra l'ora, le notifiche e altre informazioni. La durata della batteria potrebbe risentirne."</string>
+
+    <!-- Tilt sensor -->
+    <string name="tilt_sensor_title">Sensore di movimento</string>
+
+    <!-- FOD sensor-->
+    <string name="fod_sensor_title">Sensore di impronta</string>
+
+    <!-- Prevent FOD wake strings-->
+    <string name="fod_prox_gesture_title">Previeni risvegli accidentali</string>
+    <string name="fod_prox_gesture_summary">Controlla che il telefono non sia in tasca prima di attivare il sensore di impronta</string>
+
+    <!-- Pickup sensor -->
+    <string name="pickup_sensor_title">Sensore di presa</string>
+
+    <!-- Proximity sensor -->
+    <string name="proximity_sensor_title">Sensore di prossimità</string>
+
+    <!-- Pick-up gesture -->
+    <string name="pick_up_gesture_title">Presa</string>
+    <string name="pick_up_gesture_summary">Mostra le notifiche quando prendi il telefono in mano.</string>
+
+    <!-- Pick-up to wake gesture-->
+    <string name="wake_gesture_title">Risveglio</string>
+    <string name="wake_gesture_summary">Risveglia il telefono invece di mostrare le notifiche.</string>
+
+    <!-- Pocket gesture -->
+    <string name="pocket_gesture_title">Tasca</string>
+    <string name="pocket_gesture_summary">Mostra le notifiche quando prendi il telefono dalla tasca.</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Risveglio per prossimità</string>
+    <string name="proximity_wake_enable_title">Risveglia il telefono quando il sensore di prossimità è scoperto.</string>
+
+    <!-- Smart wake strings-->
+    <string name="smart_wake_gesture_title">Risveglio intelligente</string>
+    <string name="smart_wake_gesture_summary">Mostra le notifiche quando muovi di poco il telefono e riattiva lo schermo se invece lo prendi in mano.</string>
+
+    <!-- Dialog texts -->
+    <string name="dialog_ok">OK</string>
+
+    <!-- Help texts -->
+    <string name="doze_settings_help_title">Aiuto</string>
+    <string name="doze_settings_help_text">"Queste funzioni usano i sensori per attivare notifiche pulsanti su schermo. I sensori scelti si attivano solo quando ci sono nuove notifiche, ciò aiuta a risparmiare batteria. C'è anche un opzione per attivare i sensori appena lo schermo è spento ma in tal caso l'uso della batteria sarà maggiore."</string>
+</resources>
+

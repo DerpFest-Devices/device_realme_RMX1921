@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013-2016 The CyanogenMod Project
+               (C) 2017 The LineageOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- DO NOT TRANSLATE Empty summary for dynamic preferences -->
+    <string name="summary_empty" translatable="false"></string>
+
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_on">चालू</string>
+
+    <!-- Label for feature switch [CHAR LIMIT=30] -->
+    <string name="switch_bar_off">बंद</string>
+
+    <!-- Device specific settings -->
+    <string name="device_settings_app_name">एडवांस सेटिंग</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_title">परिवेश डिस्प्ले</string>
+    <string name="ambient_display_enable_title">परिवेश डिस्प्ले</string>
+    <string name="ambient_display_enable_summary">नोटिफिकेशन मिलने पर स्क्रीन चालू </string>
+    <string name="ambient_display_gestures_title">परिवेश डिस्प्ले जेस्चर </string>
+    <string name="ambient_display_gestures_summary">स्क्रीन को जगाने के लिए अतिरिक्त इशारे</string>
+    <string name="ambient_display_summary">नोटिफिकेशन मिलने पर स्क्रीन चालू</string>
+    <string name="ambient_display_summary_on">नोटिफिकेशन मिलने पर स्क्रीन चालू</string>
+    <string name="ambient_display_summary_off">सूचना मिलने पर स्क्रीन नहीं जगेगी</string>
+    <string name="ambient_display_always_on_title">हमेशा स्क्रीन चालू</string>
+    <string name="ambient_display_always_on_summary">समय, सूचना आइकन और अन्य जानकारी दिखाएं। बैटरी का उपयोग बढ़ेगा.</string>
+
+    <!-- Tilt sensor -->
+    <string name="tilt_sensor_title">टिल्ट सेंसर</string>
+
+    <!-- Pickup sensor -->
+    <string name="pickup_sensor_title">पिकप सेंसर</string>
+
+    <!-- Proximity sensor -->
+    <string name="proximity_sensor_title">प्रॉक्सिमिटी सेंसर</string>
+
+    <!-- Pick-up gesture -->
+    <string name="pick_up_gesture_title">पिकप</string>
+    <string name="pick_up_gesture_summary">पिक-अप पर पल्स नोटिफिकेशन</string>
+
+    <!-- Pick-up to wake gesture-->
+    <string name="wake_gesture_title">वेक उप </string>
+    <string name="wake_gesture_summary">डिवाइस को नोटिफिकेशन के बजाय जगाओ </string>
+
+    <!-- Pocket gesture -->
+    <string name="pocket_gesture_title">जेब</string>
+    <string name="pocket_gesture_summary">जेब से निकालने पर नोटिफिकेशन</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">प्रॉक्सिमिटी वेक</string>
+    <string name="proximity_wake_enable_title">प्रॉक्सिमिटी वेक</string>
+
+    <!-- Smart wake strings-->
+    <string name="smart_wake_gesture_title">स्मार्ट वेक</string>
+    <string name="smart_wake_gesture_summary">डिवाइस की थोड़ी गति पर नोटिफिकेशन और उठने पर स्क्रीन को जगाएं</string>
+
+    <!-- Dialog texts -->
+    <string name="dialog_ok">ठीक है</string>
+
+    <!-- Help texts -->
+    <string name="doze_settings_help_title">मदद </string>
+    <string name="doze_settings_help_text">ये फीचर डोज नोटिफिकेशन पल्स लॉन्च करने के लिए सेंसर इवेंट का उपयोग करते हैं। चुना हुआ सेंसर केवल तभी सक्षम होता है जब डिवाइस को सूचना मिलती है, इससे बैटरी के उपयोग को कम करने में मदद मिलती है। स्क्रीन को बंद करने के साथ ही चुने हुए सेंसर को सक्षम करने का विकल्प भी है, इससे बैटरी का उपयोग अधिक होगा.</string>
+</resources>

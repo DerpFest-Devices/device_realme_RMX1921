@@ -29,13 +29,13 @@
         android:disableDependentsState="true"
         android:title="@string/ambient_display_always_on_title"
         android:summary="@string/ambient_display_always_on_summary"
-        android:persistent="false" />
+        android:persistent="true" />
 
     <SwitchPreference
         android:key="gesture_raise_to_wake"
         android:defaultValue="true"
-        android:title="@string/raise_to_wake_gesture_title"
-        android:summary="@string/raise_to_wake_gesture_summary" />
+        android:title="@string/wake_gesture_title"
+        android:summary="@string/wake_gesture_summary" />
 
     <PreferenceCategory
         android:key="pickup_sensor"
@@ -67,4 +67,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="fod_sensor"
+        android:title="@string/fod_sensor_title">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="prox_fod_wake"
+            android:summary="@string/fod_prox_gesture_summary"
+            android:title="@string/fod_prox_gesture_title" />
+
+    </PreferenceCategory>
 </PreferenceScreen>

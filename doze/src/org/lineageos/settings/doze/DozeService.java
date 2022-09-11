@@ -25,6 +25,8 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
+import org.lineageos.settings.doze.Utils;
+
 public class DozeService extends Service {
     private static final String TAG = "DozeService";
     private static final boolean DEBUG = false;
@@ -32,6 +34,9 @@ public class DozeService extends Service {
     private ProximitySensor mProximitySensor;
     private TiltSensor mTiltSensor;
     private AmdSensor mAmdSensor;
+    private FODProxCheck mFODProxCheck;
+
+    private static final String allow_FOD = "/proc/touchpanel/fod_proxcheck";
 
     private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
@@ -50,6 +55,7 @@ public class DozeService extends Service {
         mProximitySensor = new ProximitySensor(this);
         mTiltSensor = new TiltSensor(this);
         mAmdSensor = new AmdSensor(this);
+        mFODProxCheck = new FODProxCheck(this);
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -71,6 +77,7 @@ public class DozeService extends Service {
         mProximitySensor.disable();
         mTiltSensor.disable();
         mAmdSensor.disable();
+        mFODProxCheck.disable();
     }
 
     @Override
@@ -89,6 +96,11 @@ public class DozeService extends Service {
         if (DozeUtils.isPocketGestureEnabled(this)) {
             mProximitySensor.disable();
         }
+        if (DozeUtils.isFODProxEnabled(this)) {
+            mFODProxCheck.disable();
+        }else
+            Utils.writeValue(allow_FOD, "0");
+
     }
 
     private void onDisplayOff() {
@@ -102,5 +114,9 @@ public class DozeService extends Service {
         if (DozeUtils.isPocketGestureEnabled(this)) {
             mProximitySensor.enable();
         }
+        if (DozeUtils.isFODProxEnabled(this)) {
+            mFODProxCheck.enable();
+        }else
+            Utils.writeValue(allow_FOD, "1");
     }
 }

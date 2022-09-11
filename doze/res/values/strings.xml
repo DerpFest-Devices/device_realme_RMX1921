@@ -46,6 +46,13 @@
     <!-- Tilt sensor -->
     <string name="tilt_sensor_title">Tilt sensor</string>
 
+    <!-- FOD sensor-->
+    <string name="fod_sensor_title">FOD Sensor</string>
+
+    <!-- Prevent FOD wake strings-->
+    <string name="fod_prox_gesture_title">Prevent accidental wakes</string>
+    <string name="fod_prox_gesture_summary">Enable proximity check before enabling screen off fingerprint on display</string>
+
     <!-- Pickup sensor -->
     <string name="pickup_sensor_title">Pickup sensor</string>
 
@@ -56,9 +63,9 @@
     <string name="pick_up_gesture_title">Pick-up</string>
     <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
 
-    <!-- Raise to wake gesture-->
-    <string name="raise_to_wake_gesture_title">Raise to wake</string>
-    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notifications</string>
+    <!-- Pick-up to wake gesture-->
+    <string name="wake_gesture_title">Wake up</string>
+    <string name="wake_gesture_summary">Wake up the device instead of pulsing notifications</string>
 
     <!-- Pocket gesture -->
     <string name="pocket_gesture_title">Pocket</string>
@@ -68,7 +75,7 @@
     <string name="proximity_wake_title">Proximity wake</string>
     <string name="proximity_wake_enable_title">Proximity wake</string>
 
-    <!-- Smart wake gesture -->
+    <!-- Smart wake strings-->
     <string name="smart_wake_gesture_title">Smart Wake</string>
     <string name="smart_wake_gesture_summary">Pulse notifications on slight motion of device and wake screen when picked up</string>
 
