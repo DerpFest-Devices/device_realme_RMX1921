@@ -22,3 +22,6 @@ get_prop(vendor_init, persist_debug_prop)
 allow vendor_init proc:file w_file_perms;
 get_prop(vendor_init, oppo_debug_prop)
 allow vendor_init system_data_file:lnk_file create;
+
+# Allow vendor_init to change watermark_scale_factor
+allow vendor_init proc_watermark_scale_factor:file w_file_perms;
