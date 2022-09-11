@@ -154,12 +154,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm@1.4-service.clearkey
 
-# Realme specific packages
-PRODUCT_PACKAGES += \
-    RealmeDoze \
-    RealmeParts \
-    RealmeProximityHelper
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xt \
@@ -416,7 +410,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
-    init.devicesetting.rc \
+    init.RealmeParts.rc \
     init.oppo.rc \
     init.oppo.display.rc \
     init.qcom.factory.rc \
@@ -440,6 +434,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
+# Realme specific packages
+PRODUCT_PACKAGES += \
+    RealmeDoze \
+    RealmeParts \
+    RealmeProximityHelper
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp_whitelist_org.device.Realmeparts.xml:system/etc/permissions/privapp_whitelist_org.device.Realmeparts.xml
 
 # Remove Unwanted Packages
 PRODUCT_PACKAGES += \
