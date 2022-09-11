@@ -1023,7 +1023,7 @@
     <integer name="config_screenBrightnessDoze">30</integer>
 
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <bool name="config_displayBlanksAfterDoze">false</bool>
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
@@ -1069,6 +1069,12 @@
 
     <!-- Whether device has a physical display cutout -->
     <bool name="config_physicalDisplayCutout">true</bool>
+
+    <!-- Default value for proximity check on screen wake
+         NOTE! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">100</integer>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
     <!-- The list of components which should be automatically disabled for a specific package. -->
     <string-array name="config_disabledComponents" translatable="false">
