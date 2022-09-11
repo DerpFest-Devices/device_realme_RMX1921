@@ -21,24 +21,32 @@
  * 
  */
 
- package co.hyper.proximityservice;
+package co.hyper.proximityservice;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.hardware.display.DisplayManager.DisplayListener;
 import android.view.Display;
 import android.util.Log;
+import android.os.UserHandle;
 
 public class DisplayStateHelper implements DisplayListener {
      private static final String TAG = "DisplayStateListener";
      private static final boolean DEBUG = false;
      private Context mcontext;
      private InfraredSensor mFakeProximity;
+     private FodHelper mFodHelper;
+     private static final String FOD_STATUS = "/proc/touchpanel/fod_aod_listener";
+     private static final String DOZING = "/proc/touchpanel/DOZE_STATUS";
+     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
      public DisplayStateHelper(Context context){
         if (DEBUG) Log.d(TAG, "Initialising display state listner constructor");
          mcontext = context;
          mFakeProximity = new InfraredSensor(context);
+         mFodHelper = new FodHelper(context);//register a proximity sensor so that it will poll for pressed status on fod and pulse once pressed to trigger the display "ON" state
      }
 
      @Override
@@ -53,15 +61,14 @@ public class DisplayStateHelper implements DisplayListener {
      
      @Override
      public void onDisplayChanged(int displayId) {
-       if (displayId == Display.DEFAULT_DISPLAY && isDefaultDisplayOff(mcontext)) {
-           // register proximity
-           if (DEBUG) Log.d(TAG, "Display OFF, Attempting to register proximity sensor");
-           mFakeProximity.enable();
-       } else {
-           // unregister proximity
-           if (DEBUG) Log.d(TAG, "Display ON, Attempting to unregister porximity sensor");
-           mFakeProximity.disable();
-       }
+        if ((displayId == Display.DEFAULT_DISPLAY && isDefaultDisplayOff(mcontext)) || (FileHelper.getFileValueAsBoolean(FOD_STATUS, false) && RealmeProximityHelperService.isAlwaysOnEnabled(mcontext))) {
+                // register proximity or fod listener
+                if (FileHelper.getFileValueAsBoolean(FOD_STATUS, false) && RealmeProximityHelperService.isAlwaysOnEnabled(mcontext)){
+                   mFodHelper.enable();
+                }
+                else if (isDefaultDisplayOff(mcontext)) 
+                    mFakeProximity.enable();
+        } else mFakeProximity.disable();
     }
 
     void enable() {
@@ -76,10 +83,20 @@ public class DisplayStateHelper implements DisplayListener {
         if (DEBUG) Log.d(TAG, "Killing display state listener");
         mcontext.getSystemService(DisplayManager.class).unregisterDisplayListener(this);
         mFakeProximity.disable();
+        disableSensors();
     }
 
     private static boolean isDefaultDisplayOff(Context context) {
         Display display = context.getSystemService(DisplayManager.class).getDisplay(Display.DEFAULT_DISPLAY);
         return display.getState() == Display.STATE_OFF;
       }
+
+    public void disableSensors() {
+        mFodHelper.disable();
+    }
+
+    protected static void launchDozePulse(Context context) {
+        context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
+                        new UserHandle(UserHandle.USER_CURRENT));
+    }
 }
