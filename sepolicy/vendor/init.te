@@ -33,3 +33,7 @@ allow init hwservicemanager:binder { call transfer };
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init proc:file { write };
 allow init iorapd_data_file:file getattr;
+
+allow init sysfs_dm:dir relabelfrom;
+allow init sysfs_dm:file relabelfrom;
+allow init sysfs_io_sched_tuneable:file { setattr w_file_perms };

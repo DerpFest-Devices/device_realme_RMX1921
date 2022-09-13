@@ -35,3 +35,19 @@ type vulkan_hal, file_type;
 
 # GCam
 type public_adsprpcd_file, file_type;
+
+# Smart Charging
+type sysfs_scharge, sysfs_type, fs_type;
+
+# Kcal
+type proc_kcal_file, sysfs_type, fs_type;
+
+# Audio control
+type sysfs_hgain, sysfs_type, fs_type;
+type sysfs_mgain, sysfs_type, fs_type;
+
+# Vibrator
+type proc_vibration_file, sysfs_type, fs_type;
+
+# I/O Scheduler
+type sysfs_io_sched_tuneable, fs_type, sysfs_type;
