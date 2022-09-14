@@ -2,6 +2,10 @@ typeattribute vendor_init data_between_core_and_vendor_violators;
 
 allow vendor_init {
   system_data_file
+  camera_data_file
+  media_rw_data_file
+  wifi_data_file
+  dhcp_data_file
   tombstone_data_file
   nfc_data_file
 }:dir { create_dir_perms relabelfrom };
@@ -17,3 +21,4 @@ allow vendor_init oppo_wlan_prop:file { open read getattr };
 get_prop(vendor_init, persist_debug_prop)
 allow vendor_init proc:file w_file_perms;
 get_prop(vendor_init, oppo_debug_prop)
+allow vendor_init system_data_file:lnk_file create;

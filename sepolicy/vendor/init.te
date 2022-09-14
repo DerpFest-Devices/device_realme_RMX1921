@@ -3,7 +3,6 @@ allow init socket_device:sock_file { create setattr unlink };
 allow init sysfs_battery_supply:file setattr; 
 allow init sysfs_oppo_display:file rw_file_perms;
 allow init sysfs_oppo_display:file setattr;
-allow init hwservicemanager:binder transfer;
 allow init hidl_base_hwservice:hwservice_manager add;
 allow init ion_device:chr_file { ioctl open read };
 allow init same_process_hal_file:file execute;
@@ -16,21 +15,16 @@ allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
 allow init self:socket create;
 allow init oppo_debug_prop:file { read open getattr setattr };
-allow init oppo_debug_prop:property_service set;
-
-# Otg Switch
 allow init sysfs_usb_supply:file setattr;
 allow init sysfs_usb_supply:file rw_file_perms;
 set_prop(init, oppo_debug_prop)
 
-# Netutils
 allow init netutils_wrapper_exec:file { execute read open getattr };
 allow init init:netlink_route_socket { read getattr };
 allow init apex_metadata_file:lnk_file read;
 allow init sysfs_battery_supply:file setattr;
 allow init adsprpcd_file:file mounton;
 allow init hwservicemanager:binder { call transfer };
-allow init hidl_base_hwservice:hwservice_manager add;
 allow init proc:file { write };
 allow init iorapd_data_file:file getattr;
 
