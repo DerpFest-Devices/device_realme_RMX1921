@@ -1,0 +1,1 @@
+allow vendor_vppservice hal_vpp_hwservice:hwservice_manager { add };
