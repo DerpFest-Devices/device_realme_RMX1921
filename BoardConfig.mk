@@ -43,10 +43,8 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_SOURCE := kernel/realme/RMX1921
-TARGET_KERNEL_CONFIG := RMX1921_defconfig
-TARGET_KERNEL_CLANG_VERSION := neutron
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-neutron
+TARGET_KERNEL_SOURCE := kernel/realme/sdm710
+TARGET_KERNEL_CONFIG := sdm670-perf_defconfig
 TARGET_KERNEL_ADDITIONAL_FLAGS += \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
@@ -86,7 +84,7 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 BOARD_HAVE_QCOM_FM := true
 
 # FOD
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.RMX1921
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.xt
 
 # Graphics
 TARGET_USES_GRALLOC1 := true
