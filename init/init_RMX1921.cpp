@@ -70,17 +70,6 @@ void load_dalvikvm_properties() {
 }
 
 void vendor_load_properties() {
-
-    string oppo_sku = GetProperty("ro.boot.product.hardware.sku", "");
-
-    if (oppo_sku == "nfc_ese"){
-        property_override("ro.boot.product.hardware.sku", "RMX1921EU");
-        property_override("ro.hardware.nfc_nci", "nqx.default");
-        property_override("ro.nfc.port", "I2C");
-    } else if (oppo_sku == "secure_element_uicc") {
-        property_override("ro.boot.product.hardware.sku", "RMX1921");
-    }
-
   // dalvikvm props
   load_dalvikvm_properties();
 }
