@@ -200,5 +200,5 @@
     <value>.2</value>    <!-- 513-4,096/hr -->
     <value>2</value>    <!-- 4097-/hr -->
   </array>
-
+  <item name="bluetooth.controller.voltage">3300</item>
 </device>
