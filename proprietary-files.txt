@@ -77,7 +77,6 @@ vendor/lib64/com.dsi.ant@1.0.so
 
 # Audio
 vendor/lib/hw/sound_trigger.primary.sdm710.so
-vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -92,7 +91,6 @@ vendor/lib/libssrec.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libtinycompress.so
 vendor/lib64/hw/sound_trigger.primary.sdm710.so
-vendor/lib64/liba2dpoffload.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
@@ -131,33 +129,31 @@ vendor/lib64/soundfx/libshoebox.so
 # Audio Firmware
 odm/firmware/tfa98xx.cnt
 
-# Bluetooth
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/lib/hw/audio.bluetooth_qti.default.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
-vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
-vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib/libbluetooth_audio_session_qti.so
-vendor/lib/libbluetooth_audio_session_qti_2_1.so
-vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
-vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/audio.bluetooth_qti.default.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib64/btaudio_offload_if.so
-vendor/lib64/libbluetooth_audio_session_qti.so
-vendor/lib64/libbluetooth_audio_session_qti_2_1.so
-vendor/lib64/libbt-hidlclient.so
-vendor/lib64/libbtnv.so
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
+# Bluetooth - from Nokia/Phoenix_00WW/PNX_sprout:11/RKQ1.200906.002/00WW_6_21F:user/release-keys
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|275aeb202001803c6bd6d632bf7958c8775468ad
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|5de0946c95e655ac2ab25c0bd7a5f964ca90041b
+vendor/lib64/libbtnv.so|07e031527e60ce5e62a5017fd1d7ff83ef1aafcf
+
+# Bluetooth (A2DP) - from Nokia/Phoenix_00WW/PNX_sprout:11/RKQ1.200906.002/00WW_6_21F:user/release-keys
+vendor/lib/hw/audio.bluetooth_qti.default.so|42a280552aea8dbce25e3e77b85ac5338cf3e7e5
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|4bed8d0cc4d2747a6f48fbbff5cd01dbc42c28d8
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|61c91107a4032634f1520340e75f015e44fd8dbc
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|cd605197212985e56a3b0e978051c3e5ed74061a
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|e7a9b0c5154652194e30550a84f1c530a43637a4
+vendor/lib/btaudio_offload_if.so|7c032ba00c5bbb7a6e265339dc63341888efe55f
+vendor/lib/libbluetooth_audio_session_qti.so|f247b051439bc769f614893a011a75a155734544
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so|7e4587a1ac13de4d1ee8463b3aae487346f31b12
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so|fbce94fed6a22fd527506d14d10a4df785b8fa25
+vendor/lib64/hw/audio.bluetooth_qti.default.so|edf9370638b02196d173d52cd12f12f7a5baa690
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|03a0e277fc46f40c4d497c9e59fc96a93e6b45d7
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|a97a6c330c932176acee0bce820c6e737778aed4
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|2c5480b33615179e1a8a67bf93e190e8647c68b4
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|0abafcc0c404b67bb0d87128a87cc9deabe54935
+vendor/lib64/btaudio_offload_if.so|3a596dd1aec2c4bd27656cddc8d5536e2d36cc33
+vendor/lib64/libbluetooth_audio_session_qti.so|fe114a474ff44baa35536e8f389e1158acbee7b9
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|d1443e04e24cb45dd06f5d222b22a699c9e82cb1
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|1671815a79dab0fde9248d0851085ec1ab314f64
 
 # Bluetooth (aptX) - from crosshatch - QQ3A.200605.001
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
@@ -739,12 +735,14 @@ vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
 vendor/lib/vendor.qti.hardware.dsp@1.0.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
-# FM
+# FM (system)
 system_ext/lib64/fm_helium.so
 system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# FM (vendor) - from Nokia/Phoenix_00WW/PNX_sprout:11/RKQ1.200906.002/00WW_6_21F:user/release-keys
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|d5cf2671e9e00f16bebcd8e3dc3247a1f2909a89
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|17e86e9a2054db733d955fcf1066f6e06a44fb21
 
 # Fingerprint - From Q
 vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
