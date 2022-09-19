@@ -1,7 +1,3 @@
-# Bluetooth
-ro.bluetooth.library_name=libbluetooth.so
-persist.vendor.btstack.aac_frm_ctl.enabled=true
-
 # Camera
 ro.camera.hfr.enable=0
 persist.camera.HAL3.enabled=1

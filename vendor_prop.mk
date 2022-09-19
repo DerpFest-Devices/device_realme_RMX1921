@@ -41,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.keep_alive.disabled=false \
     vendor.audio.volume.headset.gain.depcal=true \
     persist.vendor.audio.fluence.voicecomm=true \
-    vendor.audio.feature.a2dp_offload.enable=true \
+    vendor.audio.feature.a2dp_offload.enable=false \
     vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.anc_headset.enable=true \
     vendor.audio.feature.battery_listener.enable=false \
@@ -86,19 +86,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
-    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
-    ro.vendor.bluetooth.wipower=false \
-    persist.vendor.qcom.bluetooth.scram.enabled=true \
-    persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false \
-    persist.bluetooth.bluetooth_audio_hal.disabled=true
+    persist.bluetooth.a2dp_offload.disabled=true \
+    ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
