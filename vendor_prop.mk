@@ -86,6 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.device.default_name=Realme XT \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
