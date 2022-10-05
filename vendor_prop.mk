@@ -86,7 +86,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    bluetooth.device.default_name=Realme XT \
+    bluetooth.device.default_name=realme XT \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
@@ -196,7 +196,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.usb.product_string=Realme XT \
+    vendor.usb.product_string=realme XT \
     vendor.usb.diag.func.name=diag \
     vendor.usb.dpl.inst.name=dpl \
     vendor.usb.qdss.inst.name=qdss \
