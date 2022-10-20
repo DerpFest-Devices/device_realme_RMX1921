@@ -1,4 +1,15 @@
 on boot
+    # Disable edge limit control interface
+    chmod 0660 /proc/touchpanel/oplus_tp_limit_enable
+    chmod 0660 /proc/touchpanel/oplus_tp_direction
+    chmod 0660 /proc/touchpanel/game_switch_enable
+    chown system system /proc/touchpanel/oplus_tp_limit_enable
+    chown system system /proc/touchpanel/oplus_tp_direction
+    chown system system /proc/touchpanel/game_switch_enable
+    write /proc/touchpanel/oplus_tp_limit_enable 0
+    write /proc/touchpanel/oplus_tp_direction 1
+    write /proc/touchpanel/game_switch_enable 1
+
     # Enable OTG by default
     write /sys/class/power_supply/usb/otg_switch 1
 
