@@ -4,8 +4,8 @@ on boot
     chown system system /proc/touchpanel/oplus_tp_limit_enable
 
     chmod 0666 /proc/touchpanel/game_switch_enable
-    chmod 0666 /proc/touchpanel/oppo_tp_direction
-    chmod 0666 /proc/touchpanel/oppo_tp_limit_enable
+    chmod 0666 /proc/touchpanel/oplus_tp_direction
+    chmod 0666 /proc/touchpanel/oplus_tp_limit_enable
     chown system system /sys/kernel/oppo_display/dimlayer_bl_en
     chown system system /sys/kernel/oppo_display/hbm
     chown system system /sys/kernel/oppo_display/seed
