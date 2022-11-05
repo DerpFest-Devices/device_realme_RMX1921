@@ -1313,6 +1313,7 @@
         <item>tw.nekomimi.nekogram</item>
         <item>org.telegram.plus</item>
         <item>it.owlgram.android</item>
+        <item>us.zoom.videomeetings</item>
     </string-array>
 
     <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
