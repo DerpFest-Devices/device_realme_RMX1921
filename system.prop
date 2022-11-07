@@ -47,6 +47,7 @@ ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg
 ro.vendor.display.sensortype=2
 
 # Gboard
+ro.com.google.ime.kb_pad_port_b=1
 ro.com.google.ime.kb_pad_port_l=7
 ro.com.google.ime.kb_pad_port_r=7
 ro.com.google.ime.kb_pad_land_l=14
