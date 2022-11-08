@@ -80,4 +80,3 @@ oppo.eng.factory.no			u:object_r:oppo_debug_prop:s0
 zeroth.debuglog.logmask                  u:object_r:oppo_debug_prop:s0
 ro.build.display.full_id                  u:object_r:oppo_debug_prop:s0
 vendor.vold.serialno                  u:object_r:oppo_debug_prop:s0
-persist.vendor.data.qmipriod_load                  u:object_r:oppo_debug_prop:s0

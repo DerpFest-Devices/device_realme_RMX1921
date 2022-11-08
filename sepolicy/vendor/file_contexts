@@ -25,8 +25,6 @@
 
 # Light Hal
 /vendor/bin/hw/android\.hardware\.lights-service\.realme_sdm710        u:object_r:hal_light_default_exec:s0
-/sys/class/lcd_bias/secure_mode                                                u:object_r:sysfs_lcd_file:s0
-/sys/class/leds/wled/secure_mode                                                u:object_r:sysfs_led_file:s0
 
 # Oppo HIDL hals
 /(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.camera\.oppoAlgoProcessService@1\.0-service u:object_r:hal_camera_default_exec:s0

@@ -1,4 +1,3 @@
-add_hwservice(cnd, vendor_hal_slmadapter_hwservice)
 add_hwservice(cnd, hal_mwqemadapter_hwservice)
 allow cnd diag_device:chr_file rw_file_perms;
 get_prop(cnd, wifi_hal_prop)
