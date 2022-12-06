@@ -19,7 +19,7 @@ package org.device.RealmeParts.Touch;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import com.android.settingslib.collapsingtoolbar.R;
+import com.android.settingslib.widget.R;
 
 public class ScreenOffGestureSettings extends CollapsingToolbarBaseActivity {
 

@@ -18,7 +18,7 @@
 package org.device.RealmeParts;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.collapsingtoolbar.R;
+import com.android.settingslib.widget.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -30,7 +30,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
-import com.android.settingslib.collapsingtoolbar.R;
 
 public class RealmePartsActivity extends CollapsingToolbarBaseActivity {
 
