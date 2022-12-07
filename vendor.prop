@@ -220,3 +220,6 @@ vendor.usb.use_gadget_hal=0
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Cached app compaction
+persist.device_config.activity_manager.use_compaction=true
