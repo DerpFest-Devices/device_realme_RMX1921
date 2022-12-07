@@ -31,8 +31,8 @@
             android:summary="@string/dolby_summary"
             >
             <intent
-                 android:targetPackage="com.motorola.dolby.dolbyui"
-                 android:targetClass="com.motorola.dolby.dolbyui.ui.welcome.WelcomeActivity" />
+                 android:targetPackage="com.dolby.daxappui"
+                 android:targetClass="com.dolby.daxappui.MainActivity" />
         </Preference>
 
         <Preference
