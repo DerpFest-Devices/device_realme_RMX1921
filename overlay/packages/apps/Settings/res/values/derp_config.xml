@@ -23,11 +23,6 @@
     <!-- Device specific doze package -->
     <string name="config_customDozePackage">org.lineageos.settings/org.lineageos.settings.doze.DozeSettingsActivity</string>
 
-    <!-- Battery Health -->
-    <string name="config_batDesCap">/sys/class/power_supply/battery/charge_full</string>
-    <string name="config_batCurCap">/sys/class/power_supply/battery/charge_counter</string>
-    <bool name="config_supportBatteryHealth">true</bool>
-
     <!-- Whether to show a preference item for mobile plan -->
     <bool name="config_show_mobile_plan">false</bool>
 
