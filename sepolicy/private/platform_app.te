@@ -1,0 +1,2 @@
+r_dir_file(platform_app, sysfs_zram)
+allow platform_app config_gz:file r_file_perms;
