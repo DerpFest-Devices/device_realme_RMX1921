@@ -1344,4 +1344,7 @@
          available on some devices. -->
     <bool name="config_enableHapticTextHandle">true</bool>
 
+    <!-- Whether devices suports in-display fingerprint when screen is off -->
+    <bool name="config_supportsScreenOffUdfps">true</bool>
+
 </resources>
