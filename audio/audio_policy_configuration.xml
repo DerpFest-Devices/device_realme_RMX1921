@@ -90,7 +90,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 <item>Telephony Tx</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
-                <item>FM Tuner</item>
                 <item>Telephony Rx</item>
             </attachedDevices>
             <defaultOutputDevice>Speaker</defaultOutputDevice>
@@ -285,10 +284,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,128000,176400,192000"/>
                 </devicePort>
-                <devicePort tagName="FM" type="AUDIO_DEVICE_OUT_FM" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
 
                 <!-- Input devices declaration, i.e. Source DEVICE PORT -->
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
@@ -300,11 +295,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                </devicePort>
-                <devicePort tagName="FM Tuner" type="AUDIO_DEVICE_IN_FM_TUNER" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
                 </devicePort>
                 <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -339,8 +329,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                        sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload"/>
                 <route type="mix" sink="Telephony Tx"
                        sources="voice_tx,incall_music_uplink"/>
-                <route type="mix" sink="FM"
-                       sources="primary output"/>
                 <route type="mix" sink="BT SCO"
                        sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx"/>
                 <route type="mix" sink="BT SCO Headset"
