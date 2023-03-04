@@ -22,18 +22,9 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="co.hyper.proximityservice.RealmeProximityHelperService">
-            <intent-filter>
-                <action android:name="android.intent.action.ACTION_USER_PRESENT" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
-
         <service android:name="co.hyper.proximityservice.RealmeProximityHelperService"
                  android:permission="RealmeProximityHelperService">
         </service>
-        <service android:name="co.hyper.proximityservice.FodKeyguardAssistService"
-                 android:permission="RealmeProximityHelperService">
-        </service>
+
     </application>
 </manifest>

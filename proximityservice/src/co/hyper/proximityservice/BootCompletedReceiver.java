@@ -33,6 +33,5 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Starting");
         context.startService(new Intent(context, RealmeProximityHelperService.class));
-        context.startService(new Intent(context, FodKeyguardAssistService.class));
     }
 }

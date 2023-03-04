@@ -28,7 +28,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
-import android.os.CountDownTimer;
 
 public class InfraredSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
@@ -117,18 +116,7 @@ public class InfraredSensor implements SensorEventListener {
    /* Set proximity status as near */
    void sendNear() {
        if (DEBUG) Log.d(TAG, "Sent near event to proximity mask node");
-         new CountDownTimer(1000, 1000) {
-
-             public void onTick(long millisUntilFinished) {
-                FileHelper.writeValue(PS_MASK, "0");
-                flag = true; // Enable spam control flag
-                return;
-             }
-
-             public void onFinish() {
-                 return;
-             }
-         }.start();
-         
+       flag = true; // Enable spam control flag
+       FileHelper.writeValue(PS_MASK, "0");
     }
 }
