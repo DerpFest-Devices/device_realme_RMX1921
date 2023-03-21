@@ -154,7 +154,8 @@ PRODUCT_PACKAGES += \
 
 # Dexpreopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+    SettingsGoogle \
+    SystemUIGoogle
 
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
