@@ -49,7 +49,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     private SwitchPreference mRaiseToWakePreference;
     private SwitchPreference mPocketPreference;
     private SwitchPreference mSmartWakePreference;
-    private SwitchPreference mFODProxPreference;
 
     private Handler mHandler = new Handler();
 
@@ -98,10 +97,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mSmartWakePreference.setEnabled(dozeEnabled);
         mSmartWakePreference.setOnPreferenceChangeListener(this);
 
-        mFODProxPreference = (SwitchPreference) findPreference(DozeUtils.GESTURE_FOD_PROX_KEY);
-        mFODProxPreference.setEnabled(dozeEnabled);
-        mFODProxPreference.setOnPreferenceChangeListener(this);
-
         // Hide AOD if not supported and set all its dependents otherwise
         if (!DozeUtils.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
@@ -111,7 +106,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             proximitySensorCategory.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             raiseToWakeGesture.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
             mSmartWakePreference.setDependency(DozeUtils.GESTURE_PICK_UP_KEY);
-            mFODProxPreference.setDependency(DozeUtils.ALWAYS_ON_DISPLAY);
         }
     }
 

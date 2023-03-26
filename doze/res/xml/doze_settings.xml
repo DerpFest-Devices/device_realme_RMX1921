@@ -67,15 +67,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="fod_sensor"
-        android:title="@string/fod_sensor_title">
-
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="prox_fod_wake"
-            android:summary="@string/fod_prox_gesture_summary"
-            android:title="@string/fod_prox_gesture_title" />
-
-    </PreferenceCategory>
 </PreferenceScreen>
