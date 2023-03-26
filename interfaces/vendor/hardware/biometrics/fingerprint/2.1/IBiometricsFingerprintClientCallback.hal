@@ -40,5 +40,4 @@ interface IBiometricsFingerprintClientCallback {
     oneway onSyncTemplates(uint64_t deviceId, vec<uint32_t> fingerId, uint32_t remaining);
     oneway onEngineeringInfoUpdated(uint32_t length, vec<uint32_t> keys, vec<string> values);
     oneway onFingerprintCmd(int32_t deviceId, vec<uint32_t> groupId, uint32_t remaining);
-    oneway onUIReady(int64_t deviceId);
 };

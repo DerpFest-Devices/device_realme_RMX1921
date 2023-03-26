@@ -17,35 +17,45 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.xt"
 
 #include <android-base/logging.h>
-#include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
-#include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
+
 #include "BiometricsFingerprint.h"
 
 using android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_3::implementation::BiometricsFingerprint;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
-using android::sp;
-
 using android::OK;
+using android::sp;
 using android::status_t;
 
 int main() {
-    android::sp<IBiometricsFingerprint> service = new BiometricsFingerprint();
+    sp<BiometricsFingerprint> biometricsFingerprint;
+    status_t status;
+
+    LOG(INFO) << "Fingerprint HAL Adapter service is starting.";
+
+    biometricsFingerprint = new BiometricsFingerprint();
+    if (biometricsFingerprint == nullptr) {
+        LOG(ERROR) << "Can not create an instance of Fingerprint HAL Adapter BiometricsFingerprint Iface, exiting.";
+        goto shutdown;
+    }
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status_t status = service->registerAsService();
+    status = biometricsFingerprint->registerAsService();
     if (status != OK) {
-        LOG(ERROR) << "Cannot register Biometrics 2.3 HAL service.";
-        return 1;
+        LOG(ERROR) << "Could not register service for Fingerprint HAL Adapter BiometricsFingerprint Iface ("
+                   << status << ")";
+        goto shutdown;
     }
 
-    LOG(INFO) << "Biometrics 2.3 HAL service ready.";
-
+    LOG(INFO) << "Fingerprint HAL Adapter service is ready.";
     joinRpcThreadpool();
+    // Should not pass this line
 
-    LOG(ERROR) << "Biometrics 2.3 HAL service failed to join thread pool.";
+shutdown:
+    // In normal operation, we don't expect the thread pool to shutdown
+    LOG(ERROR) << "Fingerprint HAL Adapter service is shutting down.";
     return 1;
 }

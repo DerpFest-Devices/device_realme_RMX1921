@@ -15,23 +15,23 @@
  */
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.xt"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.xt"
-#define FP_PRESS_NOTIFY "/sys/kernel/oppo_display/notify_fppress"
-#define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
-#define PS_MASK "/proc/touchpanel/prox_mask"
-#define PS_NEAR "/proc/touchpanel/prox_near"
-#define AOD_PRESS "/proc/touchpanel/fod_aod_pressed"
-#define DOZING "/proc/touchpanel/DOZE_STATUS"
-#define DOZING_FP_HELPER "/proc/touchpanel/fod_aod_listener"
-#define ON 1
-#define OFF 0
 
+#include <hardware/hardware.h>
+#include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
 
 #include <inttypes.h>
 #include <unistd.h>
-#include <utils/Log.h>
 #include <fstream>
-#include <thread>
+
+#define FINGERPRINT_ACQUIRED_VENDOR 6
+
+#define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
+#define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
+#define AOD_MODE_PATH "/sys/kernel/oppo_display/aod_light_mode_set"
+#define NOTIFY_BLANK_PATH "/sys/kernel/oppo_display/notify_panel_blank"
+#define POWER_STATUS "/sys/kernel/oppo_display/power_status"
+#define DC_DIM_PATH "/sys/kernel/oppo_display/dimlayer_bl_en"
 
 namespace android {
 namespace hardware {
@@ -40,23 +40,28 @@ namespace fingerprint {
 namespace V2_3 {
 namespace implementation {
 
-BiometricsFingerprint::BiometricsFingerprint() : isEnrolling(false) {
-    for(int i=0; i<10; i++) {
-        mOppoBiometricsFingerprint = vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint::getService();
-        if(mOppoBiometricsFingerprint != nullptr) break;
-        sleep(10);
-    }
-    if(mOppoBiometricsFingerprint == nullptr) exit(0);
+bool volatile dcDimState;
+bool volatile mFodCircleVisible;
+std::string lastStorePath;
+uint32_t lastGid;
+
+BiometricsFingerprint::BiometricsFingerprint() {
+    mOppoBiometricsFingerprint = vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint::getService();
+    mFodCircleVisible = false;
 }
 
+
+/*
+ * Write value to path and close file.
+ */
 template <typename T>
-static inline void set(const std::string& path, const T& value) {
+static void set(const std::string& path, const T& value) {
     std::ofstream file(path);
     file << value;
 }
 
 template <typename T>
-static inline T get(const std::string& path, const T& def) {
+static T get(const std::string& path, const T& def) {
     std::ifstream file(path);
     T result;
 
@@ -64,101 +69,81 @@ static inline T get(const std::string& path, const T& def) {
     return file.fail() ? def : result;
 }
 
-static bool receivedCancel;
-static bool receivedEnumerate;
-static uint64_t myDeviceId;
-static std::vector<uint32_t> knownFingers;
+
 class OppoClientCallback : public vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprintClientCallback {
 public:
-    sp<android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprintClientCallback> mClientCallback;
-
     OppoClientCallback(sp<android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprintClientCallback> clientCallback) : mClientCallback(clientCallback) {}
     Return<void> onEnrollResult(uint64_t deviceId, uint32_t fingerId,
         uint32_t groupId, uint32_t remaining) {
-        ALOGE("onEnrollResult %lu %u %u %u", deviceId, fingerId, groupId, remaining);
-        if(mClientCallback != nullptr)
-            mClientCallback->onEnrollResult(deviceId, fingerId, groupId, remaining);
-        return Void();
+        return mClientCallback->onEnrollResult(deviceId, fingerId, groupId, remaining);
     }
 
     Return<void> onAcquired(uint64_t deviceId, vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo acquiredInfo,
         int32_t vendorCode) {
-        ALOGE("onAcquired %lu %d", deviceId, vendorCode);
-        if(mClientCallback != nullptr)
-            mClientCallback->onAcquired(deviceId, OppoToAOSPFingerprintAcquiredInfo(acquiredInfo), vendorCode);
-        return Void();
+        return mClientCallback->onAcquired(deviceId, OppoToAOSPFingerprintAcquiredInfo(acquiredInfo), vendorCode);
     }
 
     Return<void> onAuthenticated(uint64_t deviceId, uint32_t fingerId, uint32_t groupId,
         const hidl_vec<uint8_t>& token) {
-        ALOGE("onAuthenticated %lu %u %u", deviceId, fingerId, groupId);
-        if(mClientCallback != nullptr){
-            if (fingerId!=0)//0 means finger not recognized
-                set(DIMLAYER_PATH, OFF);
-            mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
+        if (token.size() > 0) {
+            if (mFodCircleVisible) {
+                set(DC_DIM_PATH, dcDimState);
+            }
+
+            set(DIMLAYER_PATH, 0);
+            set(FP_PRESS_PATH, 0);
+            mFodCircleVisible = false;
         }
-        return Void();
+
+        ALOGE("onAuthenticated %lu %u %u, isAuthSucceed %d", deviceId, fingerId, groupId, token.size() > 0);
+        
+        return mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
     }
 
     Return<void> onError(uint64_t deviceId, vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError error, int32_t vendorCode) {
-        ALOGE("onError %lu %d", deviceId, vendorCode);
-        if(error == vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED) {
-            receivedCancel = true;
-        }
-        if(mClientCallback != nullptr)
-            mClientCallback->onError(deviceId, OppoToAOSPFingerprintError(error), vendorCode);
-        return Void();
+        return mClientCallback->onError(deviceId, OppoToAOSPFingerprintError(error), vendorCode);
     }
 
     Return<void> onRemoved(uint64_t deviceId, uint32_t fingerId, uint32_t groupId,
         uint32_t remaining) {
         ALOGE("onRemoved %lu %u", deviceId, fingerId);
-        if(mClientCallback != nullptr)
-            mClientCallback->onRemoved(deviceId, fingerId, groupId, remaining);
+        mClientCallback->onRemoved(deviceId, fingerId, groupId, remaining);
         return Void();
     }
 
     Return<void> onEnumerate(uint64_t deviceId, uint32_t fingerId, uint32_t groupId,
         uint32_t remaining) {
-        receivedEnumerate = true;
         ALOGE("onEnumerate %lu %u %u %u", deviceId, fingerId, groupId, remaining);
-        if(mClientCallback != nullptr)
-            mClientCallback->onEnumerate(deviceId, fingerId, groupId, remaining);
-        return Void();
+        return mClientCallback->onEnumerate(deviceId, fingerId, groupId, remaining);
     }
 
     Return<void> onTouchUp(uint64_t deviceId) {
-        set(FP_PRESS_NOTIFY, OFF);
-        return Void();
-    }
-
-    Return<void> onTouchDown(uint64_t deviceId) {
-        if (get(DOZING, OFF)){
-            set(AOD_PRESS, ON);
-            set(PS_MASK, ON);
-        }
-        set(FP_PRESS_NOTIFY, ON);
-        return Void();
-    }
-
+        return mClientCallback->onAcquired(deviceId, android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo::ACQUIRED_VENDOR, 0);
+	}
+    Return<void> onTouchDown(uint64_t deviceId)  {
+        return mClientCallback->onAcquired(deviceId, android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo::ACQUIRED_VENDOR, 1);
+	}
     Return<void> onSyncTemplates(uint64_t deviceId, const hidl_vec<uint32_t>& fingerId, uint32_t remaining) {
         ALOGE("onSyncTemplates %lu %zu %u", deviceId, fingerId.size(), remaining);
-        myDeviceId = deviceId;
 
-        for(auto fid : fingerId) {
-            ALOGE("\t- %u", fid);
+        size_t nFingers = fingerId.size();
+        if(nFingers > 0) {
+            for(auto finger: fingerId) {
+                mClientCallback->onEnumerate(deviceId, finger, 0, --nFingers);
+            }
+        } else {
+            mClientCallback->onEnumerate(deviceId, 0, 0, 0);
         }
-        knownFingers = fingerId;
-
         return Void();
-    }
+}
+
     Return<void> onFingerprintCmd(int32_t deviceId, const hidl_vec<uint32_t>& groupId, uint32_t remaining) { return Void(); }
     Return<void> onImageInfoAcquired(uint32_t type, uint32_t quality, uint32_t match_score) { return Void(); }
     Return<void> onMonitorEventTriggered(uint32_t type, const hidl_string& data) { return Void(); }
     Return<void> onEngineeringInfoUpdated(uint32_t length, const hidl_vec<uint32_t>& keys, const hidl_vec<hidl_string>& values) { return Void(); }
-    Return<void> onUIReady(int64_t deviceId) { return Void(); }
 
 private:
+    sp<android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprintClientCallback> mClientCallback;
 
     Return<android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo> OppoToAOSPFingerprintAcquiredInfo(vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo info) {
         switch(info) {
@@ -191,6 +176,21 @@ private:
     }
 };
 
+Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
+    return true;
+}
+
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    set(DIMLAYER_PATH, 1);
+    set(FP_PRESS_PATH, 1);
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onFingerUp() {
+    set(FP_PRESS_PATH, 0);
+    return Void();
+}
+
 Return<uint64_t> BiometricsFingerprint::setNotify(
         const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
     ALOGE("setNotify");
@@ -220,21 +220,32 @@ Return<RequestStatus> BiometricsFingerprint::OppoToAOSPRequestStatus(vendor::opp
 
 Return<uint64_t> BiometricsFingerprint::preEnroll()  {
     ALOGE("preEnroll");
-    setFingerprintScreenState(true);
     return mOppoBiometricsFingerprint->preEnroll();
 }
 
 Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat,
     uint32_t gid, uint32_t timeoutSec)  {
-    ALOGE("enroll");
-    isEnrolling = true;
+    if (!mFodCircleVisible) {
+        dcDimState = get(DC_DIM_PATH, 0);
+        set(DC_DIM_PATH, 0);
+    }
+    if (get(POWER_STATUS, 3) || get(POWER_STATUS, 4)) {
+	    set(NOTIFY_BLANK_PATH, 1);
+        set(AOD_MODE_PATH, 0);
+	}
+    mFodCircleVisible = true;
+    set(DIMLAYER_PATH, 1);
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->enroll(hat, gid, timeoutSec));
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll()  {
-    ALOGE("postEnroll");
-    isEnrolling = false;
-    setFingerprintScreenState(isEnrolling);
+    if (mFodCircleVisible) {
+        set(DC_DIM_PATH, dcDimState);
+    }
+
+    set(DIMLAYER_PATH, 0);
+	set(FP_PRESS_PATH, 0);
+    mFodCircleVisible = false;
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->postEnroll());
 }
 
@@ -244,42 +255,24 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId()  {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel()  {
-    if(OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->cancel()) == RequestStatus::SYS_OK)
-       mOppoClientCallback->onError(mOppoBiometricsFingerprint->setNotify(mOppoClientCallback),
-           vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED,
-           0);
-    if (isEnrolling)
-        isEnrolling = false;
-    else 
-        setFingerprintScreenState(false);
+    if (mFodCircleVisible) {
+        set(DC_DIM_PATH, dcDimState);
+    }
+
+    set(DIMLAYER_PATH, 0);
+	set(FP_PRESS_PATH, 0);
+    mFodCircleVisible = false;
+
+    if (mOppoBiometricsFingerprint->cancel() == vendor::oppo::hardware::biometrics::fingerprint::V2_1::RequestStatus::SYS_OK) {
+        mOppoClientCallback->onError(mOppoBiometricsFingerprint->setNotify(mOppoClientCallback), vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED, 0);
+    }
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->cancel());
 }
 
 Return<RequestStatus> BiometricsFingerprint::enumerate()  {
-    receivedEnumerate = false;
-    RequestStatus ret = OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->enumerate());
-    ALOGE("ENUMERATING");
-    if(ret == RequestStatus::SYS_OK && !receivedEnumerate) {
-        size_t nFingers = knownFingers.size();
-        ALOGE("received fingers, sending our own %zu", nFingers);
-        if(nFingers > 0) {
-            for(auto finger: knownFingers) {
-                mOppoClientCallback->mClientCallback->onEnumerate(
-                        myDeviceId,
-                        finger,
-                        0,
-                        --nFingers);
-
-            }
-        } else {
-            mOppoClientCallback->mClientCallback->onEnumerate(
-                    myDeviceId,
-                    0,
-                    0,
-                    0);
-
-        }
-    }
+	RequestStatus ret = OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->enumerate());
+    ALOGE("ENUMERATING!");
+	mOppoBiometricsFingerprint->setActiveGroup(lastGid, lastStorePath);
     return ret;
 }
 
@@ -291,49 +284,22 @@ Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) 
 Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
     const hidl_string& storePath)  {
     ALOGE("setActiveGroup");
+	lastStorePath = storePath;
+	lastGid = gid;
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->setActiveGroup(gid, storePath));
 }
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, uint32_t gid)  {
+    if (!mFodCircleVisible) {
+        dcDimState = get(DC_DIM_PATH, 0);
+        set(DC_DIM_PATH, 0);
+    }
+    mFodCircleVisible = true;
+
+    set(DIMLAYER_PATH, 1);
+	set(FP_PRESS_PATH, 0);
     ALOGE("auth");
-    RequestStatus status = OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->authenticate(operationId, gid));
-    if (status == RequestStatus::SYS_OK) {
-        setFingerprintScreenState(true);
-    }
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->authenticate(operationId, gid));
-}
-
-Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
-    return true;
-}
-
-Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
-    return Void();
-}
-
-Return<void> BiometricsFingerprint::onFingerUp() {
-    if(!isEnrolling){
-        set(AOD_PRESS, OFF);
-        set(PS_NEAR, OFF);
-    }
-    return Void();
-}
-
-void BiometricsFingerprint::setFingerprintScreenState(const bool on) {
-    mOppoBiometricsFingerprint->setScreenState(
-        on ? vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintScreenState::FINGERPRINT_SCREEN_ON :
-            vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintScreenState::FINGERPRINT_SCREEN_OFF
-        );
-    if ((!isEnrolling)&&on){
-            std::thread([this]() {
-            std::this_thread::sleep_for(std::chrono::milliseconds(380));//turn display off before enabling dimlayer
-            if (!isEnrolling) {
-                set(DIMLAYER_PATH, ON);
-            }
-        }).detach();
-        set(DOZING_FP_HELPER, ON);
-    } else
-    set(DIMLAYER_PATH, on ? ON: OFF);
 }
 
 }  // namespace implementation
