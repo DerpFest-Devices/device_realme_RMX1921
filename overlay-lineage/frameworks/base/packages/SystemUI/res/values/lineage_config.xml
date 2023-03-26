@@ -13,10 +13,4 @@
 <resources>
     <!-- Color of the FOD view -->
     <color name="config_udfpsColor">#00ffffff</color>
-
-    <!-- HBM type of UDFPS overlay.
-            0 - GLOBAL HBM 
-            1 - LOCAL HBM
-    -->
-    <integer name="config_udfps_hbm_type">0</integer>
 </resources>
