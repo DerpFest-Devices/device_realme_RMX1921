@@ -49,6 +49,9 @@
     <!-- Pickup sensor -->
     <string name="pickup_sensor_title">Pickup sensor</string>
 
+    <!-- Motion sensor -->
+    <string name="motion_sensor_title">Motion sensor</string>
+
     <!-- Proximity sensor -->
     <string name="proximity_sensor_title">Proximity sensor</string>
 
@@ -56,19 +59,15 @@
     <string name="pick_up_gesture_title">Pick-up</string>
     <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
 
-    <!-- Pick-up to wake gesture-->
-    <string name="wake_gesture_title">Wake up</string>
-    <string name="wake_gesture_summary">Wake up the device instead of pulsing notifications</string>
-
     <!-- Pocket gesture -->
     <string name="pocket_gesture_title">Pocket</string>
     <string name="pocket_gesture_summary">Pulse notifications on removal from pocket</string>
 
-    <!-- Proximity wake -->
-    <string name="proximity_wake_title">Proximity wake</string>
-    <string name="proximity_wake_enable_title">Proximity wake</string>
+    <!-- Motion gesture -->
+    <string name="motion_gesture_title">Device Movement</string>
+    <string name="motion_gesture_summary">Pulse notifications when device move</string>
 
-    <!-- Smart wake strings-->
+    <!-- Smart wake gesture -->
     <string name="smart_wake_gesture_title">Smart Wake</string>
     <string name="smart_wake_gesture_summary">Pulse notifications on slight motion of device and wake screen when picked up</string>
 

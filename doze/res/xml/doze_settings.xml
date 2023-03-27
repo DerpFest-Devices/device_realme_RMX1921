@@ -29,13 +29,7 @@
         android:disableDependentsState="true"
         android:title="@string/ambient_display_always_on_title"
         android:summary="@string/ambient_display_always_on_summary"
-        android:persistent="true" />
-
-    <SwitchPreference
-        android:key="gesture_raise_to_wake"
-        android:defaultValue="true"
-        android:title="@string/wake_gesture_title"
-        android:summary="@string/wake_gesture_summary" />
+        android:persistent="false" />
 
     <PreferenceCategory
         android:key="pickup_sensor"
@@ -52,6 +46,18 @@
             android:key="gesture_smart_wake"
             android:summary="@string/smart_wake_gesture_summary"
             android:title="@string/smart_wake_gesture_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="motion_sensor"
+        android:title="@string/motion_sensor_title">
+
+        <SwitchPreference
+            android:key="gesture_motion"
+            android:defaultValue="false"
+            android:title="@string/motion_gesture_title"
+            android:summary="@string/motion_gesture_summary" />
 
     </PreferenceCategory>
 

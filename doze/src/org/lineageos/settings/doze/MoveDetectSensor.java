@@ -22,8 +22,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -31,31 +29,30 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class TiltSensor implements SensorEventListener {
+public class MoveDetectSensor implements SensorEventListener {
 
-    private static final boolean DEBUG = false;
-    private static final String TAG = "TiltSensor";
+    private static final boolean DEBUG = true;
+    private static final String TAG = "MoveDetectSensor";
 
-    private static final String TILT_SENSOR = "android.sensor.tilt_detector";
+    private static final String MOVE_DETECT_SENSOR = "qti.sensor.move_detect";
 
-    private static final int MIN_PULSE_INTERVAL_MS = 700;
-    private static final int WAKELOCK_TIMEOUT_MS = 300;
+    private static final int MIN_PULSE_INTERVAL_MS = 1000;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
+    private Sensor mFakeProximitySensor;
     private Context mContext;
     private ExecutorService mExecutorService;
-    private PowerManager mPowerManager;
-    private WakeLock mWakeLock;
 
     private long mEntryTimestamp;
 
-    public TiltSensor(Context context) {
+    private static boolean isNear = false;
+
+    public MoveDetectSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = DozeUtils.getSensor(mSensorManager, TILT_SENSOR);
-        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
-        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+        mSensor = DozeUtils.getSensor(mSensorManager, MOVE_DETECT_SENSOR);
+        mFakeProximitySensor = DozeUtils.getSensor(mSensorManager, "qti.sensor.proximity_fake");
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -65,24 +62,17 @@ public class TiltSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isSmartWake = DozeUtils.isSmartWakeEnabled(mContext);
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
-        if (!isSmartWake) {
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
         if (delta < MIN_PULSE_INTERVAL_MS) {
             return;
-            }
         }
+
         mEntryTimestamp = SystemClock.elapsedRealtime();
-        if (event.values[0] == 0) {
-            if (isSmartWake) {
-                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
-                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
-                PowerManager.WAKE_REASON_GESTURE, TAG);
-            } else {
+
+        if (event.values[0] == 2.0f && !isNear) {
             DozeUtils.launchDozePulse(mContext);
-            }
         }
     }
 
@@ -96,6 +86,8 @@ public class TiltSensor implements SensorEventListener {
         submit(() -> {
             mSensorManager.registerListener(this, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
+            mSensorManager.registerListener(mProximitySensorListener, mFakeProximitySensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
             mEntryTimestamp = SystemClock.elapsedRealtime();
         });
     }
@@ -103,7 +95,18 @@ public class TiltSensor implements SensorEventListener {
     protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
         submit(() -> {
+            mSensorManager.unregisterListener(mProximitySensorListener, mFakeProximitySensor);
             mSensorManager.unregisterListener(this, mSensor);
         });
     }
+
+    private final SensorEventListener mProximitySensorListener = new SensorEventListener() {
+        public void onSensorChanged(SensorEvent event) {
+            isNear = (event.values[0] == 0.0f);
+            Log.i(TAG,"isNear: " + isNear);
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int i) {
+        }
+    };
 }
