@@ -43,19 +43,11 @@
     <bool name="doze_proximity_check_before_pulse">false</bool>
 
     <!-- Max visible notification icons -->
-    <integer name="config_maxVisibleNotificationIcons">6</integer>
-    <integer name="config_maxVisibleNotificationIconsOnLock">7</integer>
-
-    <!-- Whether usage of the proximity sensor during doze is supported -->
-    <bool name="doze_proximity_sensor_supported">false</bool>
+    <integer name="config_maxVisibleNotificationIcons">5</integer>
+    <integer name="config_maxVisibleNotificationIconsOnLock">6</integer>
 
     <!-- The radius of the enrollment progress bar, in dp -->
-    <integer name="config_udfpsEnrollProgressBar" translatable="false">100</integer>
-
-    <!-- If true, enable the advance anti-falsing classifier on the lockscreen. On some devices it
-         does not work well, particularly with noisy touchscreens. Note that disabling it may
-         increase the rate of unintentional unlocks. -->
-    <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+    <integer name="config_udfpsEnrollProgressBar" translatable="false">105</integer>
 
     <!-- Respect drawable/rounded.xml intrinsic size for multiple radius corner path customization -->
     <bool name="config_roundedCornerMultipleRadius">true</bool>

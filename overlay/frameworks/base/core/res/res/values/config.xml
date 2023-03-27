@@ -999,21 +999,25 @@
 
     <!-- If true, the doze component is not started until after the screen has been turned off
          and the screen off animation has been performed. -->
-    <bool name="config_dozeAfterScreenOffByDefault">false</bool>
+    <bool name="config_dozeAfterScreenOffByDefault">true</bool>
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
+    <!-- Indicate whether to allow the device to suspend when the screen is off
+         due to the proximity sensor.  This resource should only be set to true
+         if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+         Otherwise, the device may fail to wake out of suspend reliably.
+         The default is false. -->
+    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
     <!-- Delay that allows some content to arrive at the display before switching
          from DOZE to ON, in millis. -->
-    <integer name="config_wakeUpDelayDoze">95</integer>
+    <integer name="config_wakeUpDelayDoze">32</integer>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">30</integer>
-
-    <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <integer name="config_screenBrightnessDoze">19</integer>
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
@@ -1093,7 +1097,7 @@
 
     <!-- Specifies the maximum burn-in offset displacement from the center.
          If -1, no maximum value will be used. -->
-    <integer name="config_burnInProtectionMaxRadius">-1</integer>
+    <integer name="config_burnInProtectionMaxRadius">70</integer>
 
     <!-- Specifies the minimum burn-in offset horizontally. -->
     <integer name="config_burnInProtectionMinHorizontalOffset">-15</integer>
