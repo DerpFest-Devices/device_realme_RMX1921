@@ -11,6 +11,11 @@
      limitations under the License.
 -->
 <resources>
+
     <!-- Color of the FOD view -->
     <color name="config_udfpsColor">#00ffffff</color>
+
+    <!-- Udfps vendor code -->
+    <integer name="config_udfps_vendor_code">1</integer>
+
 </resources>
