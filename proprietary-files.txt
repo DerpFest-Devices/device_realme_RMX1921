@@ -605,17 +605,13 @@ vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libtinyxml2_1.so
 
 # Display (SDM)
-vendor/lib/hw/hwcomposer.sdm710.so
 vendor/lib/libsdedrm.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
-vendor/lib/libsdmcore.so
 vendor/lib/libsdmextension.so
-vendor/lib64/hw/hwcomposer.sdm710.so
 vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmextension.so
 
 # Display Postprocessing
