@@ -649,7 +649,7 @@ vendor/firmware/dpAP_mini.mbn
 vendor/firmware/dpMSA.mbn
 
 # DPM (system) - from qssi-user-14-UP1A.231005.007-2310072102-release-keys
-framework/tcmclient.jar|4e1dfaa243c67fec31b5a44086c9c417892761ae
+system/framework/tcmclient.jar|4e1dfaa243c67fec31b5a44086c9c417892761ae
 system_ext/bin/dpmd|5a42bc4e5c841573579e0718d6e80e688767eeed
 system_ext/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
 system_ext/etc/init/dpmd.rc|738b638ff04cda368e22c03e16baf90ba157a6fc
@@ -1450,7 +1450,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.2.so|ca1906012d0ab6dc9048aa49703833512308
 vendor/bin/cnss-daemon
 
 # WiFi Display (system) - from qssi-user-14-UP1A.231005.007-2310072102-release-keys
-framework/WfdCommon.jar|08bf9850ac45396fe753e208c4d63ec43389dce2
+system/framework/WfdCommon.jar|08bf9850ac45396fe753e208c4d63ec43389dce2
 system_ext/bin/wfdservice|400d123df78c1ed2e9643ff3ddf5ee5748f954fe
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|10dcd4e58f0652d800d48ae5b76e4fab43fda214
