@@ -65,6 +65,7 @@ persist.sys.sf.native_mode=0
 debug.cpurend.vsync=false
 
 # IMS
+persist.sys.radio.force_lte_ca=true
 persist.vendor.ims.disableUserAgent=0
 persist.data.iwlan.enable=true
 persist.dbg.ims_volte_enable=1
