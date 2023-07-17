@@ -14,3 +14,5 @@ allow system_server proc_touchpanel:dir { search };
 allow system_server proc_oppoversion:dir { search };
 allow system_server proc_oppo_fp:file r_file_perms;
 allow system_server proc_touchpanel:file rw_file_perms;
+
+allow system_server proc_wakelocks:file { getattr open read };
