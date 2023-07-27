@@ -3,6 +3,7 @@ allow rmt_storage proc_oppoversion:dir search;
 allow rmt_storage proc_oppoversion:file { open read write };
 get_prop(rmt_storage, oppo_debug_prop);
 dontaudit rmt_storage default_prop:file { read open getattr };
+dontaudit rmt_storage self:capability { dac_override dac_read_search };
 allow rmt_storage self:capability sys_admin;
 allow rmt_storage proc:file { read open };
 allow rmt_storage sysfs_socinfo_sensitive:file r_file_perms;
