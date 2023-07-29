@@ -518,6 +518,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
 
+# VNDK
+PRODUCT_PRODUCT_VNDK_VERSION := current
+PRODUCT_ENFORCE_PRODUCT_PARTITION_INTERFACE := true
+
+PRODUCT_PACKAGES += \
+    vndk_package \
+    com.android.vndk.current.on_vendor
+
 # Wallet
 PRODUCT_PACKAGES += \
     QuickAccessWallet
