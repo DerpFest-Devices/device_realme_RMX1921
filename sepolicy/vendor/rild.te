@@ -12,3 +12,4 @@ dontaudit rild cache_file:dir { search getattr write add_name };
 dontaudit rild cache_file:file { create write open };
 allow rild mnt_vendor_file:dir search;
 allow rild mnt_vendor_file:file { read write open };
+binder_call(rild, qtidataservices_app)
