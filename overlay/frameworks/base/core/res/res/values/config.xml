@@ -1096,11 +1096,6 @@
     <!-- Whether device has a physical display cutout -->
     <bool name="config_physicalDisplayCutout">true</bool>
 
-    <!-- The list of components which should be automatically disabled for a specific package. -->
-    <string-array name="config_disabledComponents" translatable="false">
-	<item>com.google.android.googlequicksearchbox/com.google.android.hotword.service.HotwordService</item>
-    </string-array>
-
     <!-- Whether to intercept inputs on screen off -->
     <bool name="config_enableKeyHandler">true</bool>
 
