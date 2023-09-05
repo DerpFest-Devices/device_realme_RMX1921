@@ -16,6 +16,9 @@ on boot
     # TP FW Update
     write /proc/touchpanel/tp_fw_update 0
 
+    # Charger
+    chown system system /sys/class/power_supply/battery/mmi_charging_enable
+
     # FPC Fingerprint 16051 config
     chown system system /sys/bus/platform/devices/soc:fpc_fpc1020*/irq
     chown system system /sys/bus/platform/devices/soc:fpc_fpc1020*/irq_enable
