@@ -92,6 +92,9 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_RMX1921
 TARGET_RECOVERY_DEVICE_MODULES := libinit_RMX1921
 
+# Lineage Health
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/mmi_charging_enable
+
 # LMKD
 TARGET_LMKD_STATS_LOG := true
 
