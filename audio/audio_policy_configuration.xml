@@ -361,7 +361,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration_7_0.xml"/>
 
         <!-- Bluetooth Audio HAL for Hearing aid -->
-        <xi:include href="/vendor/etc/bluetooth_hearing_aid_audio_policy_configuration.xml"/>
+        <xi:include href="/vendor/etc/hearing_aid_audio_policy_configuration_7_0.xml"/>
 
         <!-- Usb Audio HAL -->
         <xi:include href="/vendor/etc/usb_audio_policy_configuration.xml"/>
