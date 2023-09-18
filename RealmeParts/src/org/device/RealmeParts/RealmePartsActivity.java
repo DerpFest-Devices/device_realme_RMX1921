@@ -18,7 +18,6 @@
 package org.device.RealmeParts;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -41,11 +40,11 @@ public class RealmePartsActivity extends CollapsingToolbarBaseActivity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
+        Fragment fragment = getFragmentManager().findFragmentById(com.android.settingslib.collapsingtoolbar.R.id.content_frame);
         if (fragment == null) {
             mRealmePartsFragment = new RealmeParts();
             getFragmentManager().beginTransaction()
-                .add(R.id.content_frame, mRealmePartsFragment)
+                .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame, mRealmePartsFragment)
                 .commit();
         } else {
             mRealmePartsFragment = (RealmeParts) fragment;

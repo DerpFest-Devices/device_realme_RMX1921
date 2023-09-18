@@ -19,7 +19,6 @@ package org.device.RealmeParts.Touch;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import com.android.settingslib.widget.R;
 
 public class ScreenOffGestureSettings extends CollapsingToolbarBaseActivity {
 
@@ -27,7 +26,8 @@ public class ScreenOffGestureSettings extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getFragmentManager().beginTransaction().replace(
+                com.android.settingslib.collapsingtoolbar.R.id.content_frame,
                 new ScreenOffGesture()).commit();
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }

@@ -17,7 +17,6 @@
 package org.device.RealmeParts.speaker;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -28,12 +27,12 @@ public class ClearSpeakerActivity extends CollapsingToolbarBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
+        Fragment fragment = getFragmentManager().findFragmentById(com.android.settingslib.collapsingtoolbar.R.id.content_frame);
         ClearSpeakerFragment clearSpeakerFragment;
         if (fragment == null) {
             clearSpeakerFragment = new ClearSpeakerFragment();
             getFragmentManager().beginTransaction()
-                    .add(R.id.content_frame, clearSpeakerFragment)
+                    .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame, clearSpeakerFragment)
                     .commit();
         }
     }

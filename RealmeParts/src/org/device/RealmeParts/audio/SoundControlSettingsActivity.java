@@ -17,7 +17,6 @@
 package org.device.RealmeParts.audio;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -32,11 +31,11 @@ public class SoundControlSettingsActivity extends CollapsingToolbarBaseActivity 
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.content_frame);
+        Fragment fragment = getFragmentManager().findFragmentById(com.android.settingslib.collapsingtoolbar.R.id.content_frame);
         if (fragment == null) {
             mSoundControlSettingsFragment = new SoundControlSettings();
             getFragmentManager().beginTransaction()
-                    .add(R.id.content_frame, mSoundControlSettingsFragment)
+                    .add(com.android.settingslib.collapsingtoolbar.R.id.content_frame, mSoundControlSettingsFragment)
                     .commit();
         } else {
             mSoundControlSettingsFragment = (SoundControlSettings) fragment;
@@ -51,4 +50,4 @@ public class SoundControlSettingsActivity extends CollapsingToolbarBaseActivity 
         }
         return super.onOptionsItemSelected(item);
     }
-} 
+}
