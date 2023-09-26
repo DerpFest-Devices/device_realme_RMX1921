@@ -117,7 +117,6 @@ persist.data.iwlan.ipsec.ap=1
 persist.sys.cust.lte_config=true 
 service.qti.ims.enabled=1 
 persist.vendor.qti.telephony.vt_cam_interface=2
-ro.telephony.iwlan_operation_mode=legacy
 ril.subscription.types=NV,RUIM
 ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
