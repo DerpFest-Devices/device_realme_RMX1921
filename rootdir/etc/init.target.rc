@@ -33,7 +33,7 @@ on early-init
     #exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710
     #else
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_wglink audio_adsp_loader audio_q6_pdr audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_digital_cdc audio_analog_cdc audio_msm_sdw audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm710 \
-    audio_tfa98xx-v6 audio_ak4376 audio_max20328 audio_dspg_dbmdx
+    audio_tfa98xx-v6 audio_ak4376 audio_max20328
     #endif
     write /proc/sys/kernel/sched_boost 1
     mkdir /firmware 0771 system system
