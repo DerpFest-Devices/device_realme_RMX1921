@@ -949,10 +949,6 @@ on property:oppo.wifi.restorepersistaccess=*
     chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
     chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
-on property:persist.sys.device_provisioned=1
-    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
-    setprop dalvik.vm.dex2oat-threads 6
-
 on property:sys.boot_completed=1
     # Restrict permissions to socket file to hide Magisk & co.
     chmod 440 /proc/net/unix
