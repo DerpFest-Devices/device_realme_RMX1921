@@ -55,10 +55,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        odm/lib64/libwvhidl.so)
-            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
-            ;;
-        odm/lib64/mediadrm/libwvdrmengine.so)
+        odm/lib64/libwvhidl.so | odm/lib64/mediadrm/libwvdrmengine.so | vendor/lib/libssc.so | vendor/lib64/libssc.so | vendor/lib/libsnsapi.so | vendor/lib64/libsnsapi.so | vendor/lib/libsensorcal.so | vendor/lib64/libsensorcal.so | vendor/lib/libsnsdiaglog.so | vendor/lib64/libsnsdiaglog.so | vendor/lib/sensors.ssc.so | vendor/lib64/sensors.ssc.so | vendor/bin/sensors.qti)
             "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
             ;;
     esac
