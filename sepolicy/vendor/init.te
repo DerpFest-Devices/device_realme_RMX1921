@@ -23,7 +23,6 @@ allow init sysfs_battery_supply:file setattr;
 allow init adsprpcd_file:file mounton;
 allow init hwservicemanager:binder { call transfer };
 allow init proc:file { write };
-allow init iorapd_data_file:file getattr;
 
 allow init sysfs_dm:dir relabelfrom;
 allow init sysfs_dm:file relabelfrom;
