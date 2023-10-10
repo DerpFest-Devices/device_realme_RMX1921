@@ -44,7 +44,7 @@ AUDIO_CONFIG_DIR := hardware/qcom-caf/sm8350/audio/configs/sdm710
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
+    android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.soundtrigger@2.2-impl \
     audio.primary.sdm710 \
