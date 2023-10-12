@@ -20,9 +20,6 @@ vendor.oplus.hardware.appradio::IOplusAppRadio          u:object_r:opporadio_hws
 vendor.oplus.hardware.radio::IOplusRadio          u:object_r:opporadio_hwservice:s0
 vendor.oplus.hardware.ims::IOplusImsRadio          u:object_r:opporadio_hwservice:s0
 
-# Dolby
-vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
-
 # Diaghal
 vendor.qti.diaghal::Idiag                                            u:object_r:hal_diag_hwservice:s0
 

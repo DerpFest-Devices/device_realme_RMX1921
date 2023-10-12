@@ -178,10 +178,6 @@
     <string name="headphone_gain">Headphone gain</string>
     <string name="microphone_gain">Microphone gain</string>
 
-    <!-- Dolby -->
-    <string name="dolby_summary">Open Dolby Atmos app</string>
-    <string name="dolby_title">Dolby App</string>
-
     <!-- Clear speaker -->
     <string name="clear_speaker_title">Clear speaker</string>
     <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>

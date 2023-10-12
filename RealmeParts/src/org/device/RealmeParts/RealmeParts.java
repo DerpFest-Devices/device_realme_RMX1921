@@ -69,7 +69,6 @@ public class RealmeParts extends PreferenceFragment
     public static final String TP_DIRECTION = "/proc/touchpanel/oplus_tp_direction";
 
     public static final String KEY_SETTINGS_PREFIX = "RealmeParts";
-    private static TwoStatePreference mEnableDolbyAtmos;
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mHBMAutobrightnessSwitch;
     private static TwoStatePreference mDCModeSwitch;

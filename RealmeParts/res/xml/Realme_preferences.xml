@@ -26,16 +26,6 @@
                 settings:iconSpaceReserved="false"/>
 
         <Preference
-            android:key="audio_dolby_atmos"
-            android:title="@string/dolby_title"
-            android:summary="@string/dolby_summary"
-            >
-            <intent
-                 android:targetPackage="com.dolby.daxappui"
-                 android:targetClass="com.dolby.daxappui.MainActivity" />
-        </Preference>
-
-        <Preference
                 android:key="clear_speaker"
                 android:title="@string/clear_speaker_title"
                 android:summary="@string/clear_speaker_summary">

@@ -10,7 +10,4 @@ get_prop(platform_app, camera_prop)
 allow platform_app sysfs_battery_supply:dir search;
 allow platform_app sysfs_battery_supply:file { getattr open read };
 allow platform_app sysfs_kgsl:file { getattr open read };
-
-allow platform_app hal_dms_hwservice:hwservice_manager find;
-binder_call(platform_app, hal_dms_default)
 allow platform_app vulkan_hal:file read;

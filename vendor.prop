@@ -21,6 +21,8 @@ vendor.audio.offload.track.enable=true
 audio.deep_buffer.media=true
 vendor.voice.path.for.pcm.voip=true
 vendor.audio.offload.multiaac.enable=true
+vendor.audio.dolby.ds2.enabled=true
+vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.passthrough=false
 ro.vendor.audio.sdk.ssr=false
@@ -121,15 +123,6 @@ debug.stagefright.omx_default_rank=0
 # Display
 vendor.display.enable_default_color_mode=1
 ro.vendor.display.cabl=2
-
-# Dolby
-vendor.audio.dolby.ds2.enabled=false
-vendor.audio.dolby.ds2.hardbypass=false
-ro.vendor.dolby.dax.version=DAX3_3.6.0.12_r1
-ro.vendor.product.device.db=OP_DEVICE
-ro.vendor.product.manufacturer.db=OP_PHONE
-vendor.product.device=OP_PHONE
-vendor.product.manufacturer=OPD
 
 # DPM
 persist.vendor.dpmhalservice.enable=1

@@ -187,10 +187,7 @@
     <string name="headphone_gain">Guadagno in cuffia</string>
     <string name="microphone_gain">Guadagno del microfono</string>
 
-    <!-- Dolby -->
-    <string name="dolby_summary">"Apri l'app Dolby"</string>
-    <string name="dolby_title">Equalizzatore Dolby Atmos</string>
-
+    <!-- Clear Speaker -->
     <string name="clear_speaker_title">"Pulisci l'altoparlante"</string>
     <string name="clear_speaker_summary">"Ascolta un audio di trenta secondi per pulire l'altoparlante"</string>
     <string name="clear_speaker_description">"Esegui questo comando se hai notato che l'altoparlante è bloccato dalla polvere, alza il volume al massimo e metti il telefono con l'altoparlante verso il basso.\n\nSe non risolvi con una sola esecuzione ripeti 2-5 volte mentre sbatti il telefono.\n\nATTENZIONE: Controlla che le cuffie siano disconnesse."</string>
