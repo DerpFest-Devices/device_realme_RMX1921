@@ -43,9 +43,6 @@
     <integer name="config_maxVisibleNotificationIcons">5</integer>
     <integer name="config_maxVisibleNotificationIconsOnLock">6</integer>
 
-    <!-- The radius of the enrollment progress bar, in dp -->
-    <integer name="config_udfpsEnrollProgressBar" translatable="false">105</integer>
-
     <!-- Respect drawable/rounded.xml intrinsic size for multiple radius corner path customization -->
     <bool name="config_roundedCornerMultipleRadius">true</bool>
 
