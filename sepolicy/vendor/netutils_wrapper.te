@@ -1,0 +1,1 @@
+dontaudit netutils_wrapper self:capability sys_admin;

@@ -6,6 +6,7 @@ wifi.active.interface              u:object_r:wifi_hal_prop:s0
 persist.oppo.mm.pcmdump                 u:object_r:vendor_audio_prop:s0
 sys.oppo.mm.record.type                 u:object_r:vendor_audio_prop:s0
 sys.oppo.mm.voice.record                u:object_r:vendor_audio_prop:s0
+ro.audio.subtype                        u:object_r:vendor_audio_prop:s0
 
 # Oppo FP props
 persist.vendor.fingerprint.             u:object_r:oppo_fingerprint_prop:s0
@@ -81,3 +82,6 @@ oppo.eng.factory.no			u:object_r:oppo_debug_prop:s0
 zeroth.debuglog.logmask                  u:object_r:oppo_debug_prop:s0
 ro.build.display.full_id                  u:object_r:oppo_debug_prop:s0
 vendor.vold.serialno                  u:object_r:oppo_debug_prop:s0
+ro.build.version.ota                  u:object_r:oppo_debug_prop:s0
+ro.vendor.ril.svlte1x		      u:object_r:oppo_debug_prop:s0
+ro.vendor.ril.svdo		      u:object_r:oppo_debug_prop:s0

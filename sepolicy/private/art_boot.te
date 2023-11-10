@@ -1,0 +1,1 @@
+allow art_boot self:capability sys_admin;
