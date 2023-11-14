@@ -8,7 +8,7 @@ allow rild vendor_pd_locater_dbg_prop:file { read open getattr };
 allow rild diag_device:chr_file rw_file_perms;
 dontaudit rild system_data_file:dir { search getattr write add_name };
 dontaudit rild system_data_file:file { create write open };
-dontaudit rild cache_file:dir { search getattr write add_name };
+dontaudit rild cache_file:dir { create search getattr write add_name };
 dontaudit rild cache_file:file { create write open };
 allow rild mnt_vendor_file:dir search;
 allow rild mnt_vendor_file:file { read write open };
