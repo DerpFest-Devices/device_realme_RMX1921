@@ -31,9 +31,6 @@
 
     <protected-broadcast android:name="org.device.RealmeParts.UPDATE_SETTINGS" />
 
-    <uses-sdk
-        android:targetSdkVersion="31" />
-
     <application
         android:icon="@drawable/ic_realmeparts"
         android:label="@string/customize_title"
