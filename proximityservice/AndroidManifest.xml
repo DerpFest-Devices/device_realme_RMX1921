@@ -7,15 +7,12 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <uses-sdk
-        android:minSdkVersion="29"
-        android:targetSdkVersion="33"/>
-
     <application
         android:label="RealmeProximityHelper"
         android:persistent="true">
 
-        <receiver android:name="co.hyper.proximityservice.BootCompletedReceiver" android:exported="true">
+        <receiver android:name="co.hyper.proximityservice.BootCompletedReceiver"
+                  android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
