@@ -47,6 +47,9 @@ ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg
 ro.vendor.display.sensortype=2
 
+# Face unlock
+ro.face.sense_service.camera_id=1
+
 # Fling
 ro.min.fling_velocity=160
 ro.max.fling_velocity=20000
