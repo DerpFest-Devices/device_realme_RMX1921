@@ -1001,11 +1001,11 @@ vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
-# Latency - from qssi-user-14-UP1A.231005.007-2310072102-release-keys
+# Latency - from LA.QSSI.14.0.r1-10000.01-qssi.0
 system_ext/framework/vendor.qti.hardware.data.latency-V1.0-java.jar|21540686c71369b2ab135fa69c5a23752cfe467e
 system_ext/framework/vendor.qti.latency-V2.0-java.jar|d44152741031ec2671fa29b904cc6bee708989ef
-system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so|6dc50d32ac0bae2137482668fa3d1c246cb7e90a
-system_ext/lib64/vendor.qti.latency@2.0.so|10719ecbfef5113d2b63219508ea84b32b565f50
+system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so|a40c573e2003579399e8e745eb46747b1dfe1402
+system_ext/lib64/vendor.qti.latency@2.0.so|1495b5576de4e4b7c045b8f013c4536ddfd04c5e
 
 # Listen
 vendor/lib/libadpcmdec.so
@@ -1455,7 +1455,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.2.so|ca1906012d0ab6dc9048aa49703833512308
 # WiFi
 vendor/bin/cnss-daemon
 
-# WiFi Display (system) - from qssi-user-14-UP1A.231005.007-2310072102-release-keys
+# WiFi Display (system) - from LA.QSSI.14.0.r1-10000.01-qssi.0
 system/framework/WfdCommon.jar|08bf9850ac45396fe753e208c4d63ec43389dce2
 system_ext/bin/wfdservice|400d123df78c1ed2e9643ff3ddf5ee5748f954fe
 system_ext/etc/init/wfdservice.rc|907def8565d8f91f531ca7dfad880af05d540b0c
@@ -1463,37 +1463,37 @@ system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml|10dcd4e58f
 system_ext/etc/seccomp_policy/wfdservice.policy|37994de64d6bd127898bd556cd614db459fe07ec
 system_ext/etc/wfdconfigsink.xml|cb78df66948314a75080a4161321fb3111a0785a
 system_ext/lib/libmmosal.so|9cfaa2338ce8c803f8c7ca12de271b9ffbbeb737
-system_ext/lib/libmmparser_lite.so|191977ec81e66c55284bce0b4b13555e181c318e
+system_ext/lib/libmmparser_lite.so|5fdac5ec7c931e199f8d59195fc3c152e2042c79
 system_ext/lib/libmmrtpdecoder.so|4fc76315f11ff5fe416f36b66c9422ef05eae182
 system_ext/lib/libmmrtpencoder.so|0fa2096eec29eec395f6bd88d7d1049a127e090c
-system_ext/lib/libwfdavenhancements.so|6b17a4e265fedb563f18b867292dcacf1913bf9e
+system_ext/lib/libwfdavenhancements.so|e3286f04422f2e21ff84e274adcd0fb2e40563b8
 system_ext/lib/libwfdclient.so|a9639d9f269880700bac6fc06e8302702fb0ab32
 system_ext/lib/libwfdcommonutils.so|b738182e77f3e7faf72460f09ebdfca7de5e0c23
-system_ext/lib/libwfdconfigutils.so|0d647652ef3c3b7e5f70134077a6fbc4269097ee
+system_ext/lib/libwfdconfigutils.so|18ce53a87c1b05a3322454e4615b5a4f1b179b21
 system_ext/lib/libwfddisplayconfig.so|f46fe63fb3d58c143dc92741a962167af3d8b928
 system_ext/lib/libwfdmminterface.so|5844114d7cc823090a70fe4f44cbda0ddf585ebd
-system_ext/lib/libwfdmmsink.so|d3f2190802077f4de4062d110077fbae893934f0
-system_ext/lib/libwfdmmsrc_system.so|9e8628fd9ede4882fa878bd09109df2d21384b02
+system_ext/lib/libwfdmmsink.so|23fb5c836fc06865b229c30b46998e41c0624dac
+system_ext/lib/libwfdmmsrc_system.so|0adfc69a5560158f3a6803ba720acc795d6d05dc
 system_ext/lib/libwfdrtsp.so|afd69963c2bd59bdb3ff23e01710c61ed90c5d87
-system_ext/lib/libwfdservice.so|41857e76e67210127909f67aa4f68398a6221459
+system_ext/lib/libwfdservice.so|07e6d0e00393a8c068f75b46531d2e75fdaebde2
 system_ext/lib/libwfdsinksm.so|875171cc6ae534dd941eec1c87b78d5961e19c06
 system_ext/lib/libwfduibcinterface.so|e90fa4920b010bd6ef2bd78c2d2644cbd0fcbffa
 system_ext/lib/libwfduibcsink.so|91af548471c395a958e6155dd9be19cccbe482d3
 system_ext/lib/libwfduibcsinkinterface.so|bc0e7dca28d1e5cbc6caf5bd5378f3e6db3b460c
 system_ext/lib/libwfduibcsrc.so|a0b1c73015c449468db0d2776fdfcc56dfeee53b
 system_ext/lib/libwfduibcsrcinterface.so|2e24ec6a075407664488b4214eef35cb2ca845f4
-system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|45a0a8cd9f1aa5cbe69b113192d42bc42e32e9c3
+system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so|b6a8e33a8a05c7150e86c2c311094f2809997992
 system_ext/lib64/libmmosal.so|a1a2875522a7b4daf346bf26c66bcbc793c8810b
-system_ext/lib64/libmmparser_lite.so|0c7d1d983a2382c831cd274cd0b0bed0f10dc901
+system_ext/lib64/libmmparser_lite.so|f4ceee2ec480bbfa55e76412a0fb19e6e38fbe9f
 system_ext/lib64/libmmrtpdecoder.so|0da526d51135ea58236ab6bcc2d1b7484931df24
 system_ext/lib64/libmmrtpencoder.so|fafe00d1ed3d691c6d2c2d963144218764cad5ae
 system_ext/lib64/libwfdclient.so|0070b1e88cee6ebaf17dcb02c2706232cc087071
 system_ext/lib64/libwfdcommonutils.so|14b3bd86703f2aca0abb1232d2304e626c1af644
-system_ext/lib64/libwfdconfigutils.so|a67a7f1a48a94680f66f9fe07ab7cac7af1bafe9
+system_ext/lib64/libwfdconfigutils.so|395c2803d43c076cb6919748882003a072bbe5a6
 system_ext/lib64/libwfddisplayconfig.so|5fd7bf7abaedfe890442f88183c49755b25c39aa
 system_ext/lib64/libwfdmminterface.so|3f16acefbe87741a5841c1c70cf74ff917299c4c
-system_ext/lib64/libwfdmmsink.so|12171731915c162b3b27a8be4eadc4f29bab54b9
-system_ext/lib64/libwfdnative.so|3d6f318c9682dfa562b1924b6d5b171df68dfcce
+system_ext/lib64/libwfdmmsink.so|8150b750357b606475521b491f78d566673f9888
+system_ext/lib64/libwfdnative.so|8bf340be3ee7aee7fc18a352358dc3ef727ab312
 system_ext/lib64/libwfdrtsp.so|8181e44d7c1f722218fabd8fe3bf788454a3f586
 system_ext/lib64/libwfdsinksm.so|c4d68ecbe0accd24296c18444e5a82b6a24be8d8
 system_ext/lib64/libwfduibcinterface.so|dca32fe063bdba7ce3b131b16cf112b793ae03ad
@@ -1501,8 +1501,8 @@ system_ext/lib64/libwfduibcsink.so|63ea93b1a6aec75a294baf50007270807a819e21
 system_ext/lib64/libwfduibcsinkinterface.so|39c123bd9a4d7a8fa317f8ed4d86972dcfab0423
 system_ext/lib64/libwfduibcsrc.so|5557f3bd58c37b7e3b28e13f2f86d55930b14ab6
 system_ext/lib64/libwfduibcsrcinterface.so|77cead9bf7b60384fe1e11dc2b25bd99af0b4608
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|67a10e8e42fd0cfc0a0a3246a4740e4ed37b3506
-system_ext/priv-app/WfdService/WfdService.apk|cd09bfd8351d99e8cedca14f761352fc1831ac06
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so|e237883243c7c42768899f319beb57ea35a8dfa1
+system_ext/priv-app/WfdService/WfdService.apk|b80767741f09d9a5bfcafb14a6221ea3b1bf248b
 
 # WiFi Display (vendor) - from Nokia/Phoenix_00WW/PNX_sprout:11/RKQ1.200906.002/00WW_6_21F:user/release-keys
 vendor/bin/wfdhdcphalservice|c7a2d70190d8a90a8ed326af0add5cf7c99d1ab6
