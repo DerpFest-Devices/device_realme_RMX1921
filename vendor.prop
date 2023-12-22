@@ -140,8 +140,9 @@ ro.apk_verity.mode=2
 
 # Graphics
 debug.egl.hw=0
-debug.sf.hw=1
-ro.opengles.version=196610
+debug.sf.hw=0
+debug.mdpcomp.logs=0
+debug.sf.latch_unsignaled=1
 debug.sf.disable_backpressure=1
 debug.sf.disable_client_composition_cache=1
 debug.sf.predict_hwc_composition_strategy=0
@@ -150,6 +151,8 @@ debug.sf.enable_egl_image_tracker=1
 debug.sf.treat_170m_as_sRGB=1
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
+ro.opengles.version=196610
+vendor.gralloc.disable_ubwc=0
 
 # IMS
 persist.dbg.volte_avail_ovr=1

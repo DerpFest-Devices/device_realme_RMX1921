@@ -66,7 +66,6 @@ ro.com.google.ime.kb_pad_land_r=14
 
 # Graphics
 debug.sf.enable_hwc_vds=1
-debug.sf.latch_unsignaled=0
 debug.hwui.skia_atrace_enabled=false
 persist.demo.hdmirotationlock=false
 persist.sys.sf.color_saturation=1.0
