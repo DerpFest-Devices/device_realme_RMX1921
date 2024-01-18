@@ -386,29 +386,6 @@ fi
                 echo 1600 > $cpubw/bw_hwmon/idle_mbps
             done
 
-            #Enable mem_latency governor for DDR scaling
-            for memlat in /sys/class/devfreq/*qcom,memlat-cpu*
-            do
-                echo "mem_latency" > $memlat/governor
-                echo 10 > $memlat/polling_interval
-                echo 400 > $memlat/mem_latency/ratio_ceil
-            done
-
-            #Enable mem_latency governor for L3 scaling
-            for memlat in /sys/class/devfreq/*qcom,l3-cpu*
-            do
-                echo "mem_latency" > $memlat/governor
-                echo 10 > $memlat/polling_interval
-                echo 400 > $memlat/mem_latency/ratio_ceil
-            done
-
-            #Enable userspace governor for L3 cdsp nodes
-            for l3cdsp in /sys/class/devfreq/*qcom,l3-cdsp*
-            do
-                echo "userspace" > $l3cdsp/governor
-                chown -h system $l3cdsp/userspace/set_freq
-            done
-
             echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
 
             # Disable CPU Retention
@@ -421,19 +398,11 @@ fi
             echo N > /sys/module/lpm_levels/L3/cpu6/ret/idle_enabled
             echo N > /sys/module/lpm_levels/L3/cpu7/ret/idle_enabled
 
-            # cpuset parameters
-            echo 0-5 > /dev/cpuset/background/cpus
-            echo 0-5 > /dev/cpuset/system-background/cpus
-
             # Turn off scheduler boost at the end
             echo 0 > /proc/sys/kernel/sched_boost
 
             # Turn on sleep modes.
             echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
 
 emmc_boot=`getprop vendor.boot.emmc`
 case "$emmc_boot"
