@@ -29,9 +29,6 @@
 
 on early-init
     write /proc/sys/kernel/sched_boost 1
-    mkdir /firmware 0771 system system
-    mkdir /bt_firmware 0771 system system
-    mkdir /dsp 0771 media media
     symlink /data/tombstones /tombstones
 
 on init
