@@ -27,8 +27,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#ifdef VENDOR_EDIT
-#/*Huacai.Zhou@Tech.Kernel.MM, add oppo zram opt*/
 function oppo_configure_zram_parameters() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
@@ -67,7 +65,6 @@ function oppo_configure_zram_parameters() {
         swapon /dev/block/zram0 -p 32758
     fi
 }
-#endif /*VENDOR_EDIT*/
 
 function configure_read_ahead_kb_values() {
     echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
@@ -79,116 +76,11 @@ function configure_read_ahead_kb_values() {
     done
 }
 
-function configure_memory_parameters() {
-    # Set Memory parameters.
-    #
-    # Set per_process_reclaim tuning parameters
-    # All targets will use vmpressure range 50-70,
-    # All targets will use 512 pages swap size.
-    #
-    # Set allocstall_threshold to 0 for all targets.
-    #
+# Set ZRAM parameters
+oppo_configure_zram_parameters
 
-    # Set PPR parameters
-    echo 6 > /sys/module/process_reclaim/parameters/min_score_adj
-    echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-    echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-    echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-    echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-    echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-
-    # Set allocstall_threshold to 0 for all targets.
-    # Set swappiness to 100 for all targets
-    echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-    echo 100 > /proc/sys/vm/swappiness
-
-    # Disable wsf for all targets beacause we are using efk.
-    # wsf Range : 1..1000 So set to bare minimum value 1.
-    echo 1 > /proc/sys/vm/watermark_scale_factor
-
-    oppo_configure_zram_parameters
-
-    configure_read_ahead_kb_values
-}
-
-        #Apply settings for sdm710
-        # Set the default IRQ affinity to the silver cluster. When a
-        # CPU is isolated/hotplugged, the IRQ affinity is adjusted
-        # to one of the CPU from the default IRQ affinity mask.
-        echo 3f > /proc/irq/default_smp_affinity
-
-      # Core control parameters on silver
-      echo 0 0 0 0 1 1 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
-      echo 4 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
-      echo 60 > /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres
-      echo 40 > /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres
-      echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
-      echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster
-      echo 8 > /sys/devices/system/cpu/cpu0/core_ctl/task_thres
-
-      # Setting b.L scheduler parameters
-      echo 96 > /proc/sys/kernel/sched_upmigrate
-      echo 90 > /proc/sys/kernel/sched_downmigrate
-      echo 140 > /proc/sys/kernel/sched_group_upmigrate
-      echo 120 > /proc/sys/kernel/sched_group_downmigrate
-      echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
-
-      # configure governor settings for little cluster
-      echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-      echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/rate_limit_us
-      echo 1209600 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq
-      echo 576000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-
-      # configure governor settings for big cluster
-      echo "schedutil" > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
-      echo 0 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/rate_limit_us
-      echo 1344000 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq
-      echo 652800 > /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
-
-      # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
-      echo -6 >  /sys/devices/system/cpu/cpu6/sched_load_boost
-      echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
-      echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
-
-      echo "0:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq
-      echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
-
-      # Set Memory parameters
-      configure_memory_parameters
-
-      # Enable bus-dcvs
-      for cpubw in /sys/class/devfreq/*qcom,cpubw*
-            do
-                echo "bw_hwmon" > $cpubw/governor
-                echo 50 > $cpubw/polling_interval
-                echo "1144 1720 2086 2929 3879 5931 6881" > $cpubw/bw_hwmon/mbps_zones
-                echo 4 > $cpubw/bw_hwmon/sample_ms
-                echo 68 > $cpubw/bw_hwmon/io_percent
-                echo 20 > $cpubw/bw_hwmon/hist_memory
-                echo 0 > $cpubw/bw_hwmon/hyst_length
-                echo 80 > $cpubw/bw_hwmon/down_thres
-                echo 0 > $cpubw/bw_hwmon/guard_band_mbps
-                echo 250 > $cpubw/bw_hwmon/up_scale
-                echo 1600 > $cpubw/bw_hwmon/idle_mbps
-            done
-
-            echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
-
-            # Disable CPU Retention
-            echo N > /sys/module/lpm_levels/L3/cpu0/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu1/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu2/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu3/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu4/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu5/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu6/ret/idle_enabled
-            echo N > /sys/module/lpm_levels/L3/cpu7/ret/idle_enabled
-
-            # Turn off scheduler boost at the end
-            echo 0 > /proc/sys/kernel/sched_boost
-
-            # Turn on sleep modes.
-            echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
+# Set read ahead parameters
+configure_read_ahead_kb_values
 
 emmc_boot=`getprop vendor.boot.emmc`
 case "$emmc_boot"
