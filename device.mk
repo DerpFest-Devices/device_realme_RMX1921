@@ -428,7 +428,6 @@ PRODUCT_PACKAGES += \
     init.RealmeParts.rc \
     init.oppo.rc \
     init.oppo.display.rc \
-    init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.power.rc \

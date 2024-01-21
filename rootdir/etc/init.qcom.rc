@@ -508,11 +508,6 @@ on property:vendor.media.target_variant=*
     setprop ro.media.xml_variant.codecs ${vendor.media.target_variant}
     setprop ro.media.xml_variant.codecs_performance ${vendor.media.target_variant}
 
-service qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
-
 on property:vold.decrypt=trigger_restart_framework
     # ifdef VENDOR_EDIT
 	# Tong.Han@PSW.Bsp.Tp, 2018/01/31, Add to aceess data fw files
