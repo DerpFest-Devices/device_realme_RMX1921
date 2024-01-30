@@ -262,6 +262,16 @@
         ""
       ],
       "Type": "Property"
+      },
+    {
+      "Name": "DoubleTapToWake",
+      "Path": "/proc/touchpanel/double_tap_enable",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -456,7 +466,7 @@
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "610000000"
-    },
+    },   
     {
       "PowerHint": "Flipendo",
       "Node": "CPULittleClusterMaxFreq",
@@ -468,6 +478,13 @@
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1536000"
+    },
+    {
+      "PowerHint": "DOUBLE_TAP_TO_WAKE",
+      "Node": "DoubleTapToWake",
+      "Duration": 0,
+      "Value": "1"
     }
   ]
 }
+
