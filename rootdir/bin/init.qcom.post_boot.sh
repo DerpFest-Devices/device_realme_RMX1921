@@ -640,7 +640,6 @@ function oppo_configure_zram_parameters() {
     MemTotal=${MemTotalStr:16:8}
 
     echo lz4 > /sys/block/zram0/comp_algorithm
-    echo 160 > /proc/sys/vm/swappiness
     echo 60 > /proc/sys/vm/direct_swappiness
     echo 0 > /proc/sys/vm/page-cluster
 
@@ -669,16 +668,22 @@ function oppo_configure_zram_parameters() {
             echo 2684354560 > /sys/block/zram0/disksize
             #config 800M almk threshold with ramsize 4GB
             echo 204800 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
+            #set swappiness value for 4GB
+            echo 180 > /proc/sys/vm/swappiness
         elif [ $MemTotal -le 6291456 ]; then
             #config 3GB zram size with memory 6 GB
             echo 3221225472 > /sys/block/zram0/disksize
             #config 1G almk threshold with ramsize 6GB
             echo 262144 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
+            #set swappiness value for 6GB
+            echo 100 > /proc/sys/vm/swappiness
         else
             #config 4GB zram size with memory greater than 6GB
             echo 4294967296 > /sys/block/zram0/disksize
             #config 1.2G almk threshold with memory greater than 6GB
             echo 314572 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
+            #set swappiness value for 8GB
+            echo 60 > /proc/sys/vm/swappiness
         fi
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
