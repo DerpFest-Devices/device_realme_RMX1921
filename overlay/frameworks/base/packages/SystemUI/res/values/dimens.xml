@@ -26,6 +26,7 @@
     <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">25dp</dimen>
 
     <!-- Udfps animation -->
+    <dimen name="udfps_animation_size">250dp</dimen>
     <dimen name="udfps_animation_offset">6dp</dimen>
 
     <!-- Location on the screen of the center of the physical power button. -->
