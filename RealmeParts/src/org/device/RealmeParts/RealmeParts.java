@@ -36,7 +36,7 @@ import android.widget.ListView;
 import android.util.Log;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;

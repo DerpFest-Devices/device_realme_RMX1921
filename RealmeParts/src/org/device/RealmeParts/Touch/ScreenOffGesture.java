@@ -34,7 +34,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.device.RealmeParts.KernelControl;
 import org.device.RealmeParts.R;
@@ -88,9 +88,9 @@ public class ScreenOffGesture extends PreferenceFragment implements
     private Preference mGestureSwipeLeft;
     private Preference mGestureSwipeRight;
 
-    private SwitchPreference mEnableDt2w;
-    private SwitchPreference mEnableGestures;
-    private SwitchPreference mHapticFeedback;
+    private SwitchPreferenceCompat mEnableDt2w;
+    private SwitchPreferenceCompat mEnableGestures;
+    private SwitchPreferenceCompat mHapticFeedback;
 
     private boolean mCheckPreferences;
     private SharedPreferences mScreenOffGestureSharedPreferences;
@@ -129,11 +129,11 @@ public class ScreenOffGesture extends PreferenceFragment implements
         addPreferencesFromResource(R.xml.screen_off_gesture);
         prefs = getPreferenceScreen();
 
-        mEnableDt2w = (SwitchPreference) prefs.findPreference(PREF_DT2W_ENABLE);
+        mEnableDt2w = (SwitchPreferenceCompat) prefs.findPreference(PREF_DT2W_ENABLE);
 
-        mEnableGestures = (SwitchPreference) prefs.findPreference(PREF_GESTURE_ENABLE);
+        mEnableGestures = (SwitchPreferenceCompat) prefs.findPreference(PREF_GESTURE_ENABLE);
 
-        mHapticFeedback = (SwitchPreference) findPreference(KEY_GESTURE_HAPTIC_FEEDBACK);
+        mHapticFeedback = (SwitchPreferenceCompat) findPreference(KEY_GESTURE_HAPTIC_FEEDBACK);
         mHapticFeedback.setChecked(Utils.getIntSystem(getContext(), getActivity().
                 getContentResolver(), Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0);
         mHapticFeedback.setOnPreferenceChangeListener(this);
