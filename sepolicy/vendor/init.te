@@ -19,8 +19,6 @@ set_prop(init, oppo_debug_prop)
 allow init netutils_wrapper_exec:file { execute read open getattr };
 allow init init:netlink_route_socket { read getattr };
 allow init apex_metadata_file:lnk_file read;
-allow init sysfs_battery_supply:file setattr;
-allow init adsprpcd_file:file mounton;
 allow init hwservicemanager:binder { call transfer };
 allow init proc:file { write };
 

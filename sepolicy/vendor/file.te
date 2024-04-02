@@ -28,16 +28,11 @@ type sysfs_led_file, sysfs_type, fs_type;
 type sysfs_lcd_file, sysfs_type, fs_type;
 
 # Wakelock stats
-type proc_wakelocks, fs_type;
+type proc_wakelocks, fs_type, proc_type;
 
 # Power stats
 type sysfs_iio, sysfs_type, fs_type;
 type sysfs_restart, sysfs_type, fs_type;
-
-type vulkan_hal, file_type;
-
-# GCam
-type public_adsprpcd_file, file_type;
 
 # Smart Charging
 type sysfs_scharge, sysfs_type, fs_type;
