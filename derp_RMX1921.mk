@@ -9,6 +9,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_NOT_USES_BLUR := true
 TARGET_USES_MINI_GAPPS := true
 TARGET_SUPPORTS_QUICK_TAP := true
+EXTRA_UDFPS_ICONS := true
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
 # Official-ify
