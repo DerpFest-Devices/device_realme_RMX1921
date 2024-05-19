@@ -41,3 +41,7 @@ genfscon sysfs /kernel/sound_control/mic_gain u:object_r:sysfs_mgain:s0
 
 # Wakelock stats
 genfscon proc /wakelocks                              u:object_r:proc_wakelocks:s0
+
+# Extcon
+genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/extcon/extcon3/cable.0/     u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/extcon/extcon3/cable.1/     u:object_r:sysfs_extcon:s0
