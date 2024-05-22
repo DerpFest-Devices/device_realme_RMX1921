@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2016-2017 The Dirty Unicorns Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License
+ */
+
 package org.device.RealmeParts.vibrator.utils;
 
 import android.content.Context;
@@ -33,7 +49,8 @@ public class VibrationSeekBarPreference extends Preference implements SeekBar.On
     protected int mMinValue = 1;
     protected int mMaxValue = 3596;
     protected int mDefaultValue = 3596;
-    protected boolean mDefaultValueExists = true; 
+    protected boolean mDefaultValueExists = true;
+
     protected int mValue;
 
     protected TextView mValueTextView;
@@ -53,13 +70,13 @@ public class VibrationSeekBarPreference extends Preference implements SeekBar.On
         super(context, attrs, defStyleAttr, defStyleRes);
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomSeekBarPreference);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProperSeekBarPreference);
         try {
-            mShowSign = a.getBoolean(R.styleable.CustomSeekBarPreference_showSign, mShowSign);
-            String units = a.getString(R.styleable.CustomSeekBarPreference_units);
+            mShowSign = a.getBoolean(R.styleable.ProperSeekBarPreference_showSign, mShowSign);
+            String units = a.getString(R.styleable.ProperSeekBarPreference_units);
             if (units != null)
                 mUnits = " " + units;
-            mContinuousUpdates = a.getBoolean(R.styleable.CustomSeekBarPreference_continuousUpdates, mContinuousUpdates);
+            mContinuousUpdates = a.getBoolean(R.styleable.ProperSeekBarPreference_continuousUpdates, mContinuousUpdates);
         } finally {
             a.recycle();
         }
@@ -85,7 +102,7 @@ public class VibrationSeekBarPreference extends Preference implements SeekBar.On
         }
 
         mSeekBar = new SeekBar(context, attrs);
-        setLayoutResource(R.layout.preference_custom_seekbar);
+        setLayoutResource(R.layout.preference_proper_seekbar);
     }
 
     public VibrationSeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -158,10 +175,10 @@ public class VibrationSeekBarPreference extends Preference implements SeekBar.On
 
     protected void updateValueViews() {
         if (mValueTextView != null) {
-            mValueTextView.setText(getContext().getString(R.string.custom_seekbar_value,
+            mValueTextView.setText(getContext().getString(R.string.proper_seekbar_value,
                 (!mTrackingTouch || mContinuousUpdates ? getTextValue(mValue) +
                 (mDefaultValueExists && mValue == mDefaultValue ? " (" +
-                getContext().getString(R.string.custom_seekbar_default_value) + ")" : "")
+                getContext().getString(R.string.proper_seekbar_default_value) + ")" : "")
                     : getTextValue(mTrackingValue))));
         }
         if (mResetImageView != null) {
@@ -238,7 +255,7 @@ public class VibrationSeekBarPreference extends Preference implements SeekBar.On
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.reset) {
-            Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
+            Toast.makeText(getContext(), getContext().getString(R.string.proper_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
                     Toast.LENGTH_LONG).show();
         } else if (id == R.id.minus) {
             setValue(mValue - mInterval, true);
@@ -252,7 +269,7 @@ public class VibrationSeekBarPreference extends Preference implements SeekBar.On
         int id = v.getId();
         if (id == R.id.reset) {
             setValue(mDefaultValue, true);
-            //Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_is_set),
+            //Toast.makeText(getContext(), getContext().getString(R.string.proper_seekbar_default_value_is_set),
             //        Toast.LENGTH_LONG).show();
         } else if (id == R.id.minus) {
             setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);

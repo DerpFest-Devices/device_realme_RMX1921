@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2019 crDroid Android Project
+ * Copyright (C) 2016-2017 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,13 +63,13 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     public CustomSeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomSeekBarPreference);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProperSeekBarPreference);
         try {
-            mShowSign = a.getBoolean(R.styleable.CustomSeekBarPreference_showSign, mShowSign);
-            String units = a.getString(R.styleable.CustomSeekBarPreference_units);
+            mShowSign = a.getBoolean(R.styleable.ProperSeekBarPreference_showSign, mShowSign);
+            String units = a.getString(R.styleable.ProperSeekBarPreference_units);
             if (units != null)
                 mUnits = " " + units;
-            mContinuousUpdates = a.getBoolean(R.styleable.CustomSeekBarPreference_continuousUpdates, mContinuousUpdates);
+            mContinuousUpdates = a.getBoolean(R.styleable.ProperSeekBarPreference_continuousUpdates, mContinuousUpdates);
         } finally {
             a.recycle();
         }
@@ -95,7 +95,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         }
 
         mSeekBar = new SeekBar(context, attrs);
-        setLayoutResource(R.layout.preference_custom_seekbar);
+        setLayoutResource(R.layout.preference_proper_seekbar);
     }
 
     public CustomSeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -168,10 +168,10 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     protected void updateValueViews() {
         if (mValueTextView != null) {
-            mValueTextView.setText(getContext().getString(R.string.custom_seekbar_value,
+            mValueTextView.setText(getContext().getString(R.string.proper_seekbar_value,
                 (!mTrackingTouch || mContinuousUpdates ? getTextValue(mValue) +
                 (mDefaultValueExists && mValue == mDefaultValue ? " (" +
-                getContext().getString(R.string.custom_seekbar_default_value) + ")" : "")
+                getContext().getString(R.string.proper_seekbar_default_value) + ")" : "")
                     : getTextValue(mTrackingValue))));
         }
         if (mResetImageView != null) {
@@ -244,7 +244,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.reset) {
-            Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
+            Toast.makeText(getContext(), getContext().getString(R.string.proper_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
                     Toast.LENGTH_LONG).show();
         } else if (id == R.id.minus) {
             setValue(mValue - mInterval, true);
@@ -258,7 +258,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         int id = v.getId();
         if (id == R.id.reset) {
             setValue(mDefaultValue, true);
-            //Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_is_set),
+            //Toast.makeText(getContext(), getContext().getString(R.string.proper_seekbar_default_value_is_set),
             //        Toast.LENGTH_LONG).show();
         } else if (id == R.id.minus) {
             setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);

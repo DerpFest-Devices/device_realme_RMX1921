@@ -49,9 +49,6 @@ import org.device.RealmeParts.ModeSwitch.GameModeSwitch;
 import org.device.RealmeParts.Touch.ScreenOffGestureSettings;
 import org.device.RealmeParts.audio.SoundControlSettingsActivity;
 import org.device.RealmeParts.kcal.DisplayCalibration;
-import org.device.RealmeParts.preferences.CustomSeekBarPreference;
-import org.device.RealmeParts.preferences.SecureSettingListPreference;
-import org.device.RealmeParts.preferences.SecureSettingSwitchPreference;
 import org.device.RealmeParts.Startup;
 
 public class RealmeParts extends PreferenceFragment

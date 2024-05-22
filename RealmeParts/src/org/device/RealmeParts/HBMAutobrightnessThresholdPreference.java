@@ -26,6 +26,10 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceViewHolder;
 
+import org.device.RealmeParts.ProperSeekBarPreference;
+
+import org.device.RealmeParts.R;
+
 public class HBMAutobrightnessThresholdPreference extends ProperSeekBarPreference {
 
     private static int mMinVal = 0;
