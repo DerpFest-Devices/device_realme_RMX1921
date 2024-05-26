@@ -1,5 +1,8 @@
 # Blur
 persist.sys.sf.disable_blurs=1
+ro.sf.blurs_are_expensive=0
+ro.surface_flinger.supports_background_blur=0
+persist.sysui.disableBlur=true
 
 # Camera
 ro.camera.hfr.enable=0
