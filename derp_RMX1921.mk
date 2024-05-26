@@ -7,7 +7,6 @@
 # Inherit some common DerpFest stuff
 TARGET_BOOT_ANIMATION_RES := 1080
 EXTRA_UDFPS_ANIMATIONS := true
-TARGET_NOT_USES_BLUR := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := false
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
 
