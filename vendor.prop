@@ -203,6 +203,7 @@ debug.sf.early_gl_app_phase_offset_ns=15000000
 persist.sys.binary_xml=false
 
 # USB
+ro.usb.uvc.enabled=true
 vendor.usb.product_string=realme XT
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
