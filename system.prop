@@ -94,10 +94,6 @@ ro.media.recorder-max-base-layer-fps=60
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
 
-# NFC
-ro.hardware.nfc_nci=nqx.default
-ro.nfc.port=I2C
-
 # One handed mode
 ro.support_one_handed_mode=true
 

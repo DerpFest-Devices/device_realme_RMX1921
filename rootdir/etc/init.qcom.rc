@@ -951,6 +951,10 @@ on property:oppo.wifi.restorepersistaccess=*
     chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
     chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
+# Disable NFC for RMX1921
+on boot && property:ro.boot.product.hardware.sku=RMX1921
+    stop vendor.nfc_hal_service
+
 on property:sys.boot_completed=1
     # Restrict permissions to socket file to hide Magisk & co.
     chmod 440 /proc/net/unix

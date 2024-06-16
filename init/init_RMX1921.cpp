@@ -78,12 +78,15 @@ void load_dalvikvm_properties() {
     getline(infile, check);
     if (!check.compare("34")) {
         property_override("ro.boot.product.hardware.sku", "RMX1921EU");
+	property_override("ro.hardware.nfc_nci", "nqx.default");
+	property_override("ro.nfc.port", "I2C");
     } else {
         property_override("ro.boot.product.hardware.sku", "RMX1921");
     }
    }
 
 void vendor_load_properties() {
+
   // dalvikvm props
   load_dalvikvm_properties();
   // Device check
