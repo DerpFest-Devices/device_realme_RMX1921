@@ -206,6 +206,7 @@ persist.sys.binary_xml=false
 ro.usb.uvc.enabled=true
 sys.usb.mtp.batchcancel=1
 vendor.usb.product_string=realme XT
+vendor.usb.controller=a600000.dwc3
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.qdss.inst.name=qdss
@@ -213,7 +214,7 @@ vendor.usb.rmnet.func.name=gsi
 vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=gsi
 vendor.usb.use_ffs_mtp=1
-vendor.usb.use_gadget_hal=0
+vendor.usb.use_gadget_hal=1
 
 # Zygote
 zygote.critical_window.minute=10

@@ -122,7 +122,6 @@ on boot
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
     setprop vendor.usb.qdss.inst.name "qdss"
-    setprop sys.usb.configfs 1
 
 #start camera server as daemon
 #service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -158,9 +157,6 @@ on boot
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/blue/blink
-
-on charger
-    setprop sys.usb.configfs 1
 
 ## import cne init file
 #on post-fs
@@ -402,10 +398,7 @@ on property:init.svc.zygote=restarting
 #    socket vqtss stream 0660 system system
 #    user system
 #    group system
-
-on charger
-     setprop sys.usb.configfs 1
-
+#
 #service hbtp /system/vendor/bin/hbtp_daemon
 #     class main
 #     user system
