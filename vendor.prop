@@ -117,9 +117,6 @@ persist.vendor.camera.eis.enable=1
 # CNE
 persist.vendor.cne.feature=1
 
-# Codec2
-debug.stagefright.omx_default_rank=0
-
 # Display
 vendor.display.enable_default_color_mode=1
 ro.vendor.display.cabl=2
