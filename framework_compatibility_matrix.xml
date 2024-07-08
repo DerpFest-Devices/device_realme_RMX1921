@@ -1,0 +1,79 @@
+<compatibility-matrix version="2.0" type="framework">
+<hal format="hidl" optional="true">
+    <name>android.hardware.radio.config</name>
+    <version>1.0-2</version>
+    <interface>
+        <name>IRadioConfig</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.google.google_battery</name>
+    <version>1.0-1</version>
+    <interface>
+        <name>IGoogleBattery</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl">
+    <name>vendor.nxp.nxpese</name>
+    <transport>hwbinder</transport>
+    <version>1.0</version>
+    <interface>
+        <name>INxpEse</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl">
+    <name>vendor.nxp.nxpnfc</name>
+    <transport>hwbinder</transport>
+    <version>1.0</version>
+    <interface>
+        <name>INxpNfc</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.oplus.hardware.appradio</name>
+    <version>1.0</version>
+    <interface>
+        <name>IOplusAppRadio</name>
+        <instance>oplus_app_slot1</instance>
+        <instance>oplus_app_slot2</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.oplus.hardware.ims</name>
+    <version>1.0</version>
+    <interface>
+        <name>IOplusImsRadio</name>
+        <instance>oplusimsradio0</instance>
+        <instance>oplusimsradio1</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.oplus.hardware.radio</name>
+    <version>1.0</version>
+    <interface>
+        <name>IOplusRadio</name>
+        <instance>oplus_slot1</instance>
+        <instance>oplus_slot2</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.oppo.hardware.biometrics.fingerprint</name>
+    <version>2.0-1</version>
+    <interface>
+        <name>IBiometricsFingerprint</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.oppo.hardware.camera.oppoAlgoProcessService</name>
+    <version>1.0</version>
+    <interface>
+        <name>IOppoAlgoProcessService</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+</compatibility-matrix>
