@@ -133,10 +133,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
     gralloc.sdm710 \
-    memtrack.sdm710 \
     hwcomposer.sdm710 \
     libtinyxml \
     libvulkan \
@@ -147,6 +144,7 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0.vendor \
     vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
+    vendor.qti.hardware.memtrack-service \
     vendor.qti.hardware.display.allocator@1.0-service \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
