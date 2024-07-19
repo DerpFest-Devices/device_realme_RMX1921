@@ -27,54 +27,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-function configure_zram_parameters() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    low_ram=`getprop ro.config.low_ram`
-
-    # Zram disk - 75% for Go devices.
-    # For 512MB Go device, size = 384MB, set same for Non-Go.
-    # For 1GB Go device, size = 768MB, set same for Non-Go.
-    # For 2GB Go device, size = 1536MB, set same for Non-Go.
-    # For >2GB Non-Go devices, size = 50% of RAM size. Limit the size to 4GB.
-    # And enable lz4 zram compression for Go targets.
-
-    let RamSizeGB="( $MemTotal / 1048576 ) + 1"
-    diskSizeUnit=M
-    if [ $RamSizeGB -le 2 ]; then
-        let zRamSizeMB="( $RamSizeGB * 1024 ) * 3 / 4"
-    else
-        let zRamSizeMB="( $RamSizeGB * 1024 ) / 2"
-    fi
-
-    # use MB avoid 32 bit overflow
-    if [ $zRamSizeMB -gt 4096 ]; then
-        let zRamSizeMB=4096
-    fi
-
-    echo lz4 > /sys/block/zram0/comp_algorithm
-
-    if [ -f /sys/block/zram0/disksize ]; then
-        if [ -f /sys/block/zram0/use_dedup ]; then
-            echo 1 > /sys/block/zram0/use_dedup
-        fi
-        echo "$zRamSizeMB""$diskSizeUnit" > /sys/block/zram0/disksize
-
-        # ZRAM may use more memory than it saves if SLAB_STORE_USER
-        # debug option is enabled.
-        if [ -e /sys/kernel/slab/zs_handle ]; then
-            echo 0 > /sys/kernel/slab/zs_handle/store_user
-        fi
-        if [ -e /sys/kernel/slab/zspage ]; then
-            echo 0 > /sys/kernel/slab/zspage/store_user
-        fi
-
-        mkswap /dev/block/zram0
-        swapon /dev/block/zram0 -p 32758
-    fi
-}
-
 #ifdef VENDOR_EDIT
 #/*Huacai.Zhou@Tech.Kernel.MM, add oppo zram opt*/
 function oppo_configure_zram_parameters() {
@@ -91,37 +43,26 @@ function oppo_configure_zram_parameters() {
             echo 1 > /sys/block/zram0/use_dedup
         fi
 
-        if [ $MemTotal -le 524288 ]; then
-            #config 384MB zramsize with ramsize 512MB
-            echo 402653184 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 1048576 ]; then
-            #config 768MB zramsize with ramsize 1GB
-            echo 805306368 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 2097152 ]; then
-            #config 1GB+256MB zramsize with ramsize 2GB
-            echo lz4 > /sys/block/zram0/comp_algorithm
-            echo 1342177280 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 3145728 ]; then
-            #config 1.9GB zramsize with ramsize 3GB
-            echo 2040109466 > /sys/block/zram0/disksize
-            #config 680M almk threshold with ramsize 3GB
-            echo 174080 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
-        elif [ $MemTotal -le 4194304 ]; then
+        if [ $MemTotal -le 4194304 ]; then
             #config 2.5GB zram size with memory 4 GB
             echo 2684354560 > /sys/block/zram0/disksize
-            #config 800M almk threshold with ramsize 4GB
-            echo 204800 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
         elif [ $MemTotal -le 6291456 ]; then
             #config 3GB zram size with memory 6 GB
             echo 3221225472 > /sys/block/zram0/disksize
-            #config 1G almk threshold with ramsize 6GB
-            echo 262144 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
         else
             #config 4GB zram size with memory greater than 6GB
             echo 4294967296 > /sys/block/zram0/disksize
-            #config 1.2G almk threshold with memory greater than 6GB
-            echo 314572 > /sys/module/lowmemorykiller/parameters/almk_totalram_threshold_pages
         fi
+
+        # ZRAM may use more memory than it saves if SLAB_STORE_USER
+        # debug option is enabled.
+        if [ -e /sys/kernel/slab/zs_handle ]; then
+            echo 0 > /sys/kernel/slab/zs_handle/store_user
+        fi
+        if [ -e /sys/kernel/slab/zspage ]; then
+            echo 0 > /sys/kernel/slab/zspage/store_user
+        fi
+
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
     fi
@@ -136,28 +77,6 @@ function configure_read_ahead_kb_values() {
     for dm in $dmpts; do
         echo 512 > $dm
     done
-}
-
-function enable_swap() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    SWAP_ENABLE_THRESHOLD=1048576
-    swap_enable=`getprop ro.vendor.qti.config.swap`
-
-    # Enable swap initially only for 1 GB targets
-    if [ "$MemTotal" -le "$SWAP_ENABLE_THRESHOLD" ] && [ "$swap_enable" == "true" ]; then
-        # Static swiftness
-        echo 1 > /proc/sys/vm/swap_ratio_enable
-        echo 70 > /proc/sys/vm/swap_ratio
-
-        # Swap disk - 200MB size
-        if [ ! -f /data/vendor/swap/swapfile ]; then
-            dd if=/dev/zero of=/data/vendor/swap/swapfile bs=1m count=200
-        fi
-        mkswap /data/vendor/swap/swapfile
-        swapon /data/vendor/swap/swapfile -p 32758
-    fi
 }
 
 function configure_memory_parameters() {
@@ -187,17 +106,9 @@ function configure_memory_parameters() {
     # wsf Range : 1..1000 So set to bare minimum value 1.
     echo 1 > /proc/sys/vm/watermark_scale_factor
 
-#ifdef VENDOR_EDIT
-#/*Huacai.Zhou@Tech.Kernel.MM, add oppo zram opt*/
-	oppo_configure_zram_parameters
-#else
-    #configure_zram_parameters
-#endif /*VENDOR_EDIT*/
+    oppo_configure_zram_parameters
 
     configure_read_ahead_kb_values
-
-    enable_swap
-fi
 }
 
         #Apply settings for sdm710
