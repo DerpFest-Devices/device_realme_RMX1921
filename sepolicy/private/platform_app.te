@@ -1,2 +1,5 @@
 r_dir_file(platform_app, sysfs_zram)
 allow platform_app config_gz:file r_file_perms;
+
+# allow systemui to set boot animation colors
+set_prop(platform_app, bootanim_system_prop)
