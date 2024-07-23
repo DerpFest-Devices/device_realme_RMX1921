@@ -25,10 +25,26 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on early-init
+    # Enable sched_boost
+    write /proc/sys/kernel/sched_boost 1
+
 on init
+    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
+    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
+    write /dev/stune/schedtune.colocate 0
+    write /dev/stune/background/schedtune.colocate 0
+    write /dev/stune/system-background/schedtune.colocate 0
+    write /dev/stune/foreground/schedtune.colocate 0
+    write /dev/stune/top-app/schedtune.colocate 1
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
     # Disable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 0
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 0
+
+    # Disable powersaving
+    write /sys/module/lpm_levels/parameters/sleep_disabled 1
 
     # Bring all cores online
     write /sys/devices/system/cpu/cpu0/online 1
@@ -46,6 +62,14 @@ on init
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
 on boot
+    # For cpusets initialize for Silver only first and then Silver + Gold
+    # Silver only configuration cannot work with 0-7
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
+    write /dev/cpuset/system-background/cpus 0-7
+
     # Disable console_suspend to get better logging for kernel crashes
     write /sys/module/printk/parameters/console_suspend N
 
@@ -67,6 +91,9 @@ on property:init.svc.vendor.charger=running
     # Enable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 1
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/hibern8_on_idle_enable 1
+
+    # Turn on sleep modes
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
     write /sys/module/msm_thermal/parameters/enabled "N"
 
