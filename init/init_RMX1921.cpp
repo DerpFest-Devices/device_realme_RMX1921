@@ -69,26 +69,28 @@ void load_dalvikvm_properties() {
   property_override("dalvik.vm.heapminfree", "512k");
 }
 
-  // Device check
-  void device_check() {
-    // Check Varient
+void nfc_device_check() {
+    /*
+     * Detect device region and set properties
+     */
     std::ifstream infile("/proc/oppoVersion/operatorName");
-    std::string check;
+    string operatorName;
 
-    getline(infile, check);
-    if (!check.compare("34")) {
+    getline(infile, operatorName);
+
+    if (operatorName == "11" || operatorName == "34") {
         property_override("ro.boot.product.hardware.sku", "RMX1921EU");
 	property_override("ro.hardware.nfc_nci", "nqx.default");
 	property_override("ro.nfc.port", "I2C");
     } else {
         property_override("ro.boot.product.hardware.sku", "RMX1921");
     }
-   }
+}
 
 void vendor_load_properties() {
 
   // dalvikvm props
   load_dalvikvm_properties();
-  // Device check
-  device_check();
+  // NFC Device Check
+  nfc_device_check();
 }
