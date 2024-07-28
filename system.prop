@@ -87,6 +87,12 @@ persist.device_config.runtime_native_boot.iorap_readahead_enable=false
 ro.iorapd.enable=false
 iorapd.readahead.enable=false
 
+# LMKD
+ro.config.low_ram=false
+ro.lmk.use_minfree_levels=true
+ro.lmk.kill_timeout_ms=100
+ro.lmk.swap_util_max=90
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 ro.media.recorder-max-base-layer-fps=60
