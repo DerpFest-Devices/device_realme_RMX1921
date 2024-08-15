@@ -25,6 +25,13 @@ genfscon proc /devinfo        u:object_r:proc_devinfo:s0
 # FPS info
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps        u:object_r:sysfs_graphics:s0
 
+# Power Hal
+genfscon proc /sys/kernel/sched_autogroup_enabled     u:object_r:proc_sched:s0
+genfscon proc /sys/kernel/sched_boost                 u:object_r:proc_sched:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_encoder_mask                        u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_state                               u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_timeout_ms                          u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display                                           u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/platform/soc/62400000.qcom,lpass/subsys[0-9]/restart_level        u:object_r:sysfs_restart:s0
 genfscon sysfs /bus/msm_subsys/devices/subsys[0-9]/restart_level        u:object_r:sysfs_restart:s0
 
