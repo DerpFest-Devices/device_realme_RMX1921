@@ -16,7 +16,7 @@
     <string name="device_summary">Специальные настройки устройства Realme</string>
     <string name="customize_title">Customize</string>
     <string name="misc_title">Прочее</string>
-    <string name="touch">сенсорный экран</string>
+    <string name="touch">Сенсорный экран</string>
     <string name="display_title">Экран</string>                                                                              
 
     <!-- DC dimming -->
@@ -25,8 +25,12 @@
     <string name="tile_dc_mode">DC-Dimming</string>
     <!-- HBM mode -->
     <string name="hbm_mode_summary">Максимальная яркость для лучшей видимости</string>
-    <string name="hbm_mode_title">Режим высокой яркости </string>
-    <string name="tile_hbm_mode">Режим высокой яркости </string>
+    <string name="hbm_mode_title">Режим высокой яркости</string>
+    <string name="tile_hbm_mode">Режим высокой яркости</string>
+    <string name="hbm_autobrightness_summary"></string>
+    <string name="hbm_autobrightness_title">Автоматический режим высокой яркости</string>
+    <string name="hbm_autobrightness_threshold_summary"></string>
+    <string name="hbm_autobrightness_threshold_title">Порог для автоматического режима высокой яркости (люксы)</string>
     <!-- otg mode -->
     <string name="otg_mode_summary">Для подключения внешних USB устройств</string>
     <string name="otg_mode_title">Включить USB-OTG</string>
@@ -99,7 +103,7 @@
     <string name="shortcut_action_help_button">кнопка</string>
     <string name="shortcut_action_help_app">приложение</string>
     <string name="shortcut_action_help_icon">, при выборе значка появятся параметры настройки</string>
-    <string name="shortcut_action_help_main">Чтобы добавить %1$s, выберите значок Добавить.После добавления %1$s, выбор строки изменит цель%2$s\n\nЧтобы удалить %1$s, проведите по строке горизонтально влево или вправо.Измените порядок %1$s в списке вертикально перетащив якорь влево.\n\nЧтобы сбросить настройки,выберите опцию сброса</string>
+    <string name="shortcut_action_help_main">Чтобы добавить %1$s, выберите значок Добавить. После добавления %1$s, выбор строки изменит цель%2$s\n\nЧтобы удалить %1$s, проведите по строке горизонтально влево или вправо. Измените порядок %1$s в списке вертикально перетащив якорь влево.\n\nЧтобы сбросить настройки,выберите опцию сброса</string>
     <string name="shortcut_action_ambient_display">Показывать ambient display</string>
     <string name="shortcut_action_vol_up">Увеличить громкость</string>
     <string name="shortcut_action_vol_down">Убавить громкость</string>
@@ -138,10 +142,38 @@
     <string name="extreme_amoled">Extreme Amoled</string>
     <string name="warm_amoled">Warm Amoled</string>
     <string name="hybrid_mamba">Hybrid Mamba</string>
+    <string name="deep_amoled">Deep Amoled</string>
+    <string name="cold_amoled">Cold New Amoled</string>
+    <string name="clean_deep">Deep and Clean</string>
+    <string name="shamshung">Shamshung</string>
+    <string name="nature">Nature</string>
+    <string name="shamshung_cold">Cool Shamshung</string>
+    <string name="cold_as_ice">Extreme Cold</string>
+    <string name="deep_saturated">Deep and Saturated</string>
+    <string name="black_af">Deep Saturated Black</string>
     <string name="kcal_hue">Оттенок</string>
     <string name="kcal_value">Значение</string>                                     
 
     <!-- Аудио -->   
     <string name="audio_title">Аудио</string>
+    <string name="switch_bar_on">Включено</string>
+    <string name="switch_bar_off">Выключено</string>
+    <string name="audio_gain_settings">Усиление звука</string>
+    <string name="gain_summary">Улучшение усиления аудиоустройств</string>
 
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Усиление наушников</string>
+    <string name="microphone_gain">Усиление микрофона</string>
+
+    <!-- Clear speaker -->
+    <string name="clear_speaker_title">Прочистка динамика</string>
+    <string name="clear_speaker_summary">Проиграть 30-секундное аудио для прочистки динамика</string>
+    <string name="clear_speaker_description">Запустите это один-два раза, если ваш динамик слегка забит пылью. Поставьте максимальный уровень громкости.\n\nЕсли динамик забит сильно, запустите прочистку 2-5 раз, тряся телефон динамиком вниз.\n\nВНИМАНИЕ: Убедитесь, что все наушники отключены.</string>
+
+    <!-- Vibration -->
+    <string name="vibration_title">Вибрация</string>
+    <string name="vibration_summary">Настроить силу вибрацию</string>
+    <string name="vibration_strength_system_title">Системная вибрация</string>
+    <string name="vibration_strength_notification_title">Вибрация уведомлений</string>
+    <string name="vibration_strength_call_title">Вибрация звонков</string>
 </resources>
