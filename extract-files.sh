@@ -58,6 +58,9 @@ function blob_fixup() {
        odm/lib64/mediadrm/libwvdrmengine.so|odm/lib64/libwvhidl.so)
            grep -q "libcrypto-v33.so" "${2}" || "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
+        vendor/etc/seccomp_policy/atfwd@2.0.policy)
+            echo 'gettid: 1' >> ${2}
+            ;;
     esac
 }
 
