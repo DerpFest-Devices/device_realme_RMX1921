@@ -172,7 +172,7 @@
 
     <!-- Vibration -->
     <string name="vibration_title">Вибрация</string>
-    <string name="vibration_summary">Настроить силу вибрацию</string>
+    <string name="vibration_summary">Настроить силу вибрации</string>
     <string name="vibration_strength_system_title">Системная вибрация</string>
     <string name="vibration_strength_notification_title">Вибрация уведомлений</string>
     <string name="vibration_strength_call_title">Вибрация звонков</string>
