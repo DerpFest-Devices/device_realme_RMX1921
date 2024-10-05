@@ -161,7 +161,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
-    android.hardware.drm-service.clearkey
+    android.hardware.drm-service.clearkey \
+    libcrypto-v33
 
 # Fingerprint
 PRODUCT_PACKAGES += \
