@@ -61,6 +61,9 @@ function blob_fixup() {
         vendor/etc/seccomp_policy/atfwd@2.0.policy)
             echo 'gettid: 1' >> ${2}
             ;;
+        vendor/lib64/hw/camera.qcom.so)
+            grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
+            ;;
     esac
 }
 
