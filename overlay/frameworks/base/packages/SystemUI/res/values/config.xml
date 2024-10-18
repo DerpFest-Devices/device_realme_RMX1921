@@ -67,4 +67,7 @@
     <!-- Update battery info every second when device is charging -->
     <bool name="config_alternateFastchargeInfoUpdate">true</bool>
 
+    <!-- Whether to play turbulence noise after clicking the play button -->
+    <bool name="config_turbulenceNoise">false</bool>
+
 </resources>
