@@ -41,16 +41,8 @@ function oppo_configure_zram_parameters() {
             echo 1 > /sys/block/zram0/use_dedup
         fi
 
-        if [ $MemTotal -le 4194304 ]; then
-            #config 2.5GB zram size with memory 4 GB
-            echo 2684354560 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 6291456 ]; then
-            #config 3GB zram size with memory 6 GB
-            echo 3221225472 > /sys/block/zram0/disksize
-        else
-            #config 4GB zram size with memory greater than 6GB
-            echo 4294967296 > /sys/block/zram0/disksize
-        fi
+        # set 4GB zram size for all
+        echo 4294967296 > /sys/block/zram0/disksize
 
         # ZRAM may use more memory than it saves if SLAB_STORE_USER
         # debug option is enabled.
