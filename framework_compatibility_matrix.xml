@@ -148,6 +148,14 @@
         <instance>default</instance>
     </interface>
 </hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.thermal</name>
+    <version>1</version>
+    <interface>
+        <name>IThermal</name>
+        <instance>default</instance>
+    </interface>
+</hal>
 <hal format="hidl" optional="true">
     <name>android.hardware.usb</name>
     <version>1.0-3</version>
@@ -156,9 +164,9 @@
         <instance>default</instance>
     </interface>
 </hal>
-<hal format="hidl" optional="true">
+<hal format="aidl" optional="true">
     <name>android.hardware.usb.gadget</name>
-    <version>1.0-2</version>
+    <version>1</version>
     <interface>
         <name>IUsbGadget</name>
         <instance>default</instance>
