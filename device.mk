@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
     gralloc.sdm710 \
-    hwcomposer.sdm710 \
+    hwcomposer.qcom \
     libtinyxml \
     libvulkan \
     libdisplayconfig.qti \
