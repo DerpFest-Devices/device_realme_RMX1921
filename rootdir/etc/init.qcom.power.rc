@@ -151,17 +151,6 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     # Memory parameters
-
-    # Set per_process_reclaim tuning parameters:
-    # - vmpressure range: 50-70
-    # - swap size: 512 pages
-    write /sys/module/process_reclaim/parameters/min_score_adj 6
-    write /sys/module/process_reclaim/parameters/enable_process_reclaim 0
-    write /sys/module/process_reclaim/parameters/pressure_min 50
-    write /sys/module/process_reclaim/parameters/pressure_max 70
-    write /sys/module/process_reclaim/parameters/swap_opt_eff 30
-    write /sys/module/process_reclaim/parameters/per_swap_size 512
-
     # Set allocstall_threshold to 0
     write /sys/module/vmpressure/parameters/allocstall_threshold 0
 

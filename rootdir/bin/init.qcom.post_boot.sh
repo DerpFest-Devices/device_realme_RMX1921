@@ -27,7 +27,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-function oppo_configure_zram_parameters() {
+function configure_zram_parameters() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
 
@@ -69,7 +69,7 @@ function configure_read_ahead_kb_values() {
 }
 
 # Set ZRAM parameters
-oppo_configure_zram_parameters
+configure_zram_parameters
 
 # Set read ahead parameters
 configure_read_ahead_kb_values
