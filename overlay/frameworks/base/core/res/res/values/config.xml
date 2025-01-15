@@ -1006,7 +1006,7 @@
         <item>"/system/framework/services.jar"</item>
         <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
-        <item>"/system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk"</item>
+        <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
     </string-array>
 
@@ -1291,10 +1291,8 @@
     <!-- The list of package IDs that are allowed to use aux cameras.
          NOTE: If this list is empty then all apps will be able to use aux cameras. -->
     <string-array name="config_cameraAuxPackageAllowList" translatable="false">
-        <item>org.codeaurora.snapcam</item>
         <item>com.android.camera</item>
         <item>org.derpfest.flash</item>
-        <item>org.derpfest.flash.dev</item>
     </string-array>
 
     <!-- The list of package IDs that are not allowed to use aux cameras. -->
